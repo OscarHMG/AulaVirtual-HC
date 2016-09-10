@@ -43,7 +43,9 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 		$wp_error = new WP_Error();
 
 	// Shake it!
-	$shake_error_codes = array( 'empty_password', 'empty_email', 'invalid_email', 'invalidcombo', 'empty_username', 'invalid_username', 'incorrect_password' );
+	//CAMBIANDO ERRORES
+	//$shake_error_codes = array( 'empty_password', 'empty_email', 'invalid_email', 'invalidcombo', 'empty_username', 'invalid_username', 'incorrect_password' );
+	$shake_error_codes = array( 'empty_password', 'invalidcombo', 'empty_username', 'invalid_username', 'incorrect_password' );
 	/**
 	 * Filters the error codes array for shaking the login form.
 	 *
@@ -701,13 +703,20 @@ case 'register' :
 		wp_redirect( site_url('wp-login.php?registration=disabled') );
 		exit();
 	}
-
+	//AQUI GUARDA EL USER FAKE EMAIL - AQUI AGREGAR CODIGO DE INGRESO?
+	$userdata = array();
 	$user_login = '';
-	$user_email = '';
+	$user_email = 'fakeemail@nodomain.com';
+	$user_pass = '';
+	//$userdata['user_pass'] = $_POST['password'];
 	if ( $http_post ) {
-		$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
-		$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';
-		$errors = register_new_user($user_login, $user_email);
+		/*$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
+		$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';*/
+		$userdata['user_login']= $_POST['user_login'];
+		$userdata['user_pass'] = $_POST['password'];
+		//$errors = register_new_user($user_login, $user_email); //Registro Usuario con ese email
+		//$errors = wp_update_user($userdata);
+		$errors = wp_insert_user($userdata);
 		if ( !is_wp_error($errors) ) {
 			$redirect_to = !empty( $_POST['redirect_to'] ) ? $_POST['redirect_to'] : 'wp-login.php?checkemail=registered';
 			wp_safe_redirect( $redirect_to );
@@ -728,7 +737,7 @@ case 'register' :
 ?>
 <form name="registerform" id="registerform" action="<?php echo esc_url( site_url( 'wp-login.php?action=register', 'login_post' ) ); ?>" method="post" novalidate="novalidate">
 	<p>
-		<label for="user_login"><?php _e('Username') ?><br />
+		<label for="user_login"><?php _e('Nombre y Apellidos') ?><br />
 		<input type="text" name="user_login" id="user_login" class="input" value="<?php echo esc_attr(wp_unslash($user_login)); ?>" size="20" /></label>
 	</p>
 	<!--<p>
@@ -737,21 +746,16 @@ case 'register' :
 	</p>
 
 	<!-- AGREGANDO CAMPOS-->
-		<p>
-		<label for="password">Password<br/>
+	<p>
+		<label for="password">Cedula<br/>
 		<input id="password" class="input" type="password" tabindex="30" size="25" value="" name="password" />
 		</label>
 	</p>
-	<p>
+	<!-- <p>
 		<label for="repeat_password">Repeat password<br/>
 		<input id="repeat_password" class="input" type="password" tabindex="40" size="25" value="" name="repeat_password" />
 		</label>
-	</p>
-	<p>
-		<label for="are_you_human" style="font-size:11px">Sorry, but we must check if you are human. What is the name of website you are registering for?<br/>
-		<input id="are_you_human" class="input" type="text" tabindex="40" size="25" value="" name="are_you_human" />
-		</label>
-	</p>
+	</p> -->
 	<!-- FIN----> 
 	<?php
 	/**
@@ -761,7 +765,7 @@ case 'register' :
 	 */
 	do_action( 'register_form' );
 	?>
-	<p id="reg_passmail"><?php _e( 'Registration confirmation will be emailed to you.' ); ?></p>
+	<!--<p id="reg_passmail"><?php _e( 'Registration confirmation will be emailed to you.' ); ?></p> -->
 	<br class="clear" />
 	<input type="hidden" name="redirect_to" value="<?php echo esc_attr( $redirect_to ); ?>" />
 	<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Register'); ?>" /></p>
@@ -769,7 +773,7 @@ case 'register' :
 
 <p id="nav">
 <a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Log in' ); ?></a> |
-<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a>
+<!-- <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a> -->
 </p>
 
 <?php
@@ -1043,9 +1047,6 @@ function ts_check_extra_register_fields($login, $email, $errors) {
 	if ( strlen( $_POST['password'] ) < 8 ) {
 		$errors->add( 'password_too_short', "<strong>ERROR</strong>: Passwords must be at least eight characters long" );
 	}
-	if ( $_POST['are_you_human'] !== get_bloginfo( 'name' ) ) {
-		$errors->add( 'not_human', "<strong>ERROR</strong>: Your name is Bot? James Bot? Check bellow the form, there's a Back to [sitename] link." );
-	}
 }
 add_action( 'user_register', 'ts_register_extra_fields', 100 );
 function ts_register_extra_fields( $user_id ){
@@ -1056,4 +1057,22 @@ function ts_register_extra_fields( $user_id ){
 	}
 	$new_user_id = wp_update_user( $userdata );
 }
+
+add_filter( 'wp_login_errors', 'override_reg_complete_msg', 10, 2 );
+function override_reg_complete_msg( $errors, $redirect_to ) {
+   if( isset( $errors->errors['registered'] ) ) {
+     $needle = __('Registration complete. Please check your e-mail.');
+     foreach( $errors->errors['registered'] as $index => $msg ) {
+       if( $msg === $needle ) {
+         $errors->errors['registered'][$index] = 'Your new message here';
+       }
+     }
+   }
+ 
+   return $errors;
+}
+
+?>
+<?php
+	
 ?>
