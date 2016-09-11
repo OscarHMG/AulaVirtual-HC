@@ -1,0 +1,10 @@
+{
+	"autoload":
+	{
+		"psr-4":
+		{
+			"plainview\\protect_passwords\\": "src/",
+			"plainview\\sdk_propas\\": "src/sdk/"
+		}
+	}
+}

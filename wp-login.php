@@ -1,4 +1,8 @@
+
 <?php
+
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_DISPLAY', true );
 /**
  * WordPress User Page
  *
@@ -323,7 +327,7 @@ function retrieve_password() {
 		return $errors;
 
 	if ( !$user_data ) {
-		$errors->add('invalidcombo', __('<strong>ERROR</strong>: Invalid username or email.'));
+		$errors->add('invalidcombo', __('<strong>ERROR</strong>: Usuario no valido.'));
 		return $errors;
 	}
 
@@ -558,10 +562,10 @@ case 'retrievepassword' :
 </form>
 
 <p id="nav">
-<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e('Log in') ?></a>
+<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e('Ingresar') ?></a>
 <?php
 if ( get_option( 'users_can_register' ) ) :
-	$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Register' ) );
+	$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Registrese' ) );
 
 	/** This filter is documented in wp-includes/general-template.php */
 	echo ' | ' . apply_filters( 'register', $registration_url );
@@ -674,7 +678,7 @@ case 'rp' :
 <a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Log in' ); ?></a>
 <?php
 if ( get_option( 'users_can_register' ) ) :
-	$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Register' ) );
+	$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Registrese' ) );
 
 	/** This filter is documented in wp-includes/general-template.php */
 	echo ' | ' . apply_filters( 'register', $registration_url );
@@ -708,21 +712,23 @@ case 'register' :
 	$user_login = '';
 	$user_email = 'fakeemail@nodomain.com';
 	$user_pass = '';
-	//$userdata['user_pass'] = $_POST['password'];
 	if ( $http_post ) {
-		/*$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
-		$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';*/
-		$userdata['user_login']= $_POST['user_login'];
-		$userdata['user_pass'] = $_POST['password'];
-		//$errors = register_new_user($user_login, $user_email); //Registro Usuario con ese email
-		//$errors = wp_update_user($userdata);
-		$errors = wp_insert_user($userdata);
-		if ( !is_wp_error($errors) ) {
+		if ( strlen($_POST['user_login'])<=7 ) {
+			$errors->add( 'empty_username', "<strong>ERROR</strong>: Nombre y Apellidos deben contener mas de 7 caracteres" );
+		}else if ( strlen( $_POST['password'] ) <10 ) {
+			$errors->add( 'passwords_not_matched', "<strong>ERROR</strong>:Numero de Cedula debe contener 10 digitos " );
+		} else{
+			$userdata['user_login']= $_POST['user_login'];
+			$userdata['user_pass'] = $_POST['password'];
+			$errors = wp_insert_user($userdata);
+		}
+		if ( !is_wp_error($errors)) {
 			$redirect_to = !empty( $_POST['redirect_to'] ) ? $_POST['redirect_to'] : 'wp-login.php?checkemail=registered';
 			wp_safe_redirect( $redirect_to );
 			exit();
 		}
 	}
+	
 
 	$registration_redirect = ! empty( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : '';
 	/**
@@ -748,7 +754,7 @@ case 'register' :
 	<!-- AGREGANDO CAMPOS-->
 	<p>
 		<label for="password">Cedula<br/>
-		<input id="password" class="input" type="password" tabindex="30" size="25" value="" name="password" />
+		<input id="password" class="input" type="text" tabindex="30" size="25" value="" name="password" />
 		</label>
 	</p>
 	<!-- <p>
@@ -768,11 +774,11 @@ case 'register' :
 	<!--<p id="reg_passmail"><?php _e( 'Registration confirmation will be emailed to you.' ); ?></p> -->
 	<br class="clear" />
 	<input type="hidden" name="redirect_to" value="<?php echo esc_attr( $redirect_to ); ?>" />
-	<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Register'); ?>" /></p>
+	<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Registrese'); ?>" /></p>
 </form>
 
 <p id="nav">
-<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Log in' ); ?></a> |
+<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Ingrese' ); ?></a> |
 <!-- <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a> -->
 </p>
 
@@ -876,22 +882,22 @@ default:
 	// Clear errors if loggedout is set.
 	if ( !empty($_GET['loggedout']) || $reauth )
 		$errors = new WP_Error();
-
+	//MESSAGES LOG/REGISTER
 	if ( $interim_login ) {
 		if ( ! $errors->get_error_code() )
-			$errors->add( 'expired', __( 'Your session has expired. Please log in to continue where you left off.' ), 'message' );
+			$errors->add( 'expired', __( 'Su sesion ha expirado. Ingrese para continuar donde se quedo.' ), 'message' );
 	} else {
 		// Some parts of this script use the main login form to display a message
 		if		( isset($_GET['loggedout']) && true == $_GET['loggedout'] )
-			$errors->add('loggedout', __('You are now logged out.'), 'message');
+			$errors->add('loggedout', __('Ud. no se encuentra logeado. Ingrese!'), 'message');
 		elseif	( isset($_GET['registration']) && 'disabled' == $_GET['registration'] )
-			$errors->add('registerdisabled', __('User registration is currently not allowed.'));
-		elseif	( isset($_GET['checkemail']) && 'confirm' == $_GET['checkemail'] )
-			$errors->add('confirm', __('Check your email for the confirmation link.'), 'message');
+			$errors->add('registerdisabled', __('El registro de usuario no esta permitido.'));
+/*		elseif	( isset($_GET['checkemail']) && 'confirm' == $_GET['checkemail'] )
+			$errors->add('confirm', __('Check your email for the confirmation link.'), 'message');*/
 		elseif	( isset($_GET['checkemail']) && 'newpass' == $_GET['checkemail'] )
 			$errors->add('newpass', __('Check your email for your new password.'), 'message');
 		elseif	( isset($_GET['checkemail']) && 'registered' == $_GET['checkemail'] )
-			$errors->add('registered', __('Registration complete. Please check your email.'), 'message');
+			$errors->add('registered', __('Registro Completo.'), 'message');
 		elseif ( strpos( $redirect_to, 'about.php?updated' ) )
 			$errors->add('updated', __( '<strong>You have successfully updated WordPress!</strong> Please log back in to see what&#8217;s new.' ), 'message' );
 	}
@@ -925,12 +931,12 @@ default:
 
 <form name="loginform" id="loginform" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post">
 	<p>
-		<label for="user_login"><?php _e('Username or Email') ?><br />
+		<label for="user_login"><?php _e('Nombre y Apellidos') ?><br />
 		<input type="text" name="log" id="user_login"<?php echo $aria_describedby_error; ?> class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" /></label>
 	</p>
 	<p>
-		<label for="user_pass"><?php _e('Password') ?><br />
-		<input type="password" name="pwd" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="" size="20" /></label>
+		<label for="user_pass"><?php _e('Cedula') ?><br />
+		<input type="text" name="pwd" id="user_pass"<?php echo $aria_describedby_error; ?> class="input" value="" size="20"/></label>
 	</p>
 	<?php
 	/**
@@ -942,7 +948,7 @@ default:
 	?>
 	<p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever" <?php checked( $rememberme ); ?> /> <?php esc_attr_e('Remember Me'); ?></label></p>
 	<p class="submit">
-		<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Log In'); ?>" />
+		<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Ingresar'); ?>" />
 <?php	if ( $interim_login ) { ?>
 		<input type="hidden" name="interim-login" value="1" />
 <?php	} else { ?>
@@ -959,13 +965,13 @@ default:
 <p id="nav">
 <?php if ( ! isset( $_GET['checkemail'] ) || ! in_array( $_GET['checkemail'], array( 'confirm', 'newpass' ) ) ) :
 	if ( get_option( 'users_can_register' ) ) :
-		$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Register' ) );
+		$registration_url = sprintf( '<a href="%s">%s</a>', esc_url( wp_registration_url() ), __( 'Registrese' ) );
 
 		/** This filter is documented in wp-includes/general-template.php */
 		echo apply_filters( 'register', $registration_url ) . ' | ';
 	endif;
 	?>
-	<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a>
+	<!-- <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a> -->
 <?php endif; ?>
 </p>
 <?php } ?>
@@ -1018,26 +1024,7 @@ break;
 
 // Add Password, Repeat Password and Are You Human fields to WordPress registration form
 // http://wp.me/p1Ehkq-gn
-add_action( 'register_form', 'ts_show_extra_register_fields' );
-function ts_show_extra_register_fields(){
-?>
-	<p>
-		<label for="password">Password<br/>
-		<input id="password" class="input" type="password" tabindex="30" size="25" value="" name="password" />
-		</label>
-	</p>
-	<p>
-		<label for="repeat_password">Repeat password<br/>
-		<input id="repeat_password" class="input" type="password" tabindex="40" size="25" value="" name="repeat_password" />
-		</label>
-	</p>
-	<p>
-		<label for="are_you_human" style="font-size:11px">Sorry, but we must check if you are human. What is the name of website you are registering for?<br/>
-		<input id="are_you_human" class="input" type="text" tabindex="40" size="25" value="" name="are_you_human" />
-		</label>
-	</p>
-<?php
-}
+
 // Check the form for errors
 add_action( 'register_post', 'ts_check_extra_register_fields', 10, 3 );
 function ts_check_extra_register_fields($login, $email, $errors) {
@@ -1073,6 +1060,8 @@ function override_reg_complete_msg( $errors, $redirect_to ) {
 }
 
 ?>
+
+
 <?php
 	
 ?>
