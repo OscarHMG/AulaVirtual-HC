@@ -181,7 +181,7 @@ define('SKT_THEME_FEATURED_SET_VIDEO_URL','https://www.youtube.com/watch?v=310YG
 
 
 function restaurant_credit(){
-		return "&copy; 2015 <a href=".home_url('/').">SKT Restaurant & Cafe</a>. All Rights Reserved";		
+		return "&copy; 2016 <a href=".home_url('/').">Hogar de Cristo</a>. All Rights Reserved";		
 }
 function restaurant_themebytext(){
 		return "Theme by <a href=".esc_url(SKT_URL)." target='_blank'>SKT Themes</a>";

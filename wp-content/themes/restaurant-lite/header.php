@@ -55,7 +55,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 <?php } ?>
 <?php echo $content; ?>
 <div class="clear"></div>
-<a class="ReadMore" href="<?php the_permalink(); ?>">Read More</a>
+<a class="ReadMore" href="<?php the_permalink(); ?>">Leer Más</a>
 </div>
 </div>      
 <?php $i++; } ?>       
@@ -133,7 +133,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 <h1><?php echo $title; ?></h1>
 <p><?php echo $content; ?></p>
 <div class="clear"></div>
-<a class="ReadMore" href="<?php the_permalink(); ?>">Read More</a>
+<a class="ReadMore" href="<?php the_permalink(); ?>">Leer Más</a>
 </div>
 </div>      
 <?php $i++; } ?>       
@@ -149,7 +149,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                             <h2><?php echo 'Restaurant & Cafe';?></h2>
                             <p><?php echo 'Phasellus viverra aliquet magna quis interduming. Sed quis fringilla massa. In ut porttitor felis necing iaculis mision'; ?> </p>
                             <div class="clear"></div>
-                            <a class="ReadMore" href="#link1"><?php echo 'Read More'; ?></a>
+                            <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>
                       </div>
                     </div>
                     <div id="slidecaption2" class="nivo-html-caption">
@@ -157,7 +157,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                             <h2><?php echo 'Restaurant & Cafe'; ?></h2>
                             <p><?php echo 'Phasellus viverra aliquet magna quis interduming. Sed quis fringilla massa. In ut porttitor felis necing iaculis mision';?></p>
                             <div class="clear"></div>
-                            <a class="ReadMore" href="#link2"><?php echo 'Read More'; ?></a>
+                            <a class="ReadMore" href="#link2"><?php echo 'Leer Más'; ?></a>
                       </div>
                     </div>
                     <div id="slidecaption3" class="nivo-html-caption">
@@ -165,7 +165,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                             <h2><?php echo 'Restaurant & Cafe';?></h2>
                             <p><?php echo 'Phasellus viverra aliquet magna quis interduming. Sed quis fringilla massa. In ut porttitor felis necing iaculis mision'; ?> </p>
                             <div class="clear"></div>
-                            <a class="ReadMore" href="#link3"><?php echo 'Read More'; ?></a>
+                            <a class="ReadMore" href="#link3"><?php echo 'Leer Más'; ?></a>
                     </div>
                    </div>
 </div>
@@ -217,9 +217,9 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                      <div class="clear"></div>
                     <?php endwhile; } else { ?> 
                     <img src="<?php echo get_template_directory_uri(); ?>/images/welcome-restaurant.png" alt=""/>     
-                    <h2><?php _e('Welcome to Our Restaurant','restaurant'); ?></h2>
+                    <h2><?php _e('AULA VIRTUAL - HOGAR DE CRISTO','restaurant'); ?></h2>
                     <p><?php _e('Donec porta quis justo id pulvinar. Integer sed varius velit. Sed turpis nunc, imperdiet at mi nec, maximus maximus odio. Integer vel molestie ante. Curabitur blandit, purus id scelerisque posuere, enim diam mattis odio, vitae cursus nulla ex malesuada nisi. Pellentesque facilisis ullamcorper lacus, a lobortis urna porttitor eu. Suspendisse rutrum velit tellus, id volutpat risus condimentum non. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut sit amet aliquet metus, porttitor iaculis nunc. Quisque cursus ipsum ac lacinia faucibus. Quisque id dui vulputate, varius lectus vitae, congue purus Quisque id dui vulputate, varius lectus vitae, congue purus','restaurant'); ?></p>
-                    <a class="MoreLink" href="#"><?php _e('More Info','restaurant'); ?></a> 
+                    <a class="MoreLink" href="#"><?php _e('Más Información','restaurant'); ?></a> 
                     <?php } ?>
                       
                </div><!-- services-wrap-->
@@ -229,7 +229,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 		<section id="wrapsecond">
             	<div class="container">
                     <div class="services-wrap">
-                        <h2><?php _e('Todays Special','restaurant'); ?></h2>
+                        <h2><?php _e('Últimos Cursos','restaurant'); ?></h2>
                      
                         <div class="space50"></div>
                         <?php for($p=1; $p<4; $p++) { ?>       
@@ -249,7 +249,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                                 <div class="one_third <?php if($p % 3 == 0) { echo "last_column"; } ?>">                       
                                     <a href="#">
                                     <img src="<?php echo get_template_directory_uri(); ?>/images/menu<?php echo $p; ?>.jpg" alt="" />
-                                    <h4><?php _e('Special Menu','restaurant'); ?> <?php echo $p; ?></h4>
+                                    <h4><?php _e('Aula Virtual  Taller','restaurant'); ?> <?php echo $p; ?></h4>
                                     </a>
                                  </div>
                         <?php }} ?>  

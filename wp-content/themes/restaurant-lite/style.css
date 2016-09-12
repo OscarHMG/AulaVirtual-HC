@@ -19,11 +19,11 @@ body{ margin:0; padding:0;line-height:20px; font-size:13px; color:#5c5c5c; font-
 img{ border:none; margin:0; padding:0; height:auto}
 .wp-caption, .wp-caption-text, .sticky, .gallery-caption, .aligncenter{ margin:0; padding:0;}
 p{ margin:0; padding:0;}
-a{ text-decoration:none; color:#ffa200;}
+a{ text-decoration:none; color:#D6DF23;}
 a:hover{ color:#b68023;}
 ol,ul{ margin:0; padding:0;}
 ul li ul, ul li ul li ul, ol li ol, ol li ol li ol{ margin-left:10px;}
-h1,h2,h3,h4,h5,h6{ color:#484f5e; font-family:'Playball', sans-serif; margin:0 0 20px; padding:0; line-height:1.1; font-weight:300; }
+h1,h2,h3,h4,h5,h6{ color:#8CC63E; font-family:'Playball', sans-serif; margin:0 0 20px; padding:0; line-height:1.1; font-weight:300; }
 h1{ font-size:36px;}
 h2{ font-size:30px;}
 h3{ font-size:24px;}
@@ -48,14 +48,14 @@ img.alignright, .alignright{ float:right; margin:0 0 0 15px; padding:5px; border
 ol.comment-list li{ list-style:none; margin-bottom:5px;}
 
 .logo{float:left; position:absolute; left:0; top:-1px; z-index:999; padding:15px;  color:#fff;}
-.header .container, .header-innerpage .container{ background-color:rgba(0, 0, 0, 0.3);}
+.header .container, .header-innerpage .container{ background-color: #006738;}
 .logo h1{font-weight:400; margin:0px; line-height:36px; color:#fff;}
 .tagline{ font-size:13px;}
 .logo a{ color:#fff;}
 .logo img{ height:55px; }
 .container{ width:1100px; margin:0 auto; position:relative;}
 
-.bookbtn{ background-color: #ffa200; border: 1px solid #03cbe9; color: #ffffff; font:200 28px/28px 'Playball',san-serif;  position:absolute; padding:10px 30px; display:inline-block; top:-50px; z-index:999; border-bottom:none !important; -webkit-border-top-left-radius: 5px;
+.bookbtn{ background-color: #D6DF23; border: 1px solid #03cbe9; color: #ffffff; font:200 28px/28px 'Playball',san-serif;  position:absolute; padding:10px 30px; display:inline-block; top:-50px; z-index:999; border-bottom:none !important; -webkit-border-top-left-radius: 5px;
 -webkit-border-top-right-radius: 5px;
 -moz-border-radius-topleft: 5px;
 -moz-border-radius-topright: 5px;
@@ -76,7 +76,7 @@ border-top-right-radius: 5px; cursor:pointer;   }
 .sitenav ul li a{ padding:33px 13px; display:block; color:#fff; border-bottom:4px solid transparent;  }
 .sitenav ul li ul li{display:block; position:relative; float:none; top:-1px;}
 .sitenav ul li ul li a{display:block; padding-top:10px; padding-bottom:10px; position:relative; top:1px; text-align:left; }
-.sitenav ul li a:hover, .sitenav ul li.current_page_item a{ color:#ffa200; border-bottom:4px solid #ffa200; }
+.sitenav ul li a:hover, .sitenav ul li.current_page_item a{ color:#D6DF23; border-bottom:4px solid #D6DF23; }
 
 .sitenav ul li ul{display:none; z-index:9999999; position:relative;}
 .sitenav ul li:hover > ul{display:block; width:200px; position:absolute; left:0; text-align:left; background-color:rgba(0, 0, 0, 0.2); box-shadow:0 2px 2px #333; }
@@ -97,12 +97,12 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 .services-wrap, #FrontBlogPost .BlogPosts{ visibility:hidden;}
 .services-wrap .one_third{ width:31%; margin:0 3.5% 0 0; float:left; position:relative;}
 .services-wrap .one_third img{ width:100%;}
-.services-wrap .one_third h4{ font-size:48px; position:absolute; color:#fff; text-align:center; top:35%; width:100%;}
-.services-wrap .one_third:hover h4{ color:#ffa200; text-shadow:2px 0 4px #000;}
+.services-wrap .one_third h4{ font-size:48px; position:absolute; color:#000000; text-align:center; top:35%; width:100%;}
+.services-wrap .one_third:hover h4{ color:#D6DF23; text-shadow:2px 0 4px #000;}
 .services-wrap .one_third:hover img{opacity:0.8;}
 
 .last_column{clear:right; margin-right:0 !important; }
-#wrapsecond h2{ font-size:40px; color:#333; font-weight:600; margin-bottom:0; text-align:center; }
+#wrapsecond h2{ font-size:40px; color:#8CC63E; font-weight:600; margin-bottom:0; text-align:center; }
 
 
 .welcomewrap img{ float:left; margin:10px 50px 0 0;}
@@ -112,8 +112,8 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 -------------------------------------------------------------- */
 .social-icons a{ border:2px solid #fff; color:#fff; width:45px; height:45px; line-height:45px; border-radius:50%; text-align:center;  vertical-align:middle; display:inline-block; transition:0.6s; -moz-transition:0.6s; -webkit-transition:0.6s; -o-transition:0.6s; font-size:20px;   margin:0 3px; padding:0; }
 .social-icons br{ display:none;}
-.social-icons a:hover{ border-color:#ffa200; color:#ffa200;}
-.social-icons .fb{ background:url(images/icon-fb.png) no-repeat center center; }
+.social-icons a:hover{ border-color:#D6DF23; color:#D6DF23;}
+.social-icons .fb{ fbackground:url(images/icon-fb.png) no-repeat center center; }
 .social-icons .tw{ background:url(images/icon-tw.png) no-repeat center center; }
 .social-icons .gp{ background:url(images/icon-gp.png) no-repeat center center;}
 .social-icons .in{ background:url(images/icon-in.png) no-repeat center center;}
@@ -137,7 +137,7 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 .BlogPosts{ width:31.2%; float:left; margin:0 3% 0 0;}
 .BlogPosts img{ width:100%;}
 .BlogPosts h2{ margin:10px 0; font-size:22px; }
-.MoreLink{font:300 20px/22px "Playball",sans-serif; background-color:#ffa200; color:#fff ;display: inline-block; padding:10px 20px; border-radius:3px; -moz-border-radius:3px; -moz-border-radius:3px;}
+.MoreLink{font:300 20px/22px "Playball",sans-serif; background-color:#D6DF23; color:#fff ;display: inline-block; padding:10px 20px; border-radius:3px; -moz-border-radius:3px; -moz-border-radius:3px;}
 .MoreLink:hover{ background-color:#2f241e; color:#fff; }
 .post-thumb img{ float:left; margin:5px 25px 5px 0;}
 /* = sidebar
@@ -145,20 +145,19 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 #sidebar{ width:330px; float:right;}
 aside.widget{margin-bottom:30px; background-color:#f6f4f4; padding:20px; border:1px solid #edecec;}
 aside.widget ul{ list-style:disc; }
-h3.widget-title{ background-color:#ffa200; padding:12px 15px; margin-bottom:1px; color:#fff;}
+h3.widget-title{ background-color:#D1D2D4; padding:12px 15px; margin-bottom:1px; color:#fff;}
 #sidebar ul li{ list-style:none;}
 #sidebar ul li a{ background:url(images/sidebar-arrow.png) no-repeat 0 14px; padding:10px 0 10px 20px; color:#3b3b3b; border-bottom:1px dashed #d0cfcf; display:block; word-wrap:break-word;}
 #sidebar ul li a:hover{ color:#34c6f6;}
 #sidebar ul li:last-child a{ border:none;}
-
 /* = Footer css
 -------------------------------------------------------------- */
-#footer-wrapper{background-color:#272727; border-top:6px solid #131313; position:relative; padding:45px 0 0; color:#fff;}
+#footer-wrapper{background-color:#00A650; border-top:6px solid #8CC63E; position:relative; padding:45px 0 0; color:#fff;}
 .cols-4{width:22%; float:left; margin:0 6% 2% 0; font-style:italic; }
 .widget-column-1 { width:15%;}
 .widget-column-4 { margin-right:0px !important;}
 .cols-4 h5{ font-weight:400; font-size:28px; color:#fff; margin-bottom:25px; border-bottom:1px solid #333333; padding-bottom:15px; }
-.cols-4 h5 span{ font-weight:300; color:#ffa200; }
+.cols-4 h5 span{ font-weight:300; color:#D6DF23; }
 .cols-4 ul{ margin:0; padding:0; list-style:inside disc;}
 .cols-4 ul li { display:block; padding:0;}
 .cols-4 ul li a { color:#fff; font:normal 12px/24px Arial, Helvetica, sans-serif; background:url(images/list-arrow.png) no-repeat 0 2px; padding:0 0 0 20px;}
@@ -170,13 +169,13 @@ h3.widget-title{ background-color:#ffa200; padding:12px 15px; margin-bottom:1px;
 .phone-no{ margin:10px 0 20px; line-height:22px;}
 .phone-no a{color:#d6d6d6;}
 .phone-no a:hover{color:#d6d6d6;}
-.phone-no strong { display:inline-block; color:#ffa200;}
+.phone-no strong { display:inline-block; color:#D6DF23;}
 .cols-4 .phone-no p{ margin-bottom:0;}
 .widget-column-2 a{font:400 20px/24px 'Playball',san-serif;}
 
-.copyright-wrapper {  background-color:#131313; position:relative; padding:15px 0;}
+.copyright-wrapper {  background-color:#8CC63E; position:relative; padding:15px 0;}
 .copyright-txt { float:left;}
-.copyright-txt span{color:#ffa200;}
+.copyright-txt span{color:#D6DF23;}
 .design-by { float:right;}
 .recent-post{ min-height:70px; margin:0 0 20px 0;}
 .recent-post img{ float:left; width:60px; margin:3px 10px 5px 0;}
@@ -216,7 +215,7 @@ h1.product_title, p.price{ margin-bottom:10px;}
 .wpcf7{ margin:30px 0 0; padding:0;}
 .wpcf7 input[type="text"], .wpcf7 input[type="tel"], .wpcf7 input[type="email"]{ width:40%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:35px; padding:0 15px; color:#797979; margin-bottom:0;}
 .wpcf7 textarea{width:60%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:150px; color:#797979; margin-bottom:25px; font:12px arial; padding:10px; padding-right:0;}
-.wpcf7 input[type="submit"]{background-color:#ffa200; width:auto; border:none; cursor:pointer; font:18px 'Playball',san-serif; color:#ffffff; padding:10px 40px; border-radius:3px;}	
+.wpcf7 input[type="submit"]{background-color:#D6DF23; width:auto; border:none; cursor:pointer; font:18px 'Playball',san-serif; color:#ffffff; padding:10px 40px; border-radius:3px;}	
 
 /* ============= Comment Form ============ */
 h1.screen-reader-text{font:22px 'Playball',san-serif;}

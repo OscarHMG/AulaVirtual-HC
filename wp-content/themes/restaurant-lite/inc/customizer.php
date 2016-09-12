@@ -65,7 +65,7 @@ function restaurant_customize_register( $wp_customize ) {
         ) )
     );
 	$wp_customize->add_setting('color_scheme',array(
-			'default'	=> '#ffa200',
+			'default'	=> '#D6DF23',
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'	=> 'sanitize_hex_color'
 	));
@@ -464,7 +464,7 @@ function restaurant_custom_css(){
 					.header .header-inner .nav ul li a:hover, .header .header-inner .nav ul li.current_page_item a,
 					.slide_info h2 a,
 					.social-icons a:hover
-					{ color:<?php echo get_theme_mod('color_scheme','#ffa200'); ?>;}
+					{ color:<?php echo get_theme_mod('color_scheme','#D1D2D4'); ?>;}
 					 
 					
 					.pagination ul li .current, .pagination ul li a:hover, 
@@ -473,12 +473,12 @@ function restaurant_custom_css(){
 					h3.widget-title,
 					.MoreLink,
 					.wpcf7 input[type='submit']
-					{ background-color:<?php echo get_theme_mod('color_scheme','#ffa200'); ?>;}
+					{ background-color:<?php echo get_theme_mod('color_scheme','#D1D2D4'); ?>;}
 					
 						
 					.header .header-inner .nav ul li a:hover, .header .header-inner .nav ul li.current_page_item a,
 					.social-icons a:hover
-					{ border-color:<?php echo get_theme_mod('color_scheme','#ffa200'); ?>;}
+					{ border-color:<?php echo get_theme_mod('color_scheme','#D1D2D4'); ?>;}
 					
 			</style> 
 <?php      
@@ -498,4 +498,4 @@ add_action( 'customize_preview_init', 'restaurant_customize_preview_js' );
 function restaurant_custom_customize_enqueue() {
 	wp_enqueue_script( 'restaurant-custom-customize', get_template_directory_uri() . '/js/custom.customize.js', array( 'jquery', 'customize-controls' ), false, true );
 }
-add_action( 'customize_controls_enqueue_scripts', 'restaurant_custom_customize_enqueue' );
+add_action( 'customize_controls_enqueue_scripts', 'restaurant_custom_customize 	_enqueue' );
