@@ -1,0 +1,155 @@
+-----09-12-2016 @ 12:53:34 ------
+Array
+(
+    [0] => Array
+        (
+            [0] => SELECT wp_posts.* FROM wp_posts WHERE 1=1 AND wp_posts.ID IN (22,23) AND wp_posts.post_type = 'nav_menu_item' AND ((wp_posts.post_status = 'publish')) ORDER BY wp_posts.menu_order ASC 
+            [1] => 1
+        )
+
+    [1] => Array
+        (
+            [0] => SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (22,23) ORDER BY meta_id ASC
+            [1] => 1
+        )
+
+    [2] => Array
+        (
+            [0] => SELECT tr.object_id FROM wp_term_relationships AS tr INNER JOIN wp_term_taxonomy AS tt ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN ('nav_menu') AND tt.term_id IN ('3') ORDER BY tr.object_id ASC
+            [1] => 1
+        )
+
+    [3] => Array
+        (
+            [0] => SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE t.term_id = 3
+            [1] => 1
+        )
+
+    [4] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = 'can_compress_scripts' LIMIT 1
+            [1] => 1
+        )
+
+    [5] => Array
+        (
+            [0] => SELECT wp_posts.* FROM wp_posts WHERE 1=1 AND wp_posts.ID IN (15,18) AND wp_posts.post_type = 'page' AND ((wp_posts.post_status = 'publish')) ORDER BY wp_posts.post_date DESC 
+            [1] => 1
+        )
+
+    [6] => Array
+        (
+            [0] => SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (18,15) ORDER BY meta_id ASC
+            [1] => 1
+        )
+
+    [7] => Array
+        (
+            [0] =>  SELECT comment_approved, COUNT( * ) AS total FROM wp_comments GROUP BY comment_approved 
+            [1] => 1
+        )
+
+    [8] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = '_site_transient_update_core' LIMIT 1
+            [1] => 1
+        )
+
+    [9] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = '_site_transient_update_themes' LIMIT 1
+            [1] => 1
+        )
+
+    [10] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = '_site_transient_update_plugins' LIMIT 1
+            [1] => 1
+        )
+
+    [11] => Array
+        (
+            [0] => SELECT ID FROM wp_posts WHERE post_name LIKE 'ketchup-mce-button-js%' AND post_type IN ('post', 'page', 'attachment', 'lp_course', 'lp_quiz') AND post_status = 'publish'
+            [1] => 1
+        )
+
+    [12] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+            [1] => 1
+        )
+
+    [13] => Array
+        (
+            [0] => SELECT * FROM wp_posts WHERE ID = 62 LIMIT 1
+            [1] => 1
+        )
+
+    [14] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_learn_press_install' LIMIT 1
+            [1] => 1
+        )
+
+    [15] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+            [1] => 1
+        )
+
+    [16] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+            [1] => 1
+        )
+
+    [17] => Array
+        (
+            [0] => SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC
+            [1] => 1
+        )
+
+    [18] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = '_transient_learn_press_install' LIMIT 1
+            [1] => 1
+        )
+
+    [19] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = 'learn_press_permalink_structure' LIMIT 1
+            [1] => 1
+        )
+
+    [20] => Array
+        (
+            [0] => SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+            [1] => 1
+        )
+
+    [21] => Array
+        (
+            [0] => SELECT wp_posts.* FROM wp_posts WHERE 1=1 AND (wp_posts.ID = '0') AND wp_posts.post_type = 'page' ORDER BY wp_posts.post_date DESC 
+            [1] => 1
+        )
+
+    [22] => Array
+        (
+            [0] =>  SELECT ID, post_name, post_parent, post_type FROM wp_posts WHERE post_name IN ('wp-content','themes','restaurante','js','ketchup-mce-button-js') AND post_type IN ('page','attachment') 
+            [1] => 1
+        )
+
+    [23] => Array
+        (
+            [0] => SELECT * FROM wp_posts WHERE ID = 61 LIMIT 1
+            [1] => 1
+        )
+
+    [24] => Array
+        (
+            [0] => SELECT * FROM wp_users WHERE user_login = 'adrian'
+            [1] => 1
+        )
+
+)
+
