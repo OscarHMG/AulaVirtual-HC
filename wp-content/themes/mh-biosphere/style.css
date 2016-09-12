@@ -1,0 +1,144 @@
+/*****
+Theme Name: MH Biosphere
+Theme URI: http://www.mhthemes.com/themes/mh/biosphere/
+Description: MH Biosphere is ideal for online magazines, dynamic news websites or blogs with topics like biology, animals, climate change, environment, environmental activism, zoology and for news portals of NGOs, wildlife foundations or else. You can have the same layout in the premium version of MH Magazine (without the need of a child theme) which can be configured by making use of the flexible layout options. MH Magazine offers additional widget areas, multiple unique custom widgets, great features and extended layout options to manage several layout elements on your site including changing the color scheme and typography.
+Author: MH Themes
+Author URI: http://www.mhthemes.com/
+Template: mh-magazine-lite
+Version: 1.1.0
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, entertainment, news
+Text Domain: mh-biosphere
+Domain Path: /languages/
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*****/
+
+/***** Typography *****/
+
+body { font-family: "Sarala", sans-serif; color: #2a2a2a; background: #66bb6a; }
+h1, h2, h3, h4, h5, h6, .mh-custom-posts-small-title { font-family: "Droid Sans", sans-serif; color: #2a2a2a; }
+pre, code, kbd { color: #2a2a2a; background: #e9ffe8; }
+blockquote { color: #2a2a2a; border-color: #66bb6a; }
+a { color: #2a2a2a; }
+a:hover { color: #66bb6a; }
+
+/***** Header *****/
+
+.mh-header { background: #0d8f4f; }
+.mh-header-title { color: #fff; }
+.mh-header-tagline { color: #66bb6a; }
+
+/***** Navigation *****/
+
+.mh-main-nav-wrap { background: #0a8043; }
+.mh-main-nav { background: #0a8043; border-bottom: none; }
+.mh-main-nav li:hover { background: #66bb6a; }
+.mh-main-nav ul li:hover > ul { background: #0a8043; }
+.mh-main-nav .menu > .current-menu-item { background: none; }
+.mh-main-nav .menu > .current-menu-item:hover { background: #66bb6a; }
+
+/***** SlickNav Custom Style *****/
+
+.slicknav_btn { background: #66bb6a; }
+.slicknav_menu { border-color: #0a8043; background: #66bb6a; }
+.slicknav_nav ul { border-color: #0a8043; }
+.slicknav_nav .slicknav_item:hover, .slicknav_nav a:hover { background: #66bb6a; }
+.mh-main-nav-wrap .slicknav_btn, .mh-main-nav-wrap .slicknav_menu, .mh-main-nav-wrap .slicknav_nav .slicknav_item:hover, .mh-main-nav-wrap .slicknav_nav a:hover { background: transparent; }
+.mh-main-nav-wrap .slicknav_nav ul { border-color: #66bb6a; }
+.mh-main-nav-wrap .slicknav_nav ul ul { border: none; }
+
+/***** Posts/Pages *****/
+
+.page-title { color: #2a2a2a; }
+.entry-content a { color: #0a8043; }
+.entry-content a:hover, .mh-meta a:hover { color: #66bb6a; }
+.entry-tags li { background: #0a8043; }
+.entry-tags li:hover, .entry-tags .fa { background: #66bb6a; }
+
+/***** Pagination *****/
+
+.page-numbers, a .pagelink { color: #2a2a2a; background: #e9ffe8; }
+.page-numbers:hover, .mh-loop-pagination .current, .mh-comments-pagination .current, a:hover .pagelink, .pagelink { background: #66bb6a; }
+
+/***** Footer *****/
+
+.mh-footer { background: #0a8043; }
+.mh-footer a, .mh-footer .mh-meta, .mh-footer .mh-meta a, .mh-footer .mh-meta a:hover { color: #e9ffe8; }
+.mh-copyright-wrap { border-color: rgba(255, 255, 255, 0.3); background: #0a8043; }
+.mh-copyright, .mh-copyright a { color: #e9ffe8; }
+
+/***** Images / Video *****/
+
+.wp-caption-text { color: #2a2a2a; }
+
+/***** Gallery *****/
+
+.gallery-caption { color: #fff; }
+
+/***** Comments *****/
+
+.bypostauthor .mh-comment-meta-author:after, .mh-comment-meta-links .comment-reply-link:before, #respond #cancel-comment-reply-link:before { color: #66bb6a; }
+
+/***** Forms *****/
+
+input[type=text]:hover, input[type=email]:hover, input[type=tel]:hover, input[type=url]:hover, textarea:hover { border-color: #66bb6a; }
+input[type=submit] { background: #66bb6a; }
+input[type=submit]:hover { background: #0a8043; }
+
+/***** Searchform *****/
+
+.mh-widget .search-form { background: #e9ffe8; }
+
+/***** Widgets *****/
+
+.mh-widget-title { padding: 10px 25px 10px 15px; background: #e9ffe8; border-left: 10px solid #66bb6a; border-bottom: none; }
+.mh-footer-widget-title { padding: 0 0 5px; border-bottom: 3px solid #66bb6a; border-left: none; background: none; }
+
+/***** Widgets Areas (Advertising) *****/
+
+.mh-ad-spot { background: #e9ffe8; }
+
+/***** MH Slider Widget *****/
+
+.mh-slider-widget img { width: 100%; display: block; }
+.mh-slider-widget .flex-control-paging li a.flex-active { background: #66bb6a; }
+.mh-slider-caption { border-color: #66bb6a; background: #0a8043; background: rgba(10, 128, 67, 0.8); }
+.mh-widget-col-1 .mh-slider-caption { background: #0a8043; }
+.mh-footer-widget .mh-slider-caption { background: rgba(255, 255, 255, 0.1); }
+
+/***** MH Posts Stacked Widget *****/
+
+.mh-posts-stacked-title { background: #0a8043; background: rgba(10, 128, 67, 0.8); }
+.mh-posts-stacked-meta { background: #66bb6a; }
+#mh-mobile .mh-footer-widget .mh-posts-stacked-overlay { border-color: #0a8043; }
+
+/***** MH Tabbed Widget *****/
+
+.mh-tabbed-widget, .mh-tabbed-widget a { color: #2a2a2a; }
+.mh-tabbed-widget a:hover { color: #66bb6a; }
+.mh-tabbed-widget .tagcloud a { color: #fff; }
+.mh-tab-buttons { border-bottom: 3px solid #66bb6a; }
+.mh-tab-button, .mh-tab-content { background: #e9ffe8; }
+.mh-tab-button.active, .mh-tab-button.active:hover { color: #fff; background: #66bb6a; }
+.mh-tab-comment-excerpt { background: rgba(255, 255, 255, 0.6); }
+.mh-footer-widget .mh-tabbed-widget, .mh-footer-widget .mh-tabbed-widget a { color: #fff; }
+.mh-footer-widget .mh-tab-button.active { background: #66bb6a; }
+.mh-footer-widget .mh-tab-comment-excerpt { background: #0a8043; }
+
+/***** WP Calendar Widget *****/
+
+#wp-calendar caption { background: #e9ffe8; }
+
+/***** WP Tag Cloud Widget *****/
+
+.mh-widget .tagcloud a, .mh-footer-widget .tagcloud a { background: #0a8043; }
+.tagcloud a:hover, .mh-widget .tagcloud a:hover, .mh-footer-widget .tagcloud a:hover { background: #66bb6a; }
+
+/***** Media Queries *****/
+
+@media screen and (max-width: 900px) {
+	#mh-mobile .mh-slider-caption { background: #0a8043; background: rgba(22, 161, 164, 1); }
+}
+@media only screen and (max-width: 420px) {
+	.mh-copyright-wrap { padding: 15px 20px; }
+}
