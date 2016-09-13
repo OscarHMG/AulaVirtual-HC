@@ -14,8 +14,8 @@ get_header();
 ?>
 <div class="container">
      <div class="page_content">
-        <section class="site-main">
-        	 <div class="blog-post">
+        <section class="site-main" style = "width: 100%">
+        	 <div class="blog-post" >
 					<?php
                     if ( have_posts() ) :
                         // Start the Loop.
@@ -39,8 +39,8 @@ get_header();
                     ?>
                     </div><!-- blog-post -->
              </section>
-      
-        <?php get_sidebar();?>     
+  
+	  
         <div class="clear"></div>
     </div><!-- site-aligner -->
 </div><!-- content -->

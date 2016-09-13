@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div class="container">
      <div class="page_content">
-        <section class="site-main">
+        <section class="site-main" style = "width: 100%">
 
 			<?php while ( have_posts() ) : the_post(); ?>
     
@@ -74,7 +74,6 @@ get_header(); ?>
             <?php endwhile; // end of the loop. ?>
 
         </section>
-        <?php get_sidebar();?>
         <div class="clear"></div>
     </div>
 </div>

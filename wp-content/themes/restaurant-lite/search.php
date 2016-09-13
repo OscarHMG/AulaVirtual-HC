@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div class="container">
      <div class="page_content">
-        <section class="site-main">
+        <section class="site-main" style = "width: 100%">
             <div class="blog-post">
 				<?php if ( have_posts() ) : ?>
                     <header>
@@ -23,8 +23,7 @@ get_header(); ?>
                     <?php get_template_part( 'no-results', 'search' ); ?>
                 <?php endif; ?>
             </div><!-- blog-post -->
-        </section>      
-       <?php get_sidebar();?>       
+        </section>             
         <div class="clear"></div>
     </div><!-- site-aligner -->
 </div><!-- container -->

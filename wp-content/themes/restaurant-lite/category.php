@@ -14,7 +14,7 @@ get_header(); ?>
 
 <div class="container">
      <div class="page_content">
-        <section class="site-main">
+        <section class="site-main" style = "width: 100%">
             <header class="page-header">
 				<h1 class="entry-title"><?php single_cat_title('Category: '); ?></h1>
             </header><!-- .page-header -->
@@ -30,7 +30,7 @@ get_header(); ?>
                 <?php get_template_part( 'no-results', 'archive' ); ?>
             <?php endif; ?>
        </section>
-       <?php get_sidebar();?>       
+              
         <div class="clear"></div>
     </div><!-- site-aligner -->
 </div><!-- container -->
