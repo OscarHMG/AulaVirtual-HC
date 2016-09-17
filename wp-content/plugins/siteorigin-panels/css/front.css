@@ -34,6 +34,9 @@
 }
 .panel-grid-cell .widget-title {
   margin-top: 0;
+  font-family: Coronetscript, cursive, Verdana, sans-serif;
+  color: white;
+  background: #108341;
 }
 .panel-row-style {
   zoom: 1;

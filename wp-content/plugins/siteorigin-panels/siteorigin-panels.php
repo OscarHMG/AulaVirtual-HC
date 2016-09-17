@@ -1273,7 +1273,7 @@ function siteorigin_panels_the_widget( $widget_info, $instance, $grid, $cell, $p
 		list( $before_title, $after_title ) = explode( '{{title}}', $title_html, 2 );
 	}
 	else {
-		$before_title = '<h3 class="widget-title">';
+		$before_title = '<h class="widget-title2">';
 		$after_title = '</h3>';
 	}
 
