@@ -198,8 +198,8 @@ class WPCW_Certificate
 		//$this->pdffile->Cell(0,0, __('Instructor', 'wp_courseware'), false, false, 'L');
 		
 		// Lines - Date, Signature
-		$this->pdffile->Line(10, $this->footer_Y-15, 90,	 $this->footer_Y-15);
-		$this->pdffile->Line(200, 	$this->footer_Y-15, 280, $this->footer_Y-15);
+		//$this->pdffile->Line(10, $this->footer_Y-15, 90,	 $this->footer_Y-15);
+		//$this->pdffile->Line(200, 	$this->footer_Y-15, 280, $this->footer_Y-15);
 		
 		
 		// Date - the date itself. Centre on the line
