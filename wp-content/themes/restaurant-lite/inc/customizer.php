@@ -464,7 +464,7 @@ function restaurant_custom_css(){
 					.header .header-inner .nav ul li a:hover, .header .header-inner .nav ul li.current_page_item a,
 					.slide_info h2 a,
 					.social-icons a:hover
-					{ color:<?php echo get_theme_mod('color_scheme','#D1D2D4'); ?>;}
+					{ color:<?php echo get_theme_mod('color_scheme','#000000'); ?>;}
 					 
 					
 					.pagination ul li .current, .pagination ul li a:hover, 

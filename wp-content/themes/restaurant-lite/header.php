@@ -64,30 +64,30 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 </section>
 <?php } else { ?>
 <section id="home_slider">
-<div class="slider-wrapper theme-default"><div id="slider" class="nivoSlider">
+<div class="slider-wrapper theme-default container"><div id="slider" class="nivoSlider">
 <img src="<?php echo get_template_directory_uri(); ?>/images/slides/slider1.jpg" alt="Restaurant " title="#slidecaption1" /><img src="<?php echo get_template_directory_uri(); ?>/images/slides/slider2.jpg" alt="Restaurant & Cafe" title="#slidecaption2" /><img src="<?php echo get_template_directory_uri(); ?>/images/slides/slider3.jpg" alt="Cafe" title="#slidecaption3" /></div>                    
                 <div id="slidecaption1" class="nivo-html-caption">
                     <div class="slide_info">
-                            <h2><?php echo 'Durante las Clases - Aula Virtual';?></h2>
-                            <p><?php echo 'Clase del Uso del Computador Dictada por Sergio Moncayo estudiante de ESPOL junto a las socias durante el taller'; ?> </p>
+                            <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
+                            <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br> ¡Comencemos! '; ?> </p>
                            <div class="clear"></div>
-                            <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>
+                           <!-- <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>-->
                       </div>
                     </div>
                     <div id="slidecaption2" class="nivo-html-caption">
                     <div class="slide_info">
-                            <h2><?php echo 'Durante las Clases - Aula Virtual';?></h2>
-                            <p><?php echo 'Phasellus viverra aliquet magna quis interduming. Sed quis fringilla massa. In ut porttitor felis necing iaculis mision';?></p>
+                            <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
+                            <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br> ¡Comencemos! ';?></p>
                             <div class="clear"></div>
-                            <a class="ReadMore" href="#link2"><?php echo 'Leer Más'; ?></a>
+                            <!--<a class="ReadMore" href="#link2"><?php echo 'Leer Más'; ?></a>-->
                       </div>
                     </div>
                     <div id="slidecaption3" class="nivo-html-caption">
                       <div class="slide_info">
-                            <h2><?php echo 'Durante las Clases - Aula Virtual';?></h2>
-                            <p><?php echo 'Phasellus viverra aliquet magna quis interduming. Sed quis fringilla massa. In ut porttitor felis necing iaculis mision'; ?> </p>
+                            <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
+                            <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente. </br></br></br>¡Comencemos! '; ?> </p>
                             <div class="clear"></div>
-                            <a class="ReadMore" href="#link3"><?php echo 'Leer Más'; ?></a>
+                            <!--<a class="ReadMore" href="#link3"><?php echo 'Leer Más'; ?></a>-->
                     </div>
                    </div>
 </div>
@@ -218,8 +218,11 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                     <?php endwhile; } else { ?> 
                     <img src="<?php echo get_template_directory_uri(); ?>/images/welcome-restaurant.png" alt=""/>     
                     <h2><?php _e('AULA VIRTUAL - HOGAR DE CRISTO','restaurant'); ?></h2>
-                    <p><?php _e('Donec porta quis justo id pulvinar. Integer sed varius velit. Sed turpis nunc, imperdiet at mi nec, maximus maximus odio. Integer vel molestie ante. Curabitur blandit, purus id scelerisque posuere, enim diam mattis odio, vitae cursus nulla ex malesuada nisi. Pellentesque facilisis ullamcorper lacus, a lobortis urna porttitor eu. Suspendisse rutrum velit tellus, id volutpat risus condimentum non. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut sit amet aliquet metus, porttitor iaculis nunc. Quisque cursus ipsum ac lacinia faucibus. Quisque id dui vulputate, varius lectus vitae, congue purus Quisque id dui vulputate, varius lectus vitae, congue purus','restaurant'); ?></p>
-                    <a class="MoreLink" href="#"><?php _e('Más Información','restaurant'); ?></a> 
+                    <p><?php _e('La Escuela Superior Politécnica del Litoral (ESPOL) y la Corporación de Viviendas de Hogar de Cristo (HC) formaron una alianza estratégica en el 2016. Dando paso a la creación del proyecto “Estructuración de un programa de educación digital para el programa de Semilleros de Emprendimientos de Hogar de Cristo”</br></br>
+-Los participantes beneficiarios de este proyecto en su mayoría son mujeres emprendedoras de 20 a 70 años que cuentan con nivel académico escolar básico. </br></br>
+-Este tipo de actividades permiten trabajar en beneficio de nuestros hermanos y hermanas ecuatorianos para así construir un país más activo y solidario. 
+','restaurant'); ?></p>
+                    <!--<a class="MoreLink" href="#"><?php _e('Más Información','restaurant'); ?></a> -->
                     <?php } ?>
                       
                </div><!-- services-wrap-->
