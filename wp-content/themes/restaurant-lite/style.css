@@ -144,7 +144,7 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 .social-icons a{ border:2px solid #fff; color:#fff; width:45px; height:45px; line-height:45px; border-radius:50%; text-align:center;  vertical-align:middle; display:inline-block; transition:0.6s; -moz-transition:0.6s; -webkit-transition:0.6s; -o-transition:0.6s; font-size:20px;   margin:0 3px; padding:0; }
 .social-icons br{ display:none;}
 .social-icons a:hover{ border-color:#D6DF23; color:#D6DF23;}
-.social-icons .fb{ fbackground:url(images/icon-fb.png) no-repeat center center; }
+.social-icons .fb{ background:url(images/icon-fb.png) no-repeat center center; }
 .social-icons .tw{ background:url(images/icon-tw.png) no-repeat center center; }
 .social-icons .gp{ background:url(images/icon-gp.png) no-repeat center center;}
 .social-icons .in{ background:url(images/icon-in.png) no-repeat center center;}
