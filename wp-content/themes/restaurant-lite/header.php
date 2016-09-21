@@ -218,10 +218,10 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                     <?php endwhile; } else { ?> 
                     <img src="<?php echo get_template_directory_uri(); ?>/images/welcome-restaurant.png" alt=""/>     
                     <h2><?php _e('AULA VIRTUAL - HOGAR DE CRISTO','restaurant'); ?></h2>
-                    <p><?php _e('La Escuela Superior Politécnica del Litoral (ESPOL) y la Corporación de Viviendas de Hogar de Cristo (HC) formaron una alianza estratégica en el 2016. Dando paso a la creación del proyecto “Estructuración de un programa de educación digital para el programa de Semilleros de Emprendimientos de Hogar de Cristo”</br></br>
+                    <h5><?php _e('La Escuela Superior Politécnica del Litoral (ESPOL) y la Corporación de Viviendas de Hogar de Cristo (HC) formaron una alianza estratégica en el 2016. Dando paso a la creación del proyecto “Estructuración de un programa de educación digital para el programa de Semilleros de Emprendimientos de Hogar de Cristo”</br></br>
 -Los participantes beneficiarios de este proyecto en su mayoría son mujeres emprendedoras de 20 a 70 años que cuentan con nivel académico escolar básico. </br></br>
 -Este tipo de actividades permiten trabajar en beneficio de nuestros hermanos y hermanas ecuatorianos para así construir un país más activo y solidario. 
-','restaurant'); ?></p>
+','restaurant'); ?></h5>
                     <!--<a class="MoreLink" href="#"><?php _e('Más Información','restaurant'); ?></a> -->
                     <?php } ?>
                       
