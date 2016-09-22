@@ -232,7 +232,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 		<section id="wrapsecond">
             	<div class="container">
                     <div class="services-wrap">
-	<iframe class="hprincipal" src="https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1"></iframe>
+	<p style="text-align: center;"><iframe  style="width: 100%;"class="hprincipal" src="https://www.youtube.com/embed/tje8Oyy-IWw"></iframe></p>
 <!--<video><source src="images/HCVINCULOS.mp4" type="video/mp4" /></video>-->
                         <!--<h2><?php _e('Últimos Cursos','restaurant'); ?></h2>
                      
