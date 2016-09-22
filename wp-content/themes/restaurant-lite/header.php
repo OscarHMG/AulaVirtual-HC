@@ -229,7 +229,8 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
               <div class="clear"></div>
             </div><!-- container -->
        </section><div class="clear"></div>
-		<section id="wrapsecond">
+	<iframe class="hprincipal" src="https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1"></iframe>
+		<!--<section id="wrapsecond">
             	<div class="container">
                     <div class="services-wrap">
                         <h2><?php _e('Últimos Cursos','restaurant'); ?></h2>
@@ -313,13 +314,12 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                                     <img src="<?php echo get_template_directory_uri(); ?>/images/menu<?php echo $p; ?>.jpg" alt="" />
                                     <h4><?php _e('Special Menu','restaurant'); ?> <?php echo $p; ?></h4>
                                     </a>
-                                 </div>
-                        <?php }} ?>  
+                                 </div>                        <?php }} ?> 
                     <div class="clear"></div>  
                </div><!-- services-wrap-->
               <div class="clear"></div>
             </div><!-- container -->
-       </section><div class="clear"></div>
+       </section><div class="clear"></div>-->
 <?php } elseif ( is_home() ) { ?>
 <div class="feature-box-main site-aligner" style="display:none;"></div>
 <?php } ?>

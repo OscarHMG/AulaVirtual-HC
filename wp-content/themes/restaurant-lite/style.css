@@ -73,6 +73,12 @@ iframe{
 	height: 580px;
 	border: solid 6px #108341 !important;
 }
+iframe.hprincipal{
+	text-align: center;
+	width: 750px; 
+	height:580px;
+	border: solid 6px #fffff !important;
+}
 .clear{ clear:both;}
 .alignnone{ width:100% !important;}
 img.alignleft, .alignleft{ float:left; margin:0 15px 0 0; padding:5px; border:1px solid #cccccc;}
