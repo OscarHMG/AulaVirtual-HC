@@ -20,7 +20,7 @@ function WPCW_showPage_Certificates_load()
 	$settingsFields = array(
 		'section_certificates_defaults' => array(
 				'type'	  	=> 'break',
-				'html'	   	=> WPCW_forms_createBreakHTML(__('Certificate Settings', 'wp_courseware')),
+				'html'	   	=> WPCW_forms_createBreakHTML(__('Configuraci&oacute;n Certificado', 'wp_courseware')),
 			),			
 			
 		'cert_signature_type' => array(
@@ -175,7 +175,7 @@ function WPCW_showPage_Certificates_load()
 	$page->showPageMiddle('23%');	
 		
 	// Create a box where the admin can preview the certificates to see what they look like.
-	$page->openPane('wpcw-certificates-preview', __('Preview Certificate', 'wp_courseware'));
+	$page->openPane('wpcw-certificates-preview', __('Vista Previa Certificado', 'wp_courseware'));
 	printf('<p>%s</p>', __('After saving the settings, you can preview the certificate using the button below. The preview opens in a new window.', 'wp_courseware'));
 	printf('<div class="wpcw_btn_centre"><a href="%spdf_create_certificate.php?certificate=preview" target="_blank" class="button-primary">%s</a></div>', WPCW_plugin_getPluginPath(), __('Preview Certificate', 'wp_courseware'));	
 	
