@@ -229,12 +229,12 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
               <div class="clear"></div>
             </div><!-- container -->
        </section><div class="clear"></div>
-	<iframe class="hprincipal" src="https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1"></iframe>
-<!--<video><source src="images/HCVINCULOS.mp4" type="video/mp4" /></video>-->
-		<!--<section id="wrapsecond">
+		<section id="wrapsecond">
             	<div class="container">
                     <div class="services-wrap">
-                        <h2><?php _e('Últimos Cursos','restaurant'); ?></h2>
+	<iframe class="hprincipal" src="https://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1"></iframe>
+<!--<video><source src="images/HCVINCULOS.mp4" type="video/mp4" /></video>-->
+                        <!--<h2><?php _e('Últimos Cursos','restaurant'); ?></h2>
                      
                         <div class="space50"></div>
                         <?php for($p=1; $p<4; $p++) { ?>       
