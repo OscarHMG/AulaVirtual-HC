@@ -83,7 +83,7 @@ function WPCW_courses_renderCourseList($courseID, $options)
 		// Check course ID is valid
 		$courseDetails = WPCW_courses_getCourseDetails($courseID);		
 		if (!$courseDetails) {
-			return __('Unrecognised course ID.', 'wp_courseware');
+			return __('No existe contenido del curso para mostrarse.', 'wp_courseware');
 		} 
 		
 		// Course ID is fine, get associated parent data for 
@@ -99,7 +99,7 @@ function WPCW_courses_renderCourseList($courseID, $options)
 		// Get module by module number within course (not the module ID)
 		$moduleDetailsSingle = WPCW_modules_getModuleDetails_byModuleNumber($courseDetails->course_id, $module);
 		if (!$moduleDetailsSingle) {
-			return __('Could not find module.', 'wp_courseware');
+			return __('No se pudo encontrar el m&oacute;dulo.', 'wp_courseware');
 		}
 		
 		// Create module list of 1 using single module
@@ -111,7 +111,7 @@ function WPCW_courses_renderCourseList($courseID, $options)
 		// Check there are modules
 		$moduleList = WPCW_courses_getModuleDetailsList($courseID);
 		if (!$moduleList) {
-			return __('There are no modules in this training course.', 'wp_courseware');
+			return __('No hay m&oacute;dulos de este curso.', 'wp_courseware');
 		}
 	}
 	
@@ -285,7 +285,7 @@ function WPCW_courses_renderCourseList($courseID, $options)
 							' . $moduleTitleArea . '			
 						</tr>', 
 							($collapseTitleArea ? 'wpcw_fe_module_toggle_hide' : ''),
-							$moduleObj->module_number, __('Module', 'wp_courseware'), 
+							$moduleObj->module_number, __('M&oacute;dulo', 'wp_courseware'), 
 							$moduleObj->module_number, 
 							$moduleTitleArea
 						);		
@@ -311,7 +311,7 @@ function WPCW_courses_renderCourseList($courseID, $options)
 						<td colspan="%d">%s</td>
 					  </tr>', 
 						$moduleRowClass,
-						$colCount+$extraColSpan, __('There are no units in this module.', 'wp_courseware')
+						$colCount+$extraColSpan, __('No hay unidades de este m&oacute;dulo.', 'wp_courseware')
 					);
 		}
 		
@@ -349,7 +349,7 @@ function WPCW_courses_renderCourseList($courseID, $options)
 								<td class="wpcw_fe_unit"><a href="%s">%s</a></td>
 								'.$progressCol.'
 							</tr>',   
-						__('Unit', 'wp_courseware'), 
+						__('Unidad', 'wp_courseware'), 
 						$unit->unit_meta->unit_number, get_permalink($unit->ID), $unit->post_title);
 					}
 					
@@ -362,7 +362,7 @@ function WPCW_courses_renderCourseList($courseID, $options)
 								<td class="wpcw_fe_unit">%s</td>
 								'.$progress_Pending.'
 							</tr>',  
-						__('Unit', 'wp_courseware'), $unit->unit_meta->unit_number, $unit->post_title);
+						__('Unidad', 'wp_courseware'), $unit->unit_meta->unit_number, $unit->post_title);
 					}
 				}
 
@@ -379,7 +379,7 @@ function WPCW_courses_renderCourseList($courseID, $options)
 						<td>%s %d</td>
 						<td colspan="%d" class="wpcw_fe_unit">%s</td>
 					</tr>',  
-				__('Unit', 'wp_courseware'), $unit->unit_meta->unit_number, 
+				__('Unidad', 'wp_courseware'), $unit->unit_meta->unit_number, 
 				$colspan, $unit->post_title);
 				}
 			}
@@ -391,11 +391,11 @@ function WPCW_courses_renderCourseList($courseID, $options)
 	$html .= '</table>';
 	
 	// Add powered by link, which has manual override.
-	if (!$hide_credit_link)
+	/*if (!$hide_credit_link)
 	{
 		$settings = TidySettings_getSettings(WPCW_DATABASE_SETTINGS_KEY);
 		$html .= WPCW_generatedPoweredByLink($settings);
-	}
+	}*/
 	
 	return $html;
 }
@@ -484,9 +484,9 @@ function WPCW_shortcodes_showTrainingCourseProgress($atts, $content)
 	if (empty($courseList))
 	{
 		// Change message slightly based on how many courses are selected.
-		$messageToShow = __('You are not currently enrolled on any courses.', 'wp_courseware');
+		$messageToShow = __('Actualmente no está inscrito en ningún curso.', 'wp_courseware');
 		if (!empty($selectedCourseList)) {
-			$messageToShow = __('You are not currently enrolled on any of these courses.', 'wp_courseware');
+			$messageToShow = __('Actualmente no está inscrito en cualquiera de estos cursos.', 'wp_courseware');
 		}
 		
 		return sprintf('<div class="wpcw_fe_progress_box_wrap"><div class="wpcw_fe_progress_box wpcw_fe_progress_box_error">%s</div></div>', 
@@ -503,18 +503,18 @@ function WPCW_shortcodes_showTrainingCourseProgress($atts, $content)
 		// The title bar for the course.
 		$html .= '<thead><tr>';
 			// Course name
-			$html .= sprintf('<th class="wpcw_fe_course_progress_course">%s</th>', __('Course', 'wp_courseware'));
+			$html .= sprintf('<th class="wpcw_fe_course_progress_course">%s</th>', __('Curso', 'wp_courseware'));
 			
 			// Course progress
 			if ($showUserProgress) {
 				$columnCount++;
-				$html .= sprintf('<th class="wpcw_fe_course_progress_pc">%s</th>', __('Your Progress', 'wp_courseware'));
+				$html .= sprintf('<th class="wpcw_fe_course_progress_pc">%s</th>', __('T&uacute; Progreso', 'wp_courseware'));
 			}
 				
 			// Overall grade so far
 			if ($showUserGrade) {
 				$columnCount++;
-				$html .= sprintf('<th class="wpcw_fe_course_progress_grade">%s</th>', __('Your Overall Grade', 'wp_courseware')); 				
+				$html .= sprintf('<th class="wpcw_fe_course_progress_grade">%s</th>', __('T&uacute; promedio general', 'wp_courseware')); 				
 			}
 			
 		$html .= '</tr></thead><tbody>';

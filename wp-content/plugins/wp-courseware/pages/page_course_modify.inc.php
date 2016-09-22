@@ -122,11 +122,11 @@ function WPCW_showPage_ModifyCourse_load()
 				),	
 		
 			'course_title' => array(
-					'label' 	=> __('Course Title', 'wp_courseware'),
+					'label' 	=> __('T&iacute;tulo del Curso', 'wp_courseware'),
 					'type'  	=> 'text',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_title',
-					'desc'  	=> __('The title of your course.', 'wp_courseware'),
+					'desc'  	=> __('El t&iacute;tulo del Curso.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 150,
@@ -137,11 +137,11 @@ function WPCW_showPage_ModifyCourse_load()
 				),				
 	
 			'course_desc' => array(
-					'label' 	=> __('Course Description', 'wp_courseware'),
+					'label' 	=> __('Descripci&oacute;n del Curso', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_desc',
-					'desc'  	=> __('The description of this course. Your trainees will be able to see this course description.', 'wp_courseware'),
+					'desc'  	=> __('Descripci&oacute;n de este curso. Sus participantes ser&aacute;n capaces de ver esta descripci&oacute;n del curso..', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 5000,
@@ -160,13 +160,13 @@ function WPCW_showPage_ModifyCourse_load()
 				),*/
 	
 			'course_opt_completion_wall' => array(
-					'label' 	=> __('When do users see the next unit on the course?', 'wp_courseware'),
+					'label' 	=> __('Cuando los usuarios puede ver la siguiente Unidad', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
-					'desc'  	=> __('Can a user see all possible course units? Or must they complete previous units before seeing the next unit?', 'wp_courseware'),
+					'desc'  	=> __('Puede un usuario ver todas las posibles unidades de curso O deben completar las unidades anteriores antes de ver la siguiente unidad.', 'wp_courseware'),
 					'data'		=> array(
-						'all_visible' => __('<b>All Units Visible</b> - All units are visible regardless of completion progress.', 'wp_courseware'),
-						'completion_wall' => __('<b>Only Completed/Next Units Visible</b> - Only show units that have been completed, plus the next unit that the user can start.', 'wp_courseware')
+						'all_visible' => __('<b>Todas las Unidades visible</b> - Todas las unidades son visibles independientemente del progreso finalizaci&oacute;n.', 'wp_courseware'),
+						'completion_wall' => __('<b>Completar Unidad/Para ver la Unidad siguiente</b> - S&oacute;lo se muestran las unidades que se han completado, adem&aacute;s la unidad siguiente que el usuario pueda iniciar.', 'wp_courseware')
 					)	 	
 				),	
 				
@@ -678,26 +678,27 @@ function WPCW_showPage_ModifyCourse_load()
 				'course_opt_user_access'					=> 'default_show',
 			
 				// Email notification defaults (yes to send email)
-				'email_complete_course_option_admin'		=> 'send_email',
-				'email_complete_course_option'				=> 'send_email',
-				'email_complete_module_option_admin'		=> 'send_email',
-				'email_complete_module_option'				=> 'send_email',
-				'email_quiz_grade_option'					=> 'send_email',
+				'email_complete_course_option_admin'		=> 'no_email',
+				'email_complete_course_option'				=> 'no_email',
+				'email_complete_module_option_admin'		=> 'no_email',
+				'email_complete_module_option'				=> 'no_email',
+				'email_quiz_grade_option'					=> 'no_email',
 						
 				// Certificate defaults
 				'course_opt_use_certificate'				=> 'no_certs',
 			
 				// User Messages
-				'course_message_unit_not_yet'				=> __("You need to complete the previous unit first.", 'wp_courseware'),		
-				'course_message_unit_pending'				=> __("Have you completed this unit? Then mark this unit as completed.", 'wp_courseware'),			
-				'course_message_unit_complete'				=> __("You have now completed this unit.", 'wp_courseware'),
-				'course_message_course_complete'			=> __("You have now completed the whole course. Congratulations!", 'wp_courseware'),
-				'course_message_unit_no_access'				=> __("Sorry, but you're not allowed to access this course.", 'wp_courseware'),
-				'course_message_unit_not_logged_in'			=> __('You cannot view this unit as you\'re not logged in yet.', 'wp_courseware'),
+				'course_message_unit_not_yet'				=> __("Es necesario completar la unidad anterior.", 'wp_courseware'),		
+				'course_message_unit_pending'				=> __("Ha completado esta unidad. A continuaci&oacute;n, marque esta unidad como completada.", 'wp_courseware'),			
+				'course_message_unit_complete'				=> __("Ahora ha completado esta Unidad.", 'wp_courseware'),
+				'course_message_course_complete'			=> __("Ahora ha completado todo el Curso. FELICITACIONES", 'wp_courseware'),
+				'course_message_unit_no_access'				=> __("Lo sentimos, pero no se le permite acceder a este curso.", 'wp_courseware'),
+				'course_message_unit_not_logged_in'			=> __('No se puede ver esta unidad, ya que no est&aacute; conectado todav&iacute;a.', 'wp_courseware'),
 			
 				// User Messages - quizzes
-				'course_message_quiz_open_grading_blocking'		=> __('Your quiz has been submitted for grading by the course instructor. Once your grade has been entered, you will be able access the next unit.', 'wp_courseware'),
-				'course_message_quiz_open_grading_non_blocking'	=> __('Your quiz has been submitted for grading by the course instructor. You have now completed this unit.', 'wp_courseware'),
+				'course_message_quiz_open_grading_blocking'		=> __('Su Evaluaci&oacute;n se ha enviado para ser calificada por su instructor.  Una vez que sea calificada, usted podr&aacute; ingresar a la siguiente Unidad.
+', 'wp_courseware'),
+				'course_message_quiz_open_grading_non_blocking'	=> __('Su Evaluaci&oacute;n se ha enviado para ser calificada por su instructor.  Ahora ha completado esta Unidad.', 'wp_courseware'),
 			));
 		}
 		
@@ -707,12 +708,12 @@ function WPCW_showPage_ModifyCourse_load()
 		);	
 		
 		// Override success messages
-		$form->msg_record_created = __('Course details successfully created. ', 'wp_courseware') . $directionMsg;
-		$form->msg_record_updated = __('Course details successfully updated. ', 'wp_courseware') . $directionMsg;
+		$form->msg_record_created = __('Los detalles del curso se crearon con exito. ', 'wp_courseware') . $directionMsg;
+		$form->msg_record_updated = __('Los detalles del curso se han actualizado correctamente. ', 'wp_courseware') . $directionMsg;
 	
 		
 		$form->setPrimaryKeyValue($courseID);	
-		$form->setSaveButtonLabel(__('Save ALL Details', 'wp_courseware'));
+		$form->setSaveButtonLabel(__('Guardar todos los detalles', 'wp_courseware'));
 		
 	
 		// Process form	
@@ -731,7 +732,7 @@ function WPCW_showPage_ModifyCourse_load()
 			if ($quizzes && count($quizzes) > 0) {
 				$quizCountMessage = sprintf(__('Currently <b>%d of your quizzes</b> are blocking process based on a percentage score <b>in this course</b>.', 'wp_courseware'), count($quizzes));
 			} else {
-				$quizCountMessage = __('You do not currently have any blocking quizzes for this course.', 'wp_courseware');
+				$quizCountMessage = __('Actualmente no tiene ninguna sección de evaluaci&oacute;n para este curso.', 'wp_courseware');
 			}
 				
 			printf('<div id="message" class="wpcw_msg_info wpcw_msg"><b>%s</b> - %s<br/><br/>

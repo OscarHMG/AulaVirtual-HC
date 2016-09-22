@@ -30,7 +30,9 @@ body{ margin:0;
 img{ border:none; margin:0; padding:0; height:auto}
 .wp-caption, .wp-caption-text, .sticky, .gallery-caption, .aligncenter{ margin:0; padding:0;}
 p{ margin:0; padding:0;}
-a{ text-decoration:none; color:#D6DF23; background-color: #006738;border-radius: 5px 5px;}
+a{ text-decoration:none; 
+	color:#D6DF23; 
+	border-radius: 5px 5px;}
 a:hover{ color:#b68023;}
 ol,ul{ margin:0; padding:0;}
 ul li ul, ul li ul li ul, ol li ol, ol li ol li ol{ margin-left:10px;}
@@ -194,7 +196,8 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 #sidebar{ width:330px; float:right;}
 aside.widget{margin-bottom:30px; background-color:#f6f4f4; padding:20px; border:1px solid #edecec;}
 aside.widget ul{ list-style:disc; }
-h3.widget-title{ background-color:#D1D2D4; padding:12px 15px; margin-bottom:1px; color:#fff;}
+h3.widget-title{ background-color:#006738 !important;
+	padding:12px 15px; margin-bottom:1px; color:#fff;}
 #sidebar ul li{ list-style:none;}
 #sidebar ul li a{ background:url(images/sidebar-arrow.png) no-repeat 0 14px; padding:10px 0 10px 20px; color:#3b3b3b; border-bottom:1px dashed #d0cfcf; display:block; word-wrap:break-word;}
 #sidebar ul li a:hover{ color:#34c6f6;}

@@ -87,7 +87,7 @@ function WPCW_showPage_QuizSummary_load()
 	?>			
 	<form id="wpcw_quizzes_search_box" method="get" action="<?php echo $summaryPageURL; ?>">
 	<p class="search-box">
-		<label class="screen-reader-text" for="wpcw_quizzes_search_input"><?php _e('Search Quizzes', 'wp_courseware'); ?></label>
+		<label class="screen-reader-text" for="wpcw_quizzes_search_input"><?php _e('Buscar Evaluaciones', 'wp_courseware'); ?></label>
 		<input id="wpcw_quizzes_search_input" type="text" value="<?php echo $searchString ?>" name="s"/>
 		<input class="button" type="submit" value="<?php _e('Search Quizzes', 'wp_courseware'); ?>"/>
 		
@@ -168,7 +168,7 @@ function WPCW_showPage_QuizSummary_load()
 		$sortableLink = sprintf('<a href="%s&order=%s&orderby=quiz_title"><span>%s</span><span class="sorting-indicator"></span></a>', 
 			$baseURL, 
 			('quiz_title' == $orderBy ? $ordering_opposite : 'asc'),
-			__('Quiz Title', 'wp_courseware')
+			__('T&iacute;tulo de Evaluaci&oacute;n', 'wp_courseware')
 		);
 			
 		// Title - render
@@ -178,28 +178,28 @@ function WPCW_showPage_QuizSummary_load()
 		$tbl->addColumn($tblCol);
 		
 				
-		$tblCol = new TableColumn(__('Associated Unit', 'wp_courseware'), 'associated_unit');
+		$tblCol = new TableColumn(__('Unidad Asociada', 'wp_courseware'), 'associated_unit');
 		$tblCol->cellClass = "associated_unit";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Quiz Type', 'wp_courseware'), 'quiz_type');
+		$tblCol = new TableColumn(__('Tipo de Evaluaci&oacute;n', 'wp_courseware'), 'quiz_type');
 		$tblCol->cellClass = "quiz_type";
 		$tbl->addColumn($tblCol);
 				
-		$tblCol = new TableColumn(__('Show Answers', 'wp_courseware'), 'quiz_show_answers');
+		$tblCol = new TableColumn(__('Mostrar respuestas', 'wp_courseware'), 'quiz_show_answers');
 		$tblCol->cellClass = "quiz_type wpcw_center";
 		$tbl->addColumn($tblCol);		
 		
-		$tblCol = new TableColumn(__('Paging', 'wp_courseware'), 'quiz_use_paging');
+		$tblCol = new TableColumn(__('Paginaci&oacute;n', 'wp_courseware'), 'quiz_use_paging');
 		$tblCol->cellClass = "quiz_type wpcw_center";
 		$tbl->addColumn($tblCol);
 		
 		
-		$tblCol = new TableColumn(__('Questions', 'wp_courseware'), 'total_questions');
+		$tblCol = new TableColumn(__('Preguntas', 'wp_courseware'), 'total_questions');
 		$tblCol->cellClass = "total_questions wpcw_center";
 		$tbl->addColumn($tblCol);
 						
-		$tblCol = new TableColumn(__('Actions', 'wp_courseware'), 'actions');
+		$tblCol = new TableColumn(__('Acciones', 'wp_courseware'), 'actions');
 		$tblCol->cellClass = "actions";
 		$tbl->addColumn($tblCol);
 		
@@ -257,7 +257,7 @@ function WPCW_showPage_QuizSummary_load()
 					$data['associated_unit'] .= sprintf('<span class="associated_unit_course"><b>%s:</b> <a href="admin.php?page=WPCW_showPage_ModifyCourse&course_id=%d" title="%s \'%s\'...">%s</a></span>',
 						__('Course', 'wp_courseware'),
 						$courseDetails->course_id,
-						__('Edit ', 'wp_courseware'), 
+						__('Editar ', 'wp_courseware'), 
 						$courseDetails->course_title,
 						$courseDetails->course_title
 					);
@@ -294,7 +294,7 @@ function WPCW_showPage_QuizSummary_load()
 			$data['actions']	.= sprintf('<li><a href="%s" class="button-secondary wpcw_action_link_delete_quiz wpcw_action_link_delete" rel="%s">%s</a></li>', 	
 					$deleteURL,
 					__('Are you sure you wish to delete this quiz?', 'wp_courseware'), 	
-					__('Delete', 'wp_courseware'));
+					__('Eliminar', 'wp_courseware'));
 					
 			// Add export button for surveys
 			if ('survey' == $quiz->quiz_type) 

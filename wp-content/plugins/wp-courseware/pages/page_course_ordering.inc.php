@@ -13,7 +13,7 @@
 function WPCW_showPage_CourseOrdering_load()
 {
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('Order Course Modules &amp; Units', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Orden de M&oacute;dulos &amp; Unidades', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	$courseDetails = false;
 	$courseID = false;
@@ -28,7 +28,7 @@ function WPCW_showPage_CourseOrdering_load()
 	// Abort if course not found.
 	if (!$courseDetails)
 	{		
-		$page->showMessage(__('Sorry, but that course could not be found.', 'wp_courseware'), true);
+		$page->showMessage(__('Lo sentimos, pero el curso no fue encontrado.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return;
 	}	
@@ -39,7 +39,7 @@ function WPCW_showPage_CourseOrdering_load()
 	$modifyURL_unit   = admin_url('post.php?action=edit');
 	
 	// Title of course being editied
-	printf('<div id="wpcw_page_course_title"><span>%s</span> %s</div>', __('Editing Course:', 'wp_courseware'), $courseDetails->course_title);
+	printf('<div id="wpcw_page_course_title"><span>%s</span> %s</div>', __('Editando Curso:', 'wp_courseware'), $courseDetails->course_title);
 	
 	// Overall wrapper
 	printf('<div id="wpcw_dragable_wrapper">');
@@ -50,7 +50,7 @@ function WPCW_showPage_CourseOrdering_load()
 	
 		// ### Show a list of units that are not currently assigned to a module		
 		printf('<div id="wpcw_unassigned_units" class="wpcw_unassigned">');	
-		printf('<div class="wpcw_unassigned_title">%s</div>', __('Unassigned Units', 'wp_courseware'));
+		printf('<div class="wpcw_unassigned_title">%s</div>', __('Unidades no asignadas', 'wp_courseware'));
 		
 			printf('<ol class="wpcw_dragable_units_connected">');
 			
@@ -70,7 +70,7 @@ function WPCW_showPage_CourseOrdering_load()
 								<div class="wpcw_quiz_des">%s</div>
 							</li>', 
 							$quizObj->quiz_id, 
-							$modifyURL_quiz, $quizObj->quiz_id, __('Edit this quiz...', 'wp_courseware'),
+							$modifyURL_quiz, $quizObj->quiz_id, __('Editar esta evaluaci&oacute;n...', 'wp_courseware'),
 							$quizObj->quiz_title, $quizObj->quiz_id, 
 							$quizObj->quiz_desc
 						);
@@ -81,7 +81,7 @@ function WPCW_showPage_CourseOrdering_load()
 						<div class="wpcw_dragable_quiz_holder"><ol class="wpcw_dragable_quizzes_connected wpcw_one_only">%s</ol></div>
 					</li>', 
 					$unassUnit->ID,
-					$modifyURL_unit, $unassUnit->ID, __('Edit this unit...', 'wp_courseware'), 
+					$modifyURL_unit, $unassUnit->ID, __('Editar esta unidad...', 'wp_courseware'), 
 					$unassUnit->post_title, $unassUnit->ID, 
 					$existingQuiz);					
 				}
@@ -92,7 +92,7 @@ function WPCW_showPage_CourseOrdering_load()
 		
 		// ### Show a list of quizzes that are not currently assigned to units		
 		printf('<div id="wpcw_unassigned_quizzes" class="wpcw_unassigned">');	
-		printf('<div class="wpcw_unassigned_title">%s</div>', __('Unassigned Quizzes', 'wp_courseware'));
+		printf('<div class="wpcw_unassigned_title">%s</div>', __('Unidades no asignadas', 'wp_courseware'));
 		
 			printf('<ol class="wpcw_dragable_quizzes_connected">');
 			
@@ -108,7 +108,7 @@ function WPCW_showPage_CourseOrdering_load()
 								<div class="wpcw_quiz_des">%s</div>
 							</li>', 
 							$quizObj->quiz_id, 
-							$modifyURL_quiz, $quizObj->quiz_id, __('Edit this quiz...', 'wp_courseware'),
+							$modifyURL_quiz, $quizObj->quiz_id, __('Editar esta evaluaci&oacute;n...', 'wp_courseware'),
 							$quizObj->quiz_title, $quizObj->quiz_id, 
 							$quizObj->quiz_desc
 						);
@@ -135,8 +135,8 @@ function WPCW_showPage_CourseOrdering_load()
 							<a href="%s&module_id=%d" target="_blank" title="%s"><b>%s %d - %s (ID: %d)</b></a>
 						</div>', 
 				$item_id, 
-				$modifyURL_module, $item_id, __('Edit this module...', 'wp_courseware'),
-				__('Module', 'wp_courseware'), $moduleObj->module_number, $moduleObj->module_title, 
+				$modifyURL_module, $item_id, __('Editar  este m&oacute;dulo...', 'wp_courseware'),
+				__('M&oacute;dulo', 'wp_courseware'), $moduleObj->module_number, $moduleObj->module_title, 
 				$item_id
 			);
 				
@@ -161,7 +161,7 @@ function WPCW_showPage_CourseOrdering_load()
 								<div class="wpcw_quiz_des">%s</div>
 							</li>', 
 							$quizObj->quiz_id, 
-							$modifyURL_quiz, $quizObj->quiz_id, __('Edit this quiz...', 'wp_courseware'),
+							$modifyURL_quiz, $quizObj->quiz_id, __('Editar esta evaluaci&oacute;n...', 'wp_courseware'),
 							$quizObj->quiz_title, $quizObj->quiz_id, 
 							$quizObj->quiz_desc
 						);
@@ -172,7 +172,7 @@ function WPCW_showPage_CourseOrdering_load()
 						<div class="wpcw_dragable_quiz_holder"><ol class="wpcw_dragable_quizzes_connected wpcw_one_only">%s</ol></div>
 					</li>', 
 					$unassUnit->ID,
-					$modifyURL_unit, $unassUnit->ID, __('Edit this unit...', 'wp_courseware'),					
+					$modifyURL_unit, $unassUnit->ID, __('Editar esta unidad...', 'wp_courseware'),					
 					$unassUnit->post_title, $unassUnit->ID, 
 					$existingQuiz);
 				}
@@ -183,14 +183,14 @@ function WPCW_showPage_CourseOrdering_load()
 		printf('</ol>');
 	} 
 	else {
-		_e('No modules yet.', 'wp_courseware');
+		_e('No hay módulos todav&iacute;a.', 'wp_courseware');
 	}
 	
 	?>
 	<div id="wpcw_sticky_bar" style="display: none">
 		<div id="wpcw_sticky_bar_inner">
-			<a href="#" id="wpcw_dragable_modules_save" class="button-primary"><?php _e('Save Changes to Ordering', 'wp_courseware'); ?></a>
-			<span id="wpcw_sticky_bar_status" title="<?php _e('Ordering has changed. Ready to save changes?', 'wp_courseware'); ?>"></span>
+			<a href="#" id="wpcw_dragable_modules_save" class="button-primary"><?php _e('Guardar los cambios en Orden', 'wp_courseware'); ?></a>
+			<span id="wpcw_sticky_bar_status" title="<?php _e('Ha cambiado el Orden. Listo para guardar los cambios', 'wp_courseware'); ?>"></span>
 		</div>
 	</div>
 	<?php 

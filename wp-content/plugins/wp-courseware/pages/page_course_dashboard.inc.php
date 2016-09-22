@@ -85,7 +85,7 @@ function WPCW_showPage_Dashboard_load()
 		$sortableLink = sprintf('<a href="%s&order=%s&orderby=course_title"><span>%s</span><span class="sorting-indicator"></span></a>', 
 			admin_url('admin.php?page=WPCW_wp_courseware'), 
 			('course_title' == $orderBy ? $ordering_opposite : 'asc'),
-			__('Course Title', 'wp_courseware')
+			__('T&iacute;tulo del Curso', 'wp_courseware')
 		);
 			
 		// Title - render
@@ -94,23 +94,23 @@ function WPCW_showPage_Dashboard_load()
 		$tblCol->cellClass = "course_title";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Description', 'wp_courseware'), 'course_desc');
+		$tblCol = new TableColumn(__('Descripci&oacute;n', 'wp_courseware'), 'course_desc');
 		$tblCol->cellClass = "course_desc";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Settings', 'wp_courseware'), 'course_settings');
+		$tblCol = new TableColumn(__('Configuraciones', 'wp_courseware'), 'course_settings');
 		$tblCol->cellClass = "course_settings";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Total Units', 'wp_courseware'), 'total_units');
+		$tblCol = new TableColumn(__('Total de Unidades', 'wp_courseware'), 'total_units');
 		$tblCol->cellClass = "total_units";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Modules', 'wp_courseware'), 'course_modules');
+		$tblCol = new TableColumn(__('Modulos', 'wp_courseware'), 'course_modules');
 		$tblCol->cellClass = "course_modules";
 		$tbl->addColumn($tblCol);
 				
-		$tblCol = new TableColumn(__('Actions', 'wp_courseware'), 'actions');
+		$tblCol = new TableColumn(__('Acciones', 'wp_courseware'), 'actions');
 		$tblCol->cellClass = "actions";
 		$tbl->addColumn($tblCol);
 		
@@ -135,10 +135,10 @@ function WPCW_showPage_Dashboard_load()
 						
 			// Actions
 			$data['actions']	= '<ul>';
-			$data['actions']	.= sprintf('<li><a href="%s&course_id=%d" class="button-primary">%s</a></li>', 	$url_addModule, $course->course_id, 	__('Add Module', 'wp_courseware'));
-			$data['actions']	.= sprintf('<li><a href="%s&course_id=%d" class="button-secondary">%s</a></li>', $editURL, $course->course_id,			__('Edit Course Settings', 'wp_courseware'));			
-			$data['actions']	.= sprintf('<li><a href="%s&course_id=%d" class="button-secondary">%s</a></li>', $url_ordering, $course->course_id,		__('Modules, Units &amp; Quiz Ordering', 'wp_courseware'));
-			$data['actions']	.= sprintf('<li><a href="%s&course_id=%d" class="button-secondary">%s</a></li>', $url_gradeBook, $course->course_id,	__('Access Grade Book', 'wp_courseware'));
+			$data['actions']	.= sprintf('<li><a href="%s&course_id=%d" class="button-primary">%s</a></li>', 	$url_addModule, $course->course_id, 	__('Agregar Modulo', 'wp_courseware'));
+			$data['actions']	.= sprintf('<li><a href="%s&course_id=%d" class="button-secondary">%s</a></li>', $editURL, $course->course_id,			__('Editar configuraci&oacute;n del curso', 'wp_courseware'));			
+			$data['actions']	.= sprintf('<li><a href="%s&course_id=%d" class="button-secondary">%s</a></li>', $url_ordering, $course->course_id,		__('Modulos, Unidades &amp; Orden del curso', 'wp_courseware'));
+			$data['actions']	.= sprintf('<li><a href="%s&course_id=%d" class="button-secondary">%s</a></li>', $url_gradeBook, $course->course_id,	__('Acceso Libro de Evaluaci&oacute;n', 'wp_courseware'));
 			$data['actions']	.= '</ul>';
 			
 			// Settings Summary - to allow user to see a quick overview of the current settings.
@@ -146,16 +146,17 @@ function WPCW_showPage_Dashboard_load()
 
 			// Access control - filtered if membership plugin
 			$data['course_settings'] .= apply_filters('wpcw_extensions_access_control_override', 
-				sprintf('<li class="wpcw_%s">%s</li>', ('default_show' == $course->course_opt_user_access ? 'enabled' : 'disabled'), __('Give new users access by default', 'wp_courseware'))
+				sprintf('<li class="wpcw_%s">%s</li>', ('default_show' == $course->course_opt_user_access ? 'enabled' : 'disabled'), __('Dar  acceso a los usuarios de forma defecto.
+', 'wp_courseware'))
 			);
 			
 			// Completion wall
 			$data['course_settings'] .= sprintf('<li class="wpcw_%s">%s</li>', ('completion_wall' == $course->course_opt_completion_wall ? 'enabled' : 'disabled'), 
-				__('Require unit completion before showing next', 'wp_courseware'));
+				__('Exigir que se cumplan la unidad para mostrar la siguiente.', 'wp_courseware'));
 				
 			// Certificate handling
 			$data['course_settings'] .= sprintf('<li class="wpcw_%s">%s</li>', ('use_certs' == $course->course_opt_use_certificate ? 'enabled' : 'disabled'), 
-				__('Generate certificates on course completion', 'wp_courseware'));
+				__('Generar certificados de finalizaci&oacute;n del curso.', 'wp_courseware'));
 				
 			$data['course_settings'] .= '</ul>';
 			
@@ -169,7 +170,7 @@ function WPCW_showPage_Dashboard_load()
 			{
 				foreach ($moduleList as $item_id => $moduleObj) 
 				{
-					$modName = sprintf('%s %d - %s', __('Module', 'wp_courseware'), $moduleObj->module_number, $moduleObj->module_title);
+					$modName = sprintf('%s %d - %s', __('M&oacute;dulo', 'wp_courseware'), $moduleObj->module_number, $moduleObj->module_title);
 					
 					// Create each module item with an edit link.
 					$modEditURL = admin_url('admin.php?page=WPCW_showPage_ModifyModule&module_id=' . $item_id);	
@@ -184,7 +185,7 @@ function WPCW_showPage_Dashboard_load()
 				}
 			} 
 			else {
-				$data['course_modules'] = __('No modules yet.', 'wp_courseware');
+				$data['course_modules'] = __('No hay módulos todavía.', 'wp_courseware');
 			}
 			
 			

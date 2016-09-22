@@ -84,11 +84,11 @@ function WPCW_showPage_ModifyQuiz_load()
 			),	
 	
 		'quiz_title' => array(
-				'label' 	=> __('Quiz Title', 'wp_courseware'),
+				'label' 	=> __('T&iacute;tulo de la Evaluaci&oacute;n', 'wp_courseware'),
 				'type'  	=> 'text',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_title',
-				'desc'  	=> __('The title of your quiz or survey. Your trainees will be able to see this quiz title.', 'wp_courseware'),
+				'desc'  	=> __('T&iacute;tulo de su examen o cuestionario. Sus participantes ser&aacute;n capaces de ver este t&iacute;tulo de la evaluaci&oacute;n.', 'wp_courseware'),
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 150,
@@ -99,29 +99,29 @@ function WPCW_showPage_ModifyQuiz_load()
 			),		
 			
 		'quiz_desc' => array(
-				'label' 	=> __('Quiz/Survey Description', 'wp_courseware'),
+				'label' 	=> __('Descripci&oacute;n de la Evaluaci&oacute;n', 'wp_courseware'),
 				'type'  	=> 'textarea',
 				'required'  => false,
 				'cssclass'	=> 'wpcw_quiz_desc',
 				'rows'		=> 2,
-				'desc'  	=> __('(Optional) The description of this quiz. Your trainees won\'t see this description. It\'s just for your reference.', 'wp_courseware'),
+				'desc'  	=> __('(Opcional) La descripci&oacute;n de esta evaluaci&oacute;n. Sus alumnos no verán esta descripci&oacute;n. Es s&oacute;lo para su referencia.', 'wp_courseware'),
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 5000,
 					'minlen'	=> 1,
-					'error'		=> __('Please limit the description of your quiz to 5000 characters.', 'wp_courseware')
+					'error'		=> __('Por favor, limitar la descripci&oacute;n de su evaluaci&oacute;n a 5000 caracteres.', 'wp_courseware')
 				)	 	
 			),		
 
 		'quiz_type' => array(
-				'label' 	=> __('Quiz Type', 'wp_courseware'),
+				'label' 	=> __('Tipo de Evaluaci&oacute;n', 'wp_courseware'),
 				'type'  	=> 'radio',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_type wpcw_quiz_type_hide_pass',
 				'data'		=> array(
-					'survey'		=> __('<b>Survey Mode</b> - No correct answers, just collect information.', 'wp_courseware'),
-					'quiz_block'	=> __('<b>Quiz Mode - Blocking</b> - require trainee to correctly answer questions before proceeding. Trainee must achieve <b>minimum pass mark</b> to progress to the next unit.', 'wp_courseware'),
-					'quiz_noblock'	=> __('<b>Quiz Mode - Non-blocking</b> - require trainee to answer a number of questions before proceeding, but allow them to progress to the next unit <b>regardless of their pass mark</b>.', 'wp_courseware'),
+					'survey'		=> __('<b>Modo encuesta</b> - No hay respuestas correctas, simplemente recoger información.', 'wp_courseware'),
+					'quiz_block'	=> __('<b>Modo de Evaluaci&oacute;n - con bloqueo </b> - Requiere de estudio de la unidad previa. <b>Minima nota </b> para pasar a la siguiente unidad.', 'wp_courseware'),
+					'quiz_noblock'	=> __('<b>Modo de Evaluaci&oacute;n - sin bloqueo </b> - Requiere de estudio de la unidad previa. <b>No necesita haber aprobado </b> para pasar a la siguiente unidad.', 'wp_courseware'),
 				)	
 			),
 
@@ -295,20 +295,20 @@ function WPCW_showPage_ModifyQuiz_load()
 		'wpcw_quiz_details_modify'	// Name of the form.
 	);	
 	
-	$form->customFormErrorMsg = __('Sorry, but unfortunately there were some errors saving the quiz details. Please fix the errors and try again.', 'wp_courseware');
+	$form->customFormErrorMsg = __('Lo sentimos, pero por desgracia hab&iacute;a algunos errores al guardar los detalles de la Evaluaci&oacute;n. Por favor corrija los errores e int&eacute;ntelo de nuevo.', 'wp_courseware');
 	$form->setAllTranslationStrings(WPCW_forms_getTranslationStrings());
 	
 	// Got to summary of quizzes
-	$directionMsg = '<br/></br>' . sprintf(__('Do you want to return to the <a href="%s">quiz summary page</a>?', 'wp_courseware'),
+	$directionMsg = '<br/></br>' . sprintf(__('Quieres volver a la <a href="%s">quiz summary page</a>?', 'wp_courseware'),
 		admin_url('admin.php?page=WPCW_showPage_QuizSummary')
 	);	
 	
 	// Override success messages
-	$form->msg_record_created = __('Quiz details successfully created.', 'wp_courseware') . $directionMsg;
-	$form->msg_record_updated = __('Quiz details successfully updated.', 'wp_courseware') . $directionMsg;
+	$form->msg_record_created = __('Detalles de la Evaluaci&oacute;n creada con &eacute;xito..', 'wp_courseware') . $directionMsg;
+	$form->msg_record_updated = __('Detalles de la Evaluaci&oacute;n se han actualizado correctamente..', 'wp_courseware') . $directionMsg;
 
 	$form->setPrimaryKeyValue($quizID);	
-	$form->setSaveButtonLabel(__('Save All Quiz Settings &amp; Questions', 'wp_courseware'));
+	$form->setSaveButtonLabel(__('Guardar todos los ajuste de la Evaluaci&oacute;n', 'wp_courseware'));
 	
 	// Do default checking based on quiz type.
 	$form->filterBeforeSaveFunction = 'WPCW_actions_quizzes_beforeQuizSaved';
@@ -320,7 +320,7 @@ function WPCW_showPage_ModifyQuiz_load()
 	{
 		$form->loadDefaults(array(
 			'quiz_pass_mark' 			 => 50,				
-			'quiz_type'					 => 'quiz_noblock',
+			'quiz_type'					 => 'quiz_block',
 			'quiz_show_survey_responses' => 'no_responses',
 		
 			// Show answers

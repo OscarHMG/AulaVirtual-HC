@@ -56,11 +56,11 @@ function WPCW_showPage_UserProgess_load()
 			printf('<table class="widefat wpcw_tbl wpcw_tbl_progress">');
 			
 			printf('<thead>');
-				printf('<th>%s</th>', 															__('Unit', 'wp_courseware'));
-				printf('<th class="wpcw_center">%s</th>', 								__('Completed', 'wp_courseware'));
-				printf('<th class="wpcw_center wpcw_tbl_progress_quiz_name">%s</th>', 	__('Quiz Name', 'wp_courseware'));
-				printf('<th class="wpcw_center">%s</th>', 								__('Quiz Status', 'wp_courseware'));
-				printf('<th class="wpcw_center">%s</th>', 								__('Actions', 'wp_courseware'));
+				printf('<th>%s</th>', 															__('Unidad', 'wp_courseware'));
+				printf('<th class="wpcw_center">%s</th>', 								__('Completada', 'wp_courseware'));
+				printf('<th class="wpcw_center wpcw_tbl_progress_quiz_name">%s</th>', 	__('Nombre de la Evaluación', 'wp_courseware'));
+				printf('<th class="wpcw_center">%s</th>', 								__('Estado de la Evaluación', 'wp_courseware'));
+				printf('<th class="wpcw_center">%s</th>', 								__('Acciones', 'wp_courseware'));
 			printf('</thead><tbody>');			
 			
 			

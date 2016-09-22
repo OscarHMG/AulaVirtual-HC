@@ -50,11 +50,11 @@ function WPCW_showPage_ModifyModule_load()
 	
 	$formDetails = array(
 		'module_title' => array(
-				'label' 	=> __('Module Title', 'wp_courseware'),
+				'label' 	=> __('T&iacute;tulo del M&oacute;dulo', 'wp_courseware'),
 				'type'  	=> 'text',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_module_title',
-				'desc'  	=> __('The title of your module. You <b>do not need to number the modules</b> - this is done automatically based on the order that they are arranged.', 'wp_courseware'),
+				'desc'  	=> __('T&iacute;tulo del m&oacute;dulo. <b>No es necesario numerar los m&oacute;dulos</b> - esto se hace autom&aacute;ticamente en funci&oacute;n del orden en el que se disponen.', 'wp_courseware'),
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 150,
@@ -65,20 +65,20 @@ function WPCW_showPage_ModifyModule_load()
 			),				
 			
 		'parent_course_id' => array(
-				'label' 	=> __('Associated Course', 'wp_courseware'),
+				'label' 	=> __('Curso Asociado', 'wp_courseware'),
 				'type'  	=> 'select',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_associated_course',
-				'desc'  	=> __('The associated training course that this module belongs to.', 'wp_courseware'),
+				'desc'  	=> __('Curso que pertenece este M&oacute;dulo.', 'wp_courseware'),
 				'data'		=> WPCW_courses_getCourseList(__('-- Select a Training Course --', 'wp_courseware'))	
 			),	
 
 		'module_desc' => array(
-				'label' 	=> __('Module Description', 'wp_courseware'),
+				'label' 	=> __('Descripci&oacute;n del M&oacute;dulo', 'wp_courseware'),
 				'type'  	=> 'textarea',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_module_desc',
-				'desc'  	=> __('The description of this module. Your trainees will be able to see this module description.', 'wp_courseware'),
+				'desc'  	=> __('La descripci&oacute;n de este m&oacute;dulo. Sus participantes ser&aacute;n capaces de ver esta descripci&oacute;n del m&oacute;dulo.', 'wp_courseware'),
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 5000,
@@ -108,7 +108,7 @@ function WPCW_showPage_ModifyModule_load()
 	$form->msg_record_updated = __('Module details successfully updated.', 'wp_courseware') . $directionMsg;
 
 	$form->setPrimaryKeyValue($moduleID);	
-	$form->setSaveButtonLabel(__('Save ALL Details', 'wp_courseware'));
+	$form->setSaveButtonLabel(__('Guardar todos los detalles', 'wp_courseware'));
 		
 	
 	// See if we have a course ID to pre-set.
