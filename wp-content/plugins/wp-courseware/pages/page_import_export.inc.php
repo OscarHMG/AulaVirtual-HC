@@ -39,23 +39,23 @@ function WPCW_showPage_ImportExport_menu($currentPage)
 	switch ($currentPage)
 	{
 		case 'import':
-			printf('<span><a href="%s">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Export Course', 'wp_courseware'));
+			printf('<span><a href="%s">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Exportar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
-			printf('<span><b>%s</b></span>', __('Import Course', 'wp_courseware'));
+			printf('<span><b>%s</b></span>', __('Importar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
-			printf('<span><a href="%s&show=import_users">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Import Users', 'wp_courseware'));
+			printf('<span><a href="%s&show=import_users">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Importar Usuario', 'wp_courseware'));
 			break;
 			
 		case 'import_users':
-			printf('<span><a href="%s">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Export Course', 'wp_courseware'));
+			printf('<span><a href="%s">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Exportar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
-			printf('<span><a href="%s&show=import">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Import Course', 'wp_courseware'));
+			printf('<span><a href="%s&show=import">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Importar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
-			printf('<span><b>%s</b></span>', __('Import Users', 'wp_courseware'));
+			printf('<span><b>%s</b></span>', __('Importar Usuario', 'wp_courseware'));
 			break;
 			
 		default:
-			printf('<span><b>%s</b></span>', __('Export Course', 'wp_courseware'));
+			printf('<span><b>%s</b></span>', __('Exportar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
 			printf('<span><a href="%s&show=import">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Import Course', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
@@ -74,24 +74,24 @@ function WPCW_showPage_ImportExport_menu($currentPage)
 function WPCW_showPage_ImportExport_export()
 {	
 	$page = new PageBuilder(true);
-	$page->showPageHeader(__('Export Training Course', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Exportar Curso de Capacitaci&oacute;n', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	// Show form of courses that can be exported.
 	$form = new FormBuilder('wpcw_export');
-	$form->setSubmitLabel(__('Export Course', 'wp_courseware'));
+	$form->setSubmitLabel(__('Exportar Curso', 'wp_courseware'));
 	
 	// Course selection
-	$formElem = new FormElement('export_course_id', __('Course to Export', 'wp_courseware'), true);
-	$formElem->setTypeAsComboBox(WPCW_courses_getCourseList(__('--- Select a course to export ---', 'wp_courseware')));
+	$formElem = new FormElement('export_course_id', __('Curso para Exportar', 'wp_courseware'), true);
+	$formElem->setTypeAsComboBox(WPCW_courses_getCourseList(__('--- Seleccionar un curso para exportar ---', 'wp_courseware')));
 	$form->addFormElement($formElem);
 	
 	// Options for what to export
-	$formElem = new FormElement('what_to_export', __('What to Export', 'wp_courseware'), true);
+	$formElem = new FormElement('what_to_export', __('Que exportar', 'wp_courseware'), true);
 	$formElem->setTypeAsRadioButtons(array(
-		'whole_course'				=> __('<b>All</b> - The whole course - including modules, units and quizzes.', 'wp_courseware'),
-		'just_course'				=> __('<b>Just the Course</b> - Just the course title, description and settings (no modules, units or quizzes).', 'wp_courseware'),	
-		'course_modules'			=> __('<b>Course and Modules</b> - Just the course settings and module settings (no units or quizzes).', 'wp_courseware'),
-		'course_modules_and_units'	=> __('<b>Course, Modules and Units</b> - The course settings and module settings and units (no quizzes).', 'wp_courseware'),
+		'whole_course'				=> __('<b>Todo</b> - El curso entero - incluyendo m&oacute;dulos, unidades y evaluaciones.', 'wp_courseware'),
+		'just_course'				=> __('<b>S&oacute;lo el Curso</b> - Sólo el t&iacute;tulo del curso, descripci&oacute;n y configuraci&oacute;n (no hay m&oacute;dulos, unidades o evaluaciones).', 'wp_courseware'),	
+		'course_modules'			=> __('<b>Curso y M&oacute;dulos</b> - Sólo los ajustes del curso y los ajustes del m&oacute;dulo (no hay unidades o evaluaciones).', 'wp_courseware'),
+		'course_modules_and_units'	=> __('<b>Curso, M&oacute;dulos y Unidades</b> - Los ajustes del curso y Ajustes de m&oacute;dulos y unidades (sin evaluaciones).', 'wp_courseware'),
 	));
 	$form->addFormElement($formElem);
 	
@@ -111,7 +111,7 @@ function WPCW_showPage_ImportExport_export()
 		
 		// Show errors
 		else  {			
-			$page->showListOfErrors($form->getListOfErrors(), __('Sorry, but unfortunately there were some errors. Please fix the errors and try again.', 'wp_courseware'));
+			$page->showListOfErrors($form->getListOfErrors(), __('Lo sentimos, pero por desgracia hab&iacute;a algunos errores. Por favor corrija los errores e int&eacute;ntelo de nuevo.', 'wp_courseware'));
 		}
 	}
 	
@@ -120,8 +120,8 @@ function WPCW_showPage_ImportExport_export()
 	WPCW_showPage_ImportExport_menu('export');	
 	
 	printf('<p class="wpcw_doc_quick">');
-	_e('When you export a course, you\'ll get an <b>XML file</b>, which you can then <b>import into another WordPress website</b> that\'s running <b>WP Courseware</b>.<br/> 
-	    When you export the course units with a course, just the <b>HTML to render images and video</b> will be copied, but the <b>actual images and video files will not be exported</b>.', 'wp_courseware');
+	_e('Al exportar un curso, obtendr&aacute; un <b>archivo XML</b>, que luego se puede <b>importar en otro sitio web de WordPress</b> que  est&eacute; ejecutando <b>WP Courseware</b>.<br/> 
+	    Cuando se exportan las unidades de curso con un curso, s&oacute;lo el <b>c&oacutedigo HTML para representar im&aacute;genes y videos</b>se copiaran, pero las <b>im&aacute;genes reales y archivos de v&iacute;deo no se exportar&aacute;.</b>.', 'wp_courseware');
 	printf('</p>');
 	
 	echo $form->toString();
@@ -136,7 +136,7 @@ function WPCW_showPage_ImportExport_export()
 function WPCW_showPage_ImportExport_import()
 {
 	$page = new PageBuilder(true);
-	$page->showPageHeader(__('Import Training Course', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());	
+	$page->showPageHeader(__('Importar Curso de Capacitaci&oacute;n', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());	
 	
 		
 	
@@ -146,10 +146,10 @@ function WPCW_showPage_ImportExport_import()
 	
 	// Show form to import some XML
 	$form = new FormBuilder('wpcw_import');
-	$form->setSubmitLabel(__('Import Course', 'wp_courseware'));
+	$form->setSubmitLabel(__('Importar Curso', 'wp_courseware'));
 	
 	// Course upload for XML file
-	$formElem = new FormElement('import_course_xml', __('Course Import XML File', 'wp_courseware'), true);
+	$formElem = new FormElement('import_course_xml', __('Importar Curso en archivo XML', 'wp_courseware'), true);
 	$formElem->setTypeAsUploadFile();
 	$form->addFormElement($formElem);
 	
@@ -165,7 +165,7 @@ function WPCW_showPage_ImportExport_import()
 		
 		// Show errors
 		else  {
-			$page->showListOfErrors($form->getListOfErrors(), __('Unfortunately, there were some errors trying to import the CSV file.', 'wp_courseware'));
+			$page->showListOfErrors($form->getListOfErrors(), __('Por desgracia, hab&iacute;a algunos errores que tratan de importar el archivo CSV.', 'wp_courseware'));
 		}
 	}
 	
@@ -176,7 +176,7 @@ function WPCW_showPage_ImportExport_import()
 	$upload_mb = min($max_upload, $max_post, $memory_limit);
 	
 	printf('<p class="wpcw_doc_quick">');
-	printf(__('You can import any export file created by <b>WP Courseware</b> using the form below.', 'wp_courseware') . ' ' . __('The <b>maximum upload file size</b> for your server is <b>%d MB</b>.', 'wp_courseware'), $upload_mb);
+	printf(__('Puede importar cualquier archivo de exportaci&oacute;n creado por <b>WP Courseware</b> usando el siguiente formulario.', 'wp_courseware') . ' ' . __('El <b>tama&ntildeo m&aacute;ximo para caragar un archivo</b> es <b>%d MB</b>.', 'wp_courseware'), $upload_mb);
 	printf('</p>');
 	
 	echo $form->toString();
@@ -193,7 +193,7 @@ function WPCW_showPage_ImportExport_import()
 function WPCW_showPage_ImportExport_importUsers()
 {
 	$page = new PageBuilder(true);
-	$page->showPageHeader(__('Import Users from CSV File', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());	
+	$page->showPageHeader(__('Importar usuarios desde un archivo CSV', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());	
 	
 		
 	// Show selection menu for import/export to save pages	
@@ -202,10 +202,10 @@ function WPCW_showPage_ImportExport_importUsers()
 	
 	// Show form to import some XML
 	$form = new FormBuilder('wpcw_import_users');
-	$form->setSubmitLabel(__('Import Users', 'wp_courseware'));
+	$form->setSubmitLabel(__('Importar Usuarios', 'wp_courseware'));
 	
 	// Course upload for XML file
-	$formElem = new FormElement('import_course_csv', __('User Import CSV File', 'wp_courseware'), true);
+	$formElem = new FormElement('import_course_csv', __('Importar usuarios desde archivo CSV', 'wp_courseware'), true);
 	$formElem->setTypeAsUploadFile();
 	$form->addFormElement($formElem);
 	
@@ -221,7 +221,7 @@ function WPCW_showPage_ImportExport_importUsers()
 		
 		// Show errors
 		else  {
-			$page->showListOfErrors($form->getListOfErrors(), __('Unfortunately, there were some errors trying to import the XML file.', 'wp_courseware'));
+			$page->showListOfErrors($form->getListOfErrors(), __('Por desgracia, hab&iacute;a algunos errores que tratan de importar el archivo XML.', 'wp_courseware'));
 		}
 	}
 	
@@ -232,21 +232,21 @@ function WPCW_showPage_ImportExport_importUsers()
 	$upload_mb = min($max_upload, $max_post, $memory_limit);
 	
 	printf('<p class="wpcw_doc_quick">');
-	printf(__('You can import a CSV file of users using the form below.', 'wp_courseware') . ' ' . __('The <b>maximum upload file size</b> for your server is <b>%d MB</b>.', 'wp_courseware'), $upload_mb);
+	printf(__('Puede importar un archivo CSV de usuarios utilizando el siguiente formulario.', 'wp_courseware') . ' ' . __('The <b>maximum upload file size</b> for your server is <b>%d MB</b>.', 'wp_courseware'), $upload_mb);
 	printf('</p>');	
 	
 	echo $form->toString();
 	
 	
 	printf('<br/><br/><div class="wpcw_docs_wrapper">');
-		printf('<b>%s</b>', __('Some tips for importing users via a CSV file:', 'wp_courseware'));
+		printf('<b>%s</b>', __('Algunos consejos para la importaci&oacute;n de usuarios a trav&eacute;s de un archivo CSV:', 'wp_courseware'));
 		printf('<ul>');
-			printf('<li>' . __('If a user email address already exists, then just the courses are updated for that user.', 'wp_courseware'));
-			printf('<li>' . __('User names are generated from the first and last name information. If a user name already exists, then a unique username is generated.', 'wp_courseware'));
-			printf('<li>' . __('To add a user to many courses, just separate those course IDs with a comma in the <code>courses_to_add_to</code> column.', 'wp_courseware'));
-			printf('<li>' . __('If a user is created, any courses set to be automatically assigned will be done first, and then the courses added in the <code>courses_to_add_to</code> column.', 'wp_courseware'));
-			printf('<li>' . __('You can download an <a href="%s">example CSV file here</a>.', 'wp_courseware') . '</li>', 								admin_url('?wpcw_export=csv_import_user_sample'));	
-			printf('<li>' . __('The IDs for the training courses can be found on the <a href="%s">course summary page</a>.', 'wp_courseware'). '</li>', admin_url('admin.php?page=WPCW_wp_courseware'));
+			printf('<li>' . __('Si una direcci&oacute;n de correo electrónico del usuario ya existe, s&oacute;lo los cursos se actualizan para ese usuario.', 'wp_courseware'));
+			printf('<li>' . __('Los nombres de usuario se generan a partir de la primera y la &uacute;ltima informaci&oacute;n del nombre. Si un nombre de usuario ya existe, entonces se genera un nombre de usuario &uacute;nico.', 'wp_courseware'));
+			printf('<li>' . __('Para agregar un usuario a muchos cursos, simplemente separar los identificadores de los cursos con una en la columna <code>courses_to_add_to</code>.', 'wp_courseware'));
+			printf('<li>' . __('Si se crea un usuario, cualquiera de los cursos establecidos para ser asignado autom&aacute;ticamente vienen primero, y luego los cursos adicionales en la columna <code>courses_to_add_to</code>.', 'wp_courseware'));
+			printf('<li>' . __('Puede descargar un <a href="%s">ejemplo de archivo CSV aqu&iacute;</a>.', 'wp_courseware') . '</li>', 								admin_url('?wpcw_export=csv_import_user_sample'));	
+			printf('<li>' . __('Las identificaciones de los cursos de capacitaci&oacute;n se pueden encontrar en la <a href="%s">p&aacute;gina de resumen del curso</a>.', 'wp_courseware'). '</li>', admin_url('admin.php?page=WPCW_wp_courseware'));
 		printf('</ul>');
 	printf('</div>');
 	
@@ -270,7 +270,7 @@ function WPCW_courses_importCourseFromFile($page)
 		);
 		
 		if (!in_array($type, $fileTypes)) {
-			$page->showMessage(__('Unfortunately, you tried to upload a file that isn\'t XML.', 'wp_courseware'), true);
+			$page->showMessage(__('Por desgracia, que est&aacute; intentando enviar un archivo que no es XML.', 'wp_courseware'), true);
 			return false;
 		}		
 		

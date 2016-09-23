@@ -39,8 +39,8 @@ function WPCW_showPage_ModifyQuiz_load()
 		// Abort if quiz not found.
 		if (!$quizDetails)
 		{
-			$page->showPageHeader(__('Edit Quiz/Survey', 'wp_courseware'), '70%', WPCW_icon_getPageIconURL());
-			$page->showMessage(__('Sorry, but that quiz/survey could not be found.', 'wp_courseware'), true);
+			$page->showPageHeader(__('Editar Evaluaci&oacute;n/Encuesta', 'wp_courseware'), '70%', WPCW_icon_getPageIconURL());
+			$page->showMessage(__('Lo sentimos, pero eso evaluaci&oacute;n/encuesta no se pudo encontrar.', 'wp_courseware'), true);
 			$page->showPageFooter();
 			return;
 		}
@@ -51,7 +51,7 @@ function WPCW_showPage_ModifyQuiz_load()
 			// Start form prolog - with quiz ID
 			printf('<form method="POST" action="%s&quiz_id=%d" name="wpcw_quiz_details_modify" id="wpcw_quiz_details_modify">', admin_url('admin.php?page=WPCW_showPage_ModifyQuiz'), $quizDetails->quiz_id);
 			
-			$page->showPageHeader(__('Edit Quiz/Survey', 'wp_courseware'), '70%', WPCW_icon_getPageIconURL());
+			$page->showPageHeader(__('Editar Evaluaci&oacute;n/Encuesta ', 'wp_courseware'), '70%', WPCW_icon_getPageIconURL());
 		}
 	}
 	
@@ -61,18 +61,18 @@ function WPCW_showPage_ModifyQuiz_load()
 		// Start form prolog - no quiz ID
 		printf('<form method="POST" action="%s" name="wpcw_quiz_details_modify" id="wpcw_quiz_details_modify">', admin_url('admin.php?page=WPCW_showPage_ModifyQuiz'));
 		
-		$page->showPageHeader(__('Add Quiz/Survey', 'wp_courseware'), '70%', WPCW_icon_getPageIconURL());
+		$page->showPageHeader(__('Agregar Evaluaci&oacute;n/Encuesta', 'wp_courseware'), '70%', WPCW_icon_getPageIconURL());
 		$adding = true;
 	}	
 	
 	
 	// Generate the tabs.
 	$tabList = array( 
-		'wpcw_section_break_quiz_general' 			=> array('label' => __('General Settings', 'wp_courseware')),
-		'wpcw_section_break_quiz_logic' 			=> array('label' => __('Quiz Behaviour Settings', 'wp_courseware')), 
-		'wpcw_section_break_quiz_results' 			=> array('label' => __('Result Settings', 'wp_courseware')), 
-		'wpcw_section_break_quiz_custom_feedback' 	=> array('label' => __('Custom Feedback', 'wp_courseware'), 'cssclass' => 'wpcw_quiz_only_tab'),
-		'wpcw_section_break_quiz_questions' 		=> array('label' => __('Manage Questions', 'wp_courseware')),
+		'wpcw_section_break_quiz_general' 			=> array('label' => __(' Configuraci&oacute;n General', 'wp_courseware')),
+		'wpcw_section_break_quiz_logic' 			=> array('label' => __('Configuraci&oacute;nes del comportamiento de la Evaluac&oacute;n', 'wp_courseware')), 
+		'wpcw_section_break_quiz_results' 			=> array('label' => __('Resultados de Configuraci&oacute;n', 'wp_courseware')), 
+		'wpcw_section_break_quiz_custom_feedback' 	=> array('label' => __('Evaluaci&oacute;n Personalizada', 'wp_courseware'), 'cssclass' => 'wpcw_quiz_only_tab'),
+		'wpcw_section_break_quiz_questions' 		=> array('label' => __('Administrar preguntas', 'wp_courseware')),
 	);
 	
 	global $wpcwdb;
@@ -223,13 +223,13 @@ function WPCW_showPage_ModifyQuiz_load()
 			),
 
 		'quiz_show_answers' => array(
-				'label' 	=> __('Show Answers?', 'wp_courseware'),
+				'label' 	=> __('Mostrar respuestas?', 'wp_courseware'),
 				'type'  	=> 'radio',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_show_answers wpcw_quiz_only',
 				'data'		=> array(
-					'show_answers' 	=> __('<b>Show Answers</b> - Show the trainee the correct answers before they progress.', 'wp_courseware'),
-					'no_answers' 	=> __('<b>No Answers</b> - Don\'t show the trainee any answers before they progress.', 'wp_courseware'),
+					'show_answers' 	=> __('<b>Mostrar Respuestas</b> - Show the trainee the correct answers before they progress.', 'wp_courseware'),
+					'no_answers' 	=> __('<b>No mostrar Respuestas</b> - Don\'t show the trainee any answers before they progress.', 'wp_courseware'),
 				),
 				'extrahtml'	=> '<div class="wpcw_msg_info wpcw_msg wpcw_msg_in_form wpcw_msg_error_no_answers_selected" style="display: none">' . __('If this option is selected, students will not be able to view correct or incorrect answers.', 'wp_courseware')  . '</div>',
 				
@@ -245,11 +245,11 @@ function WPCW_showPage_ModifyQuiz_load()
 							'cssclass'		=> '',
 							'errormsg'			=> __('Please choose at least one option when showing correct answers.', 'wp_courseware'),
 								'data'	=> array(
-									'show_correct_answer' 		=> '<b>' . __('Show correct answer', 'wp_courseware') . '</b> - ' . __('Show the trainee the correct answers before they progress.', 'wp_courseware'),
-									'show_user_answer' 			=> '<b>' . __('Show user\'s answer', 'wp_courseware') . '</b> - ' . __('Show the trainee the answer they submitted before they progress.', 'wp_courseware'),
-									'show_explanation' 			=> '<b>' . __('Show explanation', 'wp_courseware') . 	'</b> - ' . __('Show the trainee an explanation for the correct answer (if there is one).', 'wp_courseware'),
-									'mark_answers' 				=> '<b>' . __('Mark Answers', 'wp_courseware') . 		'</b> - ' . __('This option will show correct answers with a green check mark, and incorrect answers with a red "X".', 'wp_courseware'),
-									'show_results_later' 		=> '<b>' . __('Leave quiz results available for later viewing?', 'wp_courseware') . '</b> - ' . __('This setting allows you to choose whether or not you want students to be able to review their past quiz answers when they return to units.', 'wp_courseware'),
+									'show_correct_answer' 		=> '<b>' . __('Mostrar  respuestas correctas', 'wp_courseware') . '</b> - ' . __('Show the trainee the correct answers before they progress.', 'wp_courseware'),
+									'show_user_answer' 			=> '<b>' . __('Mostrar repuestas de  usuarios', 'wp_courseware') . '</b> - ' . __('Show the trainee the answer they submitted before they progress.', 'wp_courseware'),
+									'show_explanation' 			=> '<b>' . __('Mostrar explicaci&oacute;n', 'wp_courseware') . 	'</b> - ' . __('Show the trainee an explanation for the correct answer (if there is one).', 'wp_courseware'),
+									'mark_answers' 				=> '<b>' . __('Marcar Respuestas', 'wp_courseware') . 		'</b> - ' . __('This option will show correct answers with a green check mark, and incorrect answers with a red "X".', 'wp_courseware'),
+									'show_results_later' 		=> '<b>' . __('Deja resultados de la prueba disponible para verlo en otro momento?', 'wp_courseware') . '</b> - ' . __('This setting allows you to choose whether or not you want students to be able to review their past quiz answers when they return to units.', 'wp_courseware'),
 								),
 							'extrahtml'	=> '<div class="wpcw_msg_error wpcw_msg wpcw_msg_in_form wpcw_msg_error_show_answers_none_selected" style="display: none">' . __('To make use of this showing answers setting, at least one of the above settings should be ticked. Otherwise, no answers are actually shown.', 'wp_courseware')  . '</div>',
 						),
@@ -270,10 +270,10 @@ function WPCW_showPage_ModifyQuiz_load()
 			
 			
 			'quiz_results_by_tag' => array(
-				'label' 		=> __('Show Results by Tag?', 'wp_courseware'),
+				'label' 		=> __('Mostrar resultados por tag?', 'wp_courseware'),
 				'type'  		=> 'checkbox',
 				'required'  	=> false,
-				'extralabel'	=> __('<b>Display results by question tag</b> - In addition to the overall score, indicate a breakdown of the results for each question tag.', 'wp_courseware'),
+				'extralabel'	=> __('<b>Mostrar resultados por etiqueta pregunta</b> - In addition to the overall score, indicate a breakdown of the results for each question tag.', 'wp_courseware'),
 			),
 			
 			'quiz_results_by_timer' => array(

@@ -14,7 +14,7 @@
 function WPCW_showPage_Certificates_load()
 {
 	$page = new PageBuilder(true);
-	$page->showPageHeader(__('Training Courses - Certificate Settings', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Cursos de capacitaci&oacute;n - Configuraci&oacute;n del certificado', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	 
 	$settingsFields = array(
@@ -24,106 +24,106 @@ function WPCW_showPage_Certificates_load()
 			),			
 			
 		'cert_signature_type' => array(
-				'label' 	=> __('Signature Type', 'wp_courseware'),
+				'label' 	=> __('Tipo de firma', 'wp_courseware'),
 				'type'  	=> 'radio',
 				'cssclass'	=> 'wpcw_cert_signature_type',
 				'required'	=> 'true',
 				'data'		=> array(
-					'text' 		=> sprintf('<b>%s</b> - %s', __('Text', 'wp_courseware'), __('Just use text for the signature.', 'wp_courseware')),
-					'image' 	=> sprintf('<b>%s</b> - %s', __('Image File', 'wp_courseware'), __('Use an image for the signature.', 'wp_courseware')),
+					'text' 		=> sprintf('<b>%s</b> - %s', __('Texto', 'wp_courseware'), __('S&oacute;lo tiene que utilizar el texto para la firma.', 'wp_courseware')),
+					'image' 	=> sprintf('<b>%s</b> - %s', __('Archivo de Imagen', 'wp_courseware'), __('Utilice una imagen para la firma.', 'wp_courseware')),
 				),
 			),	
 
 		'cert_sig_text' => array(
-				'label' 	=> __('Name to use for signature', 'wp_courseware'),
+				'label' 	=> __('Nombre que se utilizar&aacute; para la firma', 'wp_courseware'),
 				'type'  	=> 'text',
 				'cssclass'	=> 'wpcw_cert_signature_type_text',
-				'desc'  	=> __('The name to use for the signature area.', 'wp_courseware'),
+				'desc'  	=> __('El nombre a utilizar para el &aacute;rea de la firma.', 'wp_courseware'),
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 150,
 					'minlen'	=> 1,
 					'regexp'	=> '/^[^<>]+$/',
-					'error'		=> __('Please enter the name to use for the signature area.', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca el nombre que se utilizar&aacute; para el &aacute;rea de la firma.', 'wp_courseware'),
 				)	
 			),
 			
 		'cert_sig_image_url' => array(
-				'label' 	=> __('Your Signature Image', 'wp_courseware'),
+				'label' 	=> __('Su Imagen de la firma', 'wp_courseware'),
 				'cssclass'	=> 'wpcw_image_upload_field wpcw_cert_signature_type_image',
 				'type'  	=> 'text',
-				'desc'  	=> '&bull;&nbsp;' . __('The URL of your signature image. Using a transparent image is recommended.', 'wp_courseware') .  
+				'desc'  	=> '&bull;&nbsp;' . __('La URL de la imagen de la firma. Se recomienda usar una imagen transparente.', 'wp_courseware') .  
 							   	'<br/>&bull;&nbsp;' . sprintf(__('The image must be <b>%d pixels wide, and %d pixels high</b> to render correctly. ', 'wp_courseware'), WPCW_CERTIFICATE_SIGNATURE_WIDTH_PX*2, WPCW_CERTIFICATE_SIGNATURE_HEIGHT_PX*2),
 				'validate'	 	=> array(
 					'type'		=> 'url',
 					'maxlen'	=> 300,
 					'minlen'	=> 1,
-					'error'		=> __('Please enter the URL of your signature image.', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca la direcci&oacute;n URL de la imagen de la firma.', 'wp_courseware'),
 				),
 				'extrahtml'		=> sprintf('<a id="cert_sig_image_url_btn" href="#" class="wpcw_insert_image button-secondary" data-uploader_title="%s" data-uploader_btn_text="%s" data-target="cert_sig_image_url"><span class="wpcw_insert_image_img"></span> %s</a>',
 										__('Choose an image to use for the signature image...', 'wp_courseware'),
-										__('Select Image', 'wp_courseware'), 
-										__('Select Image', 'wp_courseware')
+										__('Seleccione Imagen', 'wp_courseware'), 
+										__('Seleccione Imagen', 'wp_courseware')
 									),
 			),			
 				
 		'cert_logo_enabled' => array(
-				'label' 	=> __('Show your logo?', 'wp_courseware'),
+				'label' 	=> __('Muestre su logo', 'wp_courseware'),
 				'cssclass'	=> 'wpcw_cert_logo_enabled',
 				'type'  	=> 'radio',
 				'required'	=> 'true',
 				'data'		=> array(
-					'cert_logo' 	=> sprintf('<b>%s</b> - %s', __('Yes', 'wp_courseware'), __('Use your logo on the certificate.', 'wp_courseware')),
-					'no_cert_logo' 	=> sprintf('<b>%s</b> - %s', __('No', 'wp_courseware'), __('Don\'t show a logo on the certificate.', 'wp_courseware')),
+					'cert_logo' 	=> sprintf('<b>%s</b> - %s', __('Si', 'wp_courseware'), __('Use su logo en el certificado.', 'wp_courseware')),
+					'no_cert_logo' 	=> sprintf('<b>%s</b> - %s', __('No', 'wp_courseware'), __('No mostrar un logotipo en el certificado.', 'wp_courseware')),
 				),
 			),	
 
 		'cert_logo_url' => array(
-				'label' 	=> __('Your Logo Image', 'wp_courseware'),
+				'label' 	=> __('Su imagen de logotipo', 'wp_courseware'),
 				'type'  	=> 'text',
 				'cssclass'	=> 'wpcw_cert_logo_url wpcw_image_upload_field',
-				'desc'  	=> '&bull;&nbsp;' . __('The URL of your logo image. Using a transparent image is recommended.', 'wp_courseware') .  
+				'desc'  	=> '&bull;&nbsp;' . __('La dirección URL de la imagen del logotipo. Se recomienda usar una imagen transparente.', 'wp_courseware') .  
 							   	'<br/>&bull;&nbsp;' . sprintf(__('The image must be <b>%d pixels wide, and %d pixels</b> high to render correctly. ', 'wp_courseware'), WPCW_CERTIFICATE_LOGO_WIDTH_PX*2, WPCW_CERTIFICATE_LOGO_HEIGHT_PX*2),
 				'validate'	 	=> array(
 					'type'		=> 'url',
 					'maxlen'	=> 300,
 					'minlen'	=> 1,
-					'error'		=> __('Please enter the URL of your logo image.', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca la dirección URL de la imagen del logotipo.', 'wp_courseware'),
 				),
 				'extrahtml'		=> sprintf('<a id="cert_logo_url_btn" href="#" class="wpcw_insert_image button-secondary" data-uploader_title="%s" data-uploader_btn_text="%s" data-target="cert_logo_url"><span class="wpcw_insert_image_img"></span> %s</a>',
-										__('Choose an image to use for your logo on the certificate...', 'wp_courseware'),
+										__('Elija una imagen a utilizar para su logotipo en el certificado...', 'wp_courseware'),
 										__('Select Image', 'wp_courseware'), 
 										__('Select Image', 'wp_courseware')
 									),	
 			),	
 
 		'cert_background_type' => array(
-				'label' 	=> __('Certificate Background', 'wp_courseware'),
+				'label' 	=> __('Fondo Certificado ', 'wp_courseware'),
 				'cssclass'	=> 'wpcw_cert_background_type',
 				'type'  	=> 'radio',
 				'required'	=> 'true',
 				'data'		=> array(
-					'use_default' 	=> sprintf('<b>%s</b> - %s', __('Built-in', 'wp_courseware'), __('Use the built-in certificate background.', 'wp_courseware')),
-					'use_custom' 	=> sprintf('<b>%s</b> - %s', __('Custom', 'wp_courseware'), __('Use your own certificate background.', 'wp_courseware')),
+					'use_default' 	=> sprintf('<b>%s</b> - %s', __('Incorporado', 'wp_courseware'), __('Utilizar el fondo de certificado.', 'wp_courseware')),
+					'use_custom' 	=> sprintf('<b>%s</b> - %s', __('Personalizado', 'wp_courseware'), __('Utilice su propio fondo  decertificado .', 'wp_courseware')),
 				),
 			),	
 
 		'cert_background_custom_url' => array(
-				'label' 	=> __('Custom Background Image', 'wp_courseware'),
+				'label' 	=> __('Personalizar imagen de fondo', 'wp_courseware'),
 				'type'  	=> 'text',
 				'cssclass'	=> 'wpcw_cert_background_custom_url wpcw_image_upload_field',
-				'desc'  	=> '&bull;&nbsp;' . __('The URL of your background image.', 'wp_courseware') .  
+				'desc'  	=> '&bull;&nbsp;' . __('La URL de su imagen de fondo.', 'wp_courseware') .  
 							   	'<br/>&bull;&nbsp;' . sprintf(__('The background image must be <b>%d pixels wide, and %d pixels</b> high at <b>72 dpi</b> to render correctly. ', 'wp_courseware'), WPCW_CERTIFICATE_BG_WIDTH_PX, WPCW_CERTIFICATE_BG_HEIGHT_PX),
 				'validate'	 	=> array(
 					'type'		=> 'url',
 					'maxlen'	=> 300,
 					'minlen'	=> 1,
-					'error'		=> __('Please enter the URL of your certificate background image.', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca la dirección URL de la imagen de fondo del certificado.', 'wp_courseware'),
 				),				
 				'extrahtml'		=> sprintf('<a id="cert_background_custom_url_btn" href="#" class="wpcw_insert_image button-secondary" data-uploader_title="%s" data-uploader_btn_text="%s" data-target="cert_background_custom_url"><span class="wpcw_insert_image_img"></span> %s</a>',
-										__('Choose an image to use for the certificate background...', 'wp_courseware'),
-										__('Select Image', 'wp_courseware'), 
-										__('Select Image', 'wp_courseware')
+										__('Elige una imagen que se utilizar&aacute; para el fondo certificado...', 'wp_courseware'),
+										__('Seleccionar Imagen', 'wp_courseware'), 
+										__('Seleccionar Imagen', 'wp_courseware')
 									),	
 			),	
 			
@@ -134,7 +134,7 @@ function WPCW_showPage_Certificates_load()
 			),
 			
  		'certificate_encoding' => array(
-				'label' 	=> __('Certificate Encoding', 'wp_courseware'),
+				'label' 	=> __('Codificaci&oacute;n de Certificado', 'wp_courseware'),
 				'type'  	=> 'select',
 				'required'	=> true,
 				'desc'  	=> __('Choose a codepage encoding that matches your language to ensure certificates render correctly. You may need an encoding other than <code>ISO-8859-1</code> if you are using a non-English language.', 'wp_courseware'), 
@@ -161,10 +161,10 @@ function WPCW_showPage_Certificates_load()
 		
 	
 	$settings = new SettingsForm($settingsFields, WPCW_DATABASE_SETTINGS_KEY, 'wpcw_form_settings_certificates');
-	$settings->setSaveButtonLabel(__('Save ALL Settings', 'wp_courseware'));
+	$settings->setSaveButtonLabel(__('Guardar todos los ajustes', 'wp_courseware'));
 	
-	$settings->msg_settingsSaved   	= __('Settings successfully saved.', 'wp_courseware');
-	$settings->msg_settingsProblem 	= __('There was a problem saving the settings.', 'wp_courseware');
+	$settings->msg_settingsSaved   	= __('La configuraci&oacute;n se guard&oacute; con &eacute;xito.', 'wp_courseware');
+	$settings->msg_settingsProblem 	= __('Hubo un problema al guardar los ajustes.', 'wp_courseware');
 	$settings->setAllTranslationStrings(WPCW_forms_getTranslationStrings());
 			
 	$settings->show();	

@@ -26,21 +26,21 @@ function WPCW_showPage_ModifyModule_load()
 		// Abort if module not found.
 		if (!$moduleDetails)
 		{
-			$page->showPageHeader(__('Edit Module', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
-			$page->showMessage(__('Sorry, but that module could not be found.', 'wp_courseware'), true);
+			$page->showPageHeader(__('Editar M&oacute;dulo', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+			$page->showMessage(__('Lo sentimos, pero ese m&oacutedulo no se pudo encontrar.', 'wp_courseware'), true);
 			$page->showPageFooter();
 			return;
 		}
 		
 		// Editing a module, and it was found
 		else {
-			$page->showPageHeader(__('Edit Module', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+			$page->showPageHeader(__('Editar M&oacute;dulo', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 		}
 	}
 	
 	// Adding module
 	else {
-		$page->showPageHeader(__('Add Module', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+		$page->showPageHeader(__('Agregar M&oacute;dulo', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 		
 		$adding = true;
 	}
@@ -60,7 +60,7 @@ function WPCW_showPage_ModifyModule_load()
 					'maxlen'	=> 150,
 					'minlen'	=> 1,
 					'regexp'	=> '/^[^<>]+$/',
-					'error'		=> __('Please specify a name for your module, up to a maximum of 150 characters, just no angled brackets (&lt; or &gt;). Your trainees will be able to see this module title.', 'wp_courseware')
+					'error'		=> __('Por favor, especifique un nombre para el m&oacute;dulo, hasta un m&aacute;ximo de 150 caracteres, s&oacute;lo hay par&eacute;ntesis angulares (&lt; o &gt;). Sus participantes ser&aacute;n capaces de ver este t&iacute;tulo m&oacute;dulo.', 'wp_courseware')
 				)	
 			),				
 			
@@ -83,7 +83,7 @@ function WPCW_showPage_ModifyModule_load()
 					'type'		=> 'string',
 					'maxlen'	=> 5000,
 					'minlen'	=> 1,
-					'error'		=> __('Please limit the description of your module to 5000 characters.', 'wp_courseware')
+					'error'		=> __('Por favor, limitar la descripci&oacute;n de su m&oacute;dulo 5000 caracteres.', 'wp_courseware')
 				)	 	
 			),		
 	);
@@ -95,17 +95,17 @@ function WPCW_showPage_ModifyModule_load()
 		'module_id' 			// Primary key column name
 	);	
 	
-	$form->customFormErrorMsg = __('Sorry, but unfortunately there were some errors saving the module details. Please fix the errors and try again.', 'wp_courseware');
+	$form->customFormErrorMsg = __('Lo sentimos, pero por desgracia hab&iacute;a algunos errores al guardar los detalles del m&oacute;dulo. Por favor corrija los errores e int&eacute;ntelo de nuevo.', 'wp_courseware');
 	$form->setAllTranslationStrings(WPCW_forms_getTranslationStrings());
 	
 	// Useful place to go
-	$directionMsg = '<br/></br>' . sprintf(__('Do you want to return to the <a href="%s">course summary page</a>?', 'wp_courseware'),
+	$directionMsg = '<br/></br>' . sprintf(__('Quieres volver a la p&aacute;gina de <a href="%s"p&aacute;gina del progreso del curso</a>?', 'wp_courseware'),
 		admin_url('admin.php?page=WPCW_wp_courseware')
 	);	
 	
 	// Override success messages
-	$form->msg_record_created = __('Module details successfully created.', 'wp_courseware') . $directionMsg;
-	$form->msg_record_updated = __('Module details successfully updated.', 'wp_courseware') . $directionMsg;
+	$form->msg_record_created = __('Detalles del m&oacute;dulo creado correctamente.', 'wp_courseware') . $directionMsg;
+	$form->msg_record_updated = __('Detalles del m&oacute;dulo actualizado satisfactoriamente.', 'wp_courseware') . $directionMsg;
 
 	$form->setPrimaryKeyValue($moduleID);	
 	$form->setSaveButtonLabel(__('Guardar todos los detalles', 'wp_courseware'));
@@ -129,22 +129,22 @@ function WPCW_showPage_ModifyModule_load()
 	if ($moduleDetails) 	
 	{
 		// ### Include a link to delete the module
-		$page->openPane('wpcw-deletion-module', __('Delete Module?', 'wp_courseware'));
+		$page->openPane('wpcw-deletion-module', __('Eliminar M&oacute;dulo?', 'wp_courseware'));
 		
 		printf('<a href="%s&action=delete_module&module_id=%d" class="wpcw_delete_item" title="%s">%s</a>',
 			admin_url('admin.php?page=WPCW_wp_courseware'),
 			$moduleID,
-			__("Are you sure you want to delete the this module?\n\nThis CANNOT be undone!", 'wp_courseware'),			 
-			__('Delete this Module', 'wp_courseware')
+			__("Seguro que quieres eliminar el este m&oacute;dulo?\n\nEsto no se puede deshacer", 'wp_courseware'),			 
+			__('Eliminar este M&oacute;dulo', 'wp_courseware')
 		);	
 		
-		printf('<p>%s</p>', __('Units will <b>not</b> be deleted, they will <b>just be disassociated</b> from this module.', 'wp_courseware'));
+		printf('<p>%s</p>', __('Las unidades <b>no</b>  se borran, <b>s&oacute;lo se desvinculan</b> de este m&oacute;dulo.', 'wp_courseware'));
 		
 		$page->closePane();
 		
 		
 		// #### Show a list of all sub-units 
-		$page->openPane('wpcw-units-module', __('Units in this Module', 'wp_courseware'));
+		$page->openPane('wpcw-units-module', __('Unidades en este M&oacute;dulo', 'wp_courseware'));
 		
 		$unitList = WPCW_units_getListOfUnits($moduleID);
 		if ($unitList)
@@ -162,7 +162,7 @@ function WPCW_showPage_ModifyModule_load()
 		}
 		
 		else {
-			printf('<p>%s</p>', __('There are currently no units in this module.', 'wp_courseware'));
+			printf('<p>%s</p>', __('Actualmente no hay unidades de este m&oacute;dulo.', 'wp_courseware'));
 		}
 	}
 	

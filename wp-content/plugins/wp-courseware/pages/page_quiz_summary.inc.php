@@ -28,7 +28,7 @@ function WPCW_showPage_QuizSummary_load()
 	}
 	
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('Quiz &amp; Survey Summary', 'wp_courseware').$titlePage, '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Progreso de Evaluaci&oacute;n/Encuesta', 'wp_courseware').$titlePage, '75%', WPCW_icon_getPageIconURL());
 	
 	
 	// Handle the quiz deletion before showing remaining quizzes...
@@ -89,7 +89,7 @@ function WPCW_showPage_QuizSummary_load()
 	<p class="search-box">
 		<label class="screen-reader-text" for="wpcw_quizzes_search_input"><?php _e('Buscar Evaluaciones', 'wp_courseware'); ?></label>
 		<input id="wpcw_quizzes_search_input" type="text" value="<?php echo $searchString ?>" name="s"/>
-		<input class="button" type="submit" value="<?php _e('Search Quizzes', 'wp_courseware'); ?>"/>
+		<input class="button" type="submit" value="<?php _e('Buscar Evaluaci&oacute;n', 'wp_courseware'); ?>"/>
 		
 		<input type="hidden" name="page" value="WPCW_showPage_QuizSummary" />
 	</p>
@@ -289,11 +289,11 @@ function WPCW_showPage_QuizSummary_load()
 			// Actions
 			$data['actions']	= '<ul class="wpcw_action_link_list">';
 			
-			$data['actions']	.= sprintf('<li><a href="%s" class="button-primary">%s</a></li>', 	$editURL, 	__('Edit', 'wp_courseware'));
+			$data['actions']	.= sprintf('<li><a href="%s" class="button-primary">%s</a></li>', 	$editURL, 	__('Editar', 'wp_courseware'));
 			
 			$data['actions']	.= sprintf('<li><a href="%s" class="button-secondary wpcw_action_link_delete_quiz wpcw_action_link_delete" rel="%s">%s</a></li>', 	
 					$deleteURL,
-					__('Are you sure you wish to delete this quiz?', 'wp_courseware'), 	
+					__('Est&aacute; seguro que desea eliminar este evaluaci&oacute;n?', 'wp_courseware'), 	
 					__('Eliminar', 'wp_courseware'));
 					
 			// Add export button for surveys
@@ -316,7 +316,7 @@ function WPCW_showPage_QuizSummary_load()
 	}
 	
 	else {
-		printf('<p>%s</p>', __('There are currently no quizzes to show. Why not create one?', 'wp_courseware'));
+		printf('<p>%s</p>', __('Actualmente no hay evaluaciones para mostrar. Por qu&eacute; no crea una?', 'wp_courseware'));
 	}
 	
 	$page->showPageFooter();
@@ -360,7 +360,7 @@ function WPCW_quizzes_handleQuizDeletion($page)
 			", $quizDetails->quiz_id));
 			
 			
-			$page->showMessage(sprintf(__('The quiz \'%s\' was successfully deleted.', 'wp_courseware'), $quizDetails->quiz_title));
+			$page->showMessage(sprintf(__('La evaluaci&oacute;n \'%s\' fue eliminada satisfactoriamente.', 'wp_courseware'), $quizDetails->quiz_title));
 			
 		} // end of if $quizDetails
 		

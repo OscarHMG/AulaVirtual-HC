@@ -25,8 +25,8 @@ function WPCW_showPage_ModifyCourse_load()
 		// Abort if course not found.
 		if (!$courseDetails)
 		{
-			$page->showPageHeader(__('Edit Course', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
-			$page->showMessage(__('Sorry, but that course could not be found.', 'wp_courseware'), true);
+			$page->showPageHeader(__('Editar Curso', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+			$page->showMessage(__('Lo siento, pero este curso no fue encontrado.', 'wp_courseware'), true);
 			$page->showPageFooter();
 			return;
 		}
@@ -34,7 +34,7 @@ function WPCW_showPage_ModifyCourse_load()
 		// Editing a course, and it was found
 		else 
 		{
-			$page->showPageHeader(__('Edit Course', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+			$page->showPageHeader(__('Editar Curso', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 			
 			// Check user is allowed to edit this course.
 			$canEditCourse = apply_filters('wpcw_back_permissions_user_can_edit_course', true, get_current_user_id(), $courseDetails);
@@ -50,7 +50,7 @@ function WPCW_showPage_ModifyCourse_load()
 	// Adding course
 	else 
 	{
-		$page->showPageHeader(__('Add Course', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+		$page->showPageHeader(__('Agregar Curso', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 		
 		// Check user is allowed to add another course.
 		$canAddCourse = apply_filters('wpcw_back_permissions_user_can_add_course', true, get_current_user_id());
@@ -93,7 +93,7 @@ function WPCW_showPage_ModifyCourse_load()
 					WPCW_users_resetProgress($userList, $unitList, $courseDetails, $courseMap->getUnitCount());
 					
 					// Confirm it's complete.
-					$page->showMessage(__('User progress for this course has been reset.', 'wp_courseware'));
+					$page->showMessage(__('Progreso del usuario para este curso se ha restablecido.', 'wp_courseware'));
 				break;
 				
 			// Access changes
@@ -132,7 +132,7 @@ function WPCW_showPage_ModifyCourse_load()
 						'maxlen'	=> 150,
 						'minlen'	=> 1,
 						'regexp'	=> '/^[^<>]+$/',
-						'error'		=> __('Please specify a name for your course, up to a maximum of 150 characters, just no angled brackets (&lt; or &gt;). Your trainees will be able to see this course title.', 'wp_courseware')
+						'error'		=> __('Por favor, especifique un nombre para su curso, hasta un m&aacute;ximo de 150 caracteres, s&oacute;lo hay par&eacute;ntesis angulares (&lt; o &gt;). Sus participantes ser&aacute;n capaces de ver este t&iacute;tulo del curso..', 'wp_courseware')
 					)	
 				),				
 	
@@ -177,13 +177,13 @@ function WPCW_showPage_ModifyCourse_load()
 				),	
 				
 			'course_opt_user_access' => array(
-					'label' 	=> __('Granting users access to this course', 'wp_courseware'),
+					'label' 	=> __('Conceder acceso a este curso', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
-					'desc'  	=> __('This setting allows you to set how users can access this course. They can either be given access automatically as soon as the user is created, or you can manually give them access. You can always manually remove access if you wish.', 'wp_courseware'),
+					'desc'  	=> __('Esta configuraci&oacute;n le permite establecer c&oacute;mo los usuarios pueden acceder a este curso. O bien se puede tener acceso de forma autom&aacute;tica tan pronto como se crea el usuario, o se les puede dar acceso manualmente. Siempre se puede quitar manualmente el acceso si lo desea.', 'wp_courseware'),
 					'data'		=> array(
-						'default_show' => __('<b>Automatic</b> - All newly created users will be given access this course.', 'wp_courseware'),
-						'default_hide' => __('<b>Manual</b> - Users can only access course if you grant them access.', 'wp_courseware')
+						'default_show' => __('<b>Automatico</b> - Todos los nuevos usuarios tendr&aacute;n acceso este curso.', 'wp_courseware'),
+						'default_hide' => __('<b>Manual</b> - Los usuarios s&oacute;lo pueden acceder, si les concede el acceso.', 'wp_courseware')
 					)	 	
 				),	
 				
@@ -195,7 +195,7 @@ function WPCW_showPage_ModifyCourse_load()
 				),			
 				
 			'course_message_unit_complete' => array(
-					'label' 	=> __('Message - Unit Complete', 'wp_courseware'),
+					'label' 	=> __('Mensaje - Unidad Completa', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
@@ -210,7 +210,7 @@ function WPCW_showPage_ModifyCourse_load()
 				),		
 				
 			'course_message_course_complete' => array(
-					'label' 	=> __('Message - Course Complete', 'wp_courseware'),
+					'label' 	=> __('Mensaje - Curso Completo', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
@@ -225,7 +225,7 @@ function WPCW_showPage_ModifyCourse_load()
 				),
 	
 			'course_message_unit_pending' => array(
-					'label' 	=> __('Message - Unit Pending', 'wp_courseware'),
+					'label' 	=> __('Mensaje - Unidad Pendiente', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
@@ -240,7 +240,7 @@ function WPCW_showPage_ModifyCourse_load()
 				),	
 				
 			'course_message_unit_no_access' => array(
-					'label' 	=> __('Message - Access Denied', 'wp_courseware'),
+					'label' 	=> __('Mensaje - Acceso Denegado', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
@@ -507,7 +507,7 @@ function WPCW_showPage_ModifyCourse_load()
 						'type'		=> 'string',
 						'maxlen'	=> 300,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the email subject to 300 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite es de 300 caracteres.', 'wp_courseware')
 					)	 	
 				),		
 							
@@ -522,7 +522,7 @@ function WPCW_showPage_ModifyCourse_load()
 						'type'		=> 'string',
 						'maxlen'	=> 5000,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the email body to 5000 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite es de 5000 caracteres.', 'wp_courseware')
 					)	 	
 				),		
 	
@@ -543,7 +543,7 @@ function WPCW_showPage_ModifyCourse_load()
 						'type'		=> 'string',
 						'maxlen'	=> 300,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the email subject to 300 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite es de 300 caracteres.', 'wp_courseware')
 					)	 	
 				),		
 							
@@ -558,7 +558,7 @@ function WPCW_showPage_ModifyCourse_load()
 						'type'		=> 'string',
 						'maxlen'	=> 5000,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the email body to 5000 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite es de 5000 caracteres.', 'wp_courseware')
 					)	 	
 				),	
 				
@@ -574,8 +574,8 @@ function WPCW_showPage_ModifyCourse_load()
 					'type'  	=> 'radio',
 					'required'  => true,
 					'data'	 	=> array(
-						'use_certs'	=> __('<b>Yes</b> - generate a PDF certificate when user completes this course.','wp_courseware'),
-						'no_certs'	=> __('<b>No</b> - don\'t generate a PDF certificate when user completes this course.','wp_courseware')
+						'use_certs'	=> __('<b>Yes</b> - Genera un certificado PDF al usuario complete este curso.','wp_courseware'),
+						'no_certs'	=> __('<b>No</b> - No genera un certificado PDF al usuario complete este curso.','wp_courseware')
 					)
 				),
 
@@ -586,28 +586,28 @@ function WPCW_showPage_ModifyCourse_load()
 				),
 				
 			'course_tools_reset_all_users' => array(
-					'label' 	=> __('Reset User Progess for this Course?', 'wp_courseware'),
+					'label' 	=> __('Restablecer el Progreso de los usuarios para este curso', 'wp_courseware'),
 					'type'  	=> 'custom',
 					'html'		=> sprintf('<a href="%s?page=WPCW_showPage_ModifyCourse&course_id=%d&action=reset_course_progress" class="button-primary" id="wpcw_course_btn_progress_reset_whole_course">%s</a><p>%s</p>',
 									admin_url('admin.php'), $courseID,
-									__('Reset All Users on this Course to the start', 'wp_courseware'), 
-									__('This button will reset all users who can access this course back to the beginning of the course. This deletes all grade data too.', 'wp_courseware')
+									__('Restablecer todos los usuarios en este curso al inicio', 'wp_courseware'), 
+									__('Este bot&oacute;ón restablecer&aacute; todos los usuarios que han accedido a este curso. Esto elimina todos los datos de los cursos tambi&eacute;n.', 'wp_courseware')
 								)
 					),	
 					
 			'course_tools_user_access' => array(
-					'label' 	=> __('Bulk-grant access to this course?', 'wp_courseware'),
+					'label' 	=> __('Acceso masivo a este curso', 'wp_courseware'),
 					'type'  	=> 'custom',
 					'html'		=> sprintf('<a href="%s?page=WPCW_showPage_ModifyCourse&course_id=%d&action=grant_access_users_all" class="button-primary" id="wpcw_course_btn_access_all_existing_users">%s</a>&nbsp;&nbsp;
 										    <a href="%s?page=WPCW_showPage_ModifyCourse&course_id=%d&action=grant_access_users_admins" class="button-primary" id="wpcw_course_btn_access_all_existing_admins">%s</a> 
 										    <p>%s</p>',
 									admin_url('admin.php'), $courseID,									
-									__('All Existing Users (including Administrators)', 'wp_courseware'), 
+									__('Todos los usuarios existentes (incluidos los administradores)', 'wp_courseware'), 
 									
 									admin_url('admin.php'), $courseID,									
-									__('Only All Existing Administrators', 'wp_courseware'),
+									__('S&oacute;lo los administradores que existen', 'wp_courseware'),
 									
-									__('You can use the buttons above to grant all users access to this course. Depending on how many users you have, this may be a slow process.', 'wp_courseware')
+									__('Puede utilizar los botones de arriba para conceder a todos los usuarios el acceso a este curso. Dependiendo del n&uacute;mero de usuarios que tiene, esto puede ser un proceso lento.', 'wp_courseware')
 								)
 					),	
 		);
@@ -616,16 +616,16 @@ function WPCW_showPage_ModifyCourse_load()
 		
 		// Generate the tabs.
 		$tabList = array( 
-			'break_course_general' 						=> array('label' => __('General Course Details', 'wp_courseware')), 
-			'break_course_access' 						=> array('label' => __('User Access', 'wp_courseware')), 
-			'break_course_messages' 					=> array('label' => __('User Messages', 'wp_courseware')),
-			'break_course_notifications_from_details' 	=> array('label' => __('Email Address Details', 'wp_courseware')),
-			'break_course_notifications_user_module' 	=> array('label' => __('Email Notifications - Module', 'wp_courseware')),
-			'break_course_notifications_user_course' 	=> array('label' => __('Email Notifications - Course', 'wp_courseware')),
-			'break_course_notifications_user_grades' 	=> array('label' => __('Email Notifications - Quiz Grades', 'wp_courseware')),
-			'break_course_notifications_user_final' 	=> array('label' => __('Email Notifications - Final Summary', 'wp_courseware')),
-			'break_course_certificates_user_course' 	=> array('label' =>  __('Certificates', 'wp_courseware')),
-			'break_course_certificates_user_tools' 		=> array('label' => __('Course Access Tools', 'wp_courseware')),
+			'break_course_general' 						=> array('label' => __('Detalles Generales del Curso', 'wp_courseware')), 
+			'break_course_access' 						=> array('label' => __('Acceso de Usuario', 'wp_courseware')), 
+			'break_course_messages' 					=> array('label' => __('Mensaje de Usario', 'wp_courseware')),
+			'break_course_notifications_from_details' 	=> array('label' => __('Detalles de la direccion de correo', 'wp_courseware')),
+			'break_course_notifications_user_module' 	=> array('label' => __('Notificaciones de Correos- M&oacute;dulo', 'wp_courseware')),
+			'break_course_notifications_user_course' 	=> array('label' => __('Notificaciones de Correos- Curso', 'wp_courseware')),
+			'break_course_notifications_user_grades' 	=> array('label' => __('Notificaciones de Correos- Evaluaci&oacute;n del Curso', 'wp_courseware')),
+			'break_course_notifications_user_final' 	=> array('label' => __('Notificaciones de Correos- Promedio', 'wp_courseware')),
+			'break_course_certificates_user_course' 	=> array('label' =>  __('Certificados', 'wp_courseware')),
+			'break_course_certificates_user_tools' 		=> array('label' => __('Herramientas de acceso curso', 'wp_courseware')),
 		);
 		
 		// Remove reset fields if not appropriate.
@@ -685,7 +685,7 @@ function WPCW_showPage_ModifyCourse_load()
 				'email_quiz_grade_option'					=> 'no_email',
 						
 				// Certificate defaults
-				'course_opt_use_certificate'				=> 'no_certs',
+				'course_opt_use_certificate'				=> 'use_certs',
 			
 				// User Messages
 				'course_message_unit_not_yet'				=> __("Es necesario completar la unidad anterior.", 'wp_courseware'),		
@@ -761,13 +761,13 @@ function WPCW_showPage_ModifyCourse_load()
 	// Include a link to delete the course
 	if ($courseDetails) 	
 	{
-		$page->openPane('wpcw-deletion-course', __('Delete Course?', 'wp_courseware'));
+		$page->openPane('wpcw-deletion-course', __('Eliminar este curso?', 'wp_courseware'));
 			WPCW_showPage_ModifyCourse_deleteCourseButton($courseDetails);		
 		$page->closePane();
 	}	
 	
 	// Email template tags here...
-	$page->openPane('wpcw_docs_email_tags', __('Email Template Tags', 'wp_courseware'));
+	$page->openPane('wpcw_docs_email_tags', __('Plantilla de correo electronico', 'wp_courseware'));
 	
 	printf('<h4 class="wpcw_docs_side_mini_hdr">%s</h4>', __('All Email Notifications', 'wp_courseware'));
 	printf('<dl class="wpcw_email_tags">');
@@ -835,7 +835,7 @@ function WPCW_showPage_ModifyCourse_deleteCourseButton($courseDetails)
 	
 		// Submit
 		$html .= sprintf('<input type="submit" value="%s" class="button-primary wpcw_delete_item" title="%s" />', 
-			__('Delete this Course', 'wp_courseware'),
+			__('Eliminar este curso', 'wp_courseware'),
 			__("Are you sure you want to delete the this course?\n\nThis CANNOT be undone!", 'wp_courseware')
 		); 	
 	$html .= '</form>'; 
