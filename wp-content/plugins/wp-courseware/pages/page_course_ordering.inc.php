@@ -13,7 +13,7 @@
 function WPCW_showPage_CourseOrdering_load()
 {
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('Orden de M&oacute;dulos &amp; Unidades', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Orden de M&oacute;dulos y Unidades', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	$courseDetails = false;
 	$courseID = false;
@@ -50,7 +50,7 @@ function WPCW_showPage_CourseOrdering_load()
 	
 		// ### Show a list of units that are not currently assigned to a module		
 		printf('<div id="wpcw_unassigned_units" class="wpcw_unassigned">');	
-		printf('<div class="wpcw_unassigned_title">%s</div>', __('Unidades no asignadas', 'wp_courseware'));
+		printf('<div class="wpcw_unassigned_title">%s</div>', __('Unidades no asignadas a un M&oacute;dulo', 'wp_courseware'));
 		
 			printf('<ol class="wpcw_dragable_units_connected">');
 			
@@ -92,7 +92,7 @@ function WPCW_showPage_CourseOrdering_load()
 		
 		// ### Show a list of quizzes that are not currently assigned to units		
 		printf('<div id="wpcw_unassigned_quizzes" class="wpcw_unassigned">');	
-		printf('<div class="wpcw_unassigned_title">%s</div>', __('Unidades no asignadas', 'wp_courseware'));
+		printf('<div class="wpcw_unassigned_title">%s</div>', __('Unidades no asignadas a una Unidad', 'wp_courseware'));
 		
 			printf('<ol class="wpcw_dragable_quizzes_connected">');
 			

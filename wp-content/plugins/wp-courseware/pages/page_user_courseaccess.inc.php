@@ -15,7 +15,7 @@ function WPCW_showPage_UserCourseAccess_load()
 	$wpdb->show_errors();
 	
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('Update User Course Access Permissions', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Actualizar permisos de acceso a usuarios de los cursos', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	
 	// Check passed user ID is valid
@@ -23,12 +23,12 @@ function WPCW_showPage_UserCourseAccess_load()
 	$userDetails = get_userdata($userID); 
 	if (!$userDetails) 
 	{
-		$page->showMessage(__('Sorry, but that user could not be found.', 'wp_courseware'), true);
+		$page->showMessage(__('Lo siento, pero ese usuario no se pudo encontrar.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return false;		
 	}
 
-	printf(__('<p>Here you can change which courses the user <b>%s</b> (Username: <b>%s</b>) can access.</p>', 'wp_courseware'), $userDetails->data->display_name, $userDetails->data->user_login);
+	printf(__('<p>Aqu&iacute; puede cambiar que cursos el usuario <b>%s</b> (Username: <b>%s</b>) puede acceder.</p>', 'wp_courseware'), $userDetails->data->display_name, $userDetails->data->user_login);
 		
 	
 	// Check to see if anything has been submitted?
@@ -39,7 +39,7 @@ function WPCW_showPage_UserCourseAccess_load()
 		
 		// Check that user ID is valid, and that it matches user we're editing.
 		if (!$userSubDetails || $subUserID != $userID) {
-			$page->showMessage(__('Sorry, but that user could not be found. The changes were not saved.', 'wp_courseware'), true);
+			$page->showMessage(__('Lo sentimos, pero ese usuario no se pudo encontrar. Los cambios no se han guardado.', 'wp_courseware'), true);
 		}
 		
 		// Continue, as things appear to be fine
@@ -59,7 +59,7 @@ function WPCW_showPage_UserCourseAccess_load()
 			WPCW_courses_syncUserAccess($subUserID, $courseAccessIDs, 'sync');
 
 			// Final success message	
-			$message = sprintf(__('The courses for user <em>%s</em> have now been updated.', 'wp_courseware'), $userDetails->data->display_name);			
+			$message = sprintf(__('Los cursos para el usuario <em>%s</em> ahora han sido actualizados.', 'wp_courseware'), $userDetails->data->display_name);			
 			$page->showMessage($message, false);
 		}
 	}
@@ -80,15 +80,15 @@ function WPCW_showPage_UserCourseAccess_load()
 			'class'	=> 'widefat wpcw_tbl'
 		);
 		
-		$tblCol = new TableColumn(__('Allowed Access', 'wp_courseware'), 'allowed_access');		
+		$tblCol = new TableColumn(__('Acceso permitido', 'wp_courseware'), 'allowed_access');		
 		$tblCol->cellClass = "allowed_access";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Course Title', 'wp_courseware'), 'course_title');
+		$tblCol = new TableColumn(__('T&iacute;tulo del curso', 'wp_courseware'), 'course_title');
 		$tblCol->cellClass = "course_title";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Description', 'wp_courseware'), 'course_desc');
+		$tblCol = new TableColumn(__('Descripci&oacute;n', 'wp_courseware'), 'course_desc');
 		$tblCol->cellClass = "course_desc";
 		$tbl->addColumn($tblCol);
 		
@@ -125,13 +125,13 @@ function WPCW_showPage_UserCourseAccess_load()
 			
 			?>
 			<input type="hidden" name="user_id" value="<?php echo $userID; ?>"> 
-			<input type="submit" class="button-primary" name="wpcw_course_user_access" value="<?php _e('Save Changes', 'wp_courseware'); ?>" />
+			<input type="submit" class="button-primary" name="wpcw_course_user_access" value="<?php _e('Guardar cambios', 'wp_courseware'); ?>" />
 		</form>
 		<?php 
 	}
 	
 	else {
-		printf('<p>%s</p>', __('There are currently no courses to show. Why not create one?', 'wp_courseware'));
+		printf('<p>%s</p>', __('Actualmente no hay cursos para mostrar. Por qu&eacute; no crea uno?', 'wp_courseware'));
 	}
 	
 	

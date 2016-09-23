@@ -27,14 +27,14 @@ function WPCW_showPage_GradeBook_load()
 	// Abort if course not found.
 	if (!$courseDetails)
 	{		
-		$page->showPageHeader(__('GradeBook', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+		$page->showPageHeader(__('Calificaciones', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 		$page->showMessage(__('Sorry, but that course could not be found.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return;
 	}
 	
 	// Show title of this course
-	$page->showPageHeader(__('GradeBook', 'wp_courseware') . ': ' . $courseDetails->course_title, '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Calificaciones', 'wp_courseware') . ': ' . $courseDetails->course_title, '75%', WPCW_icon_getPageIconURL());
 	
 	global $wpcwdb, $wpdb;
 	$wpdb->show_errors();
@@ -45,7 +45,7 @@ function WPCW_showPage_GradeBook_load()
 	
 	// Handle situation when there are no quizzes.
 	if (!$quizzesForCourse) {
-		$page->showMessage(__('There are no quizzes for this course, therefore no grade information to show.', 'wp_courseware'), true);
+		$page->showMessage(__('No hay pruebas para este curso, por lo tanto, no hay informaci&oacute;n de grado para mostrar.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return;
 	}
@@ -220,7 +220,7 @@ function WPCW_showPage_GradeBook_load()
 		'class'	=> 'widefat wpcw_tbl'
 	);
 			
-	$tblCol = new TableColumn(__('Learner Details', 'wp_courseware'), 'learner_details');
+	$tblCol = new TableColumn(__('Detalles de Aprendizaje', 'wp_courseware'), 'learner_details');
 	$tblCol->cellClass = "wpcw_learner_details";
 	$tbl->addColumn($tblCol);
 			
@@ -228,20 +228,20 @@ function WPCW_showPage_GradeBook_load()
 	if ($quizzesForCourse)
 	{
 		// Show the overall progress for the course.
-		$tblCol = new TableColumn(__('Overall Progress', 'wp_courseware'), 'course_progress');
+		$tblCol = new TableColumn(__('Progreso general', 'wp_courseware'), 'course_progress');
 		//$tblCol->headerClass = "wpcw_center";
 		$tblCol->cellClass = "wpcw_grade_course_progress";
 		$tbl->addColumn($tblCol);
 		
 		
 		// ### Create heading for cumulative data.
-		$tblCol = new TableColumn(__('Cumulative Grade', 'wp_courseware'), 'quiz_cumulative');
+		$tblCol = new TableColumn(__('Grado acumulativo', 'wp_courseware'), 'quiz_cumulative');
 		$tblCol->headerClass = "wpcw_center";
 		$tblCol->cellClass = "wpcw_grade_summary wpcw_center";
 		$tbl->addColumn($tblCol);
 		
 		// ### Create heading for cumulative data.
-		$tblCol = new TableColumn(__('Grade Sent?', 'wp_courseware'), 'grade_sent');
+		$tblCol = new TableColumn(__('Enviar Grado?', 'wp_courseware'), 'grade_sent');
 		$tblCol->headerClass = "wpcw_center";
 		$tblCol->cellClass = "wpcw_grade_summary wpcw_center";
 		$tbl->addColumn($tblCol);
@@ -249,7 +249,7 @@ function WPCW_showPage_GradeBook_load()
 		// ### Create heading for cumulative data.
 		if ($usingCertificates)
 		{
-			$tblCol = new TableColumn(__('Certificate Available?', 'wp_courseware'), 'certificate_available');
+			$tblCol = new TableColumn(__('Certificado disponible?', 'wp_courseware'), 'certificate_available');
 			$tblCol->headerClass = "wpcw_center";
 			$tblCol->cellClass = "wpcw_grade_summary wpcw_center";
 			$tbl->addColumn($tblCol);
@@ -275,19 +275,19 @@ function WPCW_showPage_GradeBook_load()
 		switch ($currentFilter)
 		{
 			case 'to_mark':
-				$msg = __('There are currently no quizzes that need a manual grade.', 'wp_courseware');				
+				$msg = __('Actualmente no hay pruebas que necesitan una introducci&oacute;n manual.', 'wp_courseware');				
 				break;
 				
 			case 'eligible_for_final_grade':
-				$msg = __('There are currently no users that are eligible to receive their final grade.', 'wp_courseware');				
+				$msg = __('Actualmente no hay usuarios que son elegibles para recibir su calificaci&oacute;n final.', 'wp_courseware');				
 				break;
 				
 			case 'completed':
-				$msg = __('There are currently no users that have completed the course.', 'wp_courseware');				
+				$msg = __('Actualmente no hay usuarios que han completado el curso.', 'wp_courseware');				
 				break;
 				
 			default:
-				$msg = __('There are currently no learners allocated to this course.', 'wp_courseware');
+				$msg = __('Actualmente no hay alumnos asignados a este curso.', 'wp_courseware');
 				break;
 		}
 		

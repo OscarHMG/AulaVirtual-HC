@@ -12,7 +12,7 @@
 function WPCW_showPage_Dashboard_load() 
 {
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('My Training Courses', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Mis Cursos', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	// Handle any deletion
 	WPCW_handler_processDeletion($page);	
@@ -261,9 +261,9 @@ function WPCW_showPage_Dashboard_load()
 			{			
 				// Create message that quizzes need marking. 
 				$tblCustomRowStrTmp = 
-					__( 'This course has ', 'wp_courseware') . 
+					__( 'Este curso tiene ', 'wp_courseware') . 
 					_n( '1 user that is', '%d users that are', $countOfQuizzesNeedingManualHelp, 'wp_courseware') . 
-					__( ' blocked due to too many failed attempts.', 'wp_courseware');
+					__( ' bloqueada debido a demasiados intentos fallidos.', 'wp_courseware');
 
 				$tblCustomRowStr .= '<span>' . sprintf($tblCustomRowStrTmp, $countOfQuizzesNeedingManualHelp) . '</span>';								 
 			}
@@ -292,7 +292,7 @@ function WPCW_showPage_Dashboard_load()
 	}
 	
 	else {
-		printf('<p>%s</p>', __('There are currently no courses to show. Why not create one?', 'wp_courseware'));
+		printf('<p>%s</p>', __('Actualmente no hay cursos para mostrar. ¿Por qu&eacute; no crea uno??', 'wp_courseware'));
 	}
 	
 	$page->showPageFooter();
@@ -324,7 +324,7 @@ function WPCW_handler_processDeletion($page)
 				// Actually delete the module from the system
 				WPCW_modules_deleteModule($moduleDetails);
 				
-				$page->showMessage(sprintf(__('Successfully deleted module "<em>%s</em>".', 'wp_courseware'), $moduleDetails->module_title));	
+				$page->showMessage(sprintf(__('Se ha eliminado el módulo "<em>%s</em>".', 'wp_courseware'), $moduleDetails->module_title));	
 			}
 			break;
 			
@@ -343,7 +343,7 @@ function WPCW_handler_processDeletion($page)
 				// Actually delete the course from the system
 				WPCW_modules_deleteCourse($courseDetails, $deleteMethod);
 				
-				$page->showMessage(sprintf(__('Successfully deleted training course "<em>%s</em>".', 'wp_courseware'), $courseDetails->course_title));	
+				$page->showMessage(sprintf(__('Se ha eliminado el curso de capacitaci&oacute;n "<em>%s</em>".', 'wp_courseware'), $courseDetails->course_title));	
 			}
 			break;
 		

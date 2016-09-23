@@ -29,7 +29,7 @@ function WPCW_showPage_QuestionPool_load()
 	}
 	
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('Question Pool', 'wp_courseware').$titlePage, '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Grupo de preguntas', 'wp_courseware').$titlePage, '75%', WPCW_icon_getPageIconURL());
 	
 	
 	// Handle the question deletion before showing remaining questions
@@ -76,7 +76,7 @@ function WPCW_quizzes_handleQuestionDeletion($page)
 			", $questionDetails->question_id));
 			
 			
-			$page->showMessage(sprintf(__('The question \'%s\' was successfully deleted.', 'wp_courseware'), $questionDetails->question_question));
+			$page->showMessage(sprintf(__('La pregunta \'%s\' fue eleminada satisfactoriamente.', 'wp_courseware'), $questionDetails->question_question));
 			
 		} // end of if $questionDetails
 		
@@ -102,19 +102,19 @@ function WPCW_showPage_QuestionPool_actionForm()
 		
 		// Dropdown of actions
 		$formWrapper_end .= sprintf(WPCW_forms_createDropdown('wpcw_bulk_action_actions', array(
-			''				=> __('--- Select action ---', 'wp_courseware'),
-			'add_tag'		=> __('Add tag to selected questions', 'wp_courseware'),
-			'remove_tag'	=> __('Remove tag from selected questions', 'wp_courseware'),
-			'replace_tag'	=> __('Replace all instances of tag', 'wp_courseware'),
+			''				=> __('--- Seleccione acci&oacute;n ---', 'wp_courseware'),
+			'add_tag'		=> __('A&ntildeadir etiqueta a preguntas seleccionadas', 'wp_courseware'),
+			'remove_tag'	=> __('Remueva la etiqueta de preguntas seleccionadas', 'wp_courseware'),
+			'replace_tag'	=> __('Reemplazar todas las instancias de la etiqueta', 'wp_courseware'),
 		), false, 'wpcw_tbl_question_pool_bulk_actions_chooser', false));
 		
 		// #### The starting labels for all 3 actions.
-		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_add_tag">%s:</label>', __('Add Tag', 'wp_courseware'));
-		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_remove_tag">%s:</label>', __('Remove Tag', 'wp_courseware'));
-		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_replace_tag">%s:</label>', __('Replace Tag', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_add_tag">%s:</label>', __('Agregar Tag', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_remove_tag">%s:</label>', __('REmover Tag', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_replace_tag">%s:</label>', __('Reemplazar Tag', 'wp_courseware'));
 		
 		// #### All 3 - Selector for Add/Remove/Replace tag - first box
-		$formWrapper_end .= WPCW_questions_tags_getTagDropdown(__('Select a tag', 'wp_courseware'), 
+		$formWrapper_end .= WPCW_questions_tags_getTagDropdown(__('Seleccione una etiqueta', 'wp_courseware'), 
 			'wpcw_bulk_action_select_tag_a', 	// Name 
 			WPCW_arrays_getValue($_POST, 'wpcw_bulk_action_select_tag_a'),
 			'wpcw_bulk_action_select_tag_a wpcw_bulk_action_select_tag wpcw_bulk_action_add_tag wpcw_bulk_action_remove_tag wpcw_bulk_action_replace_tag' // CSS Classes
@@ -124,14 +124,14 @@ function WPCW_showPage_QuestionPool_actionForm()
 		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_replace_tag">%s:</label>', __('With', 'wp_courseware'));
 		
 		// Just 'Replace Tag' - the second dropdown
-		$formWrapper_end .= WPCW_questions_tags_getTagDropdown(__('Select a tag', 'wp_courseware'), 
+		$formWrapper_end .= WPCW_questions_tags_getTagDropdown(__('Seleccione una etiqueta', 'wp_courseware'), 
 			'wpcw_bulk_action_select_tag_b', 	// Name 
 			WPCW_arrays_getValue($_POST, 'wpcw_bulk_action_select_tag_b'),
 			'wpcw_bulk_action_select_tag_b wpcw_bulk_action_select_tag wpcw_bulk_action_replace_tag'
 		);
 	
 		// Button - submit
-		$formWrapper_end .= sprintf('<input type="submit" class="button-primary" value="%s">', __('Update Questions', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<input type="submit" class="button-primary" value="%s">', __('Actualizar Preguntas', 'wp_courseware'));
 
 	// End wrapper for bulk actions
 	$formWrapper_end .= '</div>';
@@ -166,7 +166,7 @@ function WPCW_showPage_QuestionPool_processActionForm($page)
 	
 	// Appears there's nothing to do.
 	if (empty($questionListToUpdate)) {
-		$page->showMessage(__('Error. Please select some questions to update.', 'wp_courseware'), true);
+		$page->showMessage(__('Error. Por favor seleccione algunas preguntas para actualizar.', 'wp_courseware'), true);
 		return;
 	}
 		
@@ -182,7 +182,7 @@ function WPCW_showPage_QuestionPool_processActionForm($page)
 	 
 	// Appears there's nothing to do, as questions do not validate.
 	if (empty($questionListToUpdate)) {
-		$page->showMessage(__('Error. Those questions no longer exist. Please select some more questions to update.', 'wp_courseware'), true);
+		$page->showMessage(__('Error. ya no existen esas preguntas. Por favor seleccione algunas preguntas más para actualizar.', 'wp_courseware'), true);
 		return;
 	}
 		
@@ -196,7 +196,7 @@ function WPCW_showPage_QuestionPool_processActionForm($page)
 		break;
 		
 		default: 
-			$page->showMessage(__('Error. Did not recognise action to apply to selected questions.', 'wp_courseware'), true);
+			$page->showMessage(__('Error. No reconoci&oacute; la acci&oacute;n de aplicar a las preguntas seleccionadas.', 'wp_courseware'), true);
 			return;
 		break;
 	}
@@ -210,7 +210,7 @@ function WPCW_showPage_QuestionPool_processActionForm($page)
 	
 	if (!$tagDetails_first = WPCW_questions_tags_getTagDetails($tagID_first))
 	{
-		$page->showMessage(__('Error. The first tag does not exist. Please select another tag.', 'wp_courseware'), true);
+		$page->showMessage(__('Error. La primera etiqueta no existe. Por favor, seleccione otra etiqueta.', 'wp_courseware'), true);
 		return;
 	}
 	
@@ -219,13 +219,13 @@ function WPCW_showPage_QuestionPool_processActionForm($page)
 	{
 		// No 2nd tag
 		if (!$tagDetails_second = WPCW_questions_tags_getTagDetails($tagID_second)) {		
-			$page->showMessage(__('Error. The second tag does not exist. Please select another tag.', 'wp_courseware'), true);
+			$page->showMessage(__('Error. La segunda etiqueta no existe. Por favor, seleccione otra etiqueta.', 'wp_courseware'), true);
 			return;
 		}
 	
 		// 1st and 2nd tags match
 		if ($tagDetails_first->question_tag_id == $tagDetails_second->question_tag_id) {
-			$page->showMessage(__('Error. The first and second tag should be different.', 'wp_courseware'), true);
+			$page->showMessage(__('Error. La primera y segunda etiqueta debe ser diferente.', 'wp_courseware'), true);
 			return;
 		}
 	}

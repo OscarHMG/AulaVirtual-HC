@@ -12,7 +12,7 @@
 function WPCW_showPage_ModifyQuestion_load() 
 {
 	$page = new PageBuilder(true); 
-	$page->showPageHeader(__('Edit Single Question', 'wp_courseware'), '70%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Editar  Pregunta', 'wp_courseware'), '70%', WPCW_icon_getPageIconURL());
 	
 	$questionID = false;
 	
@@ -30,7 +30,7 @@ function WPCW_showPage_ModifyQuestion_load()
 	// Abort if question not found.
 	if (!$questionDetails)
 	{
-		$page->showMessage(__('Sorry, but that question could not be found.', 'wp_courseware'), true);
+		$page->showMessage(__('Lo sentimos, pero esta pregunta no se pudo encontrar.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return;
 	}
@@ -41,7 +41,7 @@ function WPCW_showPage_ModifyQuestion_load()
 	{
 		WPCW_handler_questions_processSave(false, true);
 		
-		$page->showMessage(__('Question successfully updated.', 'wp_courseware'));
+		$page->showMessage(__('Pregunta actualizada correctamente.', 'wp_courseware'));
 		
 		// Assume save has happened, so reload the settings.
 		$questionDetails = WPCW_questions_getQuestionDetails($questionID, true);
@@ -70,7 +70,7 @@ function WPCW_showPage_ModifyQuestion_load()
 			break;
 			
 		default:
-			die(__('Unknown quiz type: ', 'wp_courseware') . $questionDetails->question_type);
+			die(__('Tipo de prueba desconocido: ', 'wp_courseware') . $questionDetails->question_type);
 			break;
 	}
 	
@@ -99,7 +99,7 @@ function WPCW_showPage_ModifyQuestion_load()
 			// Save and return buttons.
 			printf('<div class="wpcw_button_group"><br/>');						
 				printf('<a href="%s?page=WPCW_showPage_QuestionPool" class="button-secondary">%s</a>&nbsp;&nbsp;', admin_url('admin.php'), __('&laquo; Return to Question Pool', 'wp_courseware'));
-				printf('<input type="submit" class="button-primary" value="%s" />', __('Save Question Details', 'wp_courseware'));
+				printf('<input type="submit" class="button-primary" value="%s" />', __('Guardar Detalles de pregunta', 'wp_courseware'));
 			printf('</div>');
 		
 		printf('</form>');

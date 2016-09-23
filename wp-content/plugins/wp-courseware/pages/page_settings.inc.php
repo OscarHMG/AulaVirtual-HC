@@ -12,7 +12,7 @@
 function WPCW_showPage_Settings_load()
 {
 	$page = new PageBuilder(true);
-	$page->showPageHeader(__('Training Courses - Settings', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Cursos de capacitaci&oacute;n - Configuraci&oacute;n', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	// Check for update flag
 	if (isset($_POST['update']) && $_POST['update'] == 'tables_force_upgrade')
@@ -31,7 +31,7 @@ function WPCW_showPage_Settings_load()
 	$settingsFields = array(
 		'section_access_key' 	=> array(
 				'type'	  	=> 'break',
-				'html'	   	=> WPCW_forms_createBreakHTML(__('Licence Key Settings', 'wp_courseware')),
+				'html'	   	=> WPCW_forms_createBreakHTML(__(' Configuraci&oacute;n Licence Key', 'wp_courseware')),
 			),			
 			
 		'licence_key' => array(
@@ -115,7 +115,7 @@ function WPCW_showPage_Settings_load()
 	}
 				
 	$settings = new SettingsForm($settingsFields, WPCW_DATABASE_SETTINGS_KEY, 'wpcw_form_settings_general');
-	$settings->setSaveButtonLabel(__('Save ALL Settings', 'wp_courseware'));
+	$settings->setSaveButtonLabel(__('Guardar todas las configuraciones', 'wp_courseware'));
 	
 	// Update messages for translation
 	$settings->msg_settingsSaved   	= __('Settings successfully saved.', 'wp_courseware');
@@ -206,7 +206,7 @@ function WPCW_showPage_Settings_Network_load()
 	
 	// Set strings and messages
 	$settings->setAllTranslationStrings(WPCW_forms_getTranslationStrings());
-	$settings->setSaveButtonLabel('Save ALL Settings', 'wp_courseware');
+	$settings->setSaveButtonLabel('Guardar todas las configuraciones', 'wp_courseware');
 	
 	// Form event handlers - processes the saved settings in some way 
 	$settings->afterSaveFunction = 'WPCW_showPage_Settings_afterSave';
