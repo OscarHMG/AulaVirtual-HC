@@ -16,7 +16,7 @@ function WPCW_showPage_UserProgess_load()
 	$wpdb->show_errors();
 	
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('Detailed User Progress Report', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Informe del progreso detallada del usuario', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	
 	// Check passed user ID is valid
@@ -24,12 +24,12 @@ function WPCW_showPage_UserProgess_load()
 	$userDetails = get_userdata($userID); 
 	if (!$userDetails) 
 	{
-		$page->showMessage(__('Sorry, but that user could not be found.', 'wp_courseware'), true);
+		$page->showMessage(__('Lo siento, pero ese usuario no se pudo encontrar.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return false;		
 	}
 
-	printf(__('<p>Here you can see how well <b>%s</b> (Username: <b>%s</b>) is doing with your training courses.</p>', 'wp_courseware'), $userDetails->data->display_name, $userDetails->data->user_login);
+	printf(__('<p>Aqu&iacute; se puede ver los avances que <b>%s</b> (Username: <b>%s</b>) est&aacute; haciendo en los cursos de capacitaci&oacute;n.</p>', 'wp_courseware'), $userDetails->data->display_name, $userDetails->data->user_login);
 		
 
 	// #### 1 - Show a list of all training courses, and then list the units associated with that course.	
@@ -58,8 +58,8 @@ function WPCW_showPage_UserProgess_load()
 			printf('<thead>');
 				printf('<th>%s</th>', 															__('Unidad', 'wp_courseware'));
 				printf('<th class="wpcw_center">%s</th>', 								__('Completada', 'wp_courseware'));
-				printf('<th class="wpcw_center wpcw_tbl_progress_quiz_name">%s</th>', 	__('Nombre de la Evaluación', 'wp_courseware'));
-				printf('<th class="wpcw_center">%s</th>', 								__('Estado de la Evaluación', 'wp_courseware'));
+				printf('<th class="wpcw_center wpcw_tbl_progress_quiz_name">%s</th>', 	__('Nombre de la Evaluaci&oacute;n', 'wp_courseware'));
+				printf('<th class="wpcw_center">%s</th>', 								__('Estado de la Evaluaci&oacute;n', 'wp_courseware'));
 				printf('<th class="wpcw_center">%s</th>', 								__('Acciones', 'wp_courseware'));
 			printf('</thead><tbody>');			
 			
@@ -200,13 +200,13 @@ function WPCW_showPage_UserProgess_load()
 		
 		// Course is not allowed to access any courses. So show a meaningful message.
 		if ($courseCount == 0) {
-			$page->showMessage(sprintf(__('User <b>%s</b> is not currently allowed to access any training courses.', 'wp_courseware'), $userDetails->data->display_name), true);
+			$page->showMessage(sprintf(__('Usuario <b>%s</b> actualmente no est&aacute; permitido acceder a cualquiera de los cursos de capacitaci&oacute;n', 'wp_courseware'), $userDetails->data->display_name), true);
 		}
 		
 	}
 	
 	else {
-		printf('<p>%s</p>', __('There are currently no courses to show. Why not create one?', 'wp_courseware'));
+		printf('<p>%s</p>', __('Actualmente no hay cursos para mostrar. Por qu&eacute; no crea uno?', 'wp_courseware'));
 	}
 		
 	$page->showPageFooter();
@@ -223,7 +223,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 	$wpdb->show_errors();
 	
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('Detailed User Quiz/Survey Results', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__(' Evaluaci&oacute;n/Encuesta resultados detalleados de los Usuario  ', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	$userID = WPCW_arrays_getValue($_GET, 'user_id') + 0;
 	$unitID = WPCW_arrays_getValue($_GET, 'unit_id') + 0;
@@ -261,7 +261,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 		// Close the button wrapper for above early
 		printf('</div>'); // .wpcw_button_group
 		
-		$page->showMessage(__('Sorry, but no results could be found.', 'wp_courseware'), true);
+		$page->showMessage(__('Lo sentimos, pero no hay resultados podrían ser encontrados.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return;
 	}
@@ -331,17 +331,17 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 	
 	// These are the base details for the quiz to show.
 	$summaryData = array(
-		__('Quiz Title', 'wp_courseware')					=> $quizDetails->quiz_title,
-		__('Quiz Description', 'wp_courseware')				=> $quizDetails->quiz_desc,
-		__('Quiz Type', 'wp_courseware')					=> WPCW_quizzes_getQuizTypeName($quizDetails->quiz_type),
-		__('No. of Questions', 'wp_courseware') 			=> $results->quiz_question_total,
+		__('Titulo de Evaluaci&oacute;n', 'wp_courseware')					=> $quizDetails->quiz_title,
+		__('Descripcion de Evaluaci&oacute;n', 'wp_courseware')				=> $quizDetails->quiz_desc,
+		__('Tipo de Evaluaci&oacute;n', 'wp_courseware')					=> WPCW_quizzes_getQuizTypeName($quizDetails->quiz_type),
+		__('No. de Preguntas', 'wp_courseware') 			=> $results->quiz_question_total,
 		 
-		__('Completed Date', 'wp_courseware') 				=>
+		__('Fecha completada', 'wp_courseware') 				=>
 				__('About', 'wp_courseware') . ' ' . human_time_diff($results->quiz_completed_date_ts) . ' ' . __('ago', 'wp_courseware') . 
 				'<br/><small>(' . date('D jS M Y \a\t H:i:s', $results->quiz_completed_date_ts) . ')</small>',
 				
-		__('Number of Quiz Attempts', 'wp_courseware')			=> $results->attempt_count,
-		__('Permitted Quiz Attempts', 'wp_courseware')		=> (-1 == $quizDetails->quiz_attempts_allowed ? __('Unlimited', 'wp_courseware') : $quizDetails->quiz_attempts_allowed)
+		__('N&uacute;mero de intentos Evaluaci&oacute;n', 'wp_courseware')			=> $results->attempt_count,
+		__('Los intentos permitidos Evaluaci&oacute;n', 'wp_courseware')		=> (-1 == $quizDetails->quiz_attempts_allowed ? __('Unlimited', 'wp_courseware') : $quizDetails->quiz_attempts_allowed)
 	);
 	
 	
@@ -353,12 +353,12 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 		// Still got items to grade
 		if ($results->quiz_needs_marking > 0)
 		{
-			$summaryData[__('No. of Questions to Grade', 'wp_courseware')] = '<span class="wpcw_status_info wpcw_icon_pending">' .$results->quiz_needs_marking . '</span>';
-			$summaryData[__('Overall Grade', 'wp_courseware')]	= '<span class="wpcw_status_info wpcw_icon_pending">' . __('Awaiting Final Grading', 'wp_courseware') . '</span>';
+			$summaryData[__('Nº de preguntas de un Curso', 'wp_courseware')] = '<span class="wpcw_status_info wpcw_icon_pending">' .$results->quiz_needs_marking . '</span>';
+			$summaryData[__('Nota General', 'wp_courseware')]	= '<span class="wpcw_status_info wpcw_icon_pending">' . __('Awaiting Final Grading', 'wp_courseware') . '</span>';
 		}
 		else
 		{
-			$summaryData[__('No. of Question to Grade', 'wp_courseware')] = '-';
+			$summaryData[__('Nº de preguntas de un Curso', 'wp_courseware')] = '-';
 			
 			// Show if PASSED or FAILED with the overall grade.
 			$gradeData = false;
@@ -370,7 +370,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 				$gradeData = sprintf('<span class="wpcw_tbl_progress_quiz_overall wpcw_question_yesno_status wpcw_question_no">%s%% %s</span>', number_format($results->quiz_grade, 1), __('Failed', 'wp_courseware'));
 			}
 			
-			$summaryData[__('Overall Grade', 'wp_courseware')]	= $gradeData;
+			$summaryData[__('Nota General', 'wp_courseware')]	= $gradeData;
 		}
 	}
 	
@@ -405,7 +405,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 				$quObj = $quizDetails->questions[$questionID];
 				
 				// Render the question as a table.
-				printf('<h3>%s #%d - %s</h3>', __('Question', 'wp_courseware'), ++$questionNumber, $quObj->question_question);
+				printf('<h3>%s #%d - %s</h3>', __('Pregunta', 'wp_courseware'), ++$questionNumber, $quObj->question_question);
 
 				$tbl = new TableBuilder();
 				$tbl->attributes = array(
@@ -468,7 +468,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 						case 'truefalse':
 						case 'multi':
 							// The right answer...
-							$summaryData[__('Correct Answer', 'wp_courseware')] = array(
+							$summaryData[__('Respuesta correcta', 'wp_courseware')] = array(
 								'data' 		=> $answer['correct'],
 								'cssclass' 	=> ''
 							); 
@@ -478,7 +478,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 								('yes' == $answer['got_right'] ? __('Yes', 'wp_courseware') : __('No', 'wp_courseware'))
 							);
 								
-							$summaryData[__('Did they get it right?', 'wp_courseware')] = array(
+							$summaryData[__('Ten&iacute;an que hacerlo bien?', 'wp_courseware')] = array(
 								'data' 		=> $getItRight,
 								'cssclass'	=> ''
 							);
@@ -506,14 +506,14 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 								// the grading later if they want to.							
 								$gradeHTML .= WPCW_forms_createDropdown(
 									'grade_quiz_' . $quObj->question_id, 
-									WPCW_quizzes_getPercentageList(__('-- Select a grade --', 'wp_courseware')),
+									WPCW_quizzes_getPercentageList(__('-- Seleccione un curso --', 'wp_courseware')),
 									$theirGrade,
 									false,
 									'wpcw_tbl_progress_quiz_answers_grade'
 								);
 								
 								
-								$summaryData[__('Their Grade', 'wp_courseware')] = array(
+								$summaryData[__('Su curso', 'wp_courseware')] = array(
 									'data' 		=> $gradeHTML,
 									'cssclass'	=> $cssClass
 								);								
@@ -600,7 +600,7 @@ function WPCW_showPage_UserProgess_quizAnswers_handingGrading($quizDetails, $res
 		WPCW_quizzes_updateQuizResults($results);
 		
 		// Success message
-		$page->showMessage(__('Grades have been successfully updated for this user.', 'wp_courseware'));
+		$page->showMessage(__('Cursos se han actualizado con éxito para este usuario.', 'wp_courseware'));
 		
 		
 		// Refresh the results - now that we've made changes
@@ -620,10 +620,10 @@ function WPCW_showPage_UserProgess_quizAnswers_handingGrading($quizDetails, $res
 			if ($results->quiz_grade >= $quizDetails->quiz_pass_mark) 
 			{
 				// Just a little note to mark as complete
-				$results->extraEmailDetail = __('You have passed the quiz.', 'wp_courseware');
+				$results->extraEmailDetail = __('Usted ha aprobado la evaluaci&oacute;n.', 'wp_courseware');
 				
 				printf('<div id="message" class="wpcw_msg wpcw_msg_success">%s</span></div>', 
-					__('The user has <b>PASSED</b> this quiz, and the associated unit has been marked as complete.', 'wp_courseware')
+					__('El usuario ha <b>APROBADO</b> esta evaluaci&oacute;n y la unidad asociada se ha marcado como completa.', 'wp_courseware')
 				);
 				
 				WPCW_units_saveUserProgress_Complete($userID, $unitID);
@@ -804,7 +804,7 @@ function WPCW_showPage_UserProgess_quizAnswers_whatsNext_savePreferences($quizDe
 		{
 			// User needs to retake the course.
 			case 'retake_quiz':
-					$results->extraEmailDetail = __('Since you didn\'t pass the quiz, the instructor has asked that you re-take this quiz.', 'wp_courseware');
+					$results->extraEmailDetail = __('Ya que no aprob&oacute; la evaluaci&oacute;n, el instructor ha pedido que vuelva a tomar esta evaluaci&oacute;n.', 'wp_courseware');
 					if ($userRetakeMsg) { 
 						$results->extraEmailDetail .= "\n\n" . 	$userRetakeMsg;
 					}
@@ -812,7 +812,7 @@ function WPCW_showPage_UserProgess_quizAnswers_whatsNext_savePreferences($quizDe
 				
 			// User is allowed to progress
 			case 'progress_anyway':
-					$results->extraEmailDetail = __('Although you didn\'t pass the quiz, the instructor is allowing you to continue on to the next unit.', 'wp_courseware');
+					$results->extraEmailDetail = __('A pesar de que no aprob&oacute; la evaluaci&oacute;n, el instructor le permite continuar a la siguiente unidad.', 'wp_courseware');
 					
 					// Mark the unit as completed.
 					WPCW_units_saveUserProgress_Complete($userID, $unitID);
