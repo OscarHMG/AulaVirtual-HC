@@ -131,7 +131,7 @@ function WPCW_showPage_UserProgess_load()
 									
 									// Survey not taken yet
 									else {
-										printf('<td class="wpcw_center">%s</td>', __('Pending', 'wp_courseware'));
+										printf('<td class="wpcw_center">%s</td>', __('Pendiente', 'wp_courseware'));
 									}
 								}
 								
@@ -145,7 +145,7 @@ function WPCW_showPage_UserProgess_load()
 									{
 										// -1% means that the quiz is needing grading.
 										if ($quizResults->quiz_grade < 0) {
-											printf('<td class="wpcw_center">%s</td>', __('Awaiting Final Grading', 'wp_courseware'));
+											printf('<td class="wpcw_center">%s</td>', __('En espera de la Calificaci&oacute;n final', 'wp_courseware'));
 										}
 										else {
 											printf('<td class="wpcw_tbl_progress_completed">%d%%</td>', number_format($quizResults->quiz_grade, 1));
@@ -166,7 +166,7 @@ function WPCW_showPage_UserProgess_load()
 									
 									// Quiz not taken yet
 									else {
-										printf('<td class="wpcw_center">%s</td>', __('Pending', 'wp_courseware'));
+										printf('<td class="wpcw_center">%s</td>', __('Pendiente', 'wp_courseware'));
 									}
 									
 								} // end of if survey

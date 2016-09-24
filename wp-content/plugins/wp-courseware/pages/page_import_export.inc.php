@@ -511,7 +511,7 @@ function WPCW_users_importUsersFromFile($page)
 				if (!empty($skippedList)) 
 				{
 					printf('<div id="wpcw_user_import_skipped">');					
-						printf('<b>' . __('The following %d users were not imported:', 'wp_courseware') . '</b>', count($skippedList));
+						printf('<b>' . __('Los siguientes %d usuarios no han sido importados:', 'wp_courseware') . '</b>', count($skippedList));
 						
 						printf('<table class="widefat">');
 							printf('<thead>');

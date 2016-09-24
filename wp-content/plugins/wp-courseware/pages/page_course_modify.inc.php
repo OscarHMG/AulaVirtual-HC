@@ -229,7 +229,7 @@ function WPCW_showPage_ModifyCourse_load()
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee when they\'ve <b>yet to complete a unit</b>. This message is displayed at the bottom of the unit page, along with a button that says "<b>Mark as completed</b>". HTML is OK.', 'wp_courseware'),
+					'desc'  	=> __('The message shown to a trainee when they\'ve <b>yet to complete a unit</b>. This message is displayed at the bottom of the unit page, along with a button that says "<b>Marque esta unidad como COMPLETA</b>". HTML is OK.', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
@@ -591,7 +591,7 @@ function WPCW_showPage_ModifyCourse_load()
 					'html'		=> sprintf('<a href="%s?page=WPCW_showPage_ModifyCourse&course_id=%d&action=reset_course_progress" class="button-primary" id="wpcw_course_btn_progress_reset_whole_course">%s</a><p>%s</p>',
 									admin_url('admin.php'), $courseID,
 									__('Restablecer todos los usuarios en este curso al inicio', 'wp_courseware'), 
-									__('Este bot&oacute;ón restablecer&aacute; todos los usuarios que han accedido a este curso. Esto elimina todos los datos de los cursos tambi&eacute;n.', 'wp_courseware')
+									__('Este bot&oacute;n restablecer&aacute; todos los usuarios que han accedido a este curso. Esto elimina todos los datos de los cursos tambi&eacute;n.', 'wp_courseware')
 								)
 					),	
 					
