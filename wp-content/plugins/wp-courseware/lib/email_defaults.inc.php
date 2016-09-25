@@ -3,10 +3,10 @@
 /**
  * Email - Module Complete 
  */
-define('EMAIL_TEMPLATE_COMPLETE_MODULE_SUBJECT', __("Module {MODULE_TITLE} - Complete.", 'wp_courseware'));
-define('EMAIL_TEMPLATE_COMPLETE_MODULE_BODY', __('Hi {USER_NAME}
+define('EMAIL_TEMPLATE_COMPLETE_MODULE_SUBJECT', __("M&oacute;dulo {MODULE_TITLE} - Completo.", 'wp_courseware'));
+define('EMAIL_TEMPLATE_COMPLETE_MODULE_BODY', __('Hola {USER_NAME}
 
-Great work for completing the "{MODULE_TITLE}" module!
+Buen trabajo al completar el m&oacute;dulo "{MODULE_TITLE}"!
 
 {SITE_NAME}
 {SITE_URL}', 'wp_courseware'));
@@ -15,10 +15,10 @@ Great work for completing the "{MODULE_TITLE}" module!
 /**
  * Email - Course Complete 
  */
-define('EMAIL_TEMPLATE_COMPLETE_COURSE_SUBJECT', __("Course {COURSE_TITLE} - Complete", 'wp_courseware'));
-define('EMAIL_TEMPLATE_COMPLETE_COURSE_BODY', __('Hi {USER_NAME}
+define('EMAIL_TEMPLATE_COMPLETE_COURSE_SUBJECT', __("Curso {COURSE_TITLE} - Completo", 'wp_courseware'));
+define('EMAIL_TEMPLATE_COMPLETE_COURSE_BODY', __('Hola {USER_NAME}
 
-Great work for completing the "{COURSE_TITLE}" training course! Fantastic!
+Gran trabajo al completar el curso de capacitaci&oacute;n "{COURSE_TITLE}"! ¡Fant&aacute;stico!
 
 {SITE_NAME}
 {SITE_URL}', 'wp_courseware'));
@@ -27,13 +27,13 @@ Great work for completing the "{COURSE_TITLE}" training course! Fantastic!
 /**
  * Email - Quiz Grade
  */
-define('EMAIL_TEMPLATE_QUIZ_GRADE_SUBJECT', __('{COURSE_TITLE} - Your Quiz Grade - For "{QUIZ_TITLE}"', 'wp_courseware'));
-define('EMAIL_TEMPLATE_QUIZ_GRADE_BODY', __('Hi {USER_NAME}
+define('EMAIL_TEMPLATE_QUIZ_GRADE_SUBJECT', __('{COURSE_TITLE} - "{QUIZ_TITLE}"', 'wp_courseware'));
+define('EMAIL_TEMPLATE_QUIZ_GRADE_BODY', __('Hola {USER_NAME}
 
-Your grade for the "{QUIZ_TITLE}" quiz is: 
+Su calificaci&oacute;n para la evaluaci&oacute;n  "{QUIZ_TITLE}" es: 
 {QUIZ_GRADE} 
 
-This was for the quiz at the end of this unit:
+Esto era para el examen al final de esta unidad:
 {UNIT_URL}
 
 {QUIZ_RESULT_DETAIL}
@@ -45,20 +45,20 @@ This was for the quiz at the end of this unit:
 /**
  * Email - Final Course Summary and Grade
  */
-define('EMAIL_TEMPLATE_COURSE_SUMMARY_WITH_GRADE_SUBJECT', __('Your final grade summary for "{COURSE_TITLE}"', 'wp_courseware'));
-define('EMAIL_TEMPLATE_COURSE_SUMMARY_WITH_GRADE_BODY', __( 'Hi {USER_NAME}
+define('EMAIL_TEMPLATE_COURSE_SUMMARY_WITH_GRADE_SUBJECT', __('Su resumen final de grado para "{COURSE_TITLE}"', 'wp_courseware'));
+define('EMAIL_TEMPLATE_COURSE_SUMMARY_WITH_GRADE_BODY', __( 'Hola {USER_NAME}
 
-Congratulations on completing the "{COURSE_TITLE}" training course! Fantastic!
+Felicidades por completar el curso de capacitaci&oacute;n "{COURSE_TITLE}"! ¡Fant&aacute;stico!
 
-Your final grade is: {CUMULATIVE_GRADE} 
+Su nota final es: {CUMULATIVE_GRADE} 
 
-Here is a summary of your quiz results:
+Aqu&iacute; est&aacute; un resumen de los resultados de la evaluaci&oacute;n:
 {QUIZ_SUMMARY}
 
-You can download your certificate here:
+Puede descargar su certificado aqu&iacute;:
 {CERTIFICATE_LINK}
 
-I hope you enjoyed the course!
+Espero que hayan disfrutado el curso!
 
 {SITE_NAME}
 {SITE_URL}', 'wp_courseware')); 

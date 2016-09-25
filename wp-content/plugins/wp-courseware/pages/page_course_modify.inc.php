@@ -40,7 +40,7 @@ function WPCW_showPage_ModifyCourse_load()
 			$canEditCourse = apply_filters('wpcw_back_permissions_user_can_edit_course', true, get_current_user_id(), $courseDetails);
 			if (!$canEditCourse)
 			{
-				$page->showMessage(apply_filters('wpcw_back_msg_permissions_user_can_edit_course', __('You are currently not permitted to edit this course.', 'wp_courseware'), get_current_user_id(), $courseDetails), true);
+				$page->showMessage(apply_filters('wpcw_back_msg_permissions_user_can_edit_course', __('Actualmente no tienes permiso para editar este curso.', 'wp_courseware'), get_current_user_id(), $courseDetails), true);
 				$page->showPageFooter();
 				return;
 			}
@@ -56,7 +56,7 @@ function WPCW_showPage_ModifyCourse_load()
 		$canAddCourse = apply_filters('wpcw_back_permissions_user_can_add_course', true, get_current_user_id());
 		if (!$canAddCourse)
 		{
-			$page->showMessage(apply_filters('wpcw_back_msg_permissions_user_can_add_course', __('You are currently not permitted to add a new course.', 'wp_courseware'), get_current_user_id()), true);
+			$page->showMessage(apply_filters('wpcw_back_msg_permissions_user_can_add_course', __('YActualmente no tienes permiso para agregar un nuevo curso.', 'wp_courseware'), get_current_user_id()), true);
 			$page->showPageFooter();
 			return;
 		}
@@ -105,7 +105,7 @@ function WPCW_showPage_ModifyCourse_load()
 		
 		// Add a link back to editing, as we've hidden that panel.
 		printf('<p><a href="%s?page=WPCW_showPage_ModifyCourse&course_id=%d" class="button button-secondary">%s</a></p>', 
-			admin_url('admin.php'), $courseDetails->course_id, __('&laquo; Go back to editing the course settings', 'wp_courseware')
+			admin_url('admin.php'), $courseDetails->course_id, __('&laquo; Volver a la edici&oacute;n de los ajustes del curso', 'wp_courseware')
 		);		
 	}
 	
@@ -132,7 +132,7 @@ function WPCW_showPage_ModifyCourse_load()
 						'maxlen'	=> 150,
 						'minlen'	=> 1,
 						'regexp'	=> '/^[^<>]+$/',
-						'error'		=> __('Por favor, especifique un nombre para su curso, hasta un m&aacute;ximo de 150 caracteres, s&oacute;lo hay par&eacute;ntesis angulares (&lt; o &gt;). Sus participantes ser&aacute;n capaces de ver este t&iacute;tulo del curso..', 'wp_courseware')
+						'error'		=> __('Por favor, especifique un nombre para su curso, hasta un m&aacute;ximo de 150 caracteres, s&oacute;lo hay par&eacute;ntesis angulares (&lt; o &gt;). Sus participantes ser&aacute;n capaces de ver este t&iacute;tulo del curso.', 'wp_courseware')
 					)	
 				),				
 	
@@ -146,7 +146,7 @@ function WPCW_showPage_ModifyCourse_load()
 						'type'		=> 'string',
 						'maxlen'	=> 5000,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the description of your course to 5000 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limitar la descripci&oacute;n de su curso con 5000 caracteres.', 'wp_courseware')
 					)	 	
 				),
 				
@@ -182,7 +182,7 @@ function WPCW_showPage_ModifyCourse_load()
 					'required'  => true,
 					'desc'  	=> __('Esta configuraci&oacute;n le permite establecer c&oacute;mo los usuarios pueden acceder a este curso. O bien se puede tener acceso de forma autom&aacute;tica tan pronto como se crea el usuario, o se les puede dar acceso manualmente. Siempre se puede quitar manualmente el acceso si lo desea.', 'wp_courseware'),
 					'data'		=> array(
-						'default_show' => __('<b>Automatico</b> - Todos los nuevos usuarios tendr&aacute;n acceso este curso.', 'wp_courseware'),
+						'default_show' => __('<b>Autom&aacute;tico</b> - Todos los nuevos usuarios tendr&aacute;n acceso este curso.', 'wp_courseware'),
 						'default_hide' => __('<b>Manual</b> - Los usuarios s&oacute;lo pueden acceder, si les concede el acceso.', 'wp_courseware')
 					)	 	
 				),	
@@ -199,13 +199,13 @@ function WPCW_showPage_ModifyCourse_load()
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee once they\'ve <b>completed a unit</b>, which is displayed at the bottom of the unit page. HTML is OK.', 'wp_courseware'),
+					'desc'  	=> __('El mensaje que se muestra a un aprendiz, una vez que hayan <b>completado una unidad</b>, que se muestra en la parte inferior de la p&aacute;gina unidad. HTML es OK.', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 500,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit message to 500 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el mensaje con 500 caracteres.', 'wp_courseware')
 					)	 	
 				),		
 				
@@ -214,13 +214,13 @@ function WPCW_showPage_ModifyCourse_load()
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee once they\'ve <b>completed the whole course</b>, which is displayed at the bottom of the unit page. HTML is OK.', 'wp_courseware'),
+					'desc'  	=> __('El mensaje que se muestra a un aprendiz, una vez que hayan <b>completado todo el curso</b>, que se muestra en la parte inferior de la p&aacute;gina unidad. HTML es OK.', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 500,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit message to 500 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el mensaje a 500 caracteres.', 'wp_courseware')
 					)	 	
 				),
 	
@@ -229,13 +229,13 @@ function WPCW_showPage_ModifyCourse_load()
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee when they\'ve <b>yet to complete a unit</b>. This message is displayed at the bottom of the unit page, along with a button that says "<b>Marque esta unidad como COMPLETA</b>". HTML is OK.', 'wp_courseware'),
+					'desc'  	=> __('El mensaje que se muestra a un aprendiz cuando a&uacute;n <b>tiene que completar una unidad</b>. Este mensaje se muestra en la parte inferior de la p&aacute;gina de la unidad, junto con un bot&oacute;n que dice "Marque esta Unidad de como COMPLETA". HTML es OK.', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 500,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit message to 500 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el mensaje a 500 caracteres.', 'wp_courseware')
 					)	 	
 				),	
 				
@@ -244,73 +244,73 @@ function WPCW_showPage_ModifyCourse_load()
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee they are <b>not allowed to access a unit</b>, because they are not allowed to <b>access the whole course</b>.', 'wp_courseware'),
+					'desc'  	=> __('El mensaje que se muestra a un aprendiz que <b>no puede acceder a una unidad</b>, porque no se les permite <b>acceder el curso</b>.', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 500,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit message to 500 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el mensaje a 500 caracteres.', 'wp_courseware')
 					)	 	
 				),	
 	
 			'course_message_unit_not_yet' => array(
-					'label' 	=> __('Message - Not Yet Available', 'wp_courseware'),
+					'label' 	=> __('Mensaje - No disponible a&uacute;n', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee they are <b>not allowed to access a unit yet</b>, because they need to complete a previous unit.', 'wp_courseware'),
+					'desc'  	=> __('El mensaje que se muestra a un aprendiz que <b>no puede acceder a una unidad</b>,  debido  que necesita completar una unidad anterior.', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 500,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit message to 500 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el mensaje a 500 caracteres.', 'wp_courseware')
 					)	 	
 				),	
 	
 			'course_message_unit_not_logged_in' => array(
-					'label' 	=> __('Message - Not Logged In', 'wp_courseware'),
+					'label' 	=> __('Mensaje - Sin iniciar sesi&oacute;n', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee they are <b>not logged in</b>, and therefore cannot access the unit.', 'wp_courseware'),
+					'desc'  	=> __('El mensaje que se muestra a un aprendiz que <b>no est&aacute; en el sistema</b>, y por lo tanto no puede acceder a la unidad.', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 500,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit message to 500 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el mensaje a 500 caracteres.', 'wp_courseware')
 					)	 	
 				),			
 				
 			'course_message_quiz_open_grading_blocking' => array(
-					'label' 	=> __('Message - Open-Question Submitted - Blocking Mode', 'wp_courseware'),
+					'label' 	=> __('Mensaje - Evaluaci&oacute;n enviada - con bloqueo', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee they have submitted an answer to an <b>open-ended or upload question</b>, and you need to grade their answer <b>before they continue</b>.', 'wp_courseware'),
+					'desc'  	=> __('El mensaje que se muestra a un alumno cuando ha enviado una evaluacion. <b>Necesita que el instructor se la califique</b>, y podra <b>continuar</b>.', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 500,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit message to 500 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el mensaje a 500 caracteres.', 'wp_courseware')
 					)	 	
 				),	
 				
 			'course_message_quiz_open_grading_non_blocking' => array(
-					'label' 	=> __('Message - Open-Question Submitted - Non-Blocking Mode', 'wp_courseware'),
+					'label' 	=> __('Mensaje - Evaluaci&oacute;n enviada - Sin bloqueo', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_message',
-					'desc'  	=> __('The message shown to a trainee they have submitted an answer to an <b>open-ended or upload question</b>, and you need to grade their answer, but they can <b>continue anyway</b>.', 'wp_courseware'),
+					'desc'  	=> __('El mensaje que se muestra a un aprendiz que ha presentado una respuesta a una <b>pregunta abierta o cargada</b>, necesita que se la califiquen, pero puede <b>continuar de todos modos.</b.>', 'wp_courseware'),
 					'rows'		=> 2,
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 500,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit message to 500 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el mensaje a 500 caracteres.', 'wp_courseware')
 					)	 	
 				),	
 				
@@ -323,45 +323,45 @@ function WPCW_showPage_ModifyCourse_load()
 				),		
 	
 			'course_from_email' => array(
-					'label' 	=> __('Email From Address', 'wp_courseware'),
+					'label' 	=> __('Direcci&oacute;n de correo electr&oacute;nico', 'wp_courseware'),
 					'type'  	=> 'text',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email',
-					'desc'  	=> __('The email address that the email notifications should be from.<br/>Depending on your server\'s spam-protection set up, this may not appear in the outgoing emails.', 'wp_courseware'),
+					'desc'  	=> __('La direcci&oacute;n de correo electr&oacute;nico que se notificar&aacute;.<br/>Depende de su  protecci&oacuten de spam de su servidor, este correo podr&iacute;a no aparecer  en su bandeja de entrada.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'email',
 						'maxlen'	=> 150,
 						'minlen'	=> 1,
-						'error'		=> __('Please enter a valid email address.', 'wp_courseware')
+						'error'		=> __('Por favor, introduce una direcci&oacute;n de correo electr&oacute;nico v&aacute;lida', 'wp_courseware')
 					)	
 				),		
 				
 			'course_from_name' => array(
-					'label' 	=> __('Email From Name', 'wp_courseware'),
+					'label' 	=> __('Nombre del correo electr&oacute;nico', 'wp_courseware'),
 					'type'  	=> 'text',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email',
-					'desc'  	=> __('The name used on the email notifications, which are sent to you and your trainees. <br/>Depending on your server\'s spam-protection set up, this may not appear in the outgoing emails.', 'wp_courseware'),
+					'desc'  	=> __('El nombre utilizado en las notificaciones por correo electr&oacute;nico, que se env&iacute;an a usted y sus alumnos. <br/>Depende de su  protecci&oacute;n de spam de su servidor, esto no puede aparecer en los correos electr&oacute;nicos salientes.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 150,
 						'minlen'	=> 1,
 						'regexp'	=> '/^[^<>]+$/',
-						'error'		=> __('Please specify a from name, up to a maximum of 150 characters, just no angled brackets (&lt; or &gt;).', 'wp_courseware')			
+						'error'		=> __('Por favor, especificar un nombre de hasta un m&aacute;ximo de 150 caracteres, s&oacute;lo hay par&eacute;ntesis angulares (&lt; or &gt;).', 'wp_courseware')			
 					)	
 				),	
 	
 			'course_to_email' => array(
-					'label' 	=> __('Admin Notify Email Address', 'wp_courseware'),
+					'label' 	=> __('Notificar a la direcci&oacute;n de correo electr&oacute;nico del administrador', 'wp_courseware'),
 					'type'  	=> 'text',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email',
-					'desc'  	=> __('The email address to send admin notifications to.', 'wp_courseware'),
+					'desc'  	=> __('La direcci&oacute;n de correo electr&oacute;nico para enviar notificaciones al administrador.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'email',
 						'maxlen'	=> 150,
 						'minlen'	=> 1,
-						'error'		=> __('Please enter a valid email address.', 'wp_courseware')
+						'error'		=> __('Por favor, introduce una direcci&oacute;n de correo electr&oacute;nico v&aacute;lida.', 'wp_courseware')
 					)	
 				),	
 			
@@ -372,53 +372,53 @@ function WPCW_showPage_ModifyCourse_load()
 				),
 				
 			'email_complete_module_option_admin' => array(
-					'label' 	=> __('Module Complete - Notify You?', 'wp_courseware'),
+					'label' 	=> __('M&oacute;dulo completo - Notificarme?', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email_template_option',
 					'data'	 	=> array(
-						'send_email'	=> __('<b>Send me an email</b> - when one of your trainees has completed a module.', 'wp_courseware'),
-						'no_email'	=> __('<b>Don\'t send me an email</b> - when one of your trainees has completed a module.', 'wp_courseware')
+						'send_email'	=> __('<b>Enviarme un correo</b> - cuando uno de sus alumnos ha completado un m&oacute;dulo.', 'wp_courseware'),
+						'no_email'	=> __('<b>No enviarme un correo</b> - cuando uno de sus alumnos ha completado un m&oacute;dulo.', 'wp_courseware')
 					)
 				),				
 				
 			'email_complete_module_option' => array(
-					'label' 	=> __('Module Complete - Notify User?', 'wp_courseware'),
+					'label' 	=> __('M&oacute;dulo completo - Notificar al usuario?', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email_template_option',
 					'data'	 	=> array(
-						'send_email'	=> __('<b>Send Email</b> - to user when module has been completed.', 'wp_courseware'),
-						'no_email'	=> __('<b>Don\'t Send Email</b> - to user when module has been completed.', 'wp_courseware')
+						'send_email'	=> __('<b>Enviar correo electr&oacute;nico</b> - para usuarios que han terminado su m&oacute;dulo.', 'wp_courseware'),
+						'no_email'	=> __('<b>No enviar correo electr&oacute;nico</b> - para usuarios que han terminado su m&oacute;dulo.', 'wp_courseware')
 					)
 				),
 				
 			'email_complete_module_subject' => array(
-					'label' 	=> __('Module Complete - Email Subject', 'wp_courseware'),
+					'label' 	=> __('M&oacute;dulo completo - Asunto del correo', 'wp_courseware'),
 					'type'  	=> 'textarea',				
 					'required'  => false,
 					'cssclass'	=> 'wpcw_course_email_template_subject',
 					'rows'		=> 2,
-					'desc'  	=> __('The <b>subject line</b> for the email sent to a user when they complete a <b>module</b>.', 'wp_courseware'),
+					'desc'  	=> __('La <b>linea del asunto</b> para un correo electr&oacute;nico cuando se complete un <b>m&oacute;dulo</b>.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 300,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the email subject to 300 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el asunto del correo electr&oacute;nico con 300 caracteres.', 'wp_courseware')
 					)	 	
 				),		
 							
 			'email_complete_module_body' => array(
-					'label' 	=> __('Module Complete - Email Body', 'wp_courseware'),
+					'label' 	=> __('M&oacute;dulo completo - Cuerpo del correo', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => false,
 					'cssclass'	=> 'wpcw_course_email_template',
-					'desc'  	=> __('The <b>template body</b> for the email sent to a user when they complete a <b>module</b>.', 'wp_courseware'),
+					'desc'  	=> __('El cuerpo de la plantilla para el correo electr&oacute;nico enviado a un usuario cuando se completa un m&oacute;dulo.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 5000,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the email body to 5000 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el cuerpo del correo electr&oacute;nico a 5000 con caracteres.', 'wp_courseware')
 					)	 	
 				),	
 				
@@ -429,53 +429,53 @@ function WPCW_showPage_ModifyCourse_load()
 				),
 				
 			'email_complete_course_option_admin' => array(
-					'label' 	=> __('Course Complete - Notify You?', 'wp_courseware'),
+					'label' 	=> __('Course Complete - Notificarme', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email_template_option',
 					'data'	 	=> array(
-						'send_email'	=> __('<b>Send me an email</b> - when one of your trainees has completed the whole course.', 'wp_courseware'),
-						'no_email'	=> __('<b>Don\'t send me an email</b> - when one of your trainees has completed the whole course.', 'wp_courseware')
+						'send_email'	=> __('<b>Enviarme un correo electr&oacute;nico</b> - cuando uno de sus alumnos ha completado todo el curso..', 'wp_courseware'),
+						'no_email'	=> __('<b>No enviarme un correo electr&oacute;nico</b> - cuando uno de sus alumnos ha completado todo el curso.', 'wp_courseware')
 					)
 				),				
 				
 			'email_complete_course_option' => array(
-					'label' 	=> __('Course Complete - Notify User?', 'wp_courseware'),
+					'label' 	=> __('Curso completo - Notificar al usuario?', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email_template_option',
 					'data'	 	=> array(
-						'send_email'	=> __('<b>Send Email</b> - to user when the whole course has been completed.', 'wp_courseware'),
-						'no_email'	=> __('<b>Don\'t Send Email</b> - to user when the whole course has been completed.', 'wp_courseware')
+						'send_email'	=> __('<b>Enviar correo electr&oacute;nico</b> - al usuario cuando ha completado todo el curso', 'wp_courseware'),
+						'no_email'	=> __('<b>No enviar correo electr&oacute;nico</b> - al usuario cuando ha completado todo el curso.', 'wp_courseware')
 					)
 				),
 				
 			'email_complete_course_subject' => array(
-					'label' 	=> __('Course Complete - Email Subject', 'wp_courseware'),
+					'label' 	=> __('Curso completo - Asunto del correo electr&oacute;nico', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => false,
 					'cssclass'	=> 'wpcw_course_email_template_subject',
 					'rows'		=> 2,
-					'desc'  	=> __('The <b>subject line</b> for the email sent to a user when they complete <b>the whole course</b>.', 'wp_courseware'),
+					'desc'  	=> __('La <b>linea del asunto</b> para un correo electr&oacute;nico cuando se complete un <b>curso</b>..', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 300,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the email subject to 300 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el asunto del correo electr&oacute;nico con 300 caracteres.', 'wp_courseware')
 					)	 	
 				),		
 							
 			'email_complete_course_body' => array(
-					'label' 	=> __('Course Complete - Email Body', 'wp_courseware'),
+					'label' 	=> __('Curso completo - Cuerpo del correo electr&oacute;nico', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => false,
 					'cssclass'	=> 'wpcw_course_email_template',
-					'desc'  	=> __('The <b>template body</b> for the email sent to a user when they complete <b>the whole course</b>.', 'wp_courseware'),
+					'desc'  	=> __('El cuerpo de la plantilla para el correo electr&oacute;nico enviado a un usuario cuando completa un curso.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 5000,
 						'minlen'	=> 1,
-						'error'		=> __('Please limit the email body to 5000 characters.', 'wp_courseware')
+						'error'		=> __('Por favor, limite el cuerpo del correo electr&oacute;nico a 5000 caracteres.', 'wp_courseware')
 					)	 	
 				),	
 	
@@ -486,23 +486,23 @@ function WPCW_showPage_ModifyCourse_load()
 				),				
 				
 			'email_quiz_grade_option' => array(
-					'label' 	=> __('Quiz Grade - Notify User?', 'wp_courseware'),
+					'label' 	=> __('Evaluaci&oacute;n del curso - Notificar al usuario?', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email_template_option',
 					'data'	 	=> array(
-						'send_email'	=> __('<b>Send Email</b> - to user after a quiz is graded (automatically or by the instructor).', 'wp_courseware'),
-						'no_email'		=> __('<b>Don\'t Send Email</b> - to user when a quiz is graded.', 'wp_courseware')
+						'send_email'	=> __('<b>Enviar correo electr&oacute;nico</b> ', 'wp_courseware'),
+						'no_email'		=> __('<b>No enviar correo electr&oacute;nico</b> ', 'wp_courseware')
 					),
 				),
 				
 			'email_quiz_grade_subject' => array(
-					'label' 	=> __('Quiz Graded - Email Subject', 'wp_courseware'),
+					'label' 	=> __('Evaluaci&oacute;n del curso - Asunto del correo electr&oacute;nico', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => false,
 					'cssclass'	=> 'wpcw_course_email_template_subject',
 					'rows'		=> 2,
-					'desc'  	=> __('The <b>subject line</b> for the email sent to a user when they receive a <b>grade for a quiz</b>.', 'wp_courseware'),
+					'desc'  	=> __('La <b>linea del asunto</b> para un correo electr&oacute;nico cuando se complete una <b>evaluaci&oacute;n</b>.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 300,
@@ -512,11 +512,11 @@ function WPCW_showPage_ModifyCourse_load()
 				),		
 							
 			'email_quiz_grade_body' => array(
-					'label' 	=> __('Quiz Graded - Email Body', 'wp_courseware'),
+					'label' 	=> __('Evaluaci&oacute;n del curso - Cuerpo del correo electr&oacute;nico', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => false,
 					'cssclass'	=> 'wpcw_course_email_template',
-					'desc'  	=> __('The <b>template body</b> for the email sent to a user when they receive a <b>grade for a quiz</b>.', 'wp_courseware'),
+					'desc'  	=> __('El cuerpo de la plantilla para el correo electr&oacute;nico enviado a un usuario cuando completa una evaluaci&oacute;n.', 'wp_courseware'),
 					'rows'		=> 20,
 					'validate'	 	=> array(
 						'type'		=> 'string',
@@ -533,12 +533,12 @@ function WPCW_showPage_ModifyCourse_load()
 				),				
 				
 			'email_complete_course_grade_summary_subject' => array(
-					'label' 	=> __('Final Summary - Email Subject', 'wp_courseware'),
+					'label' 	=> __('Resumen Final - Asunto del correo electr&oacute;nico', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => false,
 					'cssclass'	=> 'wpcw_course_email_template_subject',
 					'rows'		=> 2,
-					'desc'  	=> __('The <b>subject line</b> for the email sent to a user when they receive their <b>grade summary at the end of the course</b>.', 'wp_courseware'),
+					'desc'  	=> __('La <b>linea del asunto</b> para un correo electr&oacute;nico cuando se complete una <b>evaluaci&oacute;n final</b>.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 300,
@@ -548,12 +548,12 @@ function WPCW_showPage_ModifyCourse_load()
 				),		
 							
 			'email_complete_course_grade_summary_body' => array(
-					'label' 	=> __('Final Summary - Email Body', 'wp_courseware'),
+					'label' 	=> __('Resumen Final - Cuerpo del correo electr&oacute;nico', 'wp_courseware'),
 					'type'  	=> 'textarea',
 					'required'  => false,
 					'rows'		=> 20,
 					'cssclass'	=> 'wpcw_course_email_template',
-					'desc'  	=> __('The <b>template body</b> for the email sent to a user when they receive their <b>grade summary at the end of the course</b>.', 'wp_courseware'),
+					'desc'  	=> __('El cuerpo de la plantilla para el correo electr&oacute;nico enviado a un usuario cuando completa una evaluaci&oacute;n final.', 'wp_courseware'),
 					'validate'	 	=> array(
 						'type'		=> 'string',
 						'maxlen'	=> 5000,
@@ -570,11 +570,11 @@ function WPCW_showPage_ModifyCourse_load()
 				),
 				
 			'course_opt_use_certificate' => array(
-					'label' 	=> __('Enable certificates?', 'wp_courseware'),
+					'label' 	=> __('Habilitar los certificados?', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
 					'data'	 	=> array(
-						'use_certs'	=> __('<b>Yes</b> - Genera un certificado PDF al usuario complete este curso.','wp_courseware'),
+						'use_certs'	=> __('<b>Si</b> - Genera un certificado PDF al usuario complete este curso.','wp_courseware'),
 						'no_certs'	=> __('<b>No</b> - No genera un certificado PDF al usuario complete este curso.','wp_courseware')
 					)
 				),
@@ -590,7 +590,7 @@ function WPCW_showPage_ModifyCourse_load()
 					'type'  	=> 'custom',
 					'html'		=> sprintf('<a href="%s?page=WPCW_showPage_ModifyCourse&course_id=%d&action=reset_course_progress" class="button-primary" id="wpcw_course_btn_progress_reset_whole_course">%s</a><p>%s</p>',
 									admin_url('admin.php'), $courseID,
-									__('Restablecer todos los usuarios en este curso al inicio', 'wp_courseware'), 
+									__('Restablecer a todos los usuarios al inicio de este curso', 'wp_courseware'), 
 									__('Este bot&oacute;n restablecer&aacute; todos los usuarios que han accedido a este curso. Esto elimina todos los datos de los cursos tambi&eacute;n.', 'wp_courseware')
 								)
 					),	
@@ -619,13 +619,13 @@ function WPCW_showPage_ModifyCourse_load()
 			'break_course_general' 						=> array('label' => __('Detalles Generales del Curso', 'wp_courseware')), 
 			'break_course_access' 						=> array('label' => __('Acceso de Usuario', 'wp_courseware')), 
 			'break_course_messages' 					=> array('label' => __('Mensaje de Usario', 'wp_courseware')),
-			'break_course_notifications_from_details' 	=> array('label' => __('Detalles de la direccion de correo', 'wp_courseware')),
-			'break_course_notifications_user_module' 	=> array('label' => __('Notificaciones de Correos- M&oacute;dulo', 'wp_courseware')),
+			'break_course_notifications_from_details' 	=> array('label' => __('Detalles de la direcci&oacute;n de correo', 'wp_courseware')),
+			'break_course_notifications_user_module' 	=> array('label' => __('Notificaciones de Correos- M&oacute;dulos', 'wp_courseware')),
 			'break_course_notifications_user_course' 	=> array('label' => __('Notificaciones de Correos- Curso', 'wp_courseware')),
-			'break_course_notifications_user_grades' 	=> array('label' => __('Notificaciones de Correos- Evaluaci&oacute;n del Curso', 'wp_courseware')),
-			'break_course_notifications_user_final' 	=> array('label' => __('Notificaciones de Correos- Promedio', 'wp_courseware')),
+			'break_course_notifications_user_grades' 	=> array('label' => __('Notificaciones de Correos- Evaluaci&oacute;nes del Curso', 'wp_courseware')),
+			'break_course_notifications_user_final' 	=> array('label' => __('Notificaciones de Correos- Promedios del curso', 'wp_courseware')),
 			'break_course_certificates_user_course' 	=> array('label' =>  __('Certificados', 'wp_courseware')),
-			'break_course_certificates_user_tools' 		=> array('label' => __('Herramientas de acceso curso', 'wp_courseware')),
+			'break_course_certificates_user_tools' 		=> array('label' => __('Herramientas de acceso a un curso', 'wp_courseware')),
 		);
 		
 		// Remove reset fields if not appropriate.
@@ -648,7 +648,7 @@ function WPCW_showPage_ModifyCourse_load()
 			'wpcw_course_settings'
 		);
 		
-		$form->customFormErrorMsg = __('Sorry, but unfortunately there were some errors saving the course details. Please fix the errors and try again.', 'wp_courseware');
+		$form->customFormErrorMsg = __('Lo sentimos, pero por desgracia hab&iacute;a algunos errores al guardar los detalles del curso. Por favor corrija los errores e int&eacute;ntelo de nuevo.', 'wp_courseware');
 		$form->setAllTranslationStrings(WPCW_forms_getTranslationStrings());
 	
 		// Set defaults if adding a new course
@@ -675,7 +675,7 @@ function WPCW_showPage_ModifyCourse_load()
 			
 				// Completion wall default (blocking mode)			
 				'course_opt_completion_wall'				=> 'completion_wall',
-				'course_opt_user_access'					=> 'default_show',
+				'course_opt_user_access'					=> 'default_hide',
 			
 				// Email notification defaults (yes to send email)
 				'email_complete_course_option_admin'		=> 'no_email',
@@ -685,7 +685,7 @@ function WPCW_showPage_ModifyCourse_load()
 				'email_quiz_grade_option'					=> 'no_email',
 						
 				// Certificate defaults
-				'course_opt_use_certificate'				=> 'use_certs',
+				'course_opt_use_certificate'				=> 'no_certs',
 			
 				// User Messages
 				'course_message_unit_not_yet'				=> __("Es necesario completar la unidad anterior.", 'wp_courseware'),		
@@ -732,7 +732,7 @@ function WPCW_showPage_ModifyCourse_load()
 			if ($quizzes && count($quizzes) > 0) {
 				$quizCountMessage = sprintf(__('Currently <b>%d of your quizzes</b> are blocking process based on a percentage score <b>in this course</b>.', 'wp_courseware'), count($quizzes));
 			} else {
-				$quizCountMessage = __('Actualmente no tiene ninguna sección de evaluaci&oacute;n para este curso.', 'wp_courseware');
+				$quizCountMessage = __('Actualmente no tiene ninguna secci&oacute;n de evaluaci&oacute;n para este curso.', 'wp_courseware');
 			}
 				
 			printf('<div id="message" class="wpcw_msg_info wpcw_msg"><b>%s</b> - %s<br/><br/>
@@ -767,41 +767,41 @@ function WPCW_showPage_ModifyCourse_load()
 	}	
 	
 	// Email template tags here...
-	$page->openPane('wpcw_docs_email_tags', __('Plantilla de correo electronico', 'wp_courseware'));
+	$page->openPane('wpcw_docs_email_tags', __('Plantilla de correo electr&oacute;nico', 'wp_courseware'));
 	
-	printf('<h4 class="wpcw_docs_side_mini_hdr">%s</h4>', __('All Email Notifications', 'wp_courseware'));
+	printf('<h4 class="wpcw_docs_side_mini_hdr">%s</h4>', __('Todas las notificaciones por correo electr&oacute;nico', 'wp_courseware'));
 	printf('<dl class="wpcw_email_tags">');
 		
-		printf('<dt>{USER_NAME}</dt><dd>%s</dd>', 		__('The display name of the user.', 'wp_courseware'));
+		printf('<dt>{USER_NAME}</dt><dd>%s</dd>', 		__('El nombre del usuario', 'wp_courseware'));
 		
-		printf('<dt>{SITE_NAME}</dt><dd>%s</dd>', 		__('The name of the website.', 'wp_courseware'));
-		printf('<dt>{SITE_URL}</dt><dd>%s</dd>', 		__('The URL of the website.', 'wp_courseware'));
+		printf('<dt>{SITE_NAME}</dt><dd>%s</dd>', 		__('El nombre del sitio web.', 'wp_courseware'));
+		printf('<dt>{SITE_URL}</dt><dd>%s</dd>', 		__('El url del sitio web.', 'wp_courseware'));
 		
-		printf('<dt>{COURSE_TITLE}</dt><dd>%s</dd>', 	__('The title of the course for the unit that\'s just been completed.', 'wp_courseware'));
-		printf('<dt>{MODULE_TITLE}</dt><dd>%s</dd>', 	__('The title of the module for the unit that\'s just been completed.', 'wp_courseware'));
-		printf('<dt>{MODULE_NUMBER}</dt><dd>%s</dd>', 	__('The number of the module for the unit that\'s just been completed.', 'wp_courseware'));
+		printf('<dt>{COURSE_TITLE}</dt><dd>%s</dd>', 	__('El t&iacute;tulo del curso para la unidad que acaba de ser completado.', 'wp_courseware'));
+		printf('<dt>{MODULE_TITLE}</dt><dd>%s</dd>', 	__('El t&iacute;tulo del m6oacute; para la unidad que acaba de ser completado.', 'wp_courseware'));
+		printf('<dt>{MODULE_NUMBER}</dt><dd>%s</dd>', 	__('El numero del m6oacute; para la unidad que acaba de ser completado.', 'wp_courseware'));
 		
-		printf('<dt>{CERTIFICATE_LINK}</dt><dd>%s</dd>', __('If the course has PDF certificates enabled, this is the link of the PDF certficate. (If there is no certificate or certificates are not enabled, this is simply blank)', 'wp_courseware'));
+		printf('<dt>{CERTIFICATE_LINK}</dt><dd>%s</dd>', __('Si el curso tiene habilitado los certificados PDF, este es el enlace del certificado PDF. (Si no tiene certificado o los certificados no est&aacute;n habilitados, simplemente esto estar&aacute; en blanco).', 'wp_courseware'));
 		
 	printf('</dl>');
 	
-	printf('<h4 class="wpcw_docs_side_mini_hdr">%s</h4>', __('Quiz Email Notifications Only', 'wp_courseware'));
+	printf('<h4 class="wpcw_docs_side_mini_hdr">%s</h4>', __('Notificaciones de evaluaciones por correo', 'wp_courseware'));
 	printf('<dl class="wpcw_email_tags">');
-		printf('<dt>{QUIZ_TITLE}</dt><dd>%s</dd>', 			__('The title of the quiz that has been graded.', 'wp_courseware'));
-		printf('<dt>{QUIZ_GRADE}</dt><dd>%s</dd>', 			__('The overall percentage grade for a quiz.', 'wp_courseware'));
-		printf('<dt>{QUIZ_GRADES_BY_TAG}</dt><dd>%s</dd>', 	__('Includes a breakdown of scores by tag if available.', 'wp_courseware'));
-		printf('<dt>{QUIZ_TIME}</dt><dd>%s</dd>', 			__('If the quiz was timed, displays the time used to complete the quiz.', 'wp_courseware'));
-		printf('<dt>{QUIZ_ATTEMPTS}</dt><dd>%s</dd>', 		__('Indicates the number of attempts for the quiz.', 'wp_courseware'));
-		printf('<dt>{CUSTOM_FEEDBACK}</dt><dd>%s</dd>', 	__('Includes any custom feedback messages that have been triggered based on the user\'s specific results in the quiz.', 'wp_courseware'));
-		printf('<dt>{QUIZ_RESULT_DETAIL}</dt><dd>%s</dd>', 	__('Any optional information relating to the result of the quiz, e.g. information about retaking the quiz.', 'wp_courseware'));
-		printf('<dt>{UNIT_TITLE}</dt><dd>%s</dd>', 			__('The title of the unit that is associated with the quiz.', 'wp_courseware'));
-		printf('<dt>{UNIT_URL}</dt><dd>%s</dd>', 			__('The URL of the unit that is associated with the quiz.', 'wp_courseware'));
+		printf('<dt>{QUIZ_TITLE}</dt><dd>%s</dd>', 			__('El t&iacute;tulo de la evaluaci&oacute;n que ha sido calificado.', 'wp_courseware'));
+		printf('<dt>{QUIZ_GRADE}</dt><dd>%s</dd>', 			__('El porcentaje global de grado para un concurso.', 'wp_courseware'));
+		printf('<dt>{QUIZ_GRADES_BY_TAG}</dt><dd>%s</dd>', 	__('Incluye un desglose de las puntuaciones por etiqueta si est&aacute; disponible.', 'wp_courseware'));
+		printf('<dt>{QUIZ_TIME}</dt><dd>%s</dd>', 			__('Si se program&oacute; el cuestionario, muestra el tiempo utilizado para completar el cuestionario.', 'wp_courseware'));
+		printf('<dt>{QUIZ_ATTEMPTS}</dt><dd>%s</dd>', 		__('Indica el n&uacute;mero de intentos para resolver el cuestionario.', 'wp_courseware'));
+		printf('<dt>{CUSTOM_FEEDBACK}</dt><dd>%s</dd>', 	__('Incluye todos los mensajes de informaci&oacute;n personalizada que se han desencadenado en base a los resultados espec&iacute;ficos del usuario en el cuestionario.', 'wp_courseware'));
+		printf('<dt>{QUIZ_RESULT_DETAIL}</dt><dd>%s</dd>', 	__('Cualquier informaci&oacute;n opcional relacionada con el resultado de la evaluaci&oacute;n, por ejemplo, informaci&oacute;n acerca de volver a tomar el examen.', 'wp_courseware'));
+		printf('<dt>{UNIT_TITLE}</dt><dd>%s</dd>', 			__('El t&iacute;tulo de la unidad que est&aacute; asociada con el cuestionario.', 'wp_courseware'));
+		printf('<dt>{UNIT_URL}</dt><dd>%s</dd>', 			__('La URL de la unidad que est&aacute; asociada con el cuestionario.', 'wp_courseware'));
 	printf('</dl>');
 	
-	printf('<h4 class="wpcw_docs_side_mini_hdr">%s</h4>', __('Final Summary Notifications Only', 'wp_courseware'));
+	printf('<h4 class="wpcw_docs_side_mini_hdr">%s</h4>', __('Notificaciones del resumen final ', 'wp_courseware'));
 	printf('<dl class="wpcw_email_tags">');
-		printf('<dt>{CUMULATIVE_GRADE}</dt><dd>%s</dd>', 	__('The overall cumulative grade that the user has scored from completing all quizzes on the course.', 'wp_courseware'));
-		printf('<dt>{QUIZ_SUMMARY}</dt><dd>%s</dd>', 		__('The summary of each quiz, and what the user scored on each.', 'wp_courseware'));
+		printf('<dt>{CUMULATIVE_GRADE}</dt><dd>%s</dd>', 	__('La calificaci&oacute;n global acumulado que el usuario ha marcado de completar todas las evaluaci&oacute;nes en el curso.', 'wp_courseware'));
+		printf('<dt>{QUIZ_SUMMARY}</dt><dd>%s</dd>', 		__('El resumen de cada evaluaci&oacute;n, y lo que el usuario anot&oacute; en cada uno.', 'wp_courseware'));
 	printf('</dl>');
 	
 	
@@ -823,20 +823,20 @@ function WPCW_showPage_ModifyCourse_deleteCourseButton($courseDetails)
 		// Radio option selection
 		$html .= '<div class="wpcw_form_delete_options">';
 			$html .= sprintf('<label><input type="radio" name="delete_course_type" value="course_and_module"/> %s <div class="wpcw_form_delete_options_desc">%s</div></label>', 
-					__('Course and module settings only', 'wp_courseware'),
-					__('Units and quizzes will not be deleted, but simply disassociated from the course.', 'wp_courseware')
+					__('S&oacute;lo configuraci&oacute;n del curso y el m&oacute;dulo', 'wp_courseware'),
+					__('No se eliminar&aacute;n unidades y evaluaci&oacute;n, sino que simplemente se desvincularon del curso.', 'wp_courseware')
 				);
 				
 			$html .= sprintf('<label><input type="radio" name="delete_course_type" value="complete" checked/> %s <div class="wpcw_form_delete_options_desc">%s</div></label>', 
-					__('Delete everything', 'wp_courseware'),
-					__('This option will delete the course, the modules, all units and all quizzes.', 'wp_courseware')
+					__('Eliminar todo', 'wp_courseware'),
+					__('Esta opci&oacute;n eliminar&aacute; el curso, los m&oacute;dulos, todas las unidades y todos las evaluaciones.', 'wp_courseware')
 				);
 		$html .= '</div>';
 	
 		// Submit
 		$html .= sprintf('<input type="submit" value="%s" class="button-primary wpcw_delete_item" title="%s" />', 
 			__('Eliminar este curso', 'wp_courseware'),
-			__("Are you sure you want to delete the this course?\n\nThis CANNOT be undone!", 'wp_courseware')
+			__("Seguro que quieres eliminar el este curso?\n\nEsto no se puede deshacer!", 'wp_courseware')
 		); 	
 	$html .= '</form>'; 
 	

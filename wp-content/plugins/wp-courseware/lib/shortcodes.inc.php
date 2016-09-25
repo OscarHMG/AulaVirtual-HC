@@ -425,9 +425,10 @@ function WPCW_shortcodes_showTrainingCourseProgress($atts, $content)
 	$user_id = get_current_user_id();	
 	if (!$user_id) 
 	{
-		return sprintf('<div class="wpcw_fe_progress_box_wrap"><div class="wpcw_fe_progress_box wpcw_fe_progress_box_error">%s</div></div>', 
-			apply_filters('wpcw_front_shortcode_wpcourse_progress_notloggedin', __('You need to be logged in to see your course progress.', 'wp_courseware'))
-		);
+		// return sprintf('<div class="wpcw_fe_progress_box_wrap"><div class="wpcw_fe_progress_box wpcw_fe_progress_box_error">%s</div></div>', 
+		// 	apply_filters('wpcw_front_shortcode_wpcourse_progress_notloggedin', __('You need to be logged in to see your course progress.', 'wp_courseware'))
+		// );
+		return "";
 	}	
 	
 	// Get a list of all of the courses that the user is subscribed to.
@@ -484,7 +485,7 @@ function WPCW_shortcodes_showTrainingCourseProgress($atts, $content)
 	if (empty($courseList))
 	{
 		// Change message slightly based on how many courses are selected.
-		$messageToShow = __('Actualmente no está inscrito en ningún curso.', 'wp_courseware');
+		$messageToShow = __('Actualmente no est&aacute; inscrito en ning&uacute;n curso.', 'wp_courseware');
 		if (!empty($selectedCourseList)) {
 			$messageToShow = __('Actualmente no está inscrito en cualquiera de estos cursos.', 'wp_courseware');
 		}
@@ -508,13 +509,13 @@ function WPCW_shortcodes_showTrainingCourseProgress($atts, $content)
 			// Course progress
 			if ($showUserProgress) {
 				$columnCount++;
-				$html .= sprintf('<th class="wpcw_fe_course_progress_pc">%s</th>', __('T&uacute; Progreso', 'wp_courseware'));
+				$html .= sprintf('<th class="wpcw_fe_course_progress_pc">%s</th>', __('Tu progreso', 'wp_courseware'));
 			}
 				
 			// Overall grade so far
 			if ($showUserGrade) {
 				$columnCount++;
-				$html .= sprintf('<th class="wpcw_fe_course_progress_grade">%s</th>', __('T&uacute; promedio general', 'wp_courseware')); 				
+				$html .= sprintf('<th class="wpcw_fe_course_progress_grade">%s</th>', __('Tu promedio general', 'wp_courseware')); 				
 			}
 			
 		$html .= '</tr></thead><tbody>';

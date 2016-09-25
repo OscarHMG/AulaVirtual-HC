@@ -10,7 +10,7 @@
  */
 function WPCW_metabox_showTemplateSelectionTool()
 {
-	printf('<p>%s</p>', __('Here you can choose which template to use for this unit.', 'wp_courseware'));
+	printf('<p>%s</p>', __('Aqu&iacute; se puede elegir qu&eacute; plantilla usar para esta unidad.', 'wp_courseware'));
 		
 	// Get a list of all templates
 	$theme = wp_get_theme();
@@ -22,7 +22,7 @@ function WPCW_metabox_showTemplateSelectionTool()
 	//  get_page_templates() no longer requires us to load up all theme 
 	//  data for all themes so overall, it's much quicker already."
 
-	$postTemplates = array('' => '--- ' . __('Use default template', 'wp_courseware') .  ' ---');
+	$postTemplates = array('' => '--- ' . __('Use la plantilla por defecto', 'wp_courseware') .  ' ---');
 	
 
 
