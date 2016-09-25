@@ -497,7 +497,7 @@ class WPCW_UnitFrontend
 		
 						// ### 3a - Question title
 						$html .= sprintf('<div class="wpcw_fe_quiz_q_title">%s #%d - %s</div>', 
-							__('Question', 'wp_courseware'),
+							__('Pregunta', 'wp_courseware'),
 							$questionNum++,
 							$question->question_question
 						);
@@ -699,7 +699,7 @@ class WPCW_UnitFrontend
 			if ('use_certs' == $this->parentData->course_opt_use_certificate && $certificateDetails)
 			{		
 				$certHTML = sprintf('<div class="wpcw_fe_progress_box_download"><a href="%s" class="fe_btn fe_btn_download">%s</a></div>', 
-					WPCW_certificate_generateLink($certificateDetails->cert_access_key), __('Download Certificate', 'wp_courseware')
+					WPCW_certificate_generateLink($certificateDetails->cert_access_key), __('Visualizar Certificado y Descargar', 'wp_courseware')
 				);
 			}
 					
@@ -1395,7 +1395,7 @@ class WPCW_UnitFrontend
 							if ($this->check_paging_shouldWeShowAnswerLaterButton())
 							{
 								$html .= sprintf('<div class="wpcw_fe_quiz_answer_later"><a href="#" class="fe_btn fe_btn_small fe_btn_navigation" id="wpcw_fe_quiz_answer_later">%s</a></div>', 
-									__('Answer Later...', 'wp_courseware')
+									__('Responder despues...', 'wp_courseware')
 								);
 							}
 							
@@ -1405,7 +1405,7 @@ class WPCW_UnitFrontend
 							
 							// Work out what caption to show for the submit button. Change this if we're about to
 							// submit the answers for the final question or review our answers.
-							$buttonCaption = __('Save &amp; Next Question &raquo;', 'wp_courseware');
+							$buttonCaption = __('Guardar &amp; Siguiente Pregunta &raquo;', 'wp_courseware');
 							
 							
 							// Are we showing the last incomplete question (and we're nearly complete)
@@ -1413,7 +1413,7 @@ class WPCW_UnitFrontend
 							{
 								// We appear to be on the last question. Are we going to review too?
 								if ($this->check_paging_shouldWeShowReviewPage()) {
-									$buttonCaption = __('Save &amp; Review Answers &raquo;', 'wp_courseware');
+									$buttonCaption = __('Guardar &amp; Revisar respuestas &raquo;', 'wp_courseware');
 								}
 								// No review, just submit
 								else {
@@ -1553,7 +1553,7 @@ class WPCW_UnitFrontend
 				{
 					$html[] = sprintf('<b>%s:</b> %s', 
 						$tagDetails['tag_details']->question_tag_name, 
-						sprintf(__('Your grade is %d%%', 'wp_courseware'), $tagDetails['score_total'])
+						sprintf(__('Tu calificación es %d%%', 'wp_courseware'), $tagDetails['score_total'])
 					);
 				}
 				
