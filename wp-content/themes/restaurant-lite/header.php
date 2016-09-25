@@ -113,7 +113,7 @@ endwhile;
 ?>
 <?php if(!empty($id_arr)){ ?>
 <section id="home_slider">
-<div class="slider-wrapper theme-default">
+<div class="slider-wrapper theme-default container">
 <div id="slider" class="nivoSlider">
 	<?php 
 	$i=1;
@@ -142,14 +142,18 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 </section>
 <?php } else { ?>
 <section id="home_slider">
-<div class="slider-wrapper theme-default"><div id="slider" class="nivoSlider">
+<div class="slider-wrapper theme-default container"><div id="slider" class="nivoSlider">
 <img src="<?php echo get_template_directory_uri(); ?>/images/slides/slider1.jpg" alt="We Create Delicious Memories " title="#slidecaption1" /><img src="<?php echo get_template_directory_uri(); ?>/images/slides/slider2.jpg" alt="Candle Ready Cakes " title="#slidecaption2" /><img src="<?php echo get_template_directory_uri(); ?>/images/slides/slider3.jpg" alt="Delicious Cookies " title="#slidecaption3" /></div>                    
                 <div id="slidecaption1" class="nivo-html-caption">
                     <div class="slide_info">
-                            <h2><?php echo 'Restaurant & Cafe';?></h2>
+			    <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
+                            <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br> ¡Comencemos! '; ?> </p>
+                           <div class="clear"></div>
+                           <!-- <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>-->
+                            /*<h2><?php echo 'Restaurant & Cafe';?></h2>
                             <p><?php echo 'Phasellus viverra aliquet magna quis interduming. Sed quis fringilla massa. In ut porttitor felis necing iaculis mision'; ?> </p>
                             <div class="clear"></div>
-                            <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>
+                            <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>*/
                       </div>
                     </div>
                     <div id="slidecaption2" class="nivo-html-caption">
@@ -232,8 +236,9 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 		<section id="wrapsecond">
             	<div class="container">
                     <div class="services-wrap">
-	<p style="text-align: center;"><iframe  style="width: 100%;"class="hprincipal" src="https://www.youtube.com/embed/tje8Oyy-IWw"></iframe></p>
-<!--<video><source src="images/HCVINCULOS.mp4" type="video/mp4" /></video>-->
+	<!--<p style="text-align: center;"><iframe  style="width: 100%;"class="hprincipal" src="https://www.youtube.com/embed/tje8Oyy-IWw"></iframe></p>-->
+	<p style="text-align: center;"><iframe style="width: 90%;"class="hprincipal" src="https://www.youtube.com/embed/cIScWtRLoDA" frameborder="0"></iframe></p>
+<!--<p style="text-align: center;"><iframe style="width: 90%;"class="hprincipal" src="images/HCVINCULOS.mp4" alt=""/>-->
                         <!--<h2><?php _e('Últimos Cursos','restaurant'); ?></h2>
                      
                         <div class="space50"></div>

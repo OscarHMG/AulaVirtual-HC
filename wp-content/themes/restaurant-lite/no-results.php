@@ -11,7 +11,7 @@
 
 	
             <header>
-                <h1 class="entry-title"><?php _e( 'Nothing Found', 'restaurant' ); ?></h1>
+                <h1 class="entry-title"><?php _e( 'No se ha encontrado nada', 'restaurant' ); ?></h1>
             </header>
 
 	<div class="blog-post">

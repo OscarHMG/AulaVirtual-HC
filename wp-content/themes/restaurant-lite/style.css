@@ -36,7 +36,7 @@ a{ text-decoration:none;
 a:hover{ color:#b68023;}
 ol,ul{ margin:0; padding:0;}
 ul li ul, ul li ul li ul, ol li ol, ol li ol li ol{ margin-left:10px;}
-h5{ color:#141513;  margin:0 0 20px; padding:0; line-height:1.1; font-weight:300;  }
+h5{ color:#141513;  margin:0 0 20px; padding:0; line-height:1.1; font-weight:300; text-align:justify; }
 h6{ color:#8CC63E; font-family:'Playball', sans-serif; margin:0 0 20px; padding:0; line-height:1.1; font-weight:300; }
 h2,h3,h4{ color:#8CC63E; 
 	font-family: Cambria,Georgia,serif;

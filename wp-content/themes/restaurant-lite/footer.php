@@ -9,12 +9,12 @@
 ?>
 <div id="footer-wrapper">
     	<div class="container">
-             <div class="cols-4 widget-column-1">            	
+           <!--  <div class="cols-4 widget-column-1">            	
                <h5><?php echo get_theme_mod('menu_title',__('Menú Principal','restaurant')); ?></h5>
                 <div class="menu">
                   <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
                 </div>
-            </div>                  
+            </div>                  -->
 			         
              
              <div class="cols-4 widget-column-2">            	

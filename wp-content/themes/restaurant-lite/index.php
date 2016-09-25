@@ -11,7 +11,7 @@
  */
 
 get_header(); 
-?>
+?><!--
 <div class="container">
      <div class="page_content">
         <section class="site-main" style = "width: 100%">
@@ -43,5 +43,5 @@ get_header();
 	  
         <div class="clear"></div>
     </div><!-- site-aligner -->
-</div><!-- content -->
+</div><!-- content --> 
 <?php get_footer(); ?>
