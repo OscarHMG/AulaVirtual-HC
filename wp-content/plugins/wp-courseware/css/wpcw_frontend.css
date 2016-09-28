@@ -8,7 +8,8 @@
 
 /* Shortcode - Course Progress */
 #wpcw_fe_course_progress {
-	font-size: 10pt;
+	margin: 0 auto;
+	font-size: 12pt;
 	border-spacing: 0;
 	border-radius: 3px;
 	border: 3px solid #006738;
@@ -16,7 +17,7 @@
 }
 
 #wpcw_fe_course_progress td {
-	padding: 10px 15px;
+	
 	border: 0;
 	border-bottom: 3px solid #006738;
 }
@@ -89,6 +90,7 @@
 .wpcw_fe_course_desc {
 	font-size: 12pt;
 	margin: 10px 0 30px;
+	text-align: justify;
 }
 
 /* Course Details */
@@ -126,11 +128,14 @@
 
 #wpcw_fe_course .wpcw_fe_unit a {
 	font-weight: bold;
+	font-size: 12pt;
 }
 
 /* Widget Progress */
 .wpcw_widget_progress #wpcw_fe_course {
-	font-size: 9pt;
+	font-size: 12pt;
+	margin: 0 auto;
+    text-align: left;
 }
 
 .wpcw_widget_progress #wpcw_fe_course td {
@@ -152,6 +157,7 @@
 
 .wpcw_widget_progress tr.wpcw_fe_module {
 	cursor: pointer;
+	font-size: 15pt;
 }
 
 .wpcw_widget_progress .wpcw_fe_toggle {
@@ -595,9 +601,9 @@ ul.wpcw_fe_quiz_q_answers input[type="radio"]:checked+label {
 
 .wpcw_progress {
 	display: inline-block;
-	width: 130px;
+	width: 100%;
 	margin: 0 auto;
-	height: 22px;
+	height: 16px;
 	vertical-align: middle;
 	padding: 1px;
 	border-radius: 3px;

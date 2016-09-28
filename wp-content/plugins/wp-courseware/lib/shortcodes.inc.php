@@ -509,13 +509,13 @@ function WPCW_shortcodes_showTrainingCourseProgress($atts, $content)
 			// Course progress
 			if ($showUserProgress) {
 				$columnCount++;
-				$html .= sprintf('<th class="wpcw_fe_course_progress_pc">%s</th>', __('Tu progreso', 'wp_courseware'));
+				$html .= sprintf('<th class="wpcw_fe_course_progress_pc">%s</th>', __('Progreso Curso', 'wp_courseware'));
 			}
 				
 			// Overall grade so far
 			if ($showUserGrade) {
 				$columnCount++;
-				$html .= sprintf('<th class="wpcw_fe_course_progress_grade">%s</th>', __('Tu promedio general', 'wp_courseware')); 				
+				$html .= sprintf('<th class="wpcw_fe_course_progress_grade">%s</th>', __('Proceso General', 'wp_courseware')); 				
 			}
 			
 		$html .= '</tr></thead><tbody>';
