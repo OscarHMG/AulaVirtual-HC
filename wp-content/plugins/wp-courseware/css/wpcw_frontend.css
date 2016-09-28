@@ -11,20 +11,20 @@
 	font-size: 10pt;
 	border-spacing: 0;
 	border-radius: 3px;
-	border: 1px solid #DDD;
+	border: 3px solid #006738;
 	border-bottom: 0;
 }
 
 #wpcw_fe_course_progress td {
 	padding: 10px 15px;
 	border: 0;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 3px solid #006738;
 }
 
 #wpcw_fe_course_progress th {
 	padding: 5px 15px;
 	border: 0;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 3px solid #006738;
 	font-weight: bold;
 	background-color: #F1F1F1;
 	background-image: -ms-linear-gradient(top, #F9F9F9, #DCDCDC);
@@ -96,14 +96,14 @@
 	font-size: 10pt;
 	border-spacing: 0;
 	border-radius: 3px;
-	border: 1px solid #DDD;
+	border: 3px solid #006738;
 	border-bottom: 0;
 }
 
 #wpcw_fe_course td {
-	padding: 10px 15px;
+	padding: 10px 15px !important;
 	border: 0;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 3px solid #006738;
 }
 
 #wpcw_fe_course .wpcw_fe_unit_none td {
@@ -163,7 +163,7 @@
 
 /* Progress */
 .wpcw_fe_unit_progress span {
-	display: block;
+	display: block !important;
 	background: url('../img/icon_pending_24.png') transparent no-repeat;
 	height: 24px;
 	width: 24px;
@@ -171,7 +171,6 @@
 
 /** Icons from: http://www.iconfinder.com/search/?q=iconset%3Afunction_icon_set */
 .wpcw_fe_unit_progress_incomplete span {
-	
 }
 
 .wpcw_fe_unit_progress_complete span {
@@ -181,7 +180,7 @@
 /* Completion Box */
 .wpcw_fe_progress_box {
 	margin: 10px 0;
-	border: 1px solid #DDD;
+	border: 3px solid #006738;
 	padding: 15px 20px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -385,7 +384,7 @@ a.fe_btn_navigation_disabled,a.fe_btn_navigation_disabled:hover {
 /* Quiz Boxes */
 .wpcw_fe_quiz_box {
 	margin: 10px 0;
-	border: 1px solid #DDD;
+	border: 3px solid #006738;
 	padding: 15px 20px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -436,7 +435,7 @@ a.fe_btn_navigation_disabled,a.fe_btn_navigation_disabled:hover {
 .wpcw_fe_quiz_box_wrap .wpcw_fe_quiz_q_image img,.wpcw_fe_quiz_box_wrap .wpcw_fe_quiz_a_image img
 	{
 	max-width: 100%;
-	border: 1px solid #ddd;
+	border: 3px solid #006738;
 	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
