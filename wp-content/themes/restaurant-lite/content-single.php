@@ -10,11 +10,11 @@
         <h2 class="single_title"><?php the_title(); ?></h2>
     </header><!-- .entry-header -->
     
-     <div class="postmeta">
-            <div class="post-date"><?php echo get_the_date(); ?></div><!-- post-date -->
-            <div class="post-comment"> &nbsp;|&nbsp; <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div> 
-            <div class="clear"></div>         
-    </div><!-- postmeta -->
+    <!-- <div class="postmeta">-->
+        <!--    <div class="post-date"><?php echo get_the_date(); ?></div>  post-date -->
+        <!--    <div class="post-comment"> &nbsp;|&nbsp; <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div> -->
+        <!--    <div class="clear"></div>    -->     
+    <!-- </div> postmeta -->
     
     <?php 
         if (has_post_thumbnail() ){

@@ -1,0 +1,2 @@
+front.css   -> wordpressHC\wp-content\plugins\siteorigin-panels\css
+style.css   -> C:\xampp\htdocs\wordpressHC\wp-content\themes\restaurant-lite

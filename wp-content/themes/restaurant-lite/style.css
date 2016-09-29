@@ -19,7 +19,7 @@ body{ margin:0;
  line-height:20px;
   font-size:13px; 
   color:#5c5c5c; 
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:“Helvetica Neue”, Helvetica;
   background: url(http://localhost/wordpressHC/wp-content/uploads/2016/09/fondo.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -30,16 +30,15 @@ body{ margin:0;
 img{ border:none; margin:0; padding:0; height:auto}
 .wp-caption, .wp-caption-text, .sticky, .gallery-caption, .aligncenter{ margin:0; padding:0;}
 p{ margin:0; padding:0;}
-a{ text-decoration:none; 
-	color:#D6DF23; 
-	border-radius: 5px 5px;}
+a{ text-decoration:none; color:#D6DF23;}
+li{font-size: 135%;margin-right: 13px;margin-top: 10px;font-family: "calibri", Garamond;}
 a:hover{ color:#b68023;}
 ol,ul{ margin:0; padding:0;}
 ul li ul, ul li ul li ul, ol li ol, ol li ol li ol{ margin-left:10px;}
-h5{ color:#141513;  margin:0 0 20px; padding:0; line-height:1.1; font-weight:300; text-align:justify; }
-h6{ color:#8CC63E; font-family:'Playball', sans-serif; margin:0 0 20px; padding:0; line-height:1.1; font-weight:300; }
+h5{ color:#141513;  margin:0 0 20px; padding:0; line-height:1.1; font-weight:300;  }
+h6{ color:#8CC63E; font-family:“Helvetica Neue”, Helvetica; margin:0 0 20px; padding:0; line-height:1.1; font-weight:300; }
 h2,h3,h4{ color:#8CC63E; 
-	font-family: Cambria,Georgia,serif;
+	font-family: "calibri", Garamond;
 	color: black; 
 	margin:0 0 20px; 
 	padding:0; 
@@ -48,31 +47,31 @@ h2,h3,h4{ color:#8CC63E;
 
 h1{
 	color:#8CC63E; 
-	font-family: Cambria,Georgia,serif;
+	font-family: Futura, “Trebuchet MS”,serif !important;
 	margin:0 0 20px; 
 	padding:0; 
 	line-height:1.1; 
 	font-weight: bold; 
 }
-h1{ font-size:42px;}
+h1{ font-size:287%;}
 h2{ font-size:30px;}
-h3,h4{ font-size:26px;font-weight: bold;}
-h5{ font-size:18px;}
+h3,h4{ font-size:214% !important;font-weight: bold;}
+h5{ font-size:166% !important; margin: 11px;}
 h6{ font-size:14px;}
 
 
 
 video{
 	text-align: center;
-	width: 850px; 
-	height: 580px;
+	width: 78%;
+	height: 524px;
 	border: solid 6px #108341;
 }
 
 iframe{
 	text-align: center;
-	width: 850px; 
-	height: 580px;
+	width: 78%; 
+	height: 524px;
 	border: solid 6px #108341 !important;
 }
 iframe.hprincipal{
@@ -122,7 +121,7 @@ border-top-right-radius: 5px; cursor:pointer;   }
 .sitenav{display:none;}
 .header{width:100%; position:absolute; z-index:999999; top:0;}
 .sitenav{ padding:0; text-align:right; float:right;}
-.sitenav ul { float:right; margin:0; padding:0; font-family:'Roboto Condensed', sans-serif; font-weight:400; font-size:15px;}
+.sitenav ul { float:right; margin:0; padding:0; font-family:"calibri", Garamond; font-weight:400; font-size:15px;}
 .sitenav ul li{ display:inline-block; margin:0; position:relative; text-align:center;}
 .sitenav ul li a{ padding:33px 13px; display:block; color:#fff; border-bottom:4px solid transparent;  }
 .sitenav ul li ul li{display:block; position:relative; float:none; top:-1px;}
@@ -175,7 +174,7 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 #sitefull{ width:100%; float:none;}
 #sitefull p{ margin-bottom:15px;}
 .page_content{ padding:25px 0;}
-.page_content p{ margin-bottom:20px; line-height:20px;}
+.page_content p{ margin-bottom:20px; line-height:20px; font-size: 145% ;font-family: "calibri", Garamond;}
 
 .blog_lists{ margin-bottom:30px; }
 .blog_lists h2{ margin-bottom:0px;}
@@ -196,8 +195,7 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 #sidebar{ width:330px; float:right;}
 aside.widget{margin-bottom:30px; background-color:#f6f4f4; padding:20px; border:1px solid #edecec;}
 aside.widget ul{ list-style:disc; }
-h3.widget-title{ background-color:#006738 !important;
-	padding:12px 15px; margin-bottom:1px; color:#fff;}
+h3.widget-title{ background-color:#D1D2D4; padding:12px 15px; margin-bottom:1px; color:#fff;}
 #sidebar ul li{ list-style:none;}
 #sidebar ul li a{ background:url(images/sidebar-arrow.png) no-repeat 0 14px; padding:10px 0 10px 20px; color:#3b3b3b; border-bottom:1px dashed #d0cfcf; display:block; word-wrap:break-word;}
 #sidebar ul li a:hover{ color:#34c6f6;}
@@ -249,10 +247,10 @@ a.button.added:before{content:'' !important;}
 textarea.wp-editor-area{border:1px #ccc solid;}
 .woocommerce input[type=text], .woocommerce textarea{border:1px #ccc solid; padding:4px;}
 form.woocommerce-ordering select{ padding:5px; color:#777777;}
-.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ font-family:'Playball',san-serif; color:#ff8a00;}
+.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ font-family:“Helvetica Neue”, Helvetica; color:#ff8a00;}
 .woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price{ color:inherit !important;}
 h1.product_title, p.price{ margin-bottom:10px;}
-.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ font-family:'Playball',san-serif; color:#ff6d84;}
+.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ font-family:“Helvetica Neue”, Helvetica; color:#ff6d84;}
 .woocommerce ul.products li, #payment ul.payment_methods li{ list-style:none !important;}
 .woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price{ color:inherit !important;}
 .woocommerce table.shop_table th, .woocommerce table.shop_table td{ border-bottom:0px !important}

@@ -18,6 +18,28 @@
 </head>
 
 <body <?php body_class(''); ?>>
+ <?php if ( is_front_page() && is_home() ) { ?>
+    <div class="header">
+        <?php }elseif ( is_front_page() ) { ?>
+        <div class="header">
+        <?php }else{?>
+        <div class="header-innerpage">
+        <?php
+    }?>
+        <div class="container">
+            <div class="logo">
+                        <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                        <span class="tagline"><?php bloginfo('description'); ?></span>
+            </div><!-- logo -->
+            <div class="toggle">
+                <a class="toggleMenu" href="#"><?php _e('Menu','restaurant'); ?></a>
+             </div><!-- toggle --> 
+             <div class="sitenav">                  
+                    <?php wp_nav_menu( array('theme_location' => 'primary')); ?>
+              </div><!-- nav --><div class="clear"></div>
+        </div><!-- container -->
+ </div><!-- end.header -->
+ 
 <?php if ( is_front_page() && is_home() ) { ?>
 <!-- Slider Section -->
 <?php for($sld=7; $sld<10; $sld++) { ?>
@@ -71,7 +93,6 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                             <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
                             <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br> ¡Comencemos! '; ?> </p>
                            <div class="clear"></div>
-                           <!-- <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>-->
                       </div>
                     </div>
                     <div id="slidecaption2" class="nivo-html-caption">
@@ -79,16 +100,14 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                             <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
                             <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br> ¡Comencemos! ';?></p>
                             <div class="clear"></div>
-                            <!--<a class="ReadMore" href="#link2"><?php echo 'Leer Más'; ?></a>-->
-                      </div>
+                     </div>
                     </div>
                     <div id="slidecaption3" class="nivo-html-caption">
                       <div class="slide_info">
                             <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
                             <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente. </br></br></br>¡Comencemos! '; ?> </p>
                             <div class="clear"></div>
-                            <!--<a class="ReadMore" href="#link3"><?php echo 'Leer Más'; ?></a>-->
-                    </div>
+                     </div>
                    </div>
 </div>
 <div class="clear"></div>
@@ -149,8 +168,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 			    <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
                             <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br> ¡Comencemos! '; ?> </p>
                            <div class="clear"></div>
-                           <!-- <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>-->
-                            /*<h2><?php echo 'Restaurant & Cafe';?></h2>
+                      /*<h2><?php echo 'Restaurant & Cafe';?></h2>
                             <p><?php echo 'Phasellus viverra aliquet magna quis interduming. Sed quis fringilla massa. In ut porttitor felis necing iaculis mision'; ?> </p>
                             <div class="clear"></div>
                             <a class="ReadMore" href="#link1"><?php echo 'Leer Más'; ?></a>*/
@@ -181,27 +199,7 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
         <div class="spacer80"></div><?php */?>
         <section id="home_slider" style="display:none;"></section>
         <?php } ?>
-        <?php if ( is_front_page() && is_home() ) { ?>
-		<div class="header">
-        <?php }elseif ( is_front_page() ) { ?>
-        <div class="header">
-        <?php }else{?>
-        <div class="header-innerpage">
-        <?php
-		}?>
-        <div class="container">
-            <div class="logo">
-                        <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-                        <span class="tagline"><?php bloginfo('description'); ?></span>
-            </div><!-- logo -->
-            <div class="toggle">
-                <a class="toggleMenu" href="#"><?php _e('Menu','restaurant'); ?></a>
-             </div><!-- toggle --> 
-             <div class="sitenav">                  
-                    <?php wp_nav_menu( array('theme_location' => 'primary')); ?>
-              </div><!-- nav --><div class="clear"></div>
-        </div><!-- container -->
- </div><!-- end.header -->
+       
  
  <?php if ( is_front_page() && is_home() ) { ?>
 <section id="wrapfirst">
@@ -223,10 +221,10 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                     <img src="<?php echo get_template_directory_uri(); ?>/images/welcome-restaurant.png" alt=""/>     
                     <h2><?php _e('AULA VIRTUAL - HOGAR DE CRISTO','restaurant'); ?></h2>
                     <h5><?php _e('La Escuela Superior Politécnica del Litoral (ESPOL) y la Corporación de Viviendas de Hogar de Cristo (HC) formaron una alianza estratégica en el 2016. Dando paso a la creación del proyecto “Estructuración de un programa de educación digital para el programa de Semilleros de Emprendimientos de Hogar de Cristo”</br></br>
--Los participantes beneficiarios de este proyecto en su mayoría son mujeres emprendedoras de 20 a 70 años que cuentan con nivel académico escolar básico. </br></br>
--Este tipo de actividades permiten trabajar en beneficio de nuestros hermanos y hermanas ecuatorianos para así construir un país más activo y solidario. 
+Los participantes beneficiarios de este proyecto en su mayoría son mujeres emprendedoras de 20 a 70 años que cuentan con nivel académico escolar básico. </br></br>
+Este tipo de actividades permiten trabajar en beneficio de nuestros hermanos y hermanas ecuatorianos para así construir un país más activo y solidario. 
 ','restaurant'); ?></h5>
-                    <!--<a class="MoreLink" href="#"><?php _e('Más Información','restaurant'); ?></a> -->
+                   
                     <?php } ?>
                       
                </div><!-- services-wrap-->
@@ -236,34 +234,8 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
 		<section id="wrapsecond">
             	<div class="container">
                     <div class="services-wrap">
-	<!--<p style="text-align: center;"><iframe  style="width: 100%;"class="hprincipal" src="https://www.youtube.com/embed/tje8Oyy-IWw"></iframe></p>-->
-	<p style="text-align: center;"><iframe style="width: 90%;"class="hprincipal" src="https://www.youtube.com/embed/cIScWtRLoDA" frameborder="0"></iframe></p>
-<!--<p style="text-align: center;"><iframe style="width: 90%;"class="hprincipal" src="images/HCVINCULOS.mp4" alt=""/>-->
-                        <!--<h2><?php _e('Últimos Cursos','restaurant'); ?></h2>
-                     
-                        <div class="space50"></div>
-                        <?php for($p=1; $p<4; $p++) { ?>       
-                        <?php if( get_theme_mod('page-column'.$p,false)) { ?>          
-                            <?php $queryxxx = new WP_query('page_id='.get_theme_mod('page-column'.$p,true)); ?>				
-                                    <?php while( $queryxxx->have_posts() ) : $queryxxx->the_post(); ?> 
-                                    <div class="one_third <?php if($p % 3 == 0) { echo "last_column"; } ?>">                      
-                                    <a href="<?php the_permalink(); ?>">
-                                      <?php the_post_thumbnail( array(85,85, true) );?>
-                                      <h4><?php the_title(); ?></h4>
-                                    </a>                                              
-                                    </div>
-                                    <?php endwhile;
-                                    wp_reset_query(); ?>
-                                    
-                        <?php } else { ?>
-                                <div class="one_third <?php if($p % 3 == 0) { echo "last_column"; } ?>">                       
-                                    <a href="#">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/menu<?php echo $p; ?>.jpg" alt="" />
-                                    <h4><?php _e('Aula Virtual  Taller','restaurant'); ?> <?php echo $p; ?></h4>
-                                    </a>
-                                 </div>
-                        <?php }} ?>  
-                    <div class="clear"></div>  
+	                 <p style="text-align: center;"><iframe style="width: 100%;"class="" src="https://www.youtube.com/embed/cIScWtRLoDA" frameborder="0"></iframe></p>
+                        
                </div><!-- services-wrap-->
               <div class="clear"></div>
             </div><!-- container -->
