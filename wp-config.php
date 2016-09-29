@@ -16,7 +16,7 @@
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
 /** El nombre de tu base de datos de WordPress */
-define('DB_NAME', 'old_wordpresshc_old');
+define('DB_NAME', 'wordpresshc');
 
 /** Tu nombre de usuario de MySQL */
 define('DB_USER', 'root');
