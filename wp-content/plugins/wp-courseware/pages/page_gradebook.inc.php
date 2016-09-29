@@ -28,7 +28,7 @@ function WPCW_showPage_GradeBook_load()
 	if (!$courseDetails)
 	{		
 		$page->showPageHeader(__('Calificaciones', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
-		$page->showMessage(__('Sorry, but that course could not be found.', 'wp_courseware'), true);
+		$page->showMessage(__('Lo siento, pero este curso podr&iacute;a ser no encontrado.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return;
 	}
@@ -228,7 +228,7 @@ function WPCW_showPage_GradeBook_load()
 	if ($quizzesForCourse)
 	{
 		// Show the overall progress for the course.
-		$tblCol = new TableColumn(__('Progreso general', 'wp_courseware'), 'course_progress');
+		$tblCol = new TableColumn(__('Progreso General', 'wp_courseware'), 'course_progress');
 		//$tblCol->headerClass = "wpcw_center";
 		$tblCol->cellClass = "wpcw_grade_course_progress";
 		$tbl->addColumn($tblCol);
@@ -356,7 +356,7 @@ function WPCW_showPage_GradeBook_load()
 						// Quiz not yet complete...
 						else if ('incomplete' == $theResults->quiz_paging_status)
 						{
-							$data['quiz_' . $aQuizID] = '<span class="wpcw_grade_not_taken">' . __('In Progress', 'wp_courseware') . '</span>';
+							$data['quiz_' . $aQuizID] = '<span class="wpcw_grade_not_taken">' . __('En Progreso', 'wp_courseware') . '</span>';
 						}
 						
 						// No quizzes need marking, so show the scores as usual.
@@ -391,7 +391,7 @@ function WPCW_showPage_GradeBook_load()
 			$data['course_progress'] = WPCW_stats_convertPercentageToBar($singleUser->course_progress);
 			
 			// #### Grade Sent?
-			$data['grade_sent'] = ('sent' == $singleUser->course_final_grade_sent ? __('Yes', 'wp_courseware') : '-');
+			$data['grade_sent'] = ('sent' == $singleUser->course_final_grade_sent ? __('Si', 'wp_courseware') : '-');
 			
 			
 			// #### Certificate - Show if there's a certificate that can be downloaded.
@@ -399,8 +399,8 @@ function WPCW_showPage_GradeBook_load()
 			{
 				$data['certificate_available'] = sprintf('<a href="%s" title="%s">%s</a>',					 
 					WPCW_certificate_generateLink($certDetails->cert_access_key), 
-					__('Download the certificate for this user.', 'wp_courseware'),
-					__('Yes', 'wp_courseware')
+					__('Descargar el certificado para este usuario.', 'wp_courseware'),
+					__('Si', 'wp_courseware')
 				);
 			} 
 			else {
@@ -419,12 +419,12 @@ function WPCW_showPage_GradeBook_load()
 		// Button to generate a CSV of the gradebook. 
 		printf('<a href="%s" class="button-primary">%s</a>&nbsp;&nbsp;', 
 			admin_url('?wpcw_export=gradebook_csv&course_id=' . $courseDetails->course_id),
-			__('Export Gradebook (CSV)', 'wp_courseware')
+			__('Exportaci&oacute;n calificaciones (CSV)', 'wp_courseware')
 		);
 		
 		printf('<a href="%s" class="button-primary">%s</a>&nbsp;&nbsp;', 
 			admin_url('admin.php?page=WPCW_showPage_GradeBook&action=email_grades&filter=all&course_id=' . $courseDetails->course_id),
-			__('Email Final Grades', 'wp_courseware')
+			__('Correo electr&oacute;nico calificaciones finales.', 'wp_courseware')
 		);
 		
 		// URL that shows the eligible users who are next to get the email for the final grade.
@@ -432,8 +432,8 @@ function WPCW_showPage_GradeBook_load()
 
 		// Create information about how people are chosen to send grades to.
 		printf('<div id="wpcw_button_group_info_gradebook" class="wpcw_button_group_info">%s</div>',
-			sprintf(__('Grades will only be emailed to students who have <b>completed the course</b> and who have <b>not yet received</b> their final grade. 
-			   You can see the students who are <a href="%s">eligible to receive the final grade email</a> here.', 'wp_courseware'), $eligibleURL)
+			sprintf(__('S&oacute;lo las calificaciones enviadas por correo electr&oacute;nico seran a los estudiantes que han <b>completado el curso</b> y que a&uacute;n <b>no han recibido</b> la calificaci&oacute;n final. 
+			   Se puede ver a los estudiantes que son <a href="%s">elegibles para recibir el correo electr&oacute;nico calificaci&oacute;n final</a> aqu&iacute;.', 'wp_courseware'), $eligibleURL)
 		);
 	
 	printf('</div>');		
@@ -496,8 +496,8 @@ function WPCW_showPage_GradeBook_handleFinalGradesEmail($courseDetails, $page)
 	if (empty($usersNeedGrades))
 	{	
 		$page->showMessage(
-			__('There are currently no users that are eligible to receive their final grade.', 'wp_courseware') . ' ' . 
-			__('No emails have been sent.', 'wp_courseware'), 
+			__('Actualmente no hay usuarios que son elegibles para recibir su calificaci&oacute;n final.', 'wp_courseware') . ' ' . 
+			__('No hay mensajes de correo electr&oacute;nico para ser enviado.', 'wp_courseware'), 
 			true);
 		return;
 	}
@@ -519,7 +519,7 @@ function WPCW_showPage_GradeBook_handleFinalGradesEmail($courseDetails, $page)
 	
 		// Little summary of how many users there are.
 		printf('<h3>%s <b>%d %s</b>...</h3>', 
-			__('Sending final grade emails to', 'wp_courseware'), $totalUserCount, _n('user', 'users', $totalUserCount, 'wp_courseware')
+			__('Env&iacute;o de nota final al correos electr&oacute;nicos', 'wp_courseware'), $totalUserCount, _n('usuario', 'usuarios', $totalUserCount, 'wp_courseware')
 		);
 		
 		// Get all the quizzes for this course
@@ -546,7 +546,7 @@ function WPCW_showPage_GradeBook_handleFinalGradesEmail($courseDetails, $page)
 			printf('<p>%s (%s) - <b>%d%% %s</b></p>', 
 				$aSingleUser->display_name, $aSingleUser->user_email,
 				number_format(($userCount / $totalUserCount) * 100, 1),
-				__('complete', 'wp_courseware')
+				__('completo', 'wp_courseware')
 			);
 						
 			// Work out what tags we have to replace in the body and subject and replace
@@ -594,9 +594,9 @@ function WPCW_showPage_GradeBook_handleFinalGradesEmail($courseDetails, $page)
 														
 							// Add to string with the quiz name and each grade.
 							$quizGradeMessage .= sprintf("%s #%d - %s\n%s: %s%%\n\n",
-								__('Quiz', 'wp_courseware'), $quizScoresSoFar_count,
+								__('Evaluaci&oacute;n', 'wp_courseware'), $quizScoresSoFar_count,
 								$singleQuiz->quiz_title,
-								__('Grade', 'wp_courseware'), $score
+								__('Curso', 'wp_courseware'), $score
 							);
 							
 						}
@@ -617,7 +617,7 @@ function WPCW_showPage_GradeBook_handleFinalGradesEmail($courseDetails, $page)
 						
 			// Send the actual email
 			if (!wp_mail($targetEmail, $messageSubject, $messageBody, $headers)) {
-				error_log('WPCW_email_sendEmail() - email did not send.');
+				error_log('WPCW_email_sendEmail() - correo electr&oacute;nico no se envi&oacute;.');
 			}
 			
 			
@@ -634,7 +634,7 @@ function WPCW_showPage_GradeBook_handleFinalGradesEmail($courseDetails, $page)
 		}	
 		
 		// Tell the user we're complete.
-		printf('<h3>%s</h3>', __('All done.', 'wp_courseware'));
+		printf('<h3>%s</h3>', __('Todo listo.', 'wp_courseware'));
 	
 	printf('</div>');
 }

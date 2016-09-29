@@ -185,7 +185,7 @@ function WPCW_showPage_Dashboard_load()
 				}
 			} 
 			else {
-				$data['course_modules'] = __('No hay módulos todavía.', 'wp_courseware');
+				$data['course_modules'] = __('No hay m&oacute;dulos todav&iacute;a.', 'wp_courseware');
 			}
 			
 			
@@ -249,8 +249,8 @@ function WPCW_showPage_Dashboard_load()
 			{			
 				// Create message that quizzes need marking. 
 				$tblCustomRowStrTmp = 
-					__( 'This course has ', 'wp_courseware') . 
-					_n( '1 quiz that requires', '%d quizzes that require', $countOfQuizzesNeedingGrading, 'wp_courseware') . 
+					__( 'Este curso tiene ', 'wp_courseware') . 
+					_n( '1 evaluaci&oacute;n que requiere', '%d evaluaciones que requieren', $countOfQuizzesNeedingGrading, 'wp_courseware') . 
 					__( ' manual grading.', 'wp_courseware');
 
 				$tblCustomRowStr .= '<span>' . sprintf($tblCustomRowStrTmp, $countOfQuizzesNeedingGrading) . '</span>';								 
@@ -262,7 +262,7 @@ function WPCW_showPage_Dashboard_load()
 				// Create message that quizzes need marking. 
 				$tblCustomRowStrTmp = 
 					__( 'Este curso tiene ', 'wp_courseware') . 
-					_n( '1 user that is', '%d users that are', $countOfQuizzesNeedingManualHelp, 'wp_courseware') . 
+					_n( '1 usuario que es', '%d usuarios que sone', $countOfQuizzesNeedingManualHelp, 'wp_courseware') . 
 					__( ' bloqueada debido a demasiados intentos fallidos.', 'wp_courseware');
 
 				$tblCustomRowStr .= '<span>' . sprintf($tblCustomRowStrTmp, $countOfQuizzesNeedingManualHelp) . '</span>';								 
@@ -324,7 +324,7 @@ function WPCW_handler_processDeletion($page)
 				// Actually delete the module from the system
 				WPCW_modules_deleteModule($moduleDetails);
 				
-				$page->showMessage(sprintf(__('Se ha eliminado el módulo "<em>%s</em>".', 'wp_courseware'), $moduleDetails->module_title));	
+				$page->showMessage(sprintf(__('Se ha eliminado el m&&oacute;dulo "<em>%s</em>".', 'wp_courseware'), $moduleDetails->module_title));	
 			}
 			break;
 			

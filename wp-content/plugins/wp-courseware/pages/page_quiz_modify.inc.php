@@ -69,7 +69,7 @@ function WPCW_showPage_ModifyQuiz_load()
 	// Generate the tabs.
 	$tabList = array( 
 		'wpcw_section_break_quiz_general' 			=> array('label' => __(' Configuraci&oacute;n General', 'wp_courseware')),
-		'wpcw_section_break_quiz_logic' 			=> array('label' => __('Configuraci&oacute;nes del comportamiento de la Evaluac&oacute;n', 'wp_courseware')), 
+		'wpcw_section_break_quiz_logic' 			=> array('label' => __('Configuraciones del comportamiento de las Evaluaciones/Encuestas', 'wp_courseware')), 
 		'wpcw_section_break_quiz_results' 			=> array('label' => __('Resultados de Configuraci&oacute;n', 'wp_courseware')), 
 		'wpcw_section_break_quiz_custom_feedback' 	=> array('label' => __('Evaluaci&oacute;n Personalizada', 'wp_courseware'), 'cssclass' => 'wpcw_quiz_only_tab'),
 		'wpcw_section_break_quiz_questions' 		=> array('label' => __('Administrar preguntas', 'wp_courseware')),
@@ -104,7 +104,7 @@ function WPCW_showPage_ModifyQuiz_load()
 				'required'  => false,
 				'cssclass'	=> 'wpcw_quiz_desc',
 				'rows'		=> 2,
-				'desc'  	=> __('(Opcional) La descripci&oacute;n de esta evaluaci&oacute;n. Sus alumnos no verán esta descripci&oacute;n. Es s&oacute;lo para su referencia.', 'wp_courseware'),
+				'desc'  	=> __('(Opcional) La descripci&oacute;n de esta evaluaci&oacute;n. Sus alumnos no ver&aacute;n esta descripci&oacute;n. Es s&oacute;lo para su referencia.', 'wp_courseware'),
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 5000,
@@ -119,7 +119,7 @@ function WPCW_showPage_ModifyQuiz_load()
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_type wpcw_quiz_type_hide_pass',
 				'data'		=> array(
-					'survey'		=> __('<b>Modo encuesta</b> - No hay respuestas correctas, simplemente recoger información.', 'wp_courseware'),
+					'survey'		=> __('<b>Modo encuesta</b> - No hay respuestas correctas, simplemente recoger informaci&oacute;n.', 'wp_courseware'),
 					'quiz_block'	=> __('<b>Modo de Evaluaci&oacute;n - con bloqueo </b> - Requiere de estudio de la unidad previa. <b>Minima nota </b> para pasar a la siguiente unidad.', 'wp_courseware'),
 					'quiz_noblock'	=> __('<b>Modo de Evaluaci&oacute;n - sin bloqueo </b> - Requiere de estudio de la unidad previa. <b>No necesita haber aprobado </b> para pasar a la siguiente unidad.', 'wp_courseware'),
 				)	
@@ -135,41 +135,41 @@ function WPCW_showPage_ModifyQuiz_load()
 				'type'  	=> 'select',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_block_only wpcw_quiz_only',
-				'data'		=> WPCW_quizzes_getPercentageList(__('-- Select a pass mark --', 'wp_courseware')),
-				'desc'  	=> __('The minimum pass mark that your trainees need to achieve to progress on to the next unit.', 'wp_courseware'),
+				'data'		=> WPCW_quizzes_getPercentageList(__('-- Seleccione una calificaci&oacute;n de aprobaci&oacute;n --', 'wp_courseware')),
+				'desc'  	=> __('La nota m&iacute;nima que sus alumnos necesitan para lograr progresar a la siguiente unidad.', 'wp_courseware'),
 			),
 			
 		'quiz_attempts_allowed' => array(
-				'label' 	=> __('Number of Attempts Allowed?', 'wp_courseware'),
+				'label' 	=> __('N&uacute;mero de intentos permitidos?', 'wp_courseware'),
 				'type'  	=> 'select',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_block_only wpcw_quiz_only',
 				'data'		=> WPCW_quizzes_getAttemptList(),
-				'desc'  	=> __('The maximum number of attempts that a trainee is given to complete a quiz for blocking quizzes.', 'wp_courseware'),
+				'desc'  	=> __('El n&uacute;mero m&aacute;ximo de intentos que un estudiante tiene para completar una evaluaci&oacute;n para el bloqueo de las preguntas.', 'wp_courseware'),
 			),
 			
 		'quiz_show_survey_responses' => array(
-				'label' 	=> __('Show Survey Responses?', 'wp_courseware'),
+				'label' 	=> __('Mostrar respuesta de las Encuestas', 'wp_courseware'),
 				'type'  	=> 'radio',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_survey_only',
 				'data'		=> array(
-						'show_responses' 	=> __('<b>Show Responses</b> - Show the trainee their survey responses.', 'wp_courseware'),
-						'no_responses' 	=> __('<b>No Responses</b> - Don\'t show the trainee their survey responses.', 'wp_courseware'),
+						'show_responses' 	=> __('<b>Mostrar respuestas</b> - Mostrar al estudiante sus respuestas a la encuesta.', 'wp_courseware'),
+						'no_responses' 	=> __('<b>Sin respuestas</b> - No mostrar al estudiante sus respuestas a la encuesta.', 'wp_courseware'),
 					),
-				'desc'  	=> __('This setting allows you to choose whether or not you want students to be able to review their past survey responses when they return to units.', 'wp_courseware'),
+				'desc'  	=> __('Esta configuraci&oacute;n le permite elegir si desea o no que los estudiantes sean capaces de revisar sus respuestas en las evaluaci&oacute;n anteriores cuando vuelven a las unidades.', 'wp_courseware'),
 			),
 
 			
 			
 		'quiz_paginate_questions' => array(
-				'label' 	=> __('Paginate Questions?', 'wp_courseware'),
+				'label' 	=> __('Paginaci&oacute;n de preguntas?', 'wp_courseware'),
 				'type'  	=> 'radio',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_paginate_questions',
 				'data'		=> array(
-					'use_paging' 	=> __('<b>Use Paging</b> - This setting will display quiz questions one at a time allowing students to progress through questions individually within a frame in your unit page.', 'wp_courseware'),
-					'no_paging' 	=> __('<b>No Paging</b> - Don\'t use any paging. Show all quiz questions at once on the unit page.', 'wp_courseware'),
+					'use_paging' 	=> __('<b>Use Paginaci&oacute;n</b> - Este ajuste mostrar&aacute; las preguntas una a la vez que permite a los estudiantes progresar a trav&eacute;s de preguntas individualmente dentro de un marco en su p&aacute;gina unidad.', 'wp_courseware'),
+					'no_paging' 	=> __('<b>No Paginaci&oacute;n</b> - No utiliza ning&uacute;na paginaci&oacute;n. Muestra todas las preguntas a la vez en la p&aacute;gina de la unidad.', 'wp_courseware'),
 				),
 				
 				// The list of subitems for each radio button
@@ -183,9 +183,9 @@ function WPCW_showPage_ModifyQuiz_load()
 							'required'		=> false,
 							'cssclass'		=> 'wpcw_quiz_paginate_questions_group',
 								'data'	=> array(
-									'allow_review_before_submission'  	=> '<b>' . __('Allow Review Before Final Submission', 'wp_courseware') . '</b> - ' . __('If selected, students will be presented with an opportunity to review an editable list of all answers before final submission.', 'wp_courseware'),
-									'allow_students_to_answer_later'  	=> '<b>' . __('Allow Students to Answer Later', 'wp_courseware') . '</b> - ' . __('If selected, the student will be able to click the "Answer Later" button and progress to the next question without answering. The question will be presented again at the end of the quiz.', 'wp_courseware'),
-									'allow_nav_previous_questions'  	=> '<b>' . __('Allow Navigation to Previous Questions', 'wp_courseware') . '</b> - ' . __('If selected, a "Previous Question" button will be displayed, allowing students to freely navigate backwards and forwards through questions.', 'wp_courseware'),
+									'allow_review_before_submission'  	=> '<b>' . __('Permitir revisados antes de aprobarlos final', 'wp_courseware') . '</b> - ' . __('Si se selecciona, los estudiantes ser&aacute;n presentados con la oportunidad de revisar una lista editable de todas las respuestas antes de la presentaci&oacute;n final.', 'wp_courseware'),
+									'allow_students_to_answer_later'  	=> '<b>' . __('Permitir a los alumnos que respondan tarde', 'wp_courseware') . '</b> - ' . __('Si se selecciona, los estudiantes ser&aacute;n capaz de hacer clic en el bot&oacute;n "Responder tarde" y continuar a la siguiente pregunta. La pregunta se presentar&aacute; de nuevo al final de la prueba.', 'wp_courseware'),
+									'allow_nav_previous_questions'  	=> '<b>' . __('Permitir la navegaci&oacute;n a las preguntas anteriores', 'wp_courseware') . '</b> - ' . __('Si se selecciona, se mostrar&aacute; un bot&oacute;n "Pregunta anterior", lo que permite a los estudiantes navegar libremente hacia atr&aacute;s y hacia delante a trav&eacute;s de preguntas.', 'wp_courseware'),
 								),
 						),
 					), // end of quiz_paginate_questions array
@@ -193,27 +193,27 @@ function WPCW_showPage_ModifyQuiz_load()
 			),
 			
 			'quiz_timer_mode' => array(
-				'label' 	=> __('Set Time Limit for Quiz?', 'wp_courseware'),
+				'label' 	=> __('Plazo concedido para las evaluaciones?', 'wp_courseware'),
 				'type'  	=> 'radio',
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_timer_mode wpcw_quiz_block_only',
 				'data'		=> array(
-					'use_timer' 	=> __('<b>Specify a Quiz Time Limit</b> - Give the trainee a fixed amount of time to complete the quiz.', 'wp_courseware'),
-					'no_timer' 	=> __('<b>No Time Limit</b> - the trainee can take as long as they wish to complete the quiz.', 'wp_courseware'),
+					'use_timer' 	=> __('<b>Especificar un l&iacute;mite de tiempo la evaluaci&oacute;n</b> - Dar al alumno una cantidad fija de tiempo para completar la evaluaci&oacute;n.', 'wp_courseware'),
+					'no_timer' 	=> __('<b>Sin l&iacute;mite de tiempo</b> - el estudiante puede tomar todo el tiempo que desee para completar la evaluaci&oacute;n', 'wp_courseware'),
 				),
 			),
 			
 			'quiz_timer_mode_limit' => array(
-				'label' 	=> __('Time Limit (in minutes)', 'wp_courseware'),
+				'label' 	=> __('Tiempo Limite (en minutos)', 'wp_courseware'),
 				'type'  	=> 'text',
 				'required'  => false,
 				'cssclass'	=> 'wpcw_quiz_timer_mode_limit wpcw_quiz_timer_mode_active_only wpcw_quiz_block_only',
-				'extrahtml' => __('Minutes', 'wp_courseware'),
+				'extrahtml' => __('Minutos', 'wp_courseware'),
 				'validate'	=> array(
 					'type'	=> 'number',
 					'max'	=> 1000,
 					'min'	=> 1,
-					'error'	=> 'Please choose time limit between 1 and 1000 minutes.'
+					'error'	=> 'Por favor, elija l&iacute;mite de tiempo entre 1 y 1000 minutos.'
 				) 
 			),
 			
@@ -228,10 +228,10 @@ function WPCW_showPage_ModifyQuiz_load()
 				'required'  => true,
 				'cssclass'	=> 'wpcw_quiz_show_answers wpcw_quiz_only',
 				'data'		=> array(
-					'show_answers' 	=> __('<b>Mostrar Respuestas</b> - Show the trainee the correct answers before they progress.', 'wp_courseware'),
-					'no_answers' 	=> __('<b>No mostrar Respuestas</b> - Don\'t show the trainee any answers before they progress.', 'wp_courseware'),
+					'show_answers' 	=> __('<b>Mostrar Respuestas</b> - Mostrar al estudiante las respuestas correctas antes de continuar.', 'wp_courseware'),
+					'no_answers' 	=> __('<b>No mostrar Respuestas</b> - No mostrar al estudiante las respuestas correctas antes de continuar..', 'wp_courseware'),
 				),
-				'extrahtml'	=> '<div class="wpcw_msg_info wpcw_msg wpcw_msg_in_form wpcw_msg_error_no_answers_selected" style="display: none">' . __('If this option is selected, students will not be able to view correct or incorrect answers.', 'wp_courseware')  . '</div>',
+				'extrahtml'	=> '<div class="wpcw_msg_info wpcw_msg wpcw_msg_in_form wpcw_msg_error_no_answers_selected" style="display: none">' . __('Si se selecciona esta opci&oacute;n, los estudiantes no podr&acute;n ver las respuestas correctas o incorrectas.', 'wp_courseware')  . '</div>',
 				
 				// The list of subitems for each radio button
 				'suffix_subitems' => array(
@@ -245,13 +245,13 @@ function WPCW_showPage_ModifyQuiz_load()
 							'cssclass'		=> '',
 							'errormsg'			=> __('Please choose at least one option when showing correct answers.', 'wp_courseware'),
 								'data'	=> array(
-									'show_correct_answer' 		=> '<b>' . __('Mostrar  respuestas correctas', 'wp_courseware') . '</b> - ' . __('Show the trainee the correct answers before they progress.', 'wp_courseware'),
-									'show_user_answer' 			=> '<b>' . __('Mostrar repuestas de  usuarios', 'wp_courseware') . '</b> - ' . __('Show the trainee the answer they submitted before they progress.', 'wp_courseware'),
-									'show_explanation' 			=> '<b>' . __('Mostrar explicaci&oacute;n', 'wp_courseware') . 	'</b> - ' . __('Show the trainee an explanation for the correct answer (if there is one).', 'wp_courseware'),
-									'mark_answers' 				=> '<b>' . __('Marcar Respuestas', 'wp_courseware') . 		'</b> - ' . __('This option will show correct answers with a green check mark, and incorrect answers with a red "X".', 'wp_courseware'),
-									'show_results_later' 		=> '<b>' . __('Deja resultados de la prueba disponible para verlo en otro momento?', 'wp_courseware') . '</b> - ' . __('This setting allows you to choose whether or not you want students to be able to review their past quiz answers when they return to units.', 'wp_courseware'),
+									'show_correct_answer' 		=> '<b>' . __('Mostrar  respuestas correctas', 'wp_courseware') . '</b> - ' . __('Mostrar al estudiante las respuestas correctas antes de continuar.', 'wp_courseware'),
+									'show_user_answer' 			=> '<b>' . __('Mostrar todas las repuestas del usuario', 'wp_courseware') . '</b> - ' . __('Mostrar al estudiante todas sus respuestas antes de enviarlas.', 'wp_courseware'),
+									'show_explanation' 			=> '<b>' . __('Mostrar explicaci&oacute;n', 'wp_courseware') . 	'</b> - ' . __('Muestre al estudiante una explicaci&oacute;n de la respuesta correcta (si la hay).', 'wp_courseware'),
+									'mark_answers' 				=> '<b>' . __('Marcar Respuestas', 'wp_courseware') . 		'</b> - ' . __('Esta opci&oacute;n mostrar&aacute; respuestas correctas con una marca verde, y las respuestas incorrectas con una "X" roja.', 'wp_courseware'),
+									'show_results_later' 		=> '<b>' . __('Deja resultados de la prueba disponible para verlo en otro momento?', 'wp_courseware') . '</b> - ' . __('Esta configuraci&oacute;n le permite elegir si desea o no que los estudiantes sean capaces de revisar sus &uacute;ltimas respuestas de la evaluaci&oacute;n cuando vuelven a las unidades.', 'wp_courseware'),
 								),
-							'extrahtml'	=> '<div class="wpcw_msg_error wpcw_msg wpcw_msg_in_form wpcw_msg_error_show_answers_none_selected" style="display: none">' . __('To make use of this showing answers setting, at least one of the above settings should be ticked. Otherwise, no answers are actually shown.', 'wp_courseware')  . '</div>',
+							'extrahtml'	=> '<div class="wpcw_msg_error wpcw_msg wpcw_msg_in_form wpcw_msg_error_show_answers_none_selected" style="display: none">' . __('Para hacer uso de esta opci&oacute;n que muestra las respuestas, al menos uno de los ajustes anteriores se deber&aacute; marcar. De lo contrario, no hay respuestas para mostrar', 'wp_courseware')  . '</div>',
 						),
 					), // end of show_answers array
 					
@@ -273,15 +273,15 @@ function WPCW_showPage_ModifyQuiz_load()
 				'label' 		=> __('Mostrar resultados por tag?', 'wp_courseware'),
 				'type'  		=> 'checkbox',
 				'required'  	=> false,
-				'extralabel'	=> __('<b>Mostrar resultados por etiqueta pregunta</b> - In addition to the overall score, indicate a breakdown of the results for each question tag.', 'wp_courseware'),
+				'extralabel'	=> __('<b>Mostrar resultados por etiqueta de preguntas</b> - Adem&aacute;s de la puntuaci&oacute;n total, indicar un desglose de los resultados para cada etiqueta que se trate.', 'wp_courseware'),
 			),
 			
 			'quiz_results_by_timer' => array(
-				'label' 		=> __('Show Completion Time?', 'wp_courseware'),
+				'label' 		=> __('Mostrar Tiempo de terminaci&oacute;n?', 'wp_courseware'),
 				'type'  		=> 'checkbox',
 				'required'  	=> false,
 				'cssclass'		=> 'wpcw_quiz_timer_mode_active_only wpcw_quiz_block_only',
-				'extralabel'	=> __('<b>Display completion time for timed quiz</b> - If the quiz has been timed, this option will display the student\'s total time used for completing the quiz.', 'wp_courseware'),
+				'extralabel'	=> __('<b>Mostrar el tiempo de finalizaci&oacute;n dentro de la evaluaci&oacute;n</b> - Si la evaluaci&oacute;n tiene tiempo, esta opci&oacute;n se mostrar&aacute; el tiempo total del estudiante utilizado para completar el cuestionario.', 'wp_courseware'),
 			),
 			
 	);
@@ -386,7 +386,7 @@ function WPCW_showPage_ModifyQuiz_load()
 	}
 	
 	// Show a placeholder for an error message that may occur within tabs.
-	printf('<div class="wpcw_msg wpcw_msg_error wpcw_section_error_within_tabs">%s</div>', __('Unfortunately, there are a few missing details that need to be added before this quiz can be saved. Please resolve them and try again.', 'wp_courseware'));
+	printf('<div class="wpcw_msg wpcw_msg_error wpcw_section_error_within_tabs">%s</div>', __('Por desgracia, hay algunos detalles que faltan que necesitan ser a&ntilde;adido antes de que esta evaluaci&oacute;n pueda ser guardada. Por favor, resolverlos y vuelve a intentarlo.', 'wp_courseware'));
 	
 	// Render the tabs	
 	echo WPCW_tabs_generateTabHeader($tabList, 'wpcw_quizzes_tabs');
@@ -472,9 +472,9 @@ function WPCW_showPage_thickbox_randomQuestion()
 				
 				// Label
 				printf('<label class="wpcw_bold"><input type="radio" name="wpcw_tb_random_question_type" value="whole_pool" /> %s</label>', 
-					__('Randomly Select from Entire Quiz Pool', 'wp_courseware')
+					__('Seleccionar al azar de todo el grupo de preguntas', 'wp_courseware')
 				);
-				printf('<div class="wpcw_tb_description">%s</div>', __('If this option is selected, then number of questions you choose wil be randomly chosen from the entire quiz pool, regardless of question tag.', 'wp_courseware'));
+				printf('<div class="wpcw_tb_description">%s</div>', __('Si se selecciona esta opci&oacute;n, entonces el n&uacute;mero de preguntas que elija ser&aacute; elegido al azar de todo el grupo de preguntas, independientemente de la etiqueta que se trate.', 'wp_courseware'));
 				
 				// How many questions are there?
 				$questionCount = WPCW_questions_getQuestionCount();
@@ -506,7 +506,7 @@ function WPCW_showPage_thickbox_randomQuestion()
 				printf('<label class="wpcw_bold"><input type="radio" name="wpcw_tb_random_question_type" value="question_tags" checked/> %s</label>', 
 					__('Randomly Select using Question Tags', 'wp_courseware')
 				);
-				printf('<div class="wpcw_tb_description">%s</div>', __('If this option is selected, then number of questions you choose for each tag will be randomly displayed.', 'wp_courseware'));
+				printf('<div class="wpcw_tb_description">%s</div>', __('Si se selecciona esta opci&oacute;n, se mostrar&aacute; al azar a continuaci&oacute;n, el ´n&uacute;mero de preguntas que elija para cada etiqueta.', 'wp_courseware'));
 				
 				// Wraps the selection in a grey box
 				printf('<div class="wpcw_tb_option_selection">');
@@ -519,7 +519,7 @@ function WPCW_showPage_thickbox_randomQuestion()
 					
 					// Create the add new line
 					printf('<hr/>');
-					printf('<a href="#" id="wpcw_tb_option_wrap_question_tags_add">%s</a>',  __('+ Add Another', 'wp_courseware'));
+					printf('<a href="#" id="wpcw_tb_option_wrap_question_tags_add">%s</a>',  __('+ agregar otra', 'wp_courseware'));
 					
 				printf('</div>');
 	
@@ -528,7 +528,7 @@ function WPCW_showPage_thickbox_randomQuestion()
 			
 			// Insert button
 			printf('<br/><div class="wpcw_button_group">');
-				printf('<a href="#new_question" class="button-primary" id="wpcw_tb_random_question_inner_insert">%s</a>',  __('Insert Random Question Selection', 'wp_courseware'));
+				printf('<a href="#new_question" class="button-primary" id="wpcw_tb_random_question_inner_insert">%s</a>',  __('Inserte Selecci&oacute;n de Preguntas aleatorias ', 'wp_courseware'));
 			printf('</div>');
 			
 		printf('</div>'); // #wpcw_tb_random_question_inner			
@@ -545,27 +545,27 @@ function WPCW_showPage_thickbox_randomQuestion_tagSelectionLine($defaultCount = 
 	printf('<div class="wpcw_tb_option_wrap_question_tags_row">');
 	
 		// Label prefix
-		printf('<label>%s&nbsp;&nbsp;</label>', __('Select  ', 'wp_courseware'));
+		printf('<label>%s&nbsp;&nbsp;</label>', __('  ', 'wp_courseware'));
 		
 		// Input box
 		printf('<input type="text" class="wpcw_spinner" value="%d" />', $defaultCount);
 		
 		// Label suffix
-		printf('<label>&nbsp;&nbsp;%s&nbsp;&nbsp;</label>', __('questions from', 'wp_courseware'));
+		printf('<label>&nbsp;&nbsp;%s&nbsp;&nbsp;</label>', __('preguntas de', 'wp_courseware'));
 		
 		// The tag dropdown
-		echo WPCW_questions_tags_getTagDropdown(__('--- Select Tag ---', 'wp_courseware'), 'tag_selection', false, 'wpcw_tb_option_tag_select', true);
+		echo WPCW_questions_tags_getTagDropdown(__('--- Seleccionar Tag ---', 'wp_courseware'), 'tag_selection', false, 'wpcw_tb_option_tag_select', true);
 		
 		// The deletion link.
 		printf('<a href="#" class="wpcw_delete_icon" rel="%s" %s>%s</a>',
-			__('Are you sure you wish to delete this selection?', 'wp_courseware'),
+			__('Est&aacute; seguro de que desea eliminar esta selecci&oacute;n?', 'wp_courseware'),
 			($isFirst ? 'style="display: none;"' : false), // Hide deletion link if this is the first item
-			__('Delete', 'wp_courseware') 
+			__('Eliminar', 'wp_courseware') 
 		);
 		
 		// Marker to show that a tag needs selection.
 		printf('<div class="wpcw_missing_tag">%s</div>',
-			__('Please select a tag', 'wp_courseware') 
+			__('Por favor, seleccione una etiqueta', 'wp_courseware') 
 		);
 		
 	printf('</div>');
@@ -601,7 +601,7 @@ function WPCW_showPage_ModifyQuiz_showQuestionEntryForms($quizID, $page)
 		$passQs  = ceil(($quizDetails->quiz_pass_mark / 100) * $totalQs);
 		
 		printf('<div class="wpcw_msg wpcw_msg_info">');
-		printf(__('The trainee will be required to correctly answer at least <b>%d of the %d</b> following questions (<b>at least %d%%</b>) to progress.', 'wp_courseware'),
+		printf(__('Se le requerir&aacute; al estudiante a responder correctamente al menos <b>%d de las %d</b> siguientes preguntas (<b>al menos %d%%</b>) para el progreso.', 'wp_courseware'),
 			$passQs, $totalQs, $quizDetails->quiz_pass_mark
 		);
 		printf('</div>');
@@ -614,8 +614,8 @@ function WPCW_showPage_ModifyQuiz_showQuestionEntryForms($quizID, $page)
 		printf('<div class="wpcw_msg wpcw_msg_error">');
 		
 			printf(
-			__('This quiz contains questions that need <b>manual grading</b>, and you\'ve selected \'<b>Show Answers</b>\' when the user completes this quiz. ', 'wp_courseware') . '<br/><br/>' .
-			__('Since answers cannot be shown to the user because they are not known at that stage, <b>answers cannot be shown</b>. To hide this message, select \'<b>No Answers</b>\' above.', 'wp_courseware')								
+			__('Esta evaluaci&oacute;n contiene preguntas que necesitan de <b>clasificaci&oacute;n manual</b>, y que ha seleccionado \'<b>Mostrar respuestas\' cuando el usuario complete esta evaluaci&oacute;n. ', 'wp_courseware') . '<br/><br/>' .
+			__('Dado que las respuestas no pueden ser mostrados al usuario, ya que no se conocen en esa etapa, las respuestas no pueden ser mostrados. Para ocultar este mensaje, seleccione No hay respuestas anteriores.', 'wp_courseware')								
 			);
 		printf('</div>');
 	}
@@ -676,7 +676,7 @@ function WPCW_showPage_ModifyQuiz_showQuestionEntryForms($quizID, $page)
 	// Do any of the questions have residual errors? Tell the user.
 	if ($errorCount > 0) 
 	{
-		$page->showMessage(sprintf(__('%d of the questions below have errors. Please make corrections and then save the changes.', 'wp_courseware'), $errorCount), true);
+		$page->showMessage(sprintf(__('%d de las preguntas a continuaci&oacute;n tienen errores. Por favor, hacer correcciones y luego guardar los cambios.', 'wp_courseware'), $errorCount), true);
 	}
 	
 	
@@ -753,21 +753,21 @@ function WPCW_showPage_ModifyQuiz_FloatMenu($page)
 		<div class="wpcw_add_quiz_block">
 			<div class="wpcw_add_quiz_title"><?php _e('Question Tools', 'wp_courseware'); ?></div>
 			<div class="wpcw_add_quiz_options"><ul>
-				<li><a href="#new_question" class="button-secondary" id="wpcw_add_question_multi"><?php _e('Add Multiple Choice', 'wp_courseware'); ?></a></li>
-				<li><a href="#new_question" class="button-secondary" id="wpcw_add_question_truefalse"><?php _e('Add True/False', 'wp_courseware'); ?></a></li>
-				<li><a href="#new_question" class="button-secondary" id="wpcw_add_question_open"><?php _e('Add Open Ended Question', 'wp_courseware'); ?></a></li>
-				<li><a href="#new_question" class="button-secondary" id="wpcw_add_question_upload"><?php _e('Add File Upload Question', 'wp_courseware'); ?></a></li>
+				<li><a href="#new_question" class="button-secondary" id="wpcw_add_question_multi"><?php _e('Agregar opci&oacute;n m&uacute;ltiple', 'wp_courseware'); ?></a></li>
+				<li><a href="#new_question" class="button-secondary" id="wpcw_add_question_truefalse"><?php _e('Agregar Verdadero/Falso', 'wp_courseware'); ?></a></li>
+				<li><a href="#new_question" class="button-secondary" id="wpcw_add_question_open"><?php _e('Agregar pregunta abierta', 'wp_courseware'); ?></a></li>
+				<li><a href="#new_question" class="button-secondary" id="wpcw_add_question_upload"><?php _e('Agregar archivo de preguntas', 'wp_courseware'); ?></a></li>
 				
 				<li class="wpcw_add_quiz_spacer"><hr/></li>
 				
-				<li><a href="#TB_inline?width=1200&height=800&inlineId=wpcw_tb_question_pool" title="<?php _e('Insert question from Question Pool', 'wp_courseware'); ?>" class="button-secondary thickbox" id="wpcw_add_question_from_pool"><?php _e('Add Questions from Pool', 'wp_courseware'); ?></a></li>
-				<li><a href="#TB_inline?width=1200&height=800&inlineId=wpcw_tb_random_question" title="<?php _e('Insert Random Questions', 'wp_courseware'); ?>" class="button-secondary thickbox" id="wpcw_add_question_random"><?php _e('Add Random Questions', 'wp_courseware'); ?></a></li>
+				<li><a href="#TB_inline?width=1200&height=800&inlineId=wpcw_tb_question_pool" title="<?php _e('Insertar pregunta del Grupo de preguntas', 'wp_courseware'); ?>" class="button-secondary thickbox" id="wpcw_add_question_from_pool"><?php _e('Agregar pregunta - grupo de preguntas', 'wp_courseware'); ?></a></li>
+				<li><a href="#TB_inline?width=1200&height=800&inlineId=wpcw_tb_random_question" title="<?php _e('Inserte preguntas al azar', 'wp_courseware'); ?>" class="button-secondary thickbox" id="wpcw_add_question_random"><?php _e('Agregar preguntas al azar', 'wp_courseware'); ?></a></li>
 				
 				<li class="wpcw_add_quiz_spacer"><hr/></li>
 				
 				<li class="wpcw_quiz_tool_compact">
-					<a href="#top" class="wpcw_quiz_tool_compact_compact" title="<?php _e('Use this to compact the questions so that they are easier to organise.', 'wp_courseware'); ?>">[-] <?php _e('Compact Questions', 'wp_courseware'); ?></a>
-					<a href="#top" class="wpcw_quiz_tool_compact_expand" title="<?php _e('Use this to expand the questions for editing.', 'wp_courseware'); ?>">[+] <?php _e('Expand Questions', 'wp_courseware'); ?></a>
+					<a href="#top" class="wpcw_quiz_tool_compact_compact" title="<?php _e('Utilice esta opci&oacute;n para compactar las preguntas de manera que sean m&aacute;s f&aacute;ciles de organizar.', 'wp_courseware'); ?>">[-] <?php _e('Compactar preguntas', 'wp_courseware'); ?></a>
+					<a href="#top" class="wpcw_quiz_tool_compact_expand" title="<?php _e('Utilice esta opci&oacute;n para ampliar las preguntas para la edici&oacute;n.', 'wp_courseware'); ?>">[+] <?php _e('Expandir preguntas', 'wp_courseware'); ?></a>
 				</li>
 			</ul></div>
 		</div>
@@ -778,7 +778,7 @@ function WPCW_showPage_ModifyQuiz_FloatMenu($page)
 		?>
 		
 		<div class="wpcw_add_quiz_save">
-			<input type="submit" class="button-primary" value="<?php _e('Save Quiz &amp; Questions', 'wp_courseware'); ?>" />
+			<input type="submit" class="button-primary" value="<?php _e('Guardar Evaluaci&oacute;n y Preguntas', 'wp_courseware'); ?>" />
 		</div>
 		
 		<div class="wpcw_quiz_tool_compact">
@@ -799,18 +799,18 @@ function WPCW_showPage_ModifyQuiz_FloatMenu($page)
 function WPCW_showPage_customFeedback_showEditForms($quizID, $page)
 {
 	// ### 1 - Heading Messages
-	printf('<h3>%s</h3>', __('Custom Feedback Messages', 'wp_courseware'));
+	printf('<h3>%s</h3>', __('Retroalimentaci&oacute;n de los mensajes', 'wp_courseware'));
 	printf('<p>(%s) %s</p>', 
 		__('Optional', 'wp_courseware'),
-		__('If you are using question tags within you quiz, you can create custom messages to display upon submission of the quiz based on a student\'s results for a particular tag.', 'wp_courseware')
+		__('Si est&aacute; utilizando etiquetas de preguntas dentro de tu evaluaci&oacute;n, puede crear mensajes personalizados para mostrar a la presentaci&oacute;n de la prueba sobre la base de un resultado para los estudiantes una etiqueta en particular.', 'wp_courseware')
 	);
 	
 	printf('<p><em>%s</em></p>', 
-		__('Please note: The custom feedback messages do not display any grade information. Use the settings under <b>Result Settings</b> tab, then <b>Show Answers</b> - to customise the display of results.', 'wp_courseware')
+		__('Tenga en cuenta: Los mensajes de informaci&oacute;n personalizada no muestran ninguna informaci&oacute;n de grado. Utilice la configuraci&oacute;n en la pesta&ntilde;a <b>Configuraci&oacute;n de resultados</b>, a continuaci&oacute;n, <b>Mostrar respuestas</b> - para personalizar la presentaci&oacute;n de los resultados.', 'wp_courseware')
 	);
 	
 	// ### 2 - Button to add a new message
-	printf('<div class="wpcw_button_group"><a href="#" class="button-secondary" id="wpcw_quiz_custom_feedback_add_new">%s</a></div><br/>', __('Add New Feedback Message', 'wp_courseware'));
+	printf('<div class="wpcw_button_group"><a href="#" class="button-secondary" id="wpcw_quiz_custom_feedback_add_new">%s</a></div><br/>', __('Agregar nuevo comentario', 'wp_courseware'));
 	
 	// ### 3 - Keep track of new messages and deletions
 	printf('<div id="wpcw_quiz_custom_feedback_add_new_count">0</div>'); 
@@ -992,12 +992,12 @@ function WPCW_actions_quizzes_afterQuizSaved($formValues, $originalFormValues, $
 function WPCW_quizzes_getAttemptList()
 {
 	$attemptList = array(
-		'-1'	=> __('Unlimited Attempts', 'wp_courseware'),
-		'1'		=> __('1 Attempt', 'wp_courseware'),
+		'-1'	=> __('Intentos ilimitadaos', 'wp_courseware'),
+		'1'		=> __('1 Intento', 'wp_courseware'),
 	);
 	
 	for ($i = 2; $i <= 30; $i++) {
-		$attemptList[$i] = sprintf(__('%d Attempts', 'wp_courseware'), $i);
+		$attemptList[$i] = sprintf(__('%d Intentos', 'wp_courseware'), $i);
 	}
 	
 	return $attemptList;

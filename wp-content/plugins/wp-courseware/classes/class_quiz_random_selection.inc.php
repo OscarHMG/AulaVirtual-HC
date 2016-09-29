@@ -48,11 +48,11 @@ class WPCW_quiz_RandomSelection extends WPCW_quiz_base
 					foreach ($tagDetails as $tagID => $tagDataToRender)
 					{
 						$html .= sprintf('<li>%s <b>%d</b> %s <b>%s</b>&nbsp;&nbsp;(%s)</li>',
-							__('Show', 'wp_courseware'),
+							__('Mostrar', 'wp_courseware'),
 							$tagDataToRender['count'], 	
-							__('questions from', 'wp_courseware'),
+							__('preguntas de', 'wp_courseware'),
 							$tagDataToRender['name'],
-							sprintf(__('%d questions available', 'wp_courseware'), $tagDataToRender['tag_usage'])
+							sprintf(__('%d preguntas disponibles', 'wp_courseware'), $tagDataToRender['tag_usage'])
 						);
 					}
 				}
@@ -67,8 +67,8 @@ class WPCW_quiz_RandomSelection extends WPCW_quiz_base
 				
 				// And a blank version for use with jQuery for doing a live update.
 				$html .= sprintf('<span class="wpcw_quiz_row_question_info_blank"><li>%s <b class="wpcw_count"></b> %s <b class="wpcw_name"></b></li></span>',
-					__('Show', 'wp_courseware'),
-					__('questions from', 'wp_courseware')
+					__('Mostrar', 'wp_courseware'),
+					__('preguntas de', 'wp_courseware')
 				);				
 			
 				// Load the question list direct from the question_question field - might as well reuse it.

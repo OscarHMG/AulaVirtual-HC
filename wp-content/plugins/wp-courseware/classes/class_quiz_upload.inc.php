@@ -15,7 +15,7 @@ class WPCW_quiz_FileUpload extends WPCW_quiz_base
 		$this->questionType = 'upload';		
 		$this->cssClasses = 'wpcw_question_type_upload';
 		
-		$this->hint = __('(Optional) Use this to guide the user what they should upload.', 'wp_courseware');
+		$this->hint = __('(Opcional) Use esto para guiar al usuario a lo que deben subir.', 'wp_courseware');
 	}	
 	
 	
@@ -59,7 +59,7 @@ class WPCW_quiz_FileUpload extends WPCW_quiz_base
 			// Main question details here...					
 			$html .= sprintf('<tr class="wpcw_quiz_row_question %s">', $errorClass_Question);
 			
-				$html .= sprintf('<th>%s</th>', __('Question', 'wp_courseware'));
+				$html .= sprintf('<th>%s</th>', __('Pregunta', 'wp_courseware'));
 				
 				// Upload Questions
 				$html .= '<td>';
@@ -84,14 +84,14 @@ class WPCW_quiz_FileUpload extends WPCW_quiz_base
 			// Show a bit of the form that allows the user to determine what kind of size
 			// the answer box should be.
 			$html .= sprintf('<tr class="alternate %s">', $errorClass_FileType);
-				$html .= sprintf('<th>%s</th>', __('Permitted file extensions?', 'wp_courseware'));
+				$html .= sprintf('<th>%s</th>', __('Permitida extensiones de archivo?', 'wp_courseware'));
 			
 				$html .= sprintf('<td class="wpcw_quiz_details_answer_file_type_selection">');
 					$html .= sprintf('<input type="text" name="question_answer_file_types_%s" value="%s" />', $this->quizItem->question_id, $this->quizItem->question_answer_file_types);
 									
 					$html .= sprintf('<span>%s<br/>%s</span>', 
-						__('Just list the permitted extensions without the dot.', 'wp_courseware'),
-						__('e.g. "pdf, xls, mp3"', 'wp_courseware')
+						__('Basta con enumerar las extensiones permitidas sin el punto.', 'wp_courseware'),
+						__('es decir "pdf, xls, mp3"', 'wp_courseware')
 					);
 				$html .= '</td>';			
 			$html .= '</tr>';
@@ -123,12 +123,12 @@ class WPCW_quiz_FileUpload extends WPCW_quiz_base
 			$this->extraQuizHTML .= sprintf('<div class="wpcw_fe_quiz_q_upload_existing">
 												%s <b><a href="%s%s" target="_blank">.%s %s (%s)</a></b> %s 
 											 </div>',
-					__('You have uploaded a', 'wp_courseware'), 
+					__('Ha cargado una', 'wp_courseware'), 
 					WP_CONTENT_URL, $selectedAnswer,
 					pathinfo($selectedAnswer, PATHINFO_EXTENSION),
-					__('file', 'wp_courseware'), 					
+					__('archivo', 'wp_courseware'), 					
 					WPCW_files_getFileSize_human($selectedAnswer),
-					__('for this answer.', 'wp_courseware')
+					__('para esta respuesta.', 'wp_courseware')
 				); 
 				
 			// Shows the link to change the file
@@ -138,8 +138,8 @@ class WPCW_quiz_FileUpload extends WPCW_quiz_base
 												<div class="wpcw_fe_quiz_q_upload_change_holder"></div>
 											</div>', 
 											$fieldID,
-											__('Click here to upload a different file...', 'wp_courseware'),
-											__('Cancel uploading a different file', 'wp_courseware')
+											__('Haga clic aqu&iacute; para cargar un archivo diferente ...', 'wp_courseware'),
+											__('Cancelar la posibilidad de subir un archivo diferente', 'wp_courseware')
 										);
 		} 
 		
@@ -234,33 +234,33 @@ class WPCW_quiz_FileUpload extends WPCW_quiz_base
 				// Got a PHP upload error?
 				if ($file_error > 0)
 				{
-					$errMsg = __('Error. An unknown file upload error occurred.', 'wp_courseware');
+					$errMsg = __('Error. Se ha producido un error de carga de archivos desconocido.', 'wp_courseware');
 					
 					switch ($file_error)
 					{
 						case UPLOAD_ERR_FORM_SIZE:
 						case UPLOAD_ERR_INI_SIZE:
-								$errMsg = sprintf(__('Error. The uploaded file exceeds the maximum file upload size (%s).', 'wp_courseware'), WPCW_files_getMaxUploadSize());
+								$errMsg = sprintf(__('Error. El archivo subido excede el tama&ntilde;o m&aacute;ximo de carga de archivos (%s).', 'wp_courseware'), WPCW_files_getMaxUploadSize());
 							break;
 													
 						case UPLOAD_ERR_PARTIAL:
-								$errMsg = __('Error. The uploaded file was only partially uploaded.', 'wp_courseware');
+								$errMsg = __('Error. El archivo subido se ha subido s&oacute;lo parcialmente.', 'wp_courseware');
 							break;
 							
 						case UPLOAD_ERR_NO_FILE:
-								$errMsg = __('Error. No file was uploaded.', 'wp_courseware');
+								$errMsg = __('Error. Ning&uacute;n archivo fue subido.', 'wp_courseware');
 							break;
 							
 						case UPLOAD_ERR_NO_TMP_DIR:
-								$errMsg = __('Error. The temporary upload directory does not exist.', 'wp_courseware');
+								$errMsg = __('Error. El directorio de subida temporal no existe.', 'wp_courseware');
 							break;
 							
 						case UPLOAD_ERR_CANT_WRITE:
-								$errMsg = __('Error. Could not write the uploaded file to disk.', 'wp_courseware');
+								$errMsg = __('Error. No se puede escribir el archivo cargado en el disco.', 'wp_courseware');
 							break;
 	 
 						case UPLOAD_ERR_EXTENSION:
-								$errMsg = __('Error. An extension stopped the file upload.', 'wp_courseware');
+								$errMsg = __('Error. Una extensi&oacute;n detuvo la carga de archivos.', 'wp_courseware');
 							break;
 					}
 										
@@ -277,7 +277,7 @@ class WPCW_quiz_FileUpload extends WPCW_quiz_base
 				// File extension is not valid, so abort and move to next file.
 				if (!in_array($thisFileExtension, $extensionTypes)) 
 				{
-					$results['upload_errors'][$qID] = sprintf(__('Error. Extension of file does not match allowed file types of %s.', 'wp_courseware'), implode(', ', $extensionTypes));
+					$results['upload_errors'][$qID] = sprintf(__('Error. Extensi&oacute;n de archivo no coincide con los tipos de archivo permitidos de %s.', 'wp_courseware'), implode(', ', $extensionTypes));
 					continue;
 				}
 					
@@ -292,7 +292,7 @@ class WPCW_quiz_FileUpload extends WPCW_quiz_base
 				
 				// Could not move file - might be out of space, or a write error.
 				else {
-					$results['upload_errors'][$qID] = __('Error. Could not move file to your training directory.', 'wp_courseware');
+					$results['upload_errors'][$qID] = __('Error. No se pudo mover el archivo en el directorio de las capacitaciones.', 'wp_courseware');
 					continue;
 				}
 			}

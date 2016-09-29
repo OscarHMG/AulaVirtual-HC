@@ -89,8 +89,8 @@ function WPCW_showPage_ImportExport_export()
 	$formElem = new FormElement('what_to_export', __('Que exportar', 'wp_courseware'), true);
 	$formElem->setTypeAsRadioButtons(array(
 		'whole_course'				=> __('<b>Todo</b> - El curso entero - incluyendo m&oacute;dulos, unidades y evaluaciones.', 'wp_courseware'),
-		'just_course'				=> __('<b>S&oacute;lo el Curso</b> - Sólo el t&iacute;tulo del curso, descripci&oacute;n y configuraci&oacute;n (no hay m&oacute;dulos, unidades o evaluaciones).', 'wp_courseware'),	
-		'course_modules'			=> __('<b>Curso y M&oacute;dulos</b> - Sólo los ajustes del curso y los ajustes del m&oacute;dulo (no hay unidades o evaluaciones).', 'wp_courseware'),
+		'just_course'				=> __('<b>S&oacute;lo el Curso</b> - S&oacute;lo el t&iacute;tulo del curso, descripci&oacute;n y configuraci&oacute;n (no hay m&oacute;dulos, unidades o evaluaciones).', 'wp_courseware'),	
+		'course_modules'			=> __('<b>Curso y M&oacute;dulos</b> - S&oacute;lo los ajustes del curso y los ajustes del m&oacute;dulo (no hay unidades o evaluaciones).', 'wp_courseware'),
 		'course_modules_and_units'	=> __('<b>Curso, M&oacute;dulos y Unidades</b> - Los ajustes del curso y Ajustes de m&oacute;dulos y unidades (sin evaluaciones).', 'wp_courseware'),
 	));
 	$form->addFormElement($formElem);
@@ -241,7 +241,7 @@ function WPCW_showPage_ImportExport_importUsers()
 	printf('<br/><br/><div class="wpcw_docs_wrapper">');
 		printf('<b>%s</b>', __('Algunos consejos para la importaci&oacute;n de usuarios a trav&eacute;s de un archivo CSV:', 'wp_courseware'));
 		printf('<ul>');
-			printf('<li>' . __('Si una direcci&oacute;n de correo electrónico del usuario ya existe, s&oacute;lo los cursos se actualizan para ese usuario.', 'wp_courseware'));
+			printf('<li>' . __('Si una direcci&oacute;n de correo electr&oacute;nico del usuario ya existe, s&oacute;lo los cursos se actualizan para ese usuario.', 'wp_courseware'));
 			printf('<li>' . __('Los nombres de usuario se generan a partir de la primera y la &uacute;ltima informaci&oacute;n del nombre. Si un nombre de usuario ya existe, entonces se genera un nombre de usuario &uacute;nico.', 'wp_courseware'));
 			printf('<li>' . __('Para agregar un usuario a muchos cursos, simplemente separar los identificadores de los cursos con una en la columna <code>courses_to_add_to</code>.', 'wp_courseware'));
 			printf('<li>' . __('Si se crea un usuario, cualquiera de los cursos establecidos para ser asignado autom&aacute;ticamente vienen primero, y luego los cursos adicionales en la columna <code>courses_to_add_to</code>.', 'wp_courseware'));

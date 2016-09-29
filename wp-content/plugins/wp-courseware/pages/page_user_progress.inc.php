@@ -29,7 +29,7 @@ function WPCW_showPage_UserProgess_load()
 		return false;		
 	}
 
-	printf(__('<p>Aqu&iacute; se puede ver los avances que <b>%s</b> (Username: <b>%s</b>) est&aacute; haciendo en los cursos de capacitaci&oacute;n.</p>', 'wp_courseware'), $userDetails->data->display_name, $userDetails->data->user_login);
+	printf(__('<p>Aqu&iacute; se puede ver los avances que <b>%s</b> (Usiario: <b>%s</b>) est&aacute; haciendo en los cursos de capacitaci&oacute;n.</p>', 'wp_courseware'), $userDetails->data->display_name, $userDetails->data->user_login);
 		
 
 	// #### 1 - Show a list of all training courses, and then list the units associated with that course.	
@@ -73,7 +73,7 @@ function WPCW_showPage_UserProgess_load()
 					// #### 3 - Render Modules as a heading.
 					printf('<tr class="wpcw_tbl_progress_module">');
 						printf('<td colspan="3">%s %d - %s</td>',
-							__('Module', 'wp_courseware'),
+							__('M&oacute;dulo', 'wp_courseware'),
 							$module->module_number,
 							$module->module_title
 						);
@@ -125,7 +125,7 @@ function WPCW_showPage_UserProgess_load()
 										printf('<td><a href="%s&user_id=%d&quiz_id=%d&unit_id=%d" class="button-secondary">%s</a></td>',	
 											admin_url('users.php?page=WPCW_showPage_UserProgess_quizAnswers'),
 											$userID, $quizDetails->quiz_id, $unit->ID,
-											__('View Survey Details', 'wp_courseware')
+											__('Ver detalles Encuesta', 'wp_courseware')
 										);
 									}
 									
@@ -158,7 +158,7 @@ function WPCW_showPage_UserProgess_load()
 										printf('<td><a href="%s&user_id=%d&quiz_id=%d&unit_id=%d" class="button-secondary">%s</a></td>',	
 											admin_url('users.php?page=WPCW_showPage_UserProgess_quizAnswers'),
 											$userID, $quizDetails->quiz_id, $unit->ID,
-											__('View Quiz Details', 'wp_courseware')
+											__('Ver detalles de la evaluaci&oacute;n', 'wp_courseware')
 										);
 										
 									} // end of if  printf('<td class="wpcw_tbl_progress_completed">%s</td>'
@@ -237,7 +237,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 	// Link back to all user summary
 	printf('<a href="%s" class="button-secondary">%s</a>&nbsp;&nbsp;', 
 		admin_url('users.php'),
-		__('&laquo; Return to User Summary', 'wp_courseware')
+		__('&laquo; Volver a User Summary', 'wp_courseware')
 	);
 		
 	if ($userDetails = get_userdata($userID))
@@ -246,7 +246,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 		printf('<a href="%s&user_id=%d" class="button-secondary">%s</a>&nbsp;&nbsp;', 
 			admin_url('users.php?page=WPCW_showPage_UserProgess'),
 			$userDetails->ID,
-			sprintf(__('&laquo; Return to <b>%s\'s</b> Progress Report', 'wp_courseware'), $userDetails->display_name)
+			sprintf(__('&laquo; Volver a <b>%s\'s</b> Progress Report', 'wp_courseware'), $userDetails->display_name)
 		);		
 	}
 	
@@ -261,7 +261,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 		// Close the button wrapper for above early
 		printf('</div>'); // .wpcw_button_group
 		
-		$page->showMessage(__('Lo sentimos, pero no hay resultados podrían ser encontrados.', 'wp_courseware'), true);
+		$page->showMessage(__('Lo sentimos, pero no hay resultados podr&iacute;an ser encontrados.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return;
 	}
@@ -273,7 +273,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 	// Extra button - return to gradebook
 	printf('<a href="%s&course_id=%d" class="button-secondary">%s</a>&nbsp;&nbsp;', 
 		admin_url('admin.php?page=WPCW_showPage_GradeBook'), $quizDetails->parent_course_id,
-		__("&laquo; Return to Gradebook", 'wp_courseware')
+		__("&laquo; Volver a las calificaciones", 'wp_courseware')
 	);
 	
 	printf('</div>'); // .wpcw_button_group
@@ -307,7 +307,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 			// Message is only if quiz has been graded.
 			if (isset($results->quiz_has_just_been_graded) && $results->quiz_has_just_been_graded) 	
 			{
-				$page->showMessage(__('The user has been sent an email with their grade for this course.', 'wp_courseware'));
+				$page->showMessage(__('El usuario ha enviado un correo electr&oacute;nico con su calificaci&oacute;n en este curso.', 'wp_courseware'));
 			}
 		}
 	}
@@ -353,12 +353,12 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 		// Still got items to grade
 		if ($results->quiz_needs_marking > 0)
 		{
-			$summaryData[__('Nº de preguntas de un Curso', 'wp_courseware')] = '<span class="wpcw_status_info wpcw_icon_pending">' .$results->quiz_needs_marking . '</span>';
+			$summaryData[__('No. de preguntas de un Curso', 'wp_courseware')] = '<span class="wpcw_status_info wpcw_icon_pending">' .$results->quiz_needs_marking . '</span>';
 			$summaryData[__('Nota General', 'wp_courseware')]	= '<span class="wpcw_status_info wpcw_icon_pending">' . __('Awaiting Final Grading', 'wp_courseware') . '</span>';
 		}
 		else
 		{
-			$summaryData[__('Nº de preguntas de un Curso', 'wp_courseware')] = '-';
+			$summaryData[__('No. de preguntas de un Curso', 'wp_courseware')] = '-';
 			
 			// Show if PASSED or FAILED with the overall grade.
 			$gradeData = false;
@@ -600,7 +600,7 @@ function WPCW_showPage_UserProgess_quizAnswers_handingGrading($quizDetails, $res
 		WPCW_quizzes_updateQuizResults($results);
 		
 		// Success message
-		$page->showMessage(__('Cursos se han actualizado con éxito para este usuario.', 'wp_courseware'));
+		$page->showMessage(__('Cursos se han actualizado con &eacute;xito para este usuario.', 'wp_courseware'));
 		
 		
 		// Refresh the results - now that we've made changes
@@ -651,7 +651,7 @@ function WPCW_showPage_UserProgess_quizAnswers_whatsNext($quizDetails, $results,
 	if ($results->quiz_needs_marking > 0)
 	{
 		printf('<div id="message" class="wpcw_msg wpcw_msg_info"><span class="wpcw_icon_pending"><b>%s</b></span></div>', 
-			__('This quiz has questions that need grading.', 'wp_courseware')
+			__('Esta evaluaci&oacute;n tiene preguntas que necesitan calificaciones.', 'wp_courseware')
 		);
 	}
 	else  
@@ -804,7 +804,7 @@ function WPCW_showPage_UserProgess_quizAnswers_whatsNext_savePreferences($quizDe
 		{
 			// User needs to retake the course.
 			case 'retake_quiz':
-					$results->extraEmailDetail = __('Ya que no aprob&oacute; la evaluaci&oacute;n, el instructor ha pedido que vuelva a tomar esta evaluaci&oacute;n.', 'wp_courseware');
+					$results->extraEmailDetail = __('Debido que no aprob&oacute; la evaluaci&oacute;n, el instructor ha pedido que vuelva a tomar esta evaluaci&oacute;n.', 'wp_courseware');
 					if ($userRetakeMsg) { 
 						$results->extraEmailDetail .= "\n\n" . 	$userRetakeMsg;
 					}

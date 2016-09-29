@@ -128,7 +128,7 @@ function WPCW_AJAX_handleQuestionNewTag()
 				// Validate that the question exists before we tag it.
 				$questionDetails = WPCW_questions_getQuestionDetails($questionID);
 				if (!$questionDetails) {
-					$ajaxResults['errormsg'] = __('Unfortunately that question could not be found, so the tag could not be added.', 'wp_courseware');
+					$ajaxResults['errormsg'] = __('Por desgracia, esa pregunta no se pudo encontrar, por lo que no se puede agregar la etiqueta.', 'wp_courseware');
 					$ajaxResults['success'] = false;
 				}
 				
@@ -249,7 +249,7 @@ function WPCW_AJAX_handleUnitDuplication()
 	else 
 	{
 		$ajaxResults['success'] = false;
-		$ajaxResults['errormsg'] = __('Post could not be found.', 'wp_courseware');
+		$ajaxResults['errormsg'] = __('Post no se pudo encontrar.', 'wp_courseware');
 	}
 	
 	header('Content-Type: application/json');
@@ -267,7 +267,7 @@ function WPCW_AJAX_handleUnitOrderingSaving()
 {
 	// Security check
 	if (!wp_verify_nonce(WPCW_arrays_getValue($_POST, 'order_nonce'), 'wpcw-order-nonce')) {
-        die (__('Security check failed!', 'wp_courseware'));
+        die (__('Control de seguridad fallida', 'wp_courseware'));
 	}
 	
 	// Get list of modules to save, check IDs are what we expect, and abort if nothing to do.

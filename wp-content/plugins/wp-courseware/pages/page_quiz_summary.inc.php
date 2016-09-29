@@ -24,7 +24,7 @@ function WPCW_showPage_QuizSummary_load()
 	// Title for page with page number
 	$titlePage = false;
 	if ($paging_pageWanted > 1) {
-		$titlePage = sprintf(' - %s %s', __('Page', 'wp_courseware'), $paging_pageWanted);
+		$titlePage = sprintf(' - %s %s', __('Pagina', 'wp_courseware'), $paging_pageWanted);
 	}
 	
 	$page = new PageBuilder(false);
@@ -119,12 +119,12 @@ function WPCW_showPage_QuizSummary_load()
 	if ($searchString) 
 	{
 		printf('<div class="wpcw_search_count">%s "%s" (%s %s) (<a href="%s">%s</a>)</div>',
-			__('Search results for', 'wp_courseware'), 
+			__('Resultados de la b&uacute;squeda', 'wp_courseware'), 
 			htmlentities($searchString), 
 			$paging_totalCount,
-			_n('result', 'results', $paging_totalCount, 'wp_courseware'),  
+			_n('resultado', 'resultados', $paging_totalCount, 'wp_courseware'),  
 			$summaryPageURL,
-			__('reset', 'wp_courseware')
+			__('reiniciar', 'wp_courseware')
 		);
 	}	
 		

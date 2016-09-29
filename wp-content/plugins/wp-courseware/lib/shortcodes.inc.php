@@ -425,9 +425,9 @@ function WPCW_shortcodes_showTrainingCourseProgress($atts, $content)
 	$user_id = get_current_user_id();	
 	if (!$user_id) 
 	{
-		// return sprintf('<div class="wpcw_fe_progress_box_wrap"><div class="wpcw_fe_progress_box wpcw_fe_progress_box_error">%s</div></div>', 
-		// 	apply_filters('wpcw_front_shortcode_wpcourse_progress_notloggedin', __('You need to be logged in to see your course progress.', 'wp_courseware'))
-		// );
+		 return sprintf('<div class="wpcw_fe_progress_box_wrap"><div class="wpcw_fe_progress_box wpcw_fe_progress_box_error">%s</div></div>', 
+		 	apply_filters('wpcw_front_shortcode_wpcourse_progress_notloggedin', __('Es necesario <b>estar registrado,</b> para tomar un Curso de Capacitaci&oacute;n.', 'wp_courseware'))
+		 );
 		return "";
 	}	
 	
@@ -487,7 +487,7 @@ function WPCW_shortcodes_showTrainingCourseProgress($atts, $content)
 		// Change message slightly based on how many courses are selected.
 		$messageToShow = __('Actualmente no est&aacute; inscrito en ning&uacute;n curso.', 'wp_courseware');
 		if (!empty($selectedCourseList)) {
-			$messageToShow = __('Actualmente no está inscrito en cualquiera de estos cursos.', 'wp_courseware');
+			$messageToShow = __('Actualmente no est&aacute; inscrito en cualquiera de estos cursos.', 'wp_courseware');
 		}
 		
 		return sprintf('<div class="wpcw_fe_progress_box_wrap"><div class="wpcw_fe_progress_box wpcw_fe_progress_box_error">%s</div></div>', 

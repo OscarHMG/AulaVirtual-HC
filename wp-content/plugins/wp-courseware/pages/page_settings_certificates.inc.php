@@ -62,8 +62,8 @@ function WPCW_showPage_Certificates_load()
 				),
 				'extrahtml'		=> sprintf('<a id="cert_sig_image_url_btn" href="#" class="wpcw_insert_image button-secondary" data-uploader_title="%s" data-uploader_btn_text="%s" data-target="cert_sig_image_url"><span class="wpcw_insert_image_img"></span> %s</a>',
 										__('Choose an image to use for the signature image...', 'wp_courseware'),
-										__('Seleccione Imagen', 'wp_courseware'), 
-										__('Seleccione Imagen', 'wp_courseware')
+										__('Seleccionar Imagen', 'wp_courseware'), 
+										__('Seleccionar Imagen', 'wp_courseware')
 									),
 			),			
 				
@@ -82,18 +82,18 @@ function WPCW_showPage_Certificates_load()
 				'label' 	=> __('Su imagen de logotipo', 'wp_courseware'),
 				'type'  	=> 'text',
 				'cssclass'	=> 'wpcw_cert_logo_url wpcw_image_upload_field',
-				'desc'  	=> '&bull;&nbsp;' . __('La dirección URL de la imagen del logotipo. Se recomienda usar una imagen transparente.', 'wp_courseware') .  
+				'desc'  	=> '&bull;&nbsp;' . __('La direcci&oacute;n URL de la imagen del logotipo. Se recomienda usar una imagen transparente.', 'wp_courseware') .  
 							   	'<br/>&bull;&nbsp;' . sprintf(__('The image must be <b>%d pixels wide, and %d pixels</b> high to render correctly. ', 'wp_courseware'), WPCW_CERTIFICATE_LOGO_WIDTH_PX*2, WPCW_CERTIFICATE_LOGO_HEIGHT_PX*2),
 				'validate'	 	=> array(
 					'type'		=> 'url',
 					'maxlen'	=> 300,
 					'minlen'	=> 1,
-					'error'		=> __('Por favor, introduzca la dirección URL de la imagen del logotipo.', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca la direcci&oacute;n URL de la imagen del logotipo.', 'wp_courseware'),
 				),
 				'extrahtml'		=> sprintf('<a id="cert_logo_url_btn" href="#" class="wpcw_insert_image button-secondary" data-uploader_title="%s" data-uploader_btn_text="%s" data-target="cert_logo_url"><span class="wpcw_insert_image_img"></span> %s</a>',
 										__('Elija una imagen a utilizar para su logotipo en el certificado...', 'wp_courseware'),
-										__('Select Image', 'wp_courseware'), 
-										__('Select Image', 'wp_courseware')
+										__('Seleccionar Imagen', 'wp_courseware'), 
+										__('Seleccionar Imagen', 'wp_courseware')
 									),	
 			),	
 
@@ -118,7 +118,7 @@ function WPCW_showPage_Certificates_load()
 					'type'		=> 'url',
 					'maxlen'	=> 300,
 					'minlen'	=> 1,
-					'error'		=> __('Por favor, introduzca la dirección URL de la imagen de fondo del certificado.', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca la direcci&oacute;n URL de la imagen de fondo del certificado.', 'wp_courseware'),
 				),				
 				'extrahtml'		=> sprintf('<a id="cert_background_custom_url_btn" href="#" class="wpcw_insert_image button-secondary" data-uploader_title="%s" data-uploader_btn_text="%s" data-target="cert_background_custom_url"><span class="wpcw_insert_image_img"></span> %s</a>',
 										__('Elige una imagen que se utilizar&aacute; para el fondo certificado...', 'wp_courseware'),
@@ -176,8 +176,8 @@ function WPCW_showPage_Certificates_load()
 		
 	// Create a box where the admin can preview the certificates to see what they look like.
 	$page->openPane('wpcw-certificates-preview', __('Vista Previa Certificado', 'wp_courseware'));
-	printf('<p>%s</p>', __('After saving the settings, you can preview the certificate using the button below. The preview opens in a new window.', 'wp_courseware'));
-	printf('<div class="wpcw_btn_centre"><a href="%spdf_create_certificate.php?certificate=preview" target="_blank" class="button-primary">%s</a></div>', WPCW_plugin_getPluginPath(), __('Preview Certificate', 'wp_courseware'));	
+	printf('<p>%s</p>', __('Despu&eacute;s de guardar la configuraci&oacute;n, puede previsualizar el certificado utilizando el bot&oacute;n de abajo. La vista previa se abre en una nueva ventana.', 'wp_courseware'));
+	printf('<div class="wpcw_btn_centre"><a href="%spdf_create_certificate.php?certificate=preview" target="_blank" class="button-primary">%s</a></div>', WPCW_plugin_getPluginPath(), __('Visualizar Certificado', 'wp_courseware'));	
 	
 	$page->closePane();
 	

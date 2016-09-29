@@ -657,9 +657,9 @@ function WPCW_docs_showSupportInfo_News($page)
 function WPCW_forms_getTranslationStrings()
 {
 	return array(
-			"Please fill in the required '%s' field." 	=> __("Please fill in the required '%s' field.", 'wp_courseware'),
-			"There's a problem with value for '%s'." 	=> __("There's a problem with value for '%s'.", 'wp_courseware'),
-			'required' 									=> __('required', 'wp_courseware')
+			"Please fill in the required '%s' field." 	=> __("Por favor rellene el campo requerido '%s'.", 'wp_courseware'),
+			"There's a problem with value for '%s'." 	=> __("Hay un problema con el valor de '%s'.", 'wp_courseware'),
+			'required' 									=> __('Necesario', 'wp_courseware')
 	);
 }
 
@@ -740,7 +740,7 @@ function WPCW_forms_createBreakHTML_tab()
 function WPCW_forms_createBreakHTML($title, $buttonText = false, $hideButton = false, $extraCSSClass = false) 
 {
 	if (!$hideButton) {
-		$buttonText = __('Save ALL Settings', 'wp_courseware');
+		$buttonText = __('Guardar todos los ajustes', 'wp_courseware');
 	}
 	
 	$btnHTML = false;
@@ -1306,7 +1306,7 @@ function WPCW_questionPool_showPoolTable($itemsPerPage, $paramSrc, $actionMode =
 		$sortableLink = sprintf('<a href="%s&order=%s&orderby=question_question"><span>%s</span><span class="sorting-indicator"></span></a>', 
 			$baseURL, 
 			('question_question' == $orderBy ? $ordering_opposite : 'asc'),
-			__('Question', 'wp_courseware')
+			__('Pregunta', 'wp_courseware')
 		);
 			
 		// Question - render
@@ -1319,7 +1319,7 @@ function WPCW_questionPool_showPoolTable($itemsPerPage, $paramSrc, $actionMode =
 		$sortableLink = sprintf('<a href="%s&order=%s&orderby=question_type"><span>%s</span><span class="sorting-indicator"></span></a>', 
 			$baseURL, 
 			('question_type' == $orderBy ? $ordering_opposite : 'asc'),
-			__('Question Type', 'wp_courseware')
+			__('Tipos de pregunta', 'wp_courseware')
 		);
 		
 		// Question Type - render
@@ -1337,11 +1337,11 @@ function WPCW_questionPool_showPoolTable($itemsPerPage, $paramSrc, $actionMode =
 		$tblCol->cellClass = "question_id";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Question', 'wp_courseware'), 'question_question');
+		$tblCol = new TableColumn(__('Pregunta', 'wp_courseware'), 'question_question');
 		$tblCol->cellClass = "question_question";
 		$tbl->addColumn($tblCol);
 		
-		$tblCol = new TableColumn(__('Question Type', 'wp_courseware'), 'question_type');
+		$tblCol = new TableColumn(__('Tipo de pregunta', 'wp_courseware'), 'question_type');
 		$tblCol->cellClass = "question_type";
 		$tbl->addColumn($tblCol);
 	}
@@ -1349,17 +1349,17 @@ function WPCW_questionPool_showPoolTable($itemsPerPage, $paramSrc, $actionMode =
 		
 	
 	
-	$tblCol = new TableColumn(__('Associated Quizzes', 'wp_courseware'), 'associated_quizzes');
+	$tblCol = new TableColumn(__('Evaluaciones Asociadas', 'wp_courseware'), 'associated_quizzes');
 	$tblCol->headerClass = "wpcw_center";
 	$tblCol->cellClass = "associated_quizzes wpcw_center";
 	$tbl->addColumn($tblCol);
 	
-	$tblCol = new TableColumn(__('Tags', 'wp_courseware'), 'question_tags');	
+	$tblCol = new TableColumn(__('Etiquetas', 'wp_courseware'), 'question_tags');	
 	$tblCol->cellClass = "question_tags wpcw_center";
 	$tbl->addColumn($tblCol);
 
 	// Actions
-	$tblCol = new TableColumn(__('Actions', 'wp_courseware'), 'actions');
+	$tblCol = new TableColumn(__('Acciones', 'wp_courseware'), 'actions');
 	$tblCol->cellClass = "actions actions_right";
 	$tblCol->headerClass = "actions_right";
 	$tbl->addColumn($tblCol);
@@ -1402,8 +1402,8 @@ function WPCW_questionPool_showPoolTable($itemsPerPage, $paramSrc, $actionMode =
 					$data['actions']	.= sprintf('<li><a href="%s" class="button-primary">%s</a></li>', 	$editURL, 	__('Edit', 'wp_courseware'));				
 					$data['actions']	.= sprintf('<li><a href="%s" class="button-secondary wpcw_action_link_delete_question wpcw_action_link_delete" rel="%s">%s</a></li>', 	
 							$deleteURL,
-							__('Are you sure you wish to delete this question? This cannot be undone.', 'wp_courseware'), 	
-							__('Delete', 'wp_courseware'));
+							__('¿Est&aacute; seguro que desea eliminar esta pregunta? Esto no se puede deshacer.', 'wp_courseware'), 	
+							__('Eliminar', 'wp_courseware'));
 												
 				$data['actions']	.= '</ul>';
 			}
@@ -1417,7 +1417,7 @@ function WPCW_questionPool_showPoolTable($itemsPerPage, $paramSrc, $actionMode =
 				$data['actions']	= '<ul class="wpcw_action_link_list">';				
 					$data['actions']	.= sprintf('<li><a href="#" class="button-primary wpcw_tb_action_add" data-questionnum="%d">%s</a></li>',														
 														$singleQuestion->question_id, 
-														__('Add To Quiz', 'wp_courseware')
+														__('Agregar a la evaluaci&oacute;n', 'wp_courseware')
 													);				
 				$data['actions']	.= '</ul>';
 			}
@@ -1438,7 +1438,7 @@ function WPCW_questionPool_showPoolTable($itemsPerPage, $paramSrc, $actionMode =
 	
 	else {
 		// No questions - show error in table.
-		$tbl->addRowObj(new RowDataSimple('wpcw_center wpcw_none_found', __('There are currently no questions to show.', 'wp_courseware'), 7));
+		$tbl->addRowObj(new RowDataSimple('wpcw_center wpcw_none_found', __('Actualmente no hay preguntas para mostrar.', 'wp_courseware'), 7));
 	}
 	
 	// Add the form for the start of the multiple-add 
@@ -1489,11 +1489,11 @@ function WPCW_users_manageColumns($column_headers)
 	unset($column_headers['role']);
     
     // Add new name column
-    $column_headers['wpcw_col_user_details'] = __('Details', 'wp_courseware');
+    $column_headers['wpcw_col_user_details'] = __('Detalles', 'wp_courseware');
     
     // Training Course Allocations
-    $column_headers['wpcw_col_training_courses'] 		= __('Training Course Progress', 'wp_courseware');
-    $column_headers['wpcw_col_training_courses_access'] = __('Actions', 'wp_courseware');
+    $column_headers['wpcw_col_training_courses'] 		= __('Progreso de Cursos de Capacitaci&oacute;n Course Progress', 'wp_courseware');
+    $column_headers['wpcw_col_training_courses_access'] = __('Acciones', 'wp_courseware');
     
     
     return $column_headers;
@@ -1547,7 +1547,7 @@ function WPCW_users_addCustomColumnContent($colContent, $column_name, $user_id)
 	    	
 	    	// No courses
 	    	else {
-	    		$colContent = __('No associated courses', 'wp_courseware');
+	    		$colContent = __('No hay cursos asociados', 'wp_courseware');
 	    	}
 	    break;
 	    
@@ -1557,14 +1557,14 @@ function WPCW_users_addCustomColumnContent($colContent, $column_name, $user_id)
 	    	$colContent = sprintf('<span><a href="%s&user_id=%d" class="button-primary">%s</a></span>',
 	    		admin_url('users.php?page=WPCW_showPage_UserProgess'), 
 	    		$user_id,
-	    		__('View Detailed Progress', 'wp_courseware')
+	    		__('Ver progreso detallado', 'wp_courseware')
 	    	);
 	    	
 	    	// View the full progress of the user.
 	    	$colContent .= sprintf('<span><a href="%s&user_id=%d" class="button-secondary">%s</a></span>',
 	    		admin_url('users.php?page=WPCW_showPage_UserCourseAccess'), 
 	    		$user_id,
-	    		__('Update Course Access Permissions', 'wp_courseware')
+	    		__('Actualizar permiso de acceso a los Cursos', 'wp_courseware')
 	    	);
 	    	
 	    	// Allow the user progress to be reset 
@@ -1593,8 +1593,8 @@ function WPCW_users_addCustomColumnContent($colContent, $column_name, $user_id)
 	    		$colContent .= WPCW_courses_getCourseResetDropdown(
 	    				'wpcw_user_progress_reset_point_single', 
 	    				$courseIDList, 
-	    				__('No associated courses.', 'wp_courseware'),  
-	    				__('Reset this user to beginning of...', 'wp_courseware'), 
+	    				__('No hay cursos asociados.', 'wp_courseware'),  
+	    				__('Restablecer a este usuario al inicio...', 'wp_courseware'), 
 	    				'', 
 	    				'wpcw_user_progress_reset_select wpcw_user_progress_reset_point_single'
 	    			);
@@ -2143,7 +2143,7 @@ function WPCW_units_admin_addActionRows($actions, $post)
   		$actions['duplicate_post'] = sprintf('<a class="wpcw_units_admin_duplicate" data-nonce="%s" data-postid="%d" href="#">%s</a>', 
   			wp_create_nonce('wpcw_ajax_unit_change'), 
   			$post->ID,
-  			__('Duplicate Unit', 'wp_courseware')
+  			__('Duplicar Unidad', 'wp_courseware')
   		);
 	}
 	
@@ -2161,7 +2161,7 @@ function WPCW_units_showEditScreenMetaBoxes()
 	// Posts - Shows the conversion metabox to convert the post type
 	add_meta_box( 
         'wpcw_units_convert_post',
-        __( 'Convert Post to Course Unit', 'wp_courseware' ),
+        __( 'Convertir la Post en una Unidad de Curso', 'wp_courseware' ),
         'WPCW_units_metabox_showConversionTool',
         'post',
         'side',
@@ -2171,7 +2171,7 @@ function WPCW_units_showEditScreenMetaBoxes()
     // Pages - Shows the conversion metabox to convert the post type
     add_meta_box(
         'wpcw_units_convert_post',
-        __( 'Convert Page to Course Unit', 'wp_courseware' ), 
+        __( 'Convertir la P&aacute;gina en una Unidad de Curso', 'wp_courseware' ), 
         'WPCW_units_metabox_showConversionTool',
         'page',
         'side',
@@ -2181,7 +2181,7 @@ function WPCW_units_showEditScreenMetaBoxes()
     // Course Units - template selection
     add_meta_box(
         'wpcw_units_choose_template',
-        __( 'Course Unit Template', 'wp_courseware' ), 
+        __( 'Plantilla Unidad de Curso', 'wp_courseware' ), 
         'WPCW_metabox_showTemplateSelectionTool',
         'course_unit',
         'side',
@@ -2250,7 +2250,7 @@ function WPCW_courses_getCourseResetDropdown($fieldName, $courseIDList = false, 
 					{
 						// Only add a module if it has units, to make resetting easier.
 						$selectDetails['module_' . $moduleID] = sprintf('&nbsp;&nbsp;- %s %d: %s',  
-							__('Module', 'wp_courseware'),
+							__('M&oacute;dulo', 'wp_courseware'),
 							$moduleDetails->module_number,  
 							$moduleDetails->module_title						
 						);
@@ -2258,7 +2258,7 @@ function WPCW_courses_getCourseResetDropdown($fieldName, $courseIDList = false, 
 						foreach ($units as $unitID => $unitDetails)
 						{
 							$selectDetails['unit_' . $unitID] = sprintf('&nbsp;&nbsp;-- %s %d: %s',  
-								__('Unit', 'wp_courseware'),
+								__('Unidad', 'wp_courseware'),
 								$unitDetails->unit_meta->unit_number,  
 								$unitDetails->post_title						
 							);
@@ -2386,23 +2386,23 @@ function WPCW_quizzes_getQuestionTypeName($questionType)
 	switch ($questionType)
 	{
 		case 'truefalse':
-				$questionTypeStr = __('True/False', 'wp_courseware');
+				$questionTypeStr = __('Verdadero/Falso', 'wp_courseware');
 			break;
 		
 		case 'multi':
-				$questionTypeStr = __('Multiple Choice', 'wp_courseware');
+				$questionTypeStr = __('Opci&oacute;n multiple', 'wp_courseware');
 			break;
 	
 		case 'upload':
-				$questionTypeStr = __('File Upload', 'wp_courseware');
+				$questionTypeStr = __('Subir archivo', 'wp_courseware');
 			break;
 			
 		case 'open':
-				$questionTypeStr = __('Open Ended', 'wp_courseware');
+				$questionTypeStr = __('Abierta', 'wp_courseware');
 			break;
 			
 		case 'random_selection':
-				$questionTypeStr = __('Random Selection', 'wp_courseware');
+				$questionTypeStr = __('Selecci&oacute;n aleatoria', 'wp_courseware');
 			break;
 	}
 	return $questionTypeStr;

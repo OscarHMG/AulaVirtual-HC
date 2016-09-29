@@ -93,9 +93,9 @@ function WPCW_showPage_QuestionPool_actionForm()
 	$formWrapper_end = '<div id="wpcw_tbl_question_pool_bulk_actions">'; 
 	
 		// Error messages - if no questions or tags have been selected.
-		$formWrapper_end .= sprintf('<div id="wpcw_bulk_action_message_no_questions" class="wpcw_msg_error">%s</div>', __('Please select <b>at least 1 question</b> before continuing...', 'wp_courseware'));
-		$formWrapper_end .= sprintf('<div id="wpcw_bulk_action_message_no_tag_first" class="wpcw_msg_error">%s</div>', __('Please select the <b>first tag</b> before continuing...', 'wp_courseware'));
-		$formWrapper_end .= sprintf('<div id="wpcw_bulk_action_message_no_tag_second" class="wpcw_msg_error">%s</div>', __('Please select the <b>second tag</b> before continuing...', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<div id="wpcw_bulk_action_message_no_questions" class="wpcw_msg_error">%s</div>', __('Por favor, seleccione <b>al menos 1 pregunta</b> antes de continuar... ', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<div id="wpcw_bulk_action_message_no_tag_first" class="wpcw_msg_error">%s</div>', __('Por favor, seleccione la <b>primera etiqueta</b> antes de continuar... ', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<div id="wpcw_bulk_action_message_no_tag_second" class="wpcw_msg_error">%s</div>', __('Por favor, seleccione la <b>segunda etiqueta</b> antes de continuar... ', 'wp_courseware'));
 	
 		// Label - saying these are actions
 		$formWrapper_end .= sprintf('<label>%s</label>', __('Action for selected questions?', 'wp_courseware'));
@@ -110,7 +110,7 @@ function WPCW_showPage_QuestionPool_actionForm()
 		
 		// #### The starting labels for all 3 actions.
 		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_add_tag">%s:</label>', __('Agregar Tag', 'wp_courseware'));
-		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_remove_tag">%s:</label>', __('REmover Tag', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_remove_tag">%s:</label>', __('Remover Tag', 'wp_courseware'));
 		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_replace_tag">%s:</label>', __('Reemplazar Tag', 'wp_courseware'));
 		
 		// #### All 3 - Selector for Add/Remove/Replace tag - first box
@@ -124,7 +124,7 @@ function WPCW_showPage_QuestionPool_actionForm()
 		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_replace_tag">%s:</label>', __('With', 'wp_courseware'));
 		
 		// Just 'Replace Tag' - the second dropdown
-		$formWrapper_end .= WPCW_questions_tags_getTagDropdown(__('Seleccione una etiqueta', 'wp_courseware'), 
+		$formWrapper_end .= WPCW_questions_tags_getTagDropdown(__('Seleccionar una etiqueta', 'wp_courseware'), 
 			'wpcw_bulk_action_select_tag_b', 	// Name 
 			WPCW_arrays_getValue($_POST, 'wpcw_bulk_action_select_tag_b'),
 			'wpcw_bulk_action_select_tag_b wpcw_bulk_action_select_tag wpcw_bulk_action_replace_tag'
@@ -182,7 +182,7 @@ function WPCW_showPage_QuestionPool_processActionForm($page)
 	 
 	// Appears there's nothing to do, as questions do not validate.
 	if (empty($questionListToUpdate)) {
-		$page->showMessage(__('Error. ya no existen esas preguntas. Por favor seleccione algunas preguntas más para actualizar.', 'wp_courseware'), true);
+		$page->showMessage(__('Error. ya no existen esas preguntas. Por favor seleccione algunas preguntas m&aacute;s para actualizar.', 'wp_courseware'), true);
 		return;
 	}
 		

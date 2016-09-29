@@ -27,7 +27,7 @@ function WPCW_showPage_ModifyModule_load()
 		if (!$moduleDetails)
 		{
 			$page->showPageHeader(__('Editar M&oacute;dulo', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
-			$page->showMessage(__('Lo sentimos, pero ese m&oacutedulo no se pudo encontrar.', 'wp_courseware'), true);
+			$page->showMessage(__('Lo sentimos, pero ese m&oacute;dulo no se pudo encontrar.', 'wp_courseware'), true);
 			$page->showPageFooter();
 			return;
 		}
@@ -70,7 +70,7 @@ function WPCW_showPage_ModifyModule_load()
 				'required'  => true,
 				'cssclass'	=> 'wpcw_associated_course',
 				'desc'  	=> __('Curso que pertenece este M&oacute;dulo.', 'wp_courseware'),
-				'data'		=> WPCW_courses_getCourseList(__('-- Select a Training Course --', 'wp_courseware'))	
+				'data'		=> WPCW_courses_getCourseList(__('-- Seleccionar un curso de capacitaci&oacute;n --', 'wp_courseware'))	
 			),	
 
 		'module_desc' => array(

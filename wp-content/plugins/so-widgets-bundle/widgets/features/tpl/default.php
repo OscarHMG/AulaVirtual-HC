@@ -53,7 +53,7 @@ $last_row = floor( ( count($instance['features']) - 1 ) / $instance['per_row'] )
 
 				<?php if(!empty($feature['more_text'])) : ?>
 					<p class="sow-more-text">
-						<?php if( !empty( $feature['more_url'] ) ) echo '<a href="' . sow_esc_url( $feature['more_url'] ) . '" ' . ( $instance['new_window'] ? 'target="_blank"' : '' ) . '>'; ?>
+						<?php if( !empty( $feature['more_url'] ) ) echo '<a href="' . sow_esc_url( $feature['more_url'] ) . '" ' . ( $instance['new_window'] ? 'target="_blank"' : '' ) . 'class="fasc-button fasc-size-large fasc-type-flat fasc-rounded-medium" style="background-color: #8CC63E; color: #ffffff;"> <i class="fa fa-desktop"></i>'; ?>
 						<?php echo wp_kses_post( $feature['more_text'] ) ?>
 						<?php if( !empty( $feature['more_url'] ) ) echo '</a>'; ?>
 					</p>

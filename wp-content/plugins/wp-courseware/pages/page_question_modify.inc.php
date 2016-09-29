@@ -70,7 +70,7 @@ function WPCW_showPage_ModifyQuestion_load()
 			break;
 			
 		default:
-			die(__('Tipo de prueba desconocido: ', 'wp_courseware') . $questionDetails->question_type);
+			die(__('Tipo de prueba desconocida: ', 'wp_courseware') . $questionDetails->question_type);
 			break;
 	}
 	

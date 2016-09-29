@@ -15,7 +15,7 @@ class WPCW_quiz_TrueFalse extends WPCW_quiz_base
 		$this->questionType = 'truefalse';
 		$this->cssClasses = 'wpcw_question_type_truefalse';	
 
-		$this->hint = __('(Optional) Use this to guide the user that they should make a selection.', 'wp_courseware');
+		$this->hint = __('(Opcional) Use esto para guiar al usuario que debe realizar una selecci&oacute;n.', 'wp_courseware');
 	}
 	
 	
@@ -59,7 +59,7 @@ class WPCW_quiz_TrueFalse extends WPCW_quiz_base
 			// Main question details here...		
 			$html .= sprintf('<tr class="wpcw_quiz_row_question %s">', $errorClass_Question);
 			
-				$html .= sprintf('<th>%s</th>', __('Question', 'wp_courseware'));
+				$html .= sprintf('<th>%s</th>', __('Pregunta', 'wp_courseware'));
 				
 				// T/F Type
 				$html .= sprintf('<td>');
@@ -90,12 +90,12 @@ class WPCW_quiz_TrueFalse extends WPCW_quiz_base
 				$html .= sprintf('<td class="wpcw_quiz_details_truefalse_selection">');
 					$html .= sprintf('<label><input type="radio" name="question_answer_sel_%s" value="true" %s /> %s</label>',						
 						$this->quizItem->question_id, ($this->quizItem->question_correct_answer == 'true' ? 'checked="checked"' : false),
-						__('True', 'wp_courseware')
+						__('Verdadero', 'wp_courseware')
 					);
 					
 					$html .= sprintf('<label><input type="radio" name="question_answer_sel_%s" value="false" %s /> %s</label>', 						
 						$this->quizItem->question_id, ($this->quizItem->question_correct_answer == 'false' ? 'checked="checked"' : false),
-						__('False', 'wp_courseware')
+						__('Falso', 'wp_courseware')
 					);
 				$html .= '</td>';
 							
@@ -118,8 +118,8 @@ class WPCW_quiz_TrueFalse extends WPCW_quiz_base
 	public function renderForm_toString($parentQuiz, $questionNum, $selectedAnswer, $showAsError, $errorToShow = false)
 	{
 		$this->answerList = array();
-		$this->answerList[__('True', 'wp_courseware')] 	= 'true';
-		$this->answerList[__('False', 'wp_courseware')] 	= 'false';
+		$this->answerList[__('Verdadero', 'wp_courseware')] 	= 'true';
+		$this->answerList[__('Falso', 'wp_courseware')] 	= 'false';
 		
 		// Add the hint if there is one
 		if ($this->quizItem->question_answer_hint) {

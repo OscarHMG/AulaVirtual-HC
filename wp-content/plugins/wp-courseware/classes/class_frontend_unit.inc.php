@@ -1204,7 +1204,7 @@ class WPCW_UnitFrontend
 				break;
 				
 			case 'random_selection':
-				die(__('Esta pregunta no se puede representar. This is an error.', 'wp_courseware'));
+				die(__('Esta pregunta no se puede representar. Este es un error.', 'wp_courseware'));
 				break;							
 				
 			// Not expecting anything here... so not handling the error case.
@@ -1553,7 +1553,7 @@ class WPCW_UnitFrontend
 				{
 					$html[] = sprintf('<b>%s:</b> %s', 
 						$tagDetails['tag_details']->question_tag_name, 
-						sprintf(__('Tu calificación es %d%%', 'wp_courseware'), $tagDetails['score_total'])
+						sprintf(__('Tu calificaci&oacute;n es %d%%', 'wp_courseware'), $tagDetails['score_total'])
 					);
 				}
 				
@@ -2291,7 +2291,7 @@ class WPCW_UnitFrontend
 		if ($this->unitQuizDetails->questions &&  $answerCountSoFar < count($this->unitQuizDetails->questions)) 
 		{
 			// Error - not all questions are answered
-			echo WPCW_UnitFrontend::message_createMessage_error(__('Please provide an answer for all of the questions on this page.', 'wp_courseware'));
+			echo WPCW_UnitFrontend::message_createMessage_error(__('Por favor, proporcione una respuesta para todas las preguntas en esta p&aacute;gina.', 'wp_courseware'));
 			
 			// This will trigger the form to show again with missing answers, using the ansers the user provided
 			// through what has been stored in $this->unchecked_QuizAnswersToGrade

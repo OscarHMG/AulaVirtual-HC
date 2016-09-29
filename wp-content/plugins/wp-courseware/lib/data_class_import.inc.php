@@ -120,7 +120,7 @@ class WPCW_Import
 
 		// ### 2) Turn the course into an actual database entry
 		if (count($courseData) == 0) {			
-			return $this->returnErrorList(__('There was no course data to import.', 'wp_courseware'));
+			return $this->returnErrorList(__('No hab&iacute;a datos del curso para importar.', 'wp_courseware'));
 		}
 		
 		// ### 3) Now try to load module and question data. Most load question data first, as the load module data 
@@ -137,7 +137,7 @@ class WPCW_Import
 		
 		// Check query succeeded.
 		if ($queryResult === FALSE) {
-			return $this->returnErrorList(__('Could not create course in database.', 'wp_courseware'));
+			return $this->returnErrorList(__('No se pudo crear la base de datos en curso.', 'wp_courseware'));
 		}
 		$this->course_id = $wpdb->insert_id;
 		
@@ -167,7 +167,7 @@ class WPCW_Import
 				
 				// Check query succeeded.
 				if ($queryResult === FALSE) {
-					return $this->returnErrorList(__('There was a problem inserting the module into the database.', 'wp_courseware'));
+					return $this->returnErrorList(__('Hubo un problema al insertar el m&oacute;dulo en la base de datos.', 'wp_courseware'));
 				}
 				
 				$currentModuleID = $wpdb->insert_id;
@@ -222,7 +222,7 @@ class WPCW_Import
 			// Insert the post into the database
 			$unitID = wp_insert_post($unitPost);
 			if (!$unitID) {
-				$this->errorList[] = sprintf(__('Could not create course unit "%s". So this was skipped.', 'wp_courseware'), $singleUnit['post_title']);
+				$this->errorList[] = sprintf(__('No se pudo crear unidad del curso  "%s". As&iacute; que esto fue omitido.', 'wp_courseware'), $singleUnit['post_title']);
 				continue;
 			}
 			
@@ -245,7 +245,7 @@ class WPCW_Import
 				
 			// Check query succeeded.
 			if ($queryResult === FALSE) {
-				return $this->returnErrorList(__('There was a problem adding unit meta data into the database.', 'wp_courseware'));
+				return $this->returnErrorList(__('Hubo un problema al agregar unidad de metadatos en la base de datos.', 'wp_courseware'));
 			}
 			
 			// ### 4 - Create the meta data for the quiz entry (if there are any)
@@ -1032,7 +1032,7 @@ class WPCW_Import
 				
 		// ### 7 - Check query succeeded.
 		if ($queryResult === FALSE) {
-			$this->errorList[] = __('There was a problem adding the question into the database.', 'wp_courseware');
+			$this->errorList[] = __('No se ha podido agregar la pregunta en la base de datos.', 'wp_courseware');
 			return false;
 		}
 		

@@ -15,7 +15,7 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 		$this->questionType = 'multi';		
 		$this->cssClasses = 'wpcw_question_type_multi';
 		
-		$this->hint = __('(Optional) Use this to guide the user that they should make a selection.', 'wp_courseware');
+		$this->hint = __('(Opcional )Use esto para guiar al usuario que debe realizar una selecci&oacute;n.', 'wp_courseware');
 	}
 	
 	
@@ -61,7 +61,7 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 			// Main question details here...
 			$html .= sprintf('<tr class="wpcw_quiz_row_question %s">', $errorClass_Question);			
 			
-				$html .= sprintf('<th>%s</th>', __('Question', 'wp_courseware'));
+				$html .= sprintf('<th>%s</th>', __('Pregunta', 'wp_courseware'));
 				
 				$html .= sprintf('<td>');
 					$html .= sprintf('<textarea name="question_question_%s">%s</textarea>',	$this->quizItem->question_id, htmlspecialchars($this->quizItem->question_question));					
@@ -76,7 +76,7 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 				$html .= sprintf('</td>');
 							
 				// Only show column if need correct answers.
-				$html .= sprintf('<td class="wpcw_quiz_details_tick_correct wpcw_quiz_only_td">%s</td>', __('Correct<br/>Answer?', 'wp_courseware'));
+				$html .= sprintf('<td class="wpcw_quiz_details_tick_correct wpcw_quiz_only_td">%s</td>', __('Correcta<br/>Respuesta?', 'wp_courseware'));
 				
 				// Column for add/remove buttons
 				$html .= '<td>&nbsp;</td>';						
@@ -133,8 +133,8 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 						<a href="#" title="%s" class="wpcw_question_add"><img src="%simg/icon_add_32.png" /></a>
 						<a href="#" title="%s" class="wpcw_question_remove"><img src="%simg/icon_remove_32.png" /></a>
 					</td>', 
-						__('Add a new answer...', 'wp_courseware'), WPCW_plugin_getPluginPath(), 
-						__('Remove this answer...', 'wp_courseware'), WPCW_plugin_getPluginPath()
+						__('Agregar una nueva respuesta...', 'wp_courseware'), WPCW_plugin_getPluginPath(), 
+						__('Remover esta respuesta...', 'wp_courseware'), WPCW_plugin_getPluginPath()
 					);					
 													
 				$html .= sprintf('</tr>');
@@ -143,8 +143,8 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 				// Add the image URL for this answer - added as a new row.
 				$html .= sprintf('<tr class="wpcw_quiz_row_answer_image wpcw_quiz_row_answer_image_%d %s %s">', $count, $errorClass_Answer, ($odd ? 'alternate' : ''));
 					$html .= sprintf('<th>%s <span class="wpcw_inner_hint">%s</span></th>', 
-						__('Answer Image URL', 'wp_courseware'), 
-						__('(Optional) ', 'wp_courseware')
+						__('URL de la imagen de la respuesta', 'wp_courseware'), 
+						__('(Opcional) ', 'wp_courseware')
 					);
 					
 					$html .= '<td>';
@@ -160,11 +160,11 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 						
 						// The insert button.
 						$html .= sprintf('<span class="wpcw_insert_image_wrap"><a href="#" class="button wpcw_insert_image" data-uploader_title="%s" data-uploader_btn_text="%s" data-target="%s" title="%s"><span class="wpcw_insert_image_img"></span> %s</a></span>',
-							__('Choose an image for this answer...', 'wp_courseware'),
-							__('Select Image...', 'wp_courseware'),
+							__('Elige una imagen para esta respuesta ...', 'wp_courseware'),
+							__('Seleccionar imagen...', 'wp_courseware'),
 							$thisAnswerFieldName,
-							__('Select Image', 'wp_courseware'),
-							__('Select Image', 'wp_courseware')
+							__('Seleccionar imagen...', 'wp_courseware'),
+							__('Seleccionar imagen...', 'wp_courseware')
 						);
 						
 					$html .= '</td>';
@@ -409,8 +409,8 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 	{
 		$html = '<tr>';
 			$html .= sprintf('<th>%s<span class="wpcw_inner_hint">%s</span></th>', 
-				__('Randomize Answers?', 'wp_courseware'),
-				__('(Optional)', 'wp_courseware')
+				__('Selecci&oacute;n de respuestas aleatorias?', 'wp_courseware'),
+				__('(Opcional)', 'wp_courseware')
 			);
 			
 			$html .= '<td class="wpcw_quiz_details_randomize_answers">';
@@ -419,7 +419,7 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 				$html .= sprintf('<input name="question_multi_random_enable_%s" class="wpcw_quiz_details_enable" type="checkbox" %s />',  
 					$this->quizItem->question_id, 					
 					($this->quizItem->question_multi_random_enable > 0 ? 'checked="checked"' : ''),
-					__('Yes, randomize the order of these answers.', 'wp_courseware')
+					__('S&iacute;, aleatoriamente el orden de estas respuestas.', 'wp_courseware')
 				);
 				
 				// The count of the items that will be randomized. Always include, but hide if not enabled.
@@ -432,10 +432,10 @@ class WPCW_quiz_MultipleChoice extends WPCW_quiz_base
 					// Hide if not enabled
 					($this->quizItem->question_multi_random_enable ? '' : 'style="display: none;"'),
 					
-					__('Number of answers to display:', 'wp_courseware'),  
+					__('N&uacute;mero de respuestas a mostrar:', 'wp_courseware'),  
 					$this->quizItem->question_id, 					
 					$this->quizItem->question_multi_random_count,
-					__('The correct answer will always appear in the selection of answers.', 'wp_courseware')  
+					__('La respuesta correcta aparecer&aacute; siempre en la selecci&oacute;n de respuestas.', 'wp_courseware')  
 				);
 				
 			$html .= '</td>';

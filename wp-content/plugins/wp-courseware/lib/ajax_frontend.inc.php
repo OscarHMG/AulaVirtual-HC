@@ -17,7 +17,7 @@ function WPCW_AJAX_units_handleQuizRetakeRequest()
 {
 	// Security check
 	if (!wp_verify_nonce(WPCW_arrays_getValue($_POST, 'progress_nonce'), 'wpcw-progress-nonce')) {
-        die (__('Security check failed!', 'wp_courseware'));
+        die (__('Control de seguridad fallida', 'wp_courseware'));
 	}
 	
 	// Get unit and quiz ID
@@ -27,7 +27,7 @@ function WPCW_AJAX_units_handleQuizRetakeRequest()
 	// Get the post object for this quiz item.
 	$post = get_post($unitID);
 	if (!$post) {		
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not request a retake for the quiz.', 'wp_courseware') . ' ' . __('Could not find training unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - no puede pedir una nueva toma de la evaluaci&oacute;n.', 'wp_courseware') . ' ' . __('Could not find training unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -36,7 +36,7 @@ function WPCW_AJAX_units_handleQuizRetakeRequest()
 		
 	// #### Get associated data for this unit. No course/module data, then it's not a unit 
 	if (!$fe->check_unit_doesUnitHaveParentData()) {
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not request a retake for the quiz.', 'wp_courseware') . ' ' . __('Could not find course details for unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - no puede pedir una nueva toma de la evaluaci&oacute;n.', 'wp_courseware') . ' ' . __('Could not find course details for unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -49,7 +49,7 @@ function WPCW_AJAX_units_handleQuizRetakeRequest()
 	// #### See if we're in a position to retake this quiz?
 	if (!$fe->check_quizzes_canUserRequestRetake())
 	{
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not request a retake for the quiz.', 'wp_courseware') . ' ' . __('You are not permitted to retake this quiz.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - no puede pedir una nueva toma de la evaluaci&oacute;n.', 'wp_courseware') . ' ' . __('You are not permitted to retake this quiz.', 'wp_courseware'));
 		die();
 	}
 	
@@ -71,7 +71,7 @@ function WPCW_AJAX_units_handleUserProgress()
 {
 	// Security check
 	if (!wp_verify_nonce(WPCW_arrays_getValue($_POST, 'progress_nonce'), 'wpcw-progress-nonce')) {
-        die (__('Security check failed!', 'wp_courseware'));
+        die (__('Control de seguridad fallida', 'wp_courseware'));
 	}
 	
 	$unitID = WPCW_arrays_getValue($_POST, 'id');
@@ -87,7 +87,7 @@ function WPCW_AJAX_units_handleUserProgress()
 	// Get the post object for this quiz item.
 	$post = get_post($unitID);
 	if (!$post) {		
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not save your progress.', 'wp_courseware') . ' ' . __('Could not find training unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - no pudo guardar su progreso.', 'wp_courseware') . ' ' . __('Could not find training unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -96,7 +96,7 @@ function WPCW_AJAX_units_handleUserProgress()
 		
 	// #### Get associated data for this unit. No course/module data, then it's not a unit 
 	if (!$fe->check_unit_doesUnitHaveParentData()) {
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not save your progress.', 'wp_courseware') . ' ' . __('Could not find course details for unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - no pudo guardar su progreso.', 'wp_courseware') . ' ' . __('Could not find course details for unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -127,7 +127,7 @@ function WPCW_AJAX_units_handleQuizResponse()
 {
 	// Security check
 	if (!wp_verify_nonce(WPCW_arrays_getValue($_POST, 'progress_nonce'), 'wpcw-progress-nonce')) {
-        die (__('Security check failed!', 'wp_courseware'));
+        die (__('Control de seguridad fallida', 'wp_courseware'));
 	}
 	
 	// Quiz ID and Unit ID are combined in the single CSS ID for validation.
@@ -147,7 +147,7 @@ function WPCW_AJAX_units_handleQuizResponse()
 	// Get the post object for this quiz item.
 	$post = get_post($unitID);
 	if (!$post) {		
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not save your quiz results.', 'wp_courseware') . ' ' . __('Could not find training unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - no pudo guardar los resultados de la evaluaci&oacute;n.', 'wp_courseware') . ' ' . __('Could not find training unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -157,7 +157,7 @@ function WPCW_AJAX_units_handleQuizResponse()
 	
 	// #### Get associated data for this unit. No course/module data, then it's not a unit 
 	if (!$fe->check_unit_doesUnitHaveParentData()) {
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not save your quiz results.', 'wp_courseware') . ' ' . __('Could not find course details for unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - no pudo guardar los resultados de la evaluaci&oacute;n.', 'wp_courseware') . ' ' . __('Could not find course details for unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -169,7 +169,7 @@ function WPCW_AJAX_units_handleQuizResponse()
 	
 	// #### Check that the quiz is valid and belongs to this unit
 	if (!$fe->check_quizzes_isQuizValidForUnit($quizID)) {
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not save your quiz results.', 'wp_courseware') . ' ' . __('Quiz data does not match quiz for this unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - no pudo guardar los resultados de la evaluaci&oacute;n.', 'wp_courseware') . ' ' . __('Quiz data does not match quiz for this unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -225,7 +225,7 @@ function WPCW_AJAX_units_handleQuizJumpQuestion()
 {
 	// Security check
 	if (!wp_verify_nonce(WPCW_arrays_getValue($_POST, 'progress_nonce'), 'wpcw-progress-nonce')) {
-        die (__('Security check failed!', 'wp_courseware'));
+        die (__('Control de seguridad fallida', 'wp_courseware'));
 	}
 	
 	// Get unit and quiz ID
@@ -233,13 +233,13 @@ function WPCW_AJAX_units_handleQuizJumpQuestion()
 	$quizID = intval(WPCW_arrays_getValue($_POST, 'quizid'));
 	
 	$jumpMode = 'previous';
-	$msgPrefix = __('Error - could not load the previous question.', 'wp_courseware'). ' ';
+	$msgPrefix = __('Error - no se pudo cargar la pregunta anterior.', 'wp_courseware'). ' ';
 	
 	// We're skipping ahead.
 	if ('next' == WPCW_arrays_getValue($_POST, 'qu_direction'))
 	{
 		$jumpMode = 'next';
-		$msgPrefix = __('Error - could not load the next question.', 'wp_courseware'). ' ';
+		$msgPrefix = __('Error - no se pudo cargar la pregunta anterior.', 'wp_courseware'). ' ';
 	}
 	
 	
@@ -247,7 +247,7 @@ function WPCW_AJAX_units_handleQuizJumpQuestion()
 	// Get the post object for this quiz item.
 	$post = get_post($unitID);
 	if (!$post) {		
-		echo WPCW_UnitFrontend::message_createMessage_error($msgPrefix . __('Could not find training unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error($msgPrefix . __('No se pudo encontrar la unidad de capacitaci&oacute;n.', 'wp_courseware'));
 		die();
 	}
 	
@@ -257,7 +257,7 @@ function WPCW_AJAX_units_handleQuizJumpQuestion()
 	
 	// #### Get associated data for this unit. No course/module data, then it's not a unit 
 	if (!$fe->check_unit_doesUnitHaveParentData()) {
-		echo WPCW_UnitFrontend::message_createMessage_error($msgPrefix . __('Could not find course details for unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error($msgPrefix . __('No se pudo encontrar los detalles del curso para la unidad.', 'wp_courseware'));
 		die();
 	}
 	
@@ -269,7 +269,7 @@ function WPCW_AJAX_units_handleQuizJumpQuestion()
 	
 	// #### Check that the quiz is valid and belongs to this unit
 	if (!$fe->check_quizzes_isQuizValidForUnit($quizID)) {
-		echo WPCW_UnitFrontend::message_createMessage_error($msgPrefix . __('Quiz data does not match quiz for this unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error($msgPrefix . __('Datos de la evaluaci&oacute; no coincide con la evaluaci&oacute; de esta unidad.', 'wp_courseware'));
 		die();
 	}
 	
@@ -293,7 +293,7 @@ function WPCW_AJAX_units_handleQuizTimerBegin()
 {
 	// Security check
 	if (!wp_verify_nonce(WPCW_arrays_getValue($_POST, 'progress_nonce'), 'wpcw-progress-nonce')) {
-        die (__('Security check failed!', 'wp_courseware'));
+        die (__('Control de seguridad fallida', 'wp_courseware'));
 	}
 	
 	// Get unit and quiz ID
@@ -303,7 +303,7 @@ function WPCW_AJAX_units_handleQuizTimerBegin()
 	// Get the post object for this quiz item.
 	$post = get_post($unitID);
 	if (!$post) {		
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not start the timer for the quiz.', 'wp_courseware') . ' ' . __('Could not find training unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - No se puede iniciar el temporizador para el concurso.', 'wp_courseware') . ' ' . __('Could not find training unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -312,7 +312,7 @@ function WPCW_AJAX_units_handleQuizTimerBegin()
 		
 	// #### Get associated data for this unit. No course/module data, then it's not a unit 
 	if (!$fe->check_unit_doesUnitHaveParentData()) {
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not start the timer for the quiz.', 'wp_courseware') . ' ' . __('Could not find course details for unit.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - No se puede iniciar el temporizador para el concurso.', 'wp_courseware') . ' ' . __('Could not find course details for unit.', 'wp_courseware'));
 		die();
 	}
 	
@@ -325,7 +325,7 @@ function WPCW_AJAX_units_handleQuizTimerBegin()
 	// #### See if we're in a position to retake this quiz?
 	if (!$fe->check_quizzes_canUserRequestRetake())
 	{
-		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - could not start the timer for the quiz.', 'wp_courseware') . ' ' . __('You are not permitted to retake this quiz.', 'wp_courseware'));
+		echo WPCW_UnitFrontend::message_createMessage_error(__('Error - No se puede iniciar el temporizador para el concurso.', 'wp_courseware') . ' ' . __('You are not permitted to retake this quiz.', 'wp_courseware'));
 		die();
 	}
 	

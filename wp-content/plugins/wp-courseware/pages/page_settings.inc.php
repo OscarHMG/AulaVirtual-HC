@@ -17,13 +17,13 @@ function WPCW_showPage_Settings_load()
 	// Check for update flag
 	if (isset($_POST['update']) && $_POST['update'] == 'tables_force_upgrade')
 	{
-		$page->showMessage(__('Upgrading WP Courseware Tables...', 'wp_courseware'));
+		$page->showMessage(__('Actualizaci&oacute;n de las Tablas WP Courseware...', 'wp_courseware'));
 		flush();		
 
 		$installed_ver  = get_option(WPCW_DATABASE_KEY) + 0;
 		
 		WPCW_database_upgradeTables($installed_ver, true, true); 
-		$page->showMessage(sprintf(__('%s tables have successfully been upgraded.', 'wp_courseware'), 'WP Courseware') );
+		$page->showMessage(sprintf(__('%s tablas se han actualizado con &eacute;xito.', 'wp_courseware'), 'WP Courseware') );
 	}
 	
 	
@@ -37,43 +37,43 @@ function WPCW_showPage_Settings_load()
 		'licence_key' => array(
 				'label' 	=> __('Licence Key', 'wp_courseware'),
 				'type'  	=> 'text',
-				'desc'  	=> __('Your licence key for the WP Courseware plugin.', 'wp_courseware'), 
+				'desc'  	=> __('La clave de licencia para el plugin WP Courseware.', 'wp_courseware'), 
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 32,
 					'minlen'	=> 32,
 					'regexp'	=> '/^[A-Za-z0-9]+$/',
-					'error'		=> __('Please enter your 32 character licence key, which contains only letters and numbers.', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca su clave de licencia de 32 caracteres, que contiene s&oacute;lo letras y n&uacute;meros.', 'wp_courseware'),
 				)	
 			), 	
 
 		'license_activation' => array(
-			'label' 	=> __('Licence Activation', 'wp_courseware'),
+			'label' 	=> __('Activaci&oacute;n de licencia', 'wp_courseware'),
 			'type'  	=> 'radio',
 			'required'	=> 'true',
 			'data'		=> array(
-				'activate_license' 	=> sprintf('<b>%s</b>', __('Activate', 'wp_courseware')),
-				'deactivate_license' 	=> sprintf('<b>%s</b>', __('Deactivate', 'wp_courseware')),
+				'activate_license' 	=> sprintf('<b>%s</b>', __('Activada', 'wp_courseware')),
+				'deactivate_license' 	=> sprintf('<b>%s</b>', __('Desactivada', 'wp_courseware')),
 			),
-			'desc'  	=> __('If you want to receive updates to this plugin, select "Activate". Otherwise, select "Deactivate" to deactivate license. Selecting "Deactivate" will disable any future updates. Deactivating your license allows you to move your plugin to another site.', 'wp_courseware'),
+			'desc'  	=> __('Si desea recibir las actualizaciones de este plugin, seleccione "Activar". De lo contrario, seleccione "Desactivar" para desactivar la licencia. Seleccionando la opci&oacute;n "Desactivar" inhabilitar&aacute; las actualizaciones futuras. La desactivaci&oacute;n de su licencia le permite mover su plugin a otro sitio.', 'wp_courseware'),
 		),		
 			
 		// Section that deals with CSS
 		'section_default_css' 	=> array(
 				'type'	  	=> 'break',
-				'html'	   	=> WPCW_forms_createBreakHTML(__('Style &amp; Design Settings', 'wp_courseware')),
+				'html'	   	=> WPCW_forms_createBreakHTML(__('Estilo y Dise&ntilde;o de configuraciones', 'wp_courseware')),
 			),
 			
 			
 		'use_default_css' => array(
-				'label' 	=> __('Use Default CSS?', 'wp_courseware'),
+				'label' 	=> __('Usar CSS por defecto?', 'wp_courseware'),
 				'type'  	=> 'radio',
 				'required'	=> 'true',
 				'data'		=> array(
-					'show_css' 	=> sprintf('<b>%s</b> - %s', __('Yes', 'wp_courseware'), __('Use default stylesheet for the frontend of the website.', 'wp_courseware')),
-					'hide_css' 	=> sprintf('<b>%s</b> - %s', __('No', 'wp_courseware'), __('Don\'t use the default stylesheet for the frontend of the website (you\'ll write your own CSS)', 'wp_courseware')),
+					'show_css' 	=> sprintf('<b>%s</b> - %s', __('Si', 'wp_courseware'), __('Utilice hojas de estilo por defecto para la interfaz de la p&aacute;gina web.', 'wp_courseware')),
+					'hide_css' 	=> sprintf('<b>%s</b> - %s', __('No', 'wp_courseware'), __('No utilice la hoja de estilo por defecto para la interfaz de la p&aacute;gina web (voy a escribir mi propio CSS)', 'wp_courseware')),
 				),
-				'desc'  	=> __('If you want to style your training course material yourself, you can disable the default stylesheet. If in doubt, select <b>Yes</b>.', 'wp_courseware'),
+				'desc'  	=> __('Si desea el estilo de su material del curso de formaci&oacute;n a ti mismo, puede desactivar la hoja de estilo por defecto. En caso de duda, seleccione <b>Si</b>.', 'wp_courseware'),
 			),	
 			
 		'section_link' 	=> array(
@@ -82,26 +82,26 @@ function WPCW_showPage_Settings_load()
 			),			
 			
 		'show_powered_by' => array(
-				'label' 	=> __('Show Powered By Link?', 'wp_courseware'),
+				'label' 	=> __('Mostrar Powered By Link?', 'wp_courseware'),
 				'type'  	=> 'radio',
 				'required'	=> 'true',
 				'data'		=> array(
 					'show_link' 	=> sprintf('<b>%s</b> - %s', __('Yes', 'wp_courseware'), __('Show the <em>\'Powered By WP Courseware\'</em> link.', 'wp_courseware')),
 					'hide_link' 	=> sprintf('<b>%s</b> - %s', __('No', 'wp_courseware'), __('Don\'t show any powered-by links.', 'wp_courseware')),
 				),
-				'desc'  	=> __("Do you want to show a 'Powered By WP Courseware' link at the bottom of course outlines?", 'wp_courseware'),
+				'desc'  	=> __("Quieres mostrar 'Powered By WP Courseware' en la parte final del curso?", 'wp_courseware'),
 			),
 
 		'affiliate_id' => array(
 				'label' 	=> __('Your Affiliate ID', 'wp_courseware'),
 				'type'  	=> 'text',
-				'desc'  	=> __("(Optional) Earn some money by providing your Affiliate ID, which will turn the <b>Powered By WP Courseware</b> into an affiliate link that earns you a percentage of every sale! If you are not an affiliate, login to the member portal to register and get your ID.", 'wp_courseware'), 
+				'desc'  	=> __("(Opcional) ganar algo de dinero, proporcionando su nombre de usuario, la cual a su vez, la <b>Powered By WP Courseware</b>  en un afiliado enlace que gana un porcentaje de cada venta! Si no es un afiliado, iniciar sesi&oacute;n en el portal de miembros para registrarse y obtener su ID.", 'wp_courseware'), 
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 15,
 					'minlen'	=> 1,
 					'regexp'	=> '/^[A-Za-z0-9\-_]+$/',
-					'error'		=> __('Please enter your Affiliate ID, which is only a number..', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca su nombre de usuario, que es s&oacute;lo un n&uacute;mero ..', 'wp_courseware'),
 				)	
 			),
 		);
@@ -118,9 +118,9 @@ function WPCW_showPage_Settings_load()
 	$settings->setSaveButtonLabel(__('Guardar todas las configuraciones', 'wp_courseware'));
 	
 	// Update messages for translation
-	$settings->msg_settingsSaved   	= __('Settings successfully saved.', 'wp_courseware');
-	$settings->msg_settingsProblem 	= __('There was a problem saving the settings.', 'wp_courseware'); 	
-	$settings->customFormErrorMsg = __('Sorry, but unfortunately there were some errors saving the course details. Please fix the errors and try again.', 'wp_courseware');
+	$settings->msg_settingsSaved   	= __('La configuraci&oacute;n se guard&oacute; con &eacute;xito.', 'wp_courseware');
+	$settings->msg_settingsProblem 	= __('Hubo un problema al guardar la configuraci&oacute;n.', 'wp_courseware'); 	
+	$settings->customFormErrorMsg = __('Lo sentimos, pero por desgracia hab&iacute;a algunos errores al guardar los detalles del curso. Por favor corrija los errores e int&eacute;ntelo de nuevo.', 'wp_courseware');
 	$settings->setAllTranslationStrings(WPCW_forms_getTranslationStrings());
 	
 	// Form event handlers - processes the saved settings in some way 
@@ -131,13 +131,13 @@ function WPCW_showPage_Settings_load()
 	
 	
 	// Create little form to force upgrading tables if something went wrong during update.
-	echo WPCW_forms_createBreakHTML(__("Upgrade Tables", 'wp_courseware'), false, true, 'wpcw_upgrade_tables');
+	echo WPCW_forms_createBreakHTML(__("Actualizaci&oacute;n de Tablas", 'wp_courseware'), false, true, 'wpcw_upgrade_tables');
 	?>	
-	<p><?php _e("If you're getting any errors with WP Courseware relating to database tables when you've updated, you can force an upgrade of the database tables using the button below.", 'wp_courseware'); ?></p>
+	<p><?php _e("Si usted est&aacute; recibiendo los errores con el WP pedag&oacute;gico en relaci&oacute;n con las tablas de base de datos cuando se ha informado, puede forzar una actualizaci&oacute;n de las tablas de base de datos utilizando el bot&oacute;n de abajo.", 'wp_courseware'); ?></p>
 	<?php
 	
 	$form = new FormBuilder('tables_force_upgrade');
-	$form->setSubmitLabel(__('Force Table Upgrade', 'wp_courseware'));	
+	$form->setSubmitLabel(__('Forzar actualizaci&oacute;n de tablas', 'wp_courseware'));	
 	echo $form->toString();
 
 	
@@ -178,25 +178,25 @@ function WPCW_showPage_Settings_afterSave($formValuesFiltered, $originalFormValu
 function WPCW_showPage_Settings_Network_load()
 {
 	$page = new PageBuilder(true);
-	$page->showPageHeader(__('WP Courseware - Settings', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('WP Courseware - Configuraciones', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	
 	$settingsFields = array(
 		'section_access_key' 	=> array(
 				'type'	  	=> 'break',
-				'html'	   	=> WPCW_forms_createBreakHTML(__('Licence Key Settings', 'wp_courseware'), false, true),
+				'html'	   	=> WPCW_forms_createBreakHTML(__('Clave de licencia Configuraciones', 'wp_courseware'), false, true),
 			),			
 			
 		'licence_key' => array(
-				'label' 	=> __('Licence Key', 'wp_courseware'),
+				'label' 	=> __('Clave de licencia', 'wp_courseware'),
 				'type'  	=> 'text',
-				'desc'  	=> __('Your licence key for the WP Courseware plugin.', 'wp_courseware'), 
+				'desc'  	=> __('La clave de licencia para el plugin WP pedag&oacute;gico..', 'wp_courseware'), 
 				'validate'	 	=> array(
 					'type'		=> 'string',
 					'maxlen'	=> 32,
 					'minlen'	=> 32,
 					'regexp'	=> '/^[A-Za-z0-9]+$/',
-					'error'		=> __('Please enter your 32 character licence key, which contains only letters and numbers.', 'wp_courseware'),
+					'error'		=> __('Por favor, introduzca su clave de licencia de 32 caracteres, que contiene s&oacute;lo letras y n&uacute;meros.', 'wp_courseware'),
 				)	
 			), 		
 		);

@@ -9,7 +9,8 @@
 /* Shortcode - Course Progress */
 #wpcw_fe_course_progress {
 	margin: 0 auto;
-	font-size: 12pt;
+	font-size: 14pt;
+	font-weight: bold;
 	border-spacing: 0;
 	border-radius: 3px;
 	border: 3px solid #006738;
@@ -103,7 +104,7 @@
 }
 
 #wpcw_fe_course td {
-	padding: 10px 15px !important;
+	padding: 10px 10px !important;
 	border: 0;
 	border-bottom: 3px solid #006738;
 }
@@ -216,9 +217,10 @@
 }
 
 .wpcw_fe_progress_box_error {
-	color: red;
-	background: #FDE0E0;
-	border-color: red;
+	color: #006738 ;
+	background: rgba(140, 198, 62, 0.14);
+	border-color: #8CC63E;
+	font-size: 20pt;
 }
 
 .wpcw_fe_progress_box_success {
@@ -396,7 +398,7 @@ a.fe_btn_navigation_disabled,a.fe_btn_navigation_disabled:hover {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	line-height: 1.2em;
-	font-size: 10pt;
+	font-size: 12pt;
 }
 
 .wpcw_fe_quiz_q_single {
