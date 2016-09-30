@@ -71,6 +71,7 @@ $table_prefix  = 'wp_';
  * en sus entornos de desarrollo.
  */
 define('WP_DEBUG', false);
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
 /* ¡Eso es todo, deja de editar! Feliz blogging */
 

@@ -58,7 +58,9 @@ h2{ font-size:30px;}
 h3,h4{ font-size:214% !important;font-weight: bold;}
 h5{ font-size:166% !important; margin: 11px;}
 h6{ font-size:14px;}
-
+footer.entry-meta, nav#nav-below{
+	visibility: hidden;
+}
 
 
 video{

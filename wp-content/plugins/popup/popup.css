@@ -1,0 +1,76 @@
+/**
+ *     Popup
+ *     Copyright (C) 2011 - 2015 www.gopiplus.com
+ *     http://www.gopiplus.com/work/2011/01/14/wordpress-popup/
+ * 
+ *     This program is free software: you can redistribute it and/or modify
+ *     it under the terms of the GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ * 
+ *     This program is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     GNU General Public License for more details.
+ * 
+ *     You should have received a copy of the GNU General Public License
+ *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#PopupDiv {
+	background: transparent;
+	text-align: center;
+	font-family:  Verdana, Arial, Helvetica, sans-serif;
+	position: absolute;
+	margin: 0 auto;
+	top: 50px;
+	display: none;
+	opacity: 0;
+	KHTMLOpacity: 0;
+	filter: alpha(opacity=0); 
+	-moz-opacity: 0;
+	z-index: 1000;	
+	border: 5px solid  #999; 
+	vertical-align:middle;
+	background-color:#999;
+}
+
+#PopupDiv a {
+	text-decoration: none;
+	border: none;
+}
+
+#PopupDiv .PopupDivAds {
+	/*height: 277px;*/
+}
+
+#PopupDiv img {
+	border: none;
+}
+
+#PopupDiv .PopupDivBar {
+	background: url('img/topbar.gif') repeat top left;
+	height: 20px;
+	line-height: 20px;
+}
+
+#PopupDiv .PopupDivBar a {
+	margin-left: 10px;
+	font-weight: bold;
+	float: left;
+	color: #FFF;
+	font-size: 10px;
+}
+
+#PopupDiv .PopupDivBar .close {
+	margin-right: 5px;
+	display: block;
+	width: 12px;
+	height: 20px;
+	float: right;
+	background: url('img/close.gif') no-repeat center;
+}
+
+#PopupDiv.show {
+	display: block;
+}

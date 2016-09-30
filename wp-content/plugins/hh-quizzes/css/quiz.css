@@ -1097,14 +1097,16 @@
 /* Stylesheet für suchselrätsel */
 
 .suchsel-quiz {
-	display: block;
-	float: left;
-	margin: 10px 0px;
-	padding: 0px;
-	width: 100%;
-	border: 1px solid #d0d0d0;
-	background: none;
-	clear: both;
+    display: block;
+    float: left;
+    margin: 10px 0px;
+    padding: 0px;
+    width: 100%;
+    border: 1px solid #d0d0d0;
+    background: none;
+    clear: both;
+    font-size: 112%;
+    font-weight: bold;
 }
 
 .suchsel-quiz h2 {

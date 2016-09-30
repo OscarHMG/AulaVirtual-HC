@@ -64,10 +64,11 @@
 }
 
 #wpcw_fe_course_progress .wpcw_fe_course_progress_course a {
-	background: url('../img/icon_toggle_closed.png') no-repeat 0 3px;
-	padding-left: 22px;
-	display: block;
-	text-decoration: none;
+    background: url('../img/icon_toggle_closed.png') no-repeat 0 3px;
+    padding-left: 22px;
+    display: block;
+    text-decoration: none;
+    font-size: 155%;
 }
 
 #wpcw_fe_course_progress .wpcw_fe_course_progress_course.active a {
@@ -89,9 +90,8 @@
 }
 
 .wpcw_fe_course_desc {
-	font-size: 12pt;
-	margin: 10px 0 30px;
-	text-align: justify;
+    font-size: 153%;
+    margin: 10px 0 30px;
 }
 
 /* Course Details */
@@ -134,9 +134,7 @@
 
 /* Widget Progress */
 .wpcw_widget_progress #wpcw_fe_course {
-	font-size: 12pt;
-	margin: 0 auto;
-    text-align: left;
+  font-size: 123%;
 }
 
 .wpcw_widget_progress #wpcw_fe_course td {
@@ -434,6 +432,7 @@ a.fe_btn_navigation_disabled,a.fe_btn_navigation_disabled:hover {
 .wpcw_fe_quiz_title {
 	font-weight: bold;
 	margin-bottom: 5px;
+	font-size: 175%;
 }
 
 .wpcw_fe_quiz_q_image,.wpcw_fe_quiz_a_image {
@@ -452,7 +451,7 @@ a.fe_btn_navigation_disabled,a.fe_btn_navigation_disabled:hover {
 }
 
 .wpcw_fe_quiz_pass_mark {
-	font-size: 90%;
+	font-size: 132%;
 	margin-bottom: 5px;
 	line-height: 1.2em;
 }
@@ -489,7 +488,7 @@ ul.wpcw_fe_quiz_q_answers input[type="radio"]:checked+label {
 
 .wpcw_fe_quiz_q_title {
 	margin-bottom: 15px;
-	font-size: 110%;
+	font-size: 132%;
 }
 
 .wpcw_fe_quiz_q_error .wpcw_fe_quiz_q_title {

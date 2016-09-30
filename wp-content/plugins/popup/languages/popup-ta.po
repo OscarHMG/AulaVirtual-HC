@@ -1,0 +1,203 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Popup wordpress plugin\n"
+"POT-Creation-Date: 2015-06-23 13:41+0800\n"
+"PO-Revision-Date: 2015-06-23 13:42+0800\n"
+"Last-Translator: \n"
+"Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../popup.php:146
+msgid "Popup"
+msgstr "பாப்அப்"
+
+#: ../popup.php:162
+msgid "Wordpress popup plugin"
+msgstr "வேர்ட்பிரஸ் பாப்அப்"
+
+#: ../popup.php:163
+msgid "Setting"
+msgstr "சேமிக்கவும்"
+
+#: ../popup.php:245
+msgid "Details successfully updated."
+msgstr "விவரங்கள் வெற்றிகரமாக மேம்படுத்தப்பட்டது."
+
+#: ../popup.php:338
+#, fuzzy
+msgid "Random popup display"
+msgstr "ரேண்டம் பாப்அப் காட்சி"
+
+#: ../popup.php:340
+msgid "Enter YES (or) NO"
+msgstr "Enter YES (or) NO"
+
+#: ../popup.php:342
+msgid "Popup session option"
+msgstr "பாப்அப் session option"
+
+#: ../popup.php:344
+msgid ""
+"Enter YES (or) NO  (This option is to display the popup once per session)"
+msgstr ""
+"Enter YES (or) NO  (This option is to display the popup once per session)"
+
+#: ../popup.php:346
+msgid "Popup 1"
+msgstr "பாப்அப்"
+
+#: ../popup.php:347
+msgid "Popup image 1 text (IMG1)"
+msgstr "பாப்அப் படம் 1 செய்தி (IMG1)"
+
+#: ../popup.php:349
+msgid "What is the text you want to display in popup window. (IMG1)"
+msgstr "What is the text you want to display in popup window. (IMG1)"
+
+#: ../popup.php:350
+msgid "Popup image 1 path (i.e image URL)"
+msgstr "பாப்அப் படம் 1 பாதை (i.e image URL)"
+
+#: ../popup.php:353 ../popup.php:365 ../popup.php:377 ../popup.php:389
+#: ../popup.php:401 ../popup.php:413
+msgid "Where is the picture located on the internet"
+msgstr "Where is the picture located on the internet"
+
+#: ../popup.php:354
+msgid "Popup image 1 link"
+msgstr "பாப்அப் படம் 1 Onclick link"
+
+#: ../popup.php:356
+msgid ""
+"When someone clicks on the picture, where do you want to send them. (Enter # "
+"if you dont have any link)"
+msgstr ""
+"When someone clicks on the picture, where do you want to send them. (Enter # "
+"if you dont have any link)"
+
+#: ../popup.php:358
+msgid "Popup 2"
+msgstr "பாப்அப்"
+
+#: ../popup.php:359
+msgid "Popup image 2 text (IMG2)"
+msgstr "பாப்அப் படம் 2 செய்தி (IMG2)"
+
+#: ../popup.php:361 ../popup.php:373 ../popup.php:385 ../popup.php:397
+#: ../popup.php:409
+msgid "What is the text you want to display in popup window."
+msgstr "What is the text you want to display in popup window."
+
+#: ../popup.php:362
+msgid "Popup image 2 path (i.e image URL)"
+msgstr "பாப்அப் படம் 2 பாதை (i.e image URL)"
+
+#: ../popup.php:366
+msgid "Popup image 2 link"
+msgstr "பாப்அப் படம் 2 Onclick link"
+
+#: ../popup.php:368 ../popup.php:380 ../popup.php:392 ../popup.php:404
+#: ../popup.php:416
+msgid "When someone clicks on the picture, where do you want to send them."
+msgstr "When someone clicks on the picture, where do you want to send them."
+
+#: ../popup.php:370
+msgid "Popup 3"
+msgstr "பாப்அப்"
+
+#: ../popup.php:371
+msgid "Popup image 3 text (IMG3)"
+msgstr "பாப்அப் படம் 3 செய்தி (IMG3)"
+
+#: ../popup.php:374
+msgid "Popup image 3 path (i.e image URL)"
+msgstr "பாப்அப் படம் 3 பாதை (i.e image URL)"
+
+#: ../popup.php:378
+msgid "Popup image 3 link"
+msgstr "பாப்அப் படம் 3 Onclick link"
+
+#: ../popup.php:382
+msgid "Popup 4"
+msgstr "பாப்அப்"
+
+#: ../popup.php:383
+msgid "Popup image 4 text (IMG4)"
+msgstr "பாப்அப் படம் 4 செய்தி (IMG4)"
+
+#: ../popup.php:386
+msgid "Popup image 4 path (i.e image URL)"
+msgstr "பாப்அப் படம் 4 பாதை (i.e image URL)"
+
+#: ../popup.php:390
+msgid "Popup image 4 link"
+msgstr "பாப்அப் படம் 4 Onclick link"
+
+#: ../popup.php:394
+msgid "Popup 5"
+msgstr "பாப்அப்"
+
+#: ../popup.php:395
+msgid "Popup image 5 text (IMG5)"
+msgstr "பாப்அப் படம் 5 செய்தி (IMG5)"
+
+#: ../popup.php:398
+msgid "Popup image 5 path (i.e image URL)"
+msgstr "பாப்அப் படம் 5 பாதை (i.e image URL)"
+
+#: ../popup.php:402
+msgid "Popup image 5 link"
+msgstr "பாப்அப் படம் 5 Onclick link"
+
+#: ../popup.php:406
+msgid "Popup 6"
+msgstr "பாப்அப்"
+
+#: ../popup.php:407
+msgid "Popup image 6 text (IMG6)"
+msgstr "பாப்அப் படம் 6 செய்தி (IMG5)"
+
+#: ../popup.php:410
+msgid "Popup image 6 path (i.e image URL)"
+msgstr "பாப்அப் படம் 1 பாதை (i.e image URL)"
+
+#: ../popup.php:414
+msgid "Popup image 6 link"
+msgstr "பாப்அப் படம் 1 Onclick link"
+
+#: ../popup.php:419
+msgid "Update Setting"
+msgstr "சேமிக்கவும்"
+
+#: ../popup.php:420
+msgid "Help"
+msgstr "Help"
+
+#: ../popup.php:424
+msgid "Plugin configuration option"
+msgstr "Plugin configuration option"
+
+#: ../popup.php:426
+msgid "Option to add the popup into particular pages and posts."
+msgstr "Option to add the popup into particular pages and posts."
+
+#: ../popup.php:427
+msgid "Option to add the popup window into all the pages in the website."
+msgstr "Option to add the popup window into all the pages in the website."
+
+#: ../popup.php:429
+msgid "Check official website for more information"
+msgstr "மேலும் தகவலுக்கு அதிகாரப்பூர்வ இணையதளம் பாருங்கள்"
+
+#: ../popup.php:430
+msgid "click here"
+msgstr "இங்கே கிளிக் செய்யவும்"
+
+#~ msgid "Widget setting"
+#~ msgstr "விட்ஜெட் அமைப்பு"
