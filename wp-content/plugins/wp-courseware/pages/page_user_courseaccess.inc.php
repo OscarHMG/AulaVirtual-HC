@@ -28,7 +28,7 @@ function WPCW_showPage_UserCourseAccess_load()
 		return false;		
 	}
 
-	printf(__('<p>Aqu&iacute; puede cambiar que cursos el usuario <b>%s</b> (Username: <b>%s</b>) puede acceder.</p>', 'wp_courseware'), $userDetails->data->display_name, $userDetails->data->user_login);
+	printf(__('<p>Aqu&iacute; puede cambiar que cursos el usuario <b>%s</b> (Usuario: <b>%s</b>) puede acceder.</p>', 'wp_courseware'), $userDetails->data->display_name, $userDetails->data->user_login);
 		
 	
 	// Check to see if anything has been submitted?

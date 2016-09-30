@@ -287,9 +287,9 @@ class WPCW_QuizResults
 		
 		// Work out the maximum width of labels to use so that the labels line up.
 		$labelList = array(
-			'course' 	=> __('Course Name:', 		'wp_courseware'),
-			'quiz' 		=> __('Quiz Title:', 		'wp_courseware'),
-			'trainee' 	=> __('Candidate Name:', 	'wp_courseware'),
+			'course' 	=> __('Nombre del Curso:', 		'wp_courseware'),
+			'quiz' 		=> __('T&iacute;tulo de la Evaluaci&oacute;n:', 		'wp_courseware'),
+			'trainee' 	=> __('Nombre del estudiante:', 	'wp_courseware'),
 		);
 		
 		$labelWidth = 20;
@@ -427,7 +427,7 @@ class WPCW_QuizResults
 			// Create Results breakdown label
 			$this->pdffile->Ln(4);	
 			$this->pdffile->SetFont('Helvetica', 'B', 14);		
-			$this->pdffile->Write(5, __('Your answer details:', 'wp_courseware'), false, false, 'C', true);
+			$this->pdffile->Write(5, __('Detalles de su respuesta:', 'wp_courseware'), false, false, 'C', true);
 			$this->pdffile->Ln(5);
 			
 			// Set up text size and compact it
@@ -507,7 +507,7 @@ class WPCW_PDF extends TCPDF
         $this->SetFont('helvetica', 'B', 20);
         
         // Title
-        $this->Cell(0, 15, __('Your Quiz Results', 'wp_courseware'), 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 15, __('Resultados de su evaluaci&oacute;n', 'wp_courseware'), 0, false, 'C', 0, '', 0, false, 'M', 'M');
     }
 
     
@@ -521,7 +521,7 @@ class WPCW_PDF extends TCPDF
         
         // Page number
         $this->SetY(-18);
-        $this->Cell(0, 8, sprintf(__('Page %s of %s', 'wp_courseware'), $this->getAliasNumPage(), $this->getAliasNbPages()), 0, false, 'C', 0, '', 0, false, 'T', 'M');
+        $this->Cell(0, 8, sprintf(__('P&aacute;gina %s de %s', 'wp_courseware'), $this->getAliasNumPage(), $this->getAliasNbPages()), 0, false, 'C', 0, '', 0, false, 'T', 'M');
         
         // Copyight-style link
         $this->SetY(-12);

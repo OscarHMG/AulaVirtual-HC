@@ -68,7 +68,7 @@ function WPCW_showPage_ModifyQuiz_load()
 	
 	// Generate the tabs.
 	$tabList = array( 
-		'wpcw_section_break_quiz_general' 			=> array('label' => __(' Configuraci&oacute;n General', 'wp_courseware')),
+		'wpcw_section_break_quiz_general' 			=> array('label' => __('Configuraci&oacute;n General', 'wp_courseware')),
 		'wpcw_section_break_quiz_logic' 			=> array('label' => __('Configuraciones del comportamiento de las Evaluaciones/Encuestas', 'wp_courseware')), 
 		'wpcw_section_break_quiz_results' 			=> array('label' => __('Resultados de Configuraci&oacute;n', 'wp_courseware')), 
 		'wpcw_section_break_quiz_custom_feedback' 	=> array('label' => __('Evaluaci&oacute;n Personalizada', 'wp_courseware'), 'cssclass' => 'wpcw_quiz_only_tab'),

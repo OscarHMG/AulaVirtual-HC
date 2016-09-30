@@ -524,25 +524,25 @@ function WPCW_menu_MainMenu()
 	
 	
 	add_menu_page('WP Courseware',
-	__('Training Courses', 'wp_courseware'),
+	__('Cursos de Capacitaci&oacute;n', 'wp_courseware'),
 					$fa_training_courses, WPCW_PLUGIN_ID, 'WPCW_showPage_Dashboard',  WPCW_plugin_getPluginPath().'img/icon_training_16.png', WPCW_MENU_POSITION);
 
 	// ### Course Add/Modify
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - New Course', 'wp_courseware'),
-	__('Add Course', 'wp_courseware'),
+	__('Agregar Curso', 'wp_courseware'),
 					'manage_options', 'WPCW_showPage_ModifyCourse', 'WPCW_showPage_ModifyCourse');
 	
 	// ### GradeBook for Course
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - Gradebook', 'wp_courseware'),
-	__('Gradebook', 'wp_courseware'),
+	__('Calificaciones', 'wp_courseware'),
 					 $fa_gradebook, 'WPCW_showPage_GradeBook', 'WPCW_showPage_GradeBook');
 
 	// ### Module Add/Modify
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - Modify Module', 'wp_courseware'),
-	__('Add Module', 'wp_courseware'),
+	__('Agregar M&oacute;dulo', 'wp_courseware'),
 					'manage_options', 'WPCW_showPage_ModifyModule', 'WPCW_showPage_ModifyModule');	
 
 	// Spacer
@@ -552,31 +552,31 @@ function WPCW_menu_MainMenu()
 	// ### Quiz Add/Modify
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - Modify Quiz', 'wp_courseware'),
-	__('Add Quiz/Survey', 'wp_courseware'),
+	__('Agregar Evaluaci&oacute;n/Encuesta', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_ModifyQuiz', 'WPCW_showPage_ModifyQuiz');	
 
 	// ### Quiz Summary
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - Quiz Summary', 'wp_courseware'),
-	__('Quiz Summary', 'wp_courseware'),
+	__('Sumario Evauaci&oacute;n', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_QuizSummary', 'WPCW_showPage_QuizSummary');
 	
 	// ### Question Pool
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - Question Pool', 'wp_courseware'),
-	__('Question Pool', 'wp_courseware'),
+	__('Grupo de preguntas', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_QuestionPool', 'WPCW_showPage_QuestionPool');
 	
 	// ### Question Modify
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - Modify Question', 'wp_courseware'),
-	__('Edit Question', 'wp_courseware'),
+	__('Editar preguntas', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_ModifyQuestion', 'WPCW_showPage_ModifyQuestion');	
 
 	// ### Module and Unit Ordering
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - Module &amp; Unit Ordering', 'wp_courseware'),
-	__('Module &amp; Unit Ordering', 'wp_courseware'),
+	__('Orden de M&oacute;dulos y Unidades', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_CourseOrdering', 'WPCW_showPage_CourseOrdering');					
 
 	// Spacer
@@ -607,8 +607,8 @@ function WPCW_menu_MainMenu()
 	
 	// #### Import/export course stuff.
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Import/Export Course', 'wp_courseware'),
-	__('Import/Export', 'wp_courseware'),
+	__('WP Courseware - Importar/Exportar Curso', 'wp_courseware'),
+	__('Importar/Exportar', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_ImportExport', 'WPCW_showPage_ImportExport');	
 
 	// Spacer
@@ -617,43 +617,43 @@ function WPCW_menu_MainMenu()
 
 	// #### Convert post/page to a course unit
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Convert Page/Post to Course Unit', 'wp_courseware'),
-	__('Convert Page/Post', 'wp_courseware'),
+	__('WP Courseware - Convertr P&aacute;gina/Post  una Unidad de Curso', 'wp_courseware'),
+	__('Convertir P&aacute;gina/Post', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_ConvertPage', 'WPCW_showPage_ConvertPage');				
 
 	// ### Settings
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Settings', 'wp_courseware'),
-	__('Settings', 'wp_courseware'),
+	__('WP Courseware - Configuraciones', 'wp_courseware'),
+	__('Configuraciones', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_Settings', 'WPCW_showPage_Settings');
 	
 	
 	// ### Certificate Settings
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Certificates', 'wp_courseware'),
-	__('Certificates', 'wp_courseware'),
+	__('WP Courseware - Certificados', 'wp_courseware'),
+	__('Certificados', 'wp_courseware'),
 					'manage_options', 'WPCW_showPage_Certificates', 'WPCW_showPage_Certificates');
 	
 
 	// #### Documentation Page
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Documentation', 'wp_courseware'),
-	__('Documentation', 'wp_courseware'),
+	__('WP Courseware - Documentaci&oacute;n', 'wp_courseware'),
+	__('Documentaci&oacute;n', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_Documentation', 'WPCW_showPage_Documentation');
 
 	// ### Create page to allow admin to change package for users.
-	add_users_page( __('WP Courseware - Update User Course Access Permissions', 'wp_courseware'),
-	__('Update Course Access', 'wp_courseware'),
+	add_users_page( __('WP Courseware - Actualizar permiso de acceso de usuario al Curso', 'wp_courseware'),
+	__('Actualizar acceso del Curso', 'wp_courseware'),
 					'manage_options', 'WPCW_showPage_UserCourseAccess', 'WPCW_showPage_UserCourseAccess');
 		
 	// ### Detailed user progress
-	add_users_page( __('WP Courseware - View User Progress', 'wp_courseware'),
-	__('View User Progress', 'wp_courseware'),
+	add_users_page( __('WP Courseware - Ver progreso de usuario', 'wp_courseware'),
+	__('Ver Progreso del usuario', 'wp_courseware'),
 					$fa_user_progress, 'WPCW_showPage_UserProgess', 'WPCW_showPage_UserProgess');
 		
 	// ### Detailed quiz progress
-	add_users_page( __('WP Courseware - View Quiz/Survey Results', 'wp_courseware'),
-	__('View Quiz Results', 'wp_courseware'),
+	add_users_page( __('WP Courseware - Ver Resultados Evaluaci&oacute;n/Encuesta', 'wp_courseware'),
+	__('Ver Resultados de evaluaci&oacute;n', 'wp_courseware'),
 					$fa_user_quiz_results, 'WPCW_showPage_UserProgess_quizAnswers', 'WPCW_showPage_UserProgess_quizAnswers');
 
 }
@@ -704,15 +704,15 @@ function WPCW_addCustomScripts_BackEnd()
 				'wpcw-admin-users', 		// What we're attaching too
 				'wpcw_js_consts_usr',		// Handle for this code 
 	array(
-			'confirm_bulk_change' 			=> __('Are you sure you wish to reset the progress of the selected users? This CANNOT be undone.', 'wp_courseware'),
-			'confirm_single_change' 		=> __('Are you sure you wish to reset the progress of this user? This CANNOT be undone.', 'wp_courseware'),
-			'confirm_whole_course_reset' 	=> __('Are you sure you wish to reset the progress of all users on this course? This CANNOT be undone.', 'wp_courseware'),
-			'confirm_access_change_users' 	=> __('Are you sure you wish to add access for this course for all users?', 'wp_courseware'),
-			'confirm_access_change_admins' 	=> __('Are you sure you wish to add access for this course for all admins?', 'wp_courseware'),
-			'msg_question_duplicate' 		=> __('That question already exists in this quiz, so cannot be added again.', 'wp_courseware'),
-			'status_copying' 				=> __('Copying...', 'wp_courseware'),
+			'confirm_bulk_change' 			=> __('Est&aacute; seguro de que desea restablecer el progreso de los usuarios seleccionados? Esto no se puede deshacer.', 'wp_courseware'),
+			'confirm_single_change' 		=> __('Est&aacute; seguro de que desea restablecer el progreso de este usuario? Esto no se puede deshacer.', 'wp_courseware'),
+			'confirm_whole_course_reset' 	=> __('Est&aacute; seguro de que desea restablecer el progreso de todos los usuarios en este curso? Esto no se puede deshacer.', 'wp_courseware'),
+			'confirm_access_change_users' 	=> __('Est&aacute; seguro de que desea agregar el acceso a este curso para todos los usuarios?', 'wp_courseware'),
+			'confirm_access_change_admins' 	=> __('Est&aacute; seguro de que desea agregar el acceso de este curso para todos los administradores?', 'wp_courseware'),
+			'msg_question_duplicate' 		=> __('Esa pregunta ya existe en esta prueba, por lo que no se puede añadir de nuevo.', 'wp_courseware'),
+			'status_copying' 				=> __('Copiando...', 'wp_courseware'),
 			'name_tag_whole_pool' 			=> __('Entire Question Pool', 'wp_courseware'),
-			'title_tb_edit_rand_qu' 		=> __('Edit Random Question Selection', 'wp_courseware'),
+			'title_tb_edit_rand_qu' 		=> __('Selecci&oacute;n de edici&oacute;n de preguntas aleatoria', 'wp_courseware'),
 	));
 	
 	
@@ -769,13 +769,13 @@ function WPCW_addCustomScripts_FrontEnd()
 	array(
 			'ajaxurl' 				=> admin_url('admin-ajax.php'),				// URL for admin AJAX
 			'progress_nonce' 		=> wp_create_nonce('wpcw-progress-nonce'), 	// Nonce security token
-			'str_uploading'			=> __('Uploading:', 'wp_courseware'),		// Uploading message.
-			'str_quiz_all_fields'	=> __('Please provide an answer for all of the questions on this page.', 'wp_courseware'), 
+			'str_uploading'			=> __('Subiendo:', 'wp_courseware'),		// Uploading message.
+			'str_quiz_all_fields'	=> __('Por favor, proporcione una respuesta para todas las preguntas en esta p&aacute;gina.', 'wp_courseware'), 
 		
 			// Timer units
-			'timer_units_hrs' 		=> __('hrs', 'wp_courseware'),
-			'timer_units_mins' 		=> __('mins', 'wp_courseware'),
-			'timer_units_secs' 		=> __('secs', 'wp_courseware'),
+			'timer_units_hrs' 		=> __('horas', 'wp_courseware'),
+			'timer_units_mins' 		=> __('minutos', 'wp_courseware'),
+			'timer_units_secs' 		=> __('segundos', 'wp_courseware'),
 	
 	));
 }

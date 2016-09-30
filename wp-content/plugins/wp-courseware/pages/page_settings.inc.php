@@ -31,7 +31,7 @@ function WPCW_showPage_Settings_load()
 	$settingsFields = array(
 		'section_access_key' 	=> array(
 				'type'	  	=> 'break',
-				'html'	   	=> WPCW_forms_createBreakHTML(__(' Configuraci&oacute;n Licence Key', 'wp_courseware')),
+				'html'	   	=> WPCW_forms_createBreakHTML(__('Configuraci&oacute;n Licence Key', 'wp_courseware')),
 			),			
 			
 		'licence_key' => array(

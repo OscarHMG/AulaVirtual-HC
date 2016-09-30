@@ -698,7 +698,7 @@ class WPCW_UnitFrontend
 			// Generate certificate button if enabled and a certificate exists for this user.
 			if ('use_certs' == $this->parentData->course_opt_use_certificate && $certificateDetails)
 			{		
-				$certHTML = sprintf('<div class="wpcw_fe_progress_box_download"><a href="%s" class="fe_btn fe_btn_download">%s</a></div>', 
+				$certHTML = sprintf('<div class="wpcw_fe_progress_box_download"><a href="%s" class="fe_btn fe_btn_download" target="_blank">%s</a></div>', 
 					WPCW_certificate_generateLink($certificateDetails->cert_access_key), __('Visualizar Certificado y Descargar', 'wp_courseware')
 				);
 			}
@@ -955,7 +955,7 @@ class WPCW_UnitFrontend
 		{
 			$messageToShow .= sprintf('
 				<div class="wpcw_fe_progress_download">
-					<a href="%s" class="fe_btn fe_btn_completion fe_btn_small">%s</a>
+					<a href="%s" class="fe_btn fe_btn_completion fe_btn_small" target="_blank">%s</a>
 				</div>',
 					$msgDetails['button_dl_results_url'], 
 					__('Descargar Resultados', 'wp_courseware')

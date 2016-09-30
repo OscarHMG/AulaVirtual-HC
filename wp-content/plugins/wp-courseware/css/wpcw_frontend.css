@@ -193,7 +193,7 @@
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	line-height: 1.2em;
-	font-size: 11pt;
+	font-size: 16pt;
 }
 
 .wpcw_fe_progress_box p {
@@ -251,12 +251,12 @@ a.fe_btn,.wpcw_fe_quiz_submit_data input.fe_btn {
 	text-align: center;
 	text-shadow: 0 -1px 0 #4c9021;
 	text-decoration: none;
-	font-size: 10pt;
+	font-size: 15pt;
 	line-height: 1;
 }
 
 a.fe_btn_small {
-	font-size: 9pt;
+	font-size: 13pt;
 	font-weight: normal;
 	text-shadow: none;
 	padding: 4px 6px;
@@ -398,7 +398,7 @@ a.fe_btn_navigation_disabled,a.fe_btn_navigation_disabled:hover {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	line-height: 1.2em;
-	font-size: 12pt;
+	font-size: 14pt;
 }
 
 .wpcw_fe_quiz_q_single {
@@ -716,7 +716,7 @@ ul.wpcw_fe_quiz_q_answers input[type="radio"]:checked+label {
 	border-top: 1px solid #26C510;
 	padding-top: 15px;
 	margin-top: 20px;
-	font-size: 10pt;
+	font-size: 13pt;
 }
 
 .wpcw_fe_progress_result_by_tag {
