@@ -54,7 +54,7 @@ function WPCW_showPage_Documentation_load()
 		'howto'	=> array(
 			'flag'	=> 'howto',
 			'fn' 	=> 'WPCW_showPage_Documentation_howto',
-			'label'	=> __('How-To Videos', 'wp_courseware')
+			'label'	=> __('Tutoriales', 'wp_courseware')
 		),
 	);
 	
@@ -219,71 +219,71 @@ function WPCW_showPage_Documentation_shortcodes()
 function WPCW_showPage_Documentation_howto()
 {
 	?>	
-	<div class="wpcw_vids"><h2><?php _e('How to create a new course','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo crear un nuevo curso','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/x7q6T0R7vLg?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to create a new module','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo crear un nuevo m&oacute;dulo','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/v2h2y3iIOio?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 	
-	<div class="wpcw_vids"><h2><?php _e('How to create a new unit and assign it to a module','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo crear una nueva unidad y asignarlo a un m&oacute;dulo','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/3nrLv0wxK3w?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to edit and convert a post into a unit','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo editar y convertir un Post en una Unidad','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/zpnQSqKTePM?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to add a course outline page','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo agregar a una p&aacute;gina el resumen de un curso','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/JR4k5SRlSD8?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to create a survey','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo crear una encuesta','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/I_uq57IHBnw?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to a create a blocking quiz','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo crear una evaluaci&oacute;n con bloqueo','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/B8uSQ13Pp2s?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to create a non-blocking quiz','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo crear una evaluaci&oacute;n sin bloqueo','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/1ujT-OFj_nQ?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to enroll students and track their progress','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo inscribir a los estudiantes y realizar un seguimiento de su progreso','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/-1Gfh-3_Mxw?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to reset student progress','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo restablecer el progreso del estudiante','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/Imbawimf-Xg?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to enroll all users as students into a course','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo inscribir a todos los usuarios como a los estudiantes en un curso','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/zZBkveZ0szE?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to enroll students in bulk via CSV','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo inscribir a los estudiantes de forma masiva a través de CSV','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/SPl2N9075LQ?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to create a course progress page','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo crear una p&aacute;gina de progreso del curso','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/vtSvinDfOsE?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to use the grade book','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo utilizar el libro de calificaciones','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/dsQrDqew8yk?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to add a course menu widget to the sidebar','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo agregar un widget supuesto menú a la barra lateral','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/mwsE7l9sfmg?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to import and export a course','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo importar y exportar un curso','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/lw9FjeeVrHg?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 
-	<div class="wpcw_vids"><h2><?php _e('How to Generate a PDF Certificate of Completion for Your Course','wp_courseware') ?></h2>
+	<div class="wpcw_vids"><h2><?php _e('C&oacute;mo generar un Certificado de Finalizaci&oacute;n de PDF para su curso','wp_courseware') ?></h2>
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/5bPUkGlNefI?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 	

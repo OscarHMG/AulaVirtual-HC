@@ -705,7 +705,7 @@ class WPCW_UnitFrontend
 					
 			// Course completion message
 			$html .= sprintf('<div class="wpcw_fe_progress_box_wrap">
-				<div class="wpcw_fe_progress_box wpcw_fe_progress_box_complete">%s%s</div>
+				<div class="wpcw_fe_progress_box wpcw_fe_progress_box_complete">%s%s <a href="http://186.3.171.15/wordpressHC/wp-admin/profile.php" style="color:#ff0000;" target="_blank">Chequea tus datos personales!</a></div>
 			</div>', $certHTML, $this->parentData->course_message_course_complete);
 		
 		}
@@ -714,7 +714,7 @@ class WPCW_UnitFrontend
 		else
 		{
 			$html = sprintf('<div class="wpcw_fe_progress_box_wrap"><div class="wpcw_fe_progress_box wpcw_fe_progress_box_complete">%s</div></div>', 
-				$this->parentData->course_message_unit_complete
+				$this->parentData->course_message_unit_complete 
 			);	
 		}
 		
@@ -1085,7 +1085,7 @@ class WPCW_UnitFrontend
 							if ($remainingAttempts != 0)
 							{
 								// Show a generic message that the quiz needs to be re-taken.
-								$messageToShow .= wpautop(__('El instructor del curso ha permitido volver a tomar el examen. Para volver a intentar hacer la prueba, basta con hacer clic en el bot&oacute;n de abajo.', 'wp_courseware'));
+								$messageToShow .= wpautop(__('El instructor del curso ha permitido volver a tomar la evaluaci&oacute;n. Para volver a intentar hacer la evaluaci&oacute;n, basta con hacer clic en el bot&oacute;n de abajo.', 'wp_courseware'));
 								
 								$showRetakeButton = true;
 							}
@@ -1304,7 +1304,7 @@ class WPCW_UnitFrontend
 					$passQs  = ceil(($this->unitQuizDetails->quiz_pass_mark / 100) * $totalQs);
 				
 					$html .= '<div class="wpcw_fe_quiz_pass_mark">';
-					$html .= sprintf(__('Tendr&aacute; que responder correctamente al menos <b>%d de las %d</b> siguientes preguntas (<b>at al menos %d%%</b>) para pasar a la siguiente unidad.', 'wp_courseware'),
+					$html .= sprintf(__('Tendr&aacute; que responder correctamente al menos <b>%d de las %d</b> siguientes preguntas (<b>al menos %d%%</b>) para pasar a la siguiente unidad.', 'wp_courseware'),
 								$passQs, $totalQs, $this->unitQuizDetails->quiz_pass_mark);
 					$html .= '</div>';
 				}
@@ -1405,7 +1405,7 @@ class WPCW_UnitFrontend
 							
 							// Work out what caption to show for the submit button. Change this if we're about to
 							// submit the answers for the final question or review our answers.
-							$buttonCaption = __('Guardar &amp; Siguiente Pregunta &raquo;', 'wp_courseware');
+							$buttonCaption = __('Guardar, Siguiente Pregunta &raquo;', 'wp_courseware');
 							
 							
 							// Are we showing the last incomplete question (and we're nearly complete)
@@ -1413,7 +1413,7 @@ class WPCW_UnitFrontend
 							{
 								// We appear to be on the last question. Are we going to review too?
 								if ($this->check_paging_shouldWeShowReviewPage()) {
-									$buttonCaption = __('Guardar &amp; Revisar respuestas &raquo;', 'wp_courseware');
+									$buttonCaption = __('Guardar, Revisar respuestas &raquo;', 'wp_courseware');
 								}
 								// No review, just submit
 								else {

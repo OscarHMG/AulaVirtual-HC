@@ -270,7 +270,7 @@ function WPCW_showPage_ModifyQuiz_load()
 			
 			
 			'quiz_results_by_tag' => array(
-				'label' 		=> __('Mostrar resultados por tag?', 'wp_courseware'),
+				'label' 		=> __('Mostrar resultados por etiqueta?', 'wp_courseware'),
 				'type'  		=> 'checkbox',
 				'required'  	=> false,
 				'extralabel'	=> __('<b>Mostrar resultados por etiqueta de preguntas</b> - Adem&aacute;s de la puntuaci&oacute;n total, indicar un desglose de los resultados para cada etiqueta que se trate.', 'wp_courseware'),
@@ -504,7 +504,7 @@ function WPCW_showPage_thickbox_randomQuestion()
 				
 				// Label
 				printf('<label class="wpcw_bold"><input type="radio" name="wpcw_tb_random_question_type" value="question_tags" checked/> %s</label>', 
-					__('Randomly Select using Question Tags', 'wp_courseware')
+					__('Seleccionar al azar usando preguntas con etiquetas', 'wp_courseware')
 				);
 				printf('<div class="wpcw_tb_description">%s</div>', __('Si se selecciona esta opci&oacute;n, se mostrar&aacute; al azar a continuaci&oacute;n, el ´n&uacute;mero de preguntas que elija para cada etiqueta.', 'wp_courseware'));
 				
@@ -554,7 +554,7 @@ function WPCW_showPage_thickbox_randomQuestion_tagSelectionLine($defaultCount = 
 		printf('<label>&nbsp;&nbsp;%s&nbsp;&nbsp;</label>', __('preguntas de', 'wp_courseware'));
 		
 		// The tag dropdown
-		echo WPCW_questions_tags_getTagDropdown(__('--- Seleccionar Tag ---', 'wp_courseware'), 'tag_selection', false, 'wpcw_tb_option_tag_select', true);
+		echo WPCW_questions_tags_getTagDropdown(__('--- Seleccionar Etiqueta ---', 'wp_courseware'), 'tag_selection', false, 'wpcw_tb_option_tag_select', true);
 		
 		// The deletion link.
 		printf('<a href="#" class="wpcw_delete_icon" rel="%s" %s>%s</a>',

@@ -241,7 +241,7 @@ function WPCW_showPage_GradeBook_load()
 		$tbl->addColumn($tblCol);
 		
 		// ### Create heading for cumulative data.
-		$tblCol = new TableColumn(__('Enviar Grado?', 'wp_courseware'), 'grade_sent');
+		$tblCol = new TableColumn(__('Enviar Calificaciones?', 'wp_courseware'), 'grade_sent');
 		$tblCol->headerClass = "wpcw_center";
 		$tblCol->cellClass = "wpcw_grade_summary wpcw_center";
 		$tbl->addColumn($tblCol);
@@ -344,13 +344,13 @@ function WPCW_showPage_GradeBook_load()
 						// We've got something that needs grading. So render link to where the quiz can be graded.
 						if ($theResults->quiz_needs_marking > 0)
 						{
-							$data['quiz_' . $aQuizID] = sprintf('<span class="wpcw_grade_needs_grading"><a href="%s">%s</span>', $quizDetailURL, __('Manual Grade Required', 'wp_courseware'));
+							$data['quiz_' . $aQuizID] = sprintf('<span class="wpcw_grade_needs_grading"><a href="%s" target="_blank">%s</span>', $quizDetailURL, __('Manual Grade Required', 'wp_courseware'));
 						}
 						
 						// User is blocked - they've failed and are blocked
 						else if ('quiz_fail_no_retakes' == $theResults->quiz_next_step_type)
 						{
-							$data['quiz_' . $aQuizID] = sprintf('<span class="wpcw_grade_needs_grading"><a href="%s">%s</span>', $quizDetailURL, __('Quiz Retakes Exhausted', 'wp_courseware'));
+							$data['quiz_' . $aQuizID] = sprintf('<span class="wpcw_grade_needs_grading"><a href="%s" target="_blank">%s</span>', $quizDetailURL, __('Quiz Retakes Exhausted', 'wp_courseware'));
 						}
 						
 						// Quiz not yet complete...
@@ -368,13 +368,13 @@ function WPCW_showPage_GradeBook_load()
 							$quizScoresSoFar_count++;
 													
 							// Render score and link to the full test data.
-							$data['quiz_' . $aQuizID] = sprintf('<span class="wpcw_grade_valid"><a href="%s">%s%%</span>', $quizDetailURL, $score);
+							$data['quiz_' . $aQuizID] = sprintf('<span class="wpcw_grade_valid"><a href="%s" target="_blank">%s%%</span>', $quizDetailURL, $score);
 						}
 					} 
 					
 					// No progress data - quiz not completed yet
 					else {
-						$data['quiz_' . $aQuizID] = '<span class="wpcw_grade_not_taken">' . __('Not Taken', 'wp_courseware') . '</span>';
+						$data['quiz_' . $aQuizID] = '<span class="wpcw_grade_not_taken">' . __('No tomado', 'wp_courseware') . '</span>';
 					}
 				}	
 				
@@ -397,7 +397,7 @@ function WPCW_showPage_GradeBook_load()
 			// #### Certificate - Show if there's a certificate that can be downloaded.
 			if ($usingCertificates && $certDetails = WPCW_certificate_getCertificateDetails($singleUser->ID, $courseDetails->course_id, false))
 			{
-				$data['certificate_available'] = sprintf('<a href="%s" title="%s">%s</a>',					 
+				$data['certificate_available'] = sprintf('<a href="%s" title="%s" target="_blank">%s</a>',					 
 					WPCW_certificate_generateLink($certDetails->cert_access_key), 
 					__('Descargar el certificado para este usuario.', 'wp_courseware'),
 					__('Si', 'wp_courseware')
@@ -419,7 +419,7 @@ function WPCW_showPage_GradeBook_load()
 		// Button to generate a CSV of the gradebook. 
 		printf('<a href="%s" class="button-primary">%s</a>&nbsp;&nbsp;', 
 			admin_url('?wpcw_export=gradebook_csv&course_id=' . $courseDetails->course_id),
-			__('Exportaci&oacute;n calificaciones (CSV)', 'wp_courseware')
+			__('Exportar calificaciones (CSV)', 'wp_courseware')
 		);
 		
 		printf('<a href="%s" class="button-primary">%s</a>&nbsp;&nbsp;', 
@@ -433,7 +433,7 @@ function WPCW_showPage_GradeBook_load()
 		// Create information about how people are chosen to send grades to.
 		printf('<div id="wpcw_button_group_info_gradebook" class="wpcw_button_group_info">%s</div>',
 			sprintf(__('S&oacute;lo las calificaciones enviadas por correo electr&oacute;nico seran a los estudiantes que han <b>completado el curso</b> y que a&uacute;n <b>no han recibido</b> la calificaci&oacute;n final. 
-			   Se puede ver a los estudiantes que son <a href="%s">elegibles para recibir el correo electr&oacute;nico calificaci&oacute;n final</a> aqu&iacute;.', 'wp_courseware'), $eligibleURL)
+			   Se puede ver a los estudiantes que son <a href="%s" >elegibles para recibir el correo electr&oacute;nico calificaci&oacute;n final</a> aqu&iacute;.', 'wp_courseware'), $eligibleURL)
 		);
 	
 	printf('</div>');		
@@ -444,10 +444,10 @@ function WPCW_showPage_GradeBook_load()
 	// Show the filtering to selectively show different quizzes
 	// Filter list can be modified to indicate Group's name instead of 'all'
 	$filters_list = array(
-		'all' 						=> sprintf(__('All (%d)', 								'wp_courseware'), $userCount_all),
-		'completed' 				=> sprintf(__('Completed (%d)', 						'wp_courseware'), $userCount_completed),
-		'eligible_for_final_grade' 	=> sprintf(__('Eligible for Final Grade Email (%d)', 	'wp_courseware'), $userCount_needGrade),
-		'to_mark' 					=> sprintf(__('Just Quizzes that Need Marking (%d)', 	'wp_courseware'), $userCount_toMark),
+		'all' 						=> sprintf(__('Todos (%d)', 								'wp_courseware'), $userCount_all),
+		'completed' 				=> sprintf(__('Completo (%d)', 						'wp_courseware'), $userCount_completed),
+		'eligible_for_final_grade' 	=> sprintf(__('Elegir para enviar correo electr&oacute;nico (%d)', 	'wp_courseware'), $userCount_needGrade),
+		'to_mark' 					=> sprintf(__('S&oacute;lo evaluaciones que necesitan ser calificadas (%d)', 	'wp_courseware'), $userCount_toMark),
 	);
 
 	// Allow the filters to be customised
@@ -496,7 +496,7 @@ function WPCW_showPage_GradeBook_handleFinalGradesEmail($courseDetails, $page)
 	if (empty($usersNeedGrades))
 	{	
 		$page->showMessage(
-			__('Actualmente no hay usuarios que son elegibles para recibir su calificaci&oacute;n final.', 'wp_courseware') . ' ' . 
+			__('Actualmente no hay usuarios elegidos para recibir su calificaci&oacute;nes finales.', 'wp_courseware') . ' ' . 
 			__('No hay mensajes de correo electr&oacute;nico para ser enviado.', 'wp_courseware'), 
 			true);
 		return;
@@ -510,7 +510,7 @@ function WPCW_showPage_GradeBook_handleFinalGradesEmail($courseDetails, $page)
 	// ### Email Template - Construct the from part of the email
 	$headers = false; 
 	if ($courseDetails->course_from_email) {
-		$headers = sprintf('From: %s <%s>' . "\r\n", $courseDetails->course_from_name, $courseDetails->course_from_email);
+		$headers = sprintf('De: %s <%s>' . "\r\n", $courseDetails->course_from_name, $courseDetails->course_from_email);
 	}
 			
 	

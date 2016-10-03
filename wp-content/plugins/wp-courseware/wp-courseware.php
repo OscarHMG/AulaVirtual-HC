@@ -558,7 +558,7 @@ function WPCW_menu_MainMenu()
 	// ### Quiz Summary
 	add_submenu_page(WPCW_PLUGIN_ID,
 	__('WP Courseware - Quiz Summary', 'wp_courseware'),
-	__('Sumario Evauaci&oacute;n', 'wp_courseware'),
+	__('Progreso Evaluaci&oacute;n/Encuesta', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_QuizSummary', 'WPCW_showPage_QuizSummary');
 	
 	// ### Question Pool
@@ -836,18 +836,18 @@ function WPCW_areWeOnPluginPage()
 function WPCW_plugin_registerCustomPostTypes()
 {
 	$labels = array(
-        'name' 					=> __( 'Course Units', 						'wp_courseware'),
-        'singular_name' 		=> __( 'Course Unit', 						'wp_courseware'),
-        'add_new' 				=> __( 'Add New', 							'wp_courseware'),
-        'add_new_item' 			=> __( 'Add New Course Unit', 				'wp_courseware'),
-        'edit_item'	 			=> __( 'Edit Course Unit', 					'wp_courseware'),
-        'new_item' 				=> __( 'New Course Unit', 					'wp_courseware'),
-        'view_item' 			=> __( 'View Course Unit', 					'wp_courseware'),
-        'search_items' 			=> __( 'Search Course Units', 				'wp_courseware'),
-        'not_found' 			=> __( 'No course units found', 			'wp_courseware'),
-        'not_found_in_trash'	=> __( 'No course units found in Trash', 	'wp_courseware'),
-        'parent_item_colon' 	=> __( 'Parent Course Unit:', 				'wp_courseware'),
-        'menu_name' 			=> __( 'Course Units', 						'wp_courseware'),
+        'name' 					=> __( 'Unidades del curso', 						'wp_courseware'),
+        'singular_name' 		=> __( 'Unidad del curso', 						'wp_courseware'),
+        'add_new' 				=> __( 'Agregar nuevo', 							'wp_courseware'),
+        'add_new_item' 			=> __( 'Agregar nueva Unidad del curso', 				'wp_courseware'),
+        'edit_item'	 			=> __( 'Editar Unidad del curso', 					'wp_courseware'),
+        'new_item' 				=> __( 'Nueva Unidad del curso', 					'wp_courseware'),
+        'view_item' 			=> __( 'Ver Unidad del curso', 					'wp_courseware'),
+        'search_items' 			=> __( 'Buscar Unidades del curso', 				'wp_courseware'),
+        'not_found' 			=> __( 'No se encontraron unidades de curso', 			'wp_courseware'),
+        'not_found_in_trash'	=> __( 'No se encontraron unidades de curso en la basura', 	'wp_courseware'),
+        'parent_item_colon' 	=> __( 'Unidades de curso para padres:', 				'wp_courseware'),
+        'menu_name' 			=> __( 'Unidades del curso', 						'wp_courseware'),
 	);
 
 	$args = array(

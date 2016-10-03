@@ -43,7 +43,7 @@ function WPCW_showPage_ImportExport_menu($currentPage)
 			printf('&nbsp;|&nbsp;');
 			printf('<span><b>%s</b></span>', __('Importar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
-			printf('<span><a href="%s&show=import_users">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Importar Usuario', 'wp_courseware'));
+			printf('<span><a href="%s&show=import_users">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Importar Usuarios', 'wp_courseware'));
 			break;
 			
 		case 'import_users':
@@ -51,15 +51,15 @@ function WPCW_showPage_ImportExport_menu($currentPage)
 			printf('&nbsp;|&nbsp;');
 			printf('<span><a href="%s&show=import">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Importar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
-			printf('<span><b>%s</b></span>', __('Importar Usuario', 'wp_courseware'));
+			printf('<span><b>%s</b></span>', __('Importar Usuarios', 'wp_courseware'));
 			break;
 			
 		default:
 			printf('<span><b>%s</b></span>', __('Exportar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
-			printf('<span><a href="%s&show=import">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Import Course', 'wp_courseware'));
+			printf('<span><a href="%s&show=import">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Importar Curso', 'wp_courseware'));
 			printf('&nbsp;|&nbsp;');
-			printf('<span><a href="%s&show=import_users">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Import Users', 'wp_courseware'));
+			printf('<span><a href="%s&show=import_users">%s</a></span>', admin_url('admin.php?page=WPCW_showPage_ImportExport'), __('Importar Usuarios', 'wp_courseware'));
 			break;
 	}	
 
@@ -81,7 +81,7 @@ function WPCW_showPage_ImportExport_export()
 	$form->setSubmitLabel(__('Exportar Curso', 'wp_courseware'));
 	
 	// Course selection
-	$formElem = new FormElement('export_course_id', __('Curso para Exportar', 'wp_courseware'), true);
+	$formElem = new FormElement('export_course_id', __('Cursos para Exportar', 'wp_courseware'), true);
 	$formElem->setTypeAsComboBox(WPCW_courses_getCourseList(__('--- Seleccionar un curso para exportar ---', 'wp_courseware')));
 	$form->addFormElement($formElem);
 	
@@ -232,7 +232,7 @@ function WPCW_showPage_ImportExport_importUsers()
 	$upload_mb = min($max_upload, $max_post, $memory_limit);
 	
 	printf('<p class="wpcw_doc_quick">');
-	printf(__('Puede importar un archivo CSV de usuarios utilizando el siguiente formulario.', 'wp_courseware') . ' ' . __('The <b>maximum upload file size</b> for your server is <b>%d MB</b>.', 'wp_courseware'), $upload_mb);
+	printf(__('Puede importar un archivo CSV de usuarios utilizando el siguiente formulario.', 'wp_courseware') . ' ' . __('El <b>tama&ntilde;o maximo del archivo</b> es <b>%d MB</b>.', 'wp_courseware'), $upload_mb);
 	printf('</p>');	
 	
 	echo $form->toString();
@@ -309,21 +309,21 @@ function WPCW_courses_importCourseFromFile($page)
 			{				
 				case UPLOAD_ERR_FORM_SIZE:
 				case UPLOAD_ERR_INI_SIZE:
-					$page->showMessage(__("Unfortunately the file you've uploaded is too large for the system.", 'wp_courseware'), true);
+					$page->showMessage(__("Por desgracia, el archivo que ha subido es demasiado grande para el sistema.", 'wp_courseware'), true);
 					break;
 					
 				case UPLOAD_ERR_PARTIAL:
 				case UPLOAD_ERR_NO_FILE:
-					$page->showMessage(__("For some reason, the file you've uploaded didn't transfer correctly to the server. Please try again.", 'wp_courseware'), true);
+					$page->showMessage(__("Por alguna raz&oacute;n, el archivo que has subido no transfiri&oacute; correctamente al servidor. Por favor, int&eacute;ntelo de nuevo.", 'wp_courseware'), true);
 					break;
 					
 				case UPLOAD_ERR_NO_TMP_DIR:
 				case UPLOAD_ERR_CANT_WRITE:
-					$page->showMessage(__("There appears to be an issue with your server, as the import file could not be stored in the temporary directory.", 'wp_courseware'), true);
+					$page->showMessage(__("Parece que hay un problema con el servidor, ya que el archivo de importaci&oacute;n no pod&iacute;a ser almacenado en el directorio temporal.", 'wp_courseware'), true);
 					break;
 					
 				case UPLOAD_ERR_EXTENSION:
-					$page->showMessage(__('Unfortunately, you tried to upload a file that isn\'t XML.', 'wp_courseware'), true);
+					$page->showMessage(__('Por desgracia, est&aacute; intentando enviar un archivo que no es XML.', 'wp_courseware'), true);
 					break;
 			}
 		}
@@ -338,7 +338,7 @@ function WPCW_courses_importCourseFromFile($page)
 function WPCW_users_importUsersFromFile($page)
 {
 	set_time_limit(0);
-	$page->showMessage(__('Import started...', 'wp_courseware'));
+	$page->showMessage(__('Importaci&oacute;n comenz&oacute; ...', 'wp_courseware'));
 	flush();
 	
 	if (isset($_FILES['import_course_csv']['name']))
@@ -359,7 +359,7 @@ function WPCW_users_importUsersFromFile($page)
 		);
 		
 		if (!in_array($type, $fileTypes)) {
-			$page->showMessage(__('Unfortunately, you tried to upload a file that isn\'t a CSV file.', 'wp_courseware'), true);
+			$page->showMessage(__('Por desgracia, est&aacute; intentando enviar un archivo que no es un archivo CSV.', 'wp_courseware'), true);
 			return false;
 		}		
 		
@@ -393,7 +393,7 @@ function WPCW_users_importUsersFromFile($page)
 				
 				// Check we have users to process before continuing.
 				if (count($assocData) < 1) {
-					$page->showMessage(__('No data was found in the CSV file, so there is nothing to do.', 'wp_courseware'), true);
+					$page->showMessage(__('No se encontraron datos en el archivo CSV, por lo que no hay nada que hacer.', 'wp_courseware'), true);
 					return;
 				}
 				
@@ -422,7 +422,7 @@ function WPCW_users_importUsersFromFile($page)
 							'id' 		=> $userRowData,
 							'row_num'	=> $userRowData['row_num'],
 							'aborted'	=> true,
-							'reason' 	=> __('Cannot create a user with no name.', 'wp_courseware')
+							'reason' 	=> __('No se puede crear un usuario sin nombre.', 'wp_courseware')
 						);
 						$count_aborted++;
 						continue;
@@ -436,7 +436,7 @@ function WPCW_users_importUsersFromFile($page)
 							'id' 		=> $userRowData,
 							'row_num'	=> $userRowData['row_num'],
 							'aborted'	=> false,
-							'reason' 	=> __('Email address already exists.', 'wp_courseware')
+							'reason' 	=> __('La direcci&oacute;n de correo ya existe.', 'wp_courseware')
 						);				
 
 						$count_skippedButUpdated++;
@@ -502,7 +502,7 @@ function WPCW_users_importUsersFromFile($page)
 				}
 				
 				// Summary import.
-				$page->showMessage(__('Import complete!', 'wp_courseware') . ' ' . sprintf(__('%d users were registered, %d users were updated, and %d user entries could not be processed.', 'wp_courseware'), 
+				$page->showMessage(__('Importaci&oacute;n completa!', 'wp_courseware') . ' ' . sprintf(__('%d usuarios se registraron, %d usuarios se actualizan, y %d entradas de usuarios no pod&iacute;an ser procesados.', 'wp_courseware'), 
 					$count_newUser, $count_skippedButUpdated, $count_aborted)
 				);
 				
@@ -516,10 +516,10 @@ function WPCW_users_importUsersFromFile($page)
 						printf('<table class="widefat">');
 							printf('<thead>');
 								printf('<tr>');
-									printf('<th>%s</th>', __('Line #', 'wp_courseware'));
-									printf('<th>%s</th>', __('User Email Address', 'wp_courseware'));
-									printf('<th>%s</th>', __('Reason why not imported', 'wp_courseware'));
-									printf('<th>%s</th>', __('Updated Anyway?', 'wp_courseware'));
+									printf('<th>%s</th>', __('Linea #', 'wp_courseware'));
+									printf('<th>%s</th>', __('Direcci&oacute;n de correo electr&oacute;nico del usuario', 'wp_courseware'));
+									printf('<th>%s</th>', __('Raz&oacute;n porque no import&oacute;', 'wp_courseware'));
+									printf('<th>%s</th>', __('Actualizar de todos modos?', 'wp_courseware'));
 								printf('</tr>');
 							printf('</thead>');
 							
@@ -530,7 +530,7 @@ function WPCW_users_importUsersFromFile($page)
 								printf('<td>%s</td>', $skipItem['row_num']);
 								printf('<td>%s</td>', $skipItem['id']['email_address']);
 								printf('<td>%s</td>', $skipItem['reason']);
-								printf('<td>%s</td>', ($skipItem['aborted'] ? __('No, Aborted', 'wp_courseware') : __('Yes', 'wp_courseware')));
+								printf('<td>%s</td>', ($skipItem['aborted'] ? __('No, Aborted', 'wp_courseware') : __('Si', 'wp_courseware')));
 								printf('</tr>');
 								
 								$odd = !$odd;
@@ -546,7 +546,7 @@ function WPCW_users_importUsersFromFile($page)
 				fclose($csvHandle);
 			}
 			else {
-				$page->showMessage(__('Unfortunately, the temporary CSV file could not be opened for processing.', 'wp_courseware'), true);
+				$page->showMessage(__('Por desgracia, el archivo CSV temporal no se puede abrir para su procesamiento.', 'wp_courseware'), true);
 				return;
 			}
 			
@@ -558,21 +558,21 @@ function WPCW_users_importUsersFromFile($page)
 			{				
 				case UPLOAD_ERR_FORM_SIZE:
 				case UPLOAD_ERR_INI_SIZE:
-					$page->showMessage(__("Unfortunately the file you've uploaded is too large for the system.", 'wp_courseware'), true);
+					$page->showMessage(__("Por desgracia, el archivo que ha subido es demasiado grande para el sistema.", 'wp_courseware'), true);
 					break;
 					
 				case UPLOAD_ERR_PARTIAL:
 				case UPLOAD_ERR_NO_FILE:
-					$page->showMessage(__("For some reason, the file you've uploaded didn't transfer correctly to the server. Please try again.", 'wp_courseware'), true);
+					$page->showMessage(__("Por alguna raz&oacute;n, el archivo que has subido no transfiri&oacute; correctamente al servidor. Por favor, int&eacute;ntelo de nuevo.", 'wp_courseware'), true);
 					break;
 					
 				case UPLOAD_ERR_NO_TMP_DIR:
 				case UPLOAD_ERR_CANT_WRITE:
-					$page->showMessage(__("There appears to be an issue with your server, as the import file could not be stored in the temporary directory.", 'wp_courseware'), true);
+					$page->showMessage(__("Parece que hay un problema con el servidor, ya que el archivo de importaci&oacute;n no pod&iacute;a ser almacenado en el directorio temporal.", 'wp_courseware'), true);
 					break;
 					
 				case UPLOAD_ERR_EXTENSION:
-					$page->showMessage(__('Unfortunately, you tried to upload a file that isn\'t a CSV file.', 'wp_courseware'), true);
+					$page->showMessage(__('Por desgracia, que est&aacute; intentando enviar un archivo que no es un archivo CSV.', 'wp_courseware'), true);
 					break;
 			}
 		} 

@@ -56,7 +56,7 @@ function WPCW_showPage_ModifyCourse_load()
 		$canAddCourse = apply_filters('wpcw_back_permissions_user_can_add_course', true, get_current_user_id());
 		if (!$canAddCourse)
 		{
-			$page->showMessage(apply_filters('wpcw_back_msg_permissions_user_can_add_course', __('YActualmente no tienes permiso para agregar un nuevo curso.', 'wp_courseware'), get_current_user_id()), true);
+			$page->showMessage(apply_filters('wpcw_back_msg_permissions_user_can_add_course', __('Actualmente no tienes permiso para agregar un nuevo curso.', 'wp_courseware'), get_current_user_id()), true);
 			$page->showPageFooter();
 			return;
 		}
@@ -429,7 +429,7 @@ function WPCW_showPage_ModifyCourse_load()
 				),
 				
 			'email_complete_course_option_admin' => array(
-					'label' 	=> __('Course Complete - Notificarme', 'wp_courseware'),
+					'label' 	=> __('Curso completo - Notificarme?', 'wp_courseware'),
 					'type'  	=> 'radio',
 					'required'  => true,
 					'cssclass'	=> 'wpcw_course_email_template_option',
@@ -620,10 +620,10 @@ function WPCW_showPage_ModifyCourse_load()
 			'break_course_access' 						=> array('label' => __('Acceso de Usuario', 'wp_courseware')), 
 			'break_course_messages' 					=> array('label' => __('Mensaje de Usario', 'wp_courseware')),
 			'break_course_notifications_from_details' 	=> array('label' => __('Detalles de la direcci&oacute;n de correo', 'wp_courseware')),
-			'break_course_notifications_user_module' 	=> array('label' => __('Notificaciones de Correos- M&oacute;dulos', 'wp_courseware')),
-			'break_course_notifications_user_course' 	=> array('label' => __('Notificaciones de Correos- Curso', 'wp_courseware')),
-			'break_course_notifications_user_grades' 	=> array('label' => __('Notificaciones de Correos- Evaluaci&oacute;nes del Curso', 'wp_courseware')),
-			'break_course_notifications_user_final' 	=> array('label' => __('Notificaciones de Correos- Promedios del curso', 'wp_courseware')),
+			'break_course_notifications_user_module' 	=> array('label' => __('Notificaciones de Correos - M&oacute;dulos', 'wp_courseware')),
+			'break_course_notifications_user_course' 	=> array('label' => __('Notificaciones de Correos - Curso', 'wp_courseware')),
+			'break_course_notifications_user_grades' 	=> array('label' => __('Notificaciones de Correos - Evaluaci&oacute;nes del Curso', 'wp_courseware')),
+			'break_course_notifications_user_final' 	=> array('label' => __('Notificaciones de Correos - Promedios del curso', 'wp_courseware')),
 			'break_course_certificates_user_course' 	=> array('label' =>  __('Certificados', 'wp_courseware')),
 			'break_course_certificates_user_tools' 		=> array('label' => __('Herramientas de acceso a un curso', 'wp_courseware')),
 		);
@@ -691,7 +691,7 @@ function WPCW_showPage_ModifyCourse_load()
 				'course_message_unit_not_yet'				=> __("Es necesario completar la unidad anterior.", 'wp_courseware'),		
 				'course_message_unit_pending'				=> __("Ha completado esta unidad. A continuaci&oacute;n, marque esta unidad como completada.", 'wp_courseware'),			
 				'course_message_unit_complete'				=> __("Ahora ha completado esta Unidad.", 'wp_courseware'),
-				'course_message_course_complete'			=> __("Ahora ha completado todo el Curso. FELICITACIONES", 'wp_courseware'),
+				'course_message_course_complete'			=> __("FELICITACIONES, has completado el curso y puedes generar tu certificado, pero antes  VERIFICA tus datos personales.", 'wp_courseware'),
 				'course_message_unit_no_access'				=> __("Lo sentimos, pero no se le permite acceder a este curso.", 'wp_courseware'),
 				'course_message_unit_not_logged_in'			=> __('No se puede ver esta unidad, ya que no est&aacute; conectado todav&iacute;a.', 'wp_courseware'),
 			

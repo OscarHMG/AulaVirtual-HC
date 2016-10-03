@@ -14,7 +14,7 @@
 function WPCW_showPage_Certificates_load()
 {
 	$page = new PageBuilder(true);
-	$page->showPageHeader(__('Cursos de capacitaci&oacute;n - Configuraci&oacute;n del certificado', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Cursos de Capacitaci&oacute;n - Configuraci&oacute;n del certificado', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	 
 	$settingsFields = array(

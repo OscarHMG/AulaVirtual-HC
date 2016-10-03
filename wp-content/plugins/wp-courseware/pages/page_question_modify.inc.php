@@ -98,7 +98,7 @@ function WPCW_showPage_ModifyQuestion_load()
 		
 			// Save and return buttons.
 			printf('<div class="wpcw_button_group"><br/>');						
-				printf('<a href="%s?page=WPCW_showPage_QuestionPool" class="button-secondary">%s</a>&nbsp;&nbsp;', admin_url('admin.php'), __('&laquo; Return to Question Pool', 'wp_courseware'));
+				printf('<a href="%s?page=WPCW_showPage_QuestionPool" class="button-secondary">%s</a>&nbsp;&nbsp;', admin_url('admin.php'), __('&laquo; Volver al grupo de preguntas', 'wp_courseware'));
 				printf('<input type="submit" class="button-primary" value="%s" />', __('Guardar Detalles de pregunta', 'wp_courseware'));
 			printf('</div>');
 		

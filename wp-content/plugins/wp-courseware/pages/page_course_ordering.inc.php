@@ -13,7 +13,7 @@
 function WPCW_showPage_CourseOrdering_load()
 {
 	$page = new PageBuilder(false);
-	$page->showPageHeader(__('Orden de M&oacute;dulos y Unidades', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('M&oacute;dulos, Unidades y Orden del curso', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	$courseDetails = false;
 	$courseID = false;
@@ -183,7 +183,7 @@ function WPCW_showPage_CourseOrdering_load()
 		printf('</ol>');
 	} 
 	else {
-		_e('No hay módulos todav&iacute;a.', 'wp_courseware');
+		_e('No hay m&oacute;dulos todav&iacute;a.', 'wp_courseware');
 	}
 	
 	?>

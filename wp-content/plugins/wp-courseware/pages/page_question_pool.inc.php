@@ -98,7 +98,7 @@ function WPCW_showPage_QuestionPool_actionForm()
 		$formWrapper_end .= sprintf('<div id="wpcw_bulk_action_message_no_tag_second" class="wpcw_msg_error">%s</div>', __('Por favor, seleccione la <b>segunda etiqueta</b> antes de continuar... ', 'wp_courseware'));
 	
 		// Label - saying these are actions
-		$formWrapper_end .= sprintf('<label>%s</label>', __('Action for selected questions?', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<label>%s</label>', __('Acci&oacute;n para las preguntas seleccionadas?', 'wp_courseware'));
 		
 		// Dropdown of actions
 		$formWrapper_end .= sprintf(WPCW_forms_createDropdown('wpcw_bulk_action_actions', array(
@@ -109,9 +109,9 @@ function WPCW_showPage_QuestionPool_actionForm()
 		), false, 'wpcw_tbl_question_pool_bulk_actions_chooser', false));
 		
 		// #### The starting labels for all 3 actions.
-		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_add_tag">%s:</label>', __('Agregar Tag', 'wp_courseware'));
-		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_remove_tag">%s:</label>', __('Remover Tag', 'wp_courseware'));
-		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_replace_tag">%s:</label>', __('Reemplazar Tag', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_add_tag">%s:</label>', __('Agregar Etiqueta', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_remove_tag">%s:</label>', __('Remover Etiqueta', 'wp_courseware'));
+		$formWrapper_end .= sprintf('<label class="wpcw_bulk_action_label wpcw_bulk_action_replace_tag">%s:</label>', __('Reemplazar Etiqueta', 'wp_courseware'));
 		
 		// #### All 3 - Selector for Add/Remove/Replace tag - first box
 		$formWrapper_end .= WPCW_questions_tags_getTagDropdown(__('Seleccione una etiqueta', 'wp_courseware'), 
@@ -275,7 +275,7 @@ function WPCW_showPage_QuestionPool_processActionForm($page)
 	}
 	
 	// #### #6 Finally show message
-	$page->showMessage(__('Questions successfully updated.', 'wp_courseware'));
+	$page->showMessage(__('Preguntas actualizado satisfactoriamente.', 'wp_courseware'));
 }
 
 ?>

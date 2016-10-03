@@ -16,7 +16,7 @@ function WPCW_showPage_ConvertPage_load()
 	
 	// Future Feature - Check user can edit other people's pages - use edit_others_pages or custom capability.
 	if (!current_user_can('manage_options')) {
-		$page->showMessage(__('Lo sentimos, pero no es&aacute; autorizado a editar esta P&aacute;gina/Post.', 'wp_courseware'), true);
+		$page->showMessage(__('Lo sentimos, pero no est&aacute; autorizado a editar esta P&aacute;gina/Post.', 'wp_courseware'), true);
 		$page->showPageFooter();
 		return false;
 	}

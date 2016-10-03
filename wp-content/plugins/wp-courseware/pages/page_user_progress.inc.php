@@ -100,7 +100,7 @@ function WPCW_showPage_UserProgess_load()
 							);
 							
 							// Has the unit been completed yet?
-							printf('<td class="wpcw_tbl_progress_completed">%s</td>', $up->isUnitCompleted($unit->ID) ? __('Completed', 'wp_courseware') : '');
+							printf('<td class="wpcw_tbl_progress_completed">%s</td>', $up->isUnitCompleted($unit->ID) ? __('Completo', 'wp_courseware') : '');
 							
 							// See if there's a quiz for this unit?
 							$quizDetails = WPCW_quizzes_getAssociatedQuizForUnit($unit->ID, false, $userID);
@@ -118,7 +118,7 @@ function WPCW_showPage_UserProgess_load()
 									
 									if ($quizResults)
 									{
-										printf('<td class="wpcw_tbl_progress_completed">%s</td>', __('Completed', 'wp_courseware'));
+										printf('<td class="wpcw_tbl_progress_completed">%s</td>', __('Completo', 'wp_courseware'));
 																			
 										// Showing a link to view details
 										$showDetailLink = true;
@@ -246,7 +246,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 		printf('<a href="%s&user_id=%d" class="button-secondary">%s</a>&nbsp;&nbsp;', 
 			admin_url('users.php?page=WPCW_showPage_UserProgess'),
 			$userDetails->ID,
-			sprintf(__('&laquo; Volver a <b>%s\'s</b> Progress Report', 'wp_courseware'), $userDetails->display_name)
+			sprintf(__('&laquo; Volver a <b>%s\'s</b> Informe de Progreso', 'wp_courseware'), $userDetails->display_name)
 		);		
 	}
 	
@@ -314,7 +314,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 	
 	
 	// #### - Table 1 - Overview
-	printf('<h3>%s</h3>', __('Quiz/Survey Overview', 'wp_courseware'));
+	printf('<h3>%s</h3>', __('Vista general Evaluaci&oacute;n/Encuesta', 'wp_courseware'));
 	
 	$tbl = new TableBuilder();
 	$tbl->attributes = array(
@@ -341,20 +341,20 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 				'<br/><small>(' . date('D jS M Y \a\t H:i:s', $results->quiz_completed_date_ts) . ')</small>',
 				
 		__('N&uacute;mero de intentos Evaluaci&oacute;n', 'wp_courseware')			=> $results->attempt_count,
-		__('Los intentos permitidos Evaluaci&oacute;n', 'wp_courseware')		=> (-1 == $quizDetails->quiz_attempts_allowed ? __('Unlimited', 'wp_courseware') : $quizDetails->quiz_attempts_allowed)
+		__('Los intentos permitidos Evaluaci&oacute;n', 'wp_courseware')		=> (-1 == $quizDetails->quiz_attempts_allowed ? __('Ilimitado', 'wp_courseware') : $quizDetails->quiz_attempts_allowed)
 	);
 	
 	
 	// Quiz details relating to score, etc.
 	if ('survey' != $quizDetails->quiz_type)
 	{	
-		$summaryData[__('Pass Mark', 'wp_courseware')]		= $quizDetails->quiz_pass_mark . '%';				
+		$summaryData[__('Aprobado', 'wp_courseware')]		= $quizDetails->quiz_pass_mark . '%';				
 		
 		// Still got items to grade
 		if ($results->quiz_needs_marking > 0)
 		{
 			$summaryData[__('No. de preguntas de un Curso', 'wp_courseware')] = '<span class="wpcw_status_info wpcw_icon_pending">' .$results->quiz_needs_marking . '</span>';
-			$summaryData[__('Nota General', 'wp_courseware')]	= '<span class="wpcw_status_info wpcw_icon_pending">' . __('Awaiting Final Grading', 'wp_courseware') . '</span>';
+			$summaryData[__('Nota General', 'wp_courseware')]	= '<span class="wpcw_status_info wpcw_icon_pending">' . __('En espera de la calificaci&oacute;n final', 'wp_courseware') . '</span>';
 		}
 		else
 		{
@@ -364,10 +364,10 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 			$gradeData = false;
 			if ($results->quiz_grade >= $quizDetails->quiz_pass_mark) 
 			{
-				$gradeData = sprintf('<span class="wpcw_tbl_progress_quiz_overall wpcw_question_yesno_status wpcw_question_yes">%s%% %s</span>', number_format($results->quiz_grade, 1), __('Passed', 'wp_courseware'));
+				$gradeData = sprintf('<span class="wpcw_tbl_progress_quiz_overall wpcw_question_yesno_status wpcw_question_yes">%s%% %s</span>', number_format($results->quiz_grade, 1), __('Pasado', 'wp_courseware'));
 			}
 			else {
-				$gradeData = sprintf('<span class="wpcw_tbl_progress_quiz_overall wpcw_question_yesno_status wpcw_question_no">%s%% %s</span>', number_format($results->quiz_grade, 1), __('Failed', 'wp_courseware'));
+				$gradeData = sprintf('<span class="wpcw_tbl_progress_quiz_overall wpcw_question_yesno_status wpcw_question_no">%s%% %s</span>', number_format($results->quiz_grade, 1), __('Ha fallado', 'wp_courseware'));
 			}
 			
 			$summaryData[__('Nota General', 'wp_courseware')]	= $gradeData;
@@ -448,12 +448,12 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 				
 				$summaryData = array(
 					// Quiz Type - Work out the label for the quiz type
-					__('Type', 'wp_courseware')	=> array(
+					__('Tipo', 'wp_courseware')	=> array(
 							'data' 		=> WPCW_quizzes_getQuestionTypeName($quObj->question_type), 
 							'cssclass' 	=> ''
 					),
 					
-					__('Their Answer', 'wp_courseware')	=> array(
+					__('Su respuesta', 'wp_courseware')	=> array(
 							'data' 		=> $theirAnswer, 
 							'cssclass' 	=> ''
 					),
@@ -499,7 +499,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 								else 
 								{
 									$cssClass = 'wpcw_grade_already_graded';									
-									$gradeHTML = sprintf('<span class="wpcw_grade_view">%d%% <a href="#">(%s)</a></span>', $theirGrade, __('Click to edit', 'wp_courseware'));
+									$gradeHTML = sprintf('<span class="wpcw_grade_view">%d%% <a href="#">(%s)</a></span>', $theirGrade, __('Click para editar', 'wp_courseware'));
 								}
 								
 								// Not graded yet, allow admin to grade the quiz, or change
@@ -543,8 +543,8 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 	?>
 	<div id="wpcw_sticky_bar" style="display: none">
 		<div id="wpcw_sticky_bar_inner">
-			<a href="#" id="wpcw_tbl_progress_quiz_grading_updated" class="button-primary"><?php _e('Save Changes to Grades', 'wp_courseware'); ?></a>
-			<span id="wpcw_sticky_bar_status" title="<?php _e('Grades have been changed. Ready to save changes?', 'wp_courseware'); ?>"></span>
+			<a href="#" id="wpcw_tbl_progress_quiz_grading_updated" class="button-primary"><?php _e('Guardar los cambios ', 'wp_courseware'); ?></a>
+			<span id="wpcw_sticky_bar_status" title="<?php _e('Calificaciones se han cambiado. Listo para guardar los cambios?', 'wp_courseware'); ?>"></span>
 		</div>
 	</div>
 	<br/><br/><br/><br/>

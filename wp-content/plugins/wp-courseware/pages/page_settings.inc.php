@@ -12,7 +12,7 @@
 function WPCW_showPage_Settings_load()
 {
 	$page = new PageBuilder(true);
-	$page->showPageHeader(__('Cursos de capacitaci&oacute;n - Configuraci&oacute;n', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
+	$page->showPageHeader(__('Cursos de Capacitaci&oacute;n - Configuraciones', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 	
 	// Check for update flag
 	if (isset($_POST['update']) && $_POST['update'] == 'tables_force_upgrade')
@@ -86,14 +86,14 @@ function WPCW_showPage_Settings_load()
 				'type'  	=> 'radio',
 				'required'	=> 'true',
 				'data'		=> array(
-					'show_link' 	=> sprintf('<b>%s</b> - %s', __('Yes', 'wp_courseware'), __('Show the <em>\'Powered By WP Courseware\'</em> link.', 'wp_courseware')),
-					'hide_link' 	=> sprintf('<b>%s</b> - %s', __('No', 'wp_courseware'), __('Don\'t show any powered-by links.', 'wp_courseware')),
+					'show_link' 	=> sprintf('<b>%s</b> - %s', __('Yes', 'wp_courseware'), __('Mostrar el enlace <em>\'Powered By WP Courseware\'</em>.', 'wp_courseware')),
+					'hide_link' 	=> sprintf('<b>%s</b> - %s', __('No', 'wp_courseware'), __('No mostrar ning&uacute;n powered-by links.', 'wp_courseware')),
 				),
 				'desc'  	=> __("Quieres mostrar 'Powered By WP Courseware' en la parte final del curso?", 'wp_courseware'),
 			),
 
 		'affiliate_id' => array(
-				'label' 	=> __('Your Affiliate ID', 'wp_courseware'),
+				'label' 	=> __('Su ID de afiliado', 'wp_courseware'),
 				'type'  	=> 'text',
 				'desc'  	=> __("(Opcional) ganar algo de dinero, proporcionando su nombre de usuario, la cual a su vez, la <b>Powered By WP Courseware</b>  en un afiliado enlace que gana un porcentaje de cada venta! Si no es un afiliado, iniciar sesi&oacute;n en el portal de miembros para registrarse y obtener su ID.", 'wp_courseware'), 
 				'validate'	 	=> array(

@@ -99,7 +99,7 @@ function WPCW_showPage_ModifyModule_load()
 	$form->setAllTranslationStrings(WPCW_forms_getTranslationStrings());
 	
 	// Useful place to go
-	$directionMsg = '<br/></br>' . sprintf(__('Quieres volver a la p&aacute;gina de <a href="%s"p&aacute;gina del progreso del curso</a>?', 'wp_courseware'),
+	$directionMsg = '<br/></br>' . sprintf(__('Quieres volver a la p&aacute;gina de <a href="%s">p&aacute;gina del progreso del curso</a>?', 'wp_courseware'),
 		admin_url('admin.php?page=WPCW_wp_courseware')
 	);	
 	
@@ -138,7 +138,7 @@ function WPCW_showPage_ModifyModule_load()
 			__('Eliminar este M&oacute;dulo', 'wp_courseware')
 		);	
 		
-		printf('<p>%s</p>', __('Las unidades <b>no</b>  se borran, <b>s&oacute;lo se desvinculan</b> de este m&oacute;dulo.', 'wp_courseware'));
+		printf('<p>%s</p>', __('Las unidades <b>no</b> se borran, <b>s&oacute;lo se desvinculan</b> de este m&oacute;dulo.', 'wp_courseware'));
 		
 		$page->closePane();
 		
@@ -153,7 +153,7 @@ function WPCW_showPage_ModifyModule_load()
 			foreach ($unitList as $unitID => $unitObj)
 			{
 				printf('<li>%s %d - %s</li>',
-					__('Unit', 'wp_courseware'),
+					__('Unidad', 'wp_courseware'),
 					$unitObj->unit_meta->unit_number,
 					$unitObj->post_title
 				);

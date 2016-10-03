@@ -234,7 +234,7 @@ function WPCW_showPage_QuizSummary_load()
 			if ($quiz->parent_unit_id > 0 && $unitDetails = get_post($quiz->parent_unit_id))
 			{
 				$data['associated_unit'] = sprintf('<span class="associated_unit_unit"><b>%s</b>: <a href="%s" target="_blank" title="%s \'%s\'...">%s</a></span>',
-					__('Unit', 'wp_courseware'), 
+					__('Unidad', 'wp_courseware'), 
 					get_permalink($unitDetails->ID),
 					__('View ', 'wp_courseware'), 
 					$unitDetails->post_title,
@@ -255,7 +255,7 @@ function WPCW_showPage_QuizSummary_load()
 				if ($courseDetails)
 				{				 
 					$data['associated_unit'] .= sprintf('<span class="associated_unit_course"><b>%s:</b> <a href="admin.php?page=WPCW_showPage_ModifyCourse&course_id=%d" title="%s \'%s\'...">%s</a></span>',
-						__('Course', 'wp_courseware'),
+						__('Curso', 'wp_courseware'),
 						$courseDetails->course_id,
 						__('Editar ', 'wp_courseware'), 
 						$courseDetails->course_title,
@@ -299,7 +299,7 @@ function WPCW_showPage_QuizSummary_load()
 			// Add export button for surveys
 			if ('survey' == $quiz->quiz_type) 
 			{
-				$data['actions']	.= sprintf('<li class="wpcw_action_item_newline"><a href="%s" class="button-secondary">%s</a></li>', $surveyExportURL, 	__('Export Responses', 'wp_courseware'));
+				$data['actions']	.= sprintf('<li class="wpcw_action_item_newline"><a href="%s" class="button-secondary">%s</a></li>', $surveyExportURL, 	__('Exportar Respuestas', 'wp_courseware'));
 			}
 											
 			$data['actions']	.= '</ul>';
