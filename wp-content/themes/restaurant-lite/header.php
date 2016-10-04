@@ -91,21 +91,22 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                 <div id="slidecaption1" class="nivo-html-caption">
                     <div class="slide_info">
                             <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
-                            <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br> ¡Comencemos! '; ?> </p>
+                            <p style="font-size:20px;" align="justify"><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br>';?> <a class="fasc-button fasc-size-large fasc-type-flat fasc-rounded-medium" href="http://186.3.171.15/wordpressHC/wp-login.php?action=register" style="background-color: #8CC63E; color: #ffffff;"><i class="fa fa-sign-in"></i><?php echo ' REGISTRATE Aula Virtual'; ?></a></p>
                            <div class="clear"></div>
                       </div>
                     </div>
                     <div id="slidecaption2" class="nivo-html-caption">
                     <div class="slide_info">
                             <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
-                            <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br> ¡Comencemos! ';?></p>
+                            <p style="font-size:20px;" align="justify"><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br>';?> <a class="fasc-button fasc-size-large fasc-type-flat fasc-rounded-medium" href="http://186.3.171.15/wordpressHC/wp-login.php?action=register" style="background-color: #8CC63E; color: #ffffff;"><i class="fa fa-sign-in"></i><?php echo ' REGISTRATE Aula Virtual'; ?></a></p>
+				
                             <div class="clear"></div>
                      </div>
                     </div>
                     <div id="slidecaption3" class="nivo-html-caption">
                       <div class="slide_info">
                             <h2><?php echo '¡Bienvenidos al aula virtual!';?></h2>
-                            <p><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente. </br></br></br>¡Comencemos! '; ?> </p>
+                            <p style="font-size:20px;" align="justify"><?php echo 'Aquí encontrarás información sobre diversos temas que podrás capacitarte en áreas afines a tu negocio.  Estás a tan solo un clic de aprender autodidácticamente.</br></br></br>';?> <a class="fasc-button fasc-size-large fasc-type-flat fasc-rounded-medium" href="http://186.3.171.15/wordpressHC/wp-login.php?action=register" style="background-color: #8CC63E; color: #ffffff;"><i class="fa fa-sign-in"></i><?php echo ' REGISTRATE Aula Virtual'; ?></a></p>
                             <div class="clear"></div>
                      </div>
                    </div>
@@ -220,16 +221,16 @@ $content = apply_filters('the_content', substr(strip_tags($post->post_content), 
                     <?php endwhile; } else { ?> 
                     <img src="<?php echo get_template_directory_uri(); ?>/images/welcome-restaurant.png" alt=""/>     
                     <h2><?php _e('AULA VIRTUAL - HOGAR DE CRISTO','restaurant'); ?></h2>
-                    <h5><?php _e('La Escuela Superior Politécnica del Litoral (ESPOL) y la Corporación de Viviendas de Hogar de Cristo (HC) formaron una alianza estratégica en el 2016. Dando paso a la creación del proyecto “Estructuración de un programa de educación digital para el programa de Semilleros de Emprendimientos de Hogar de Cristo”</br></br>
+                    <h6 style="text-align: justify; font-size: 24px; color: #006738;"><?php _e('La Escuela Superior Politécnica del Litoral (ESPOL) y la Corporación de Viviendas de Hogar de Cristo (HC) formaron una alianza estratégica en el 2016. Dando paso a la creación del proyecto “Estructuración de un programa de educación digital para el programa de Semilleros de Emprendimientos de Hogar de Cristo”</br></br>
 Los participantes beneficiarios de este proyecto en su mayoría son mujeres emprendedoras de 20 a 70 años que cuentan con nivel académico escolar básico. </br></br>
 Este tipo de actividades permiten trabajar en beneficio de nuestros hermanos y hermanas ecuatorianos para así construir un país más activo y solidario. 
-','restaurant'); ?></h5>
+','restaurant'); ?></h6>
                    
                     <?php } ?>
                       
                </div><!-- services-wrap-->
               <div class="clear"></div>
-            </div><!-- container -->
+            <!--</div><!-- container -->
        </section><div class="clear"></div>
 		<section id="wrapsecond">
             	<div class="container">

@@ -16,10 +16,11 @@ Restaurant Lite WordPress Theme is released under the terms of GNU GPL
 */
 body{ margin:0;
  padding:0;
- line-height:20px;
-  font-size:13px; 
+ 
+  font-size:98%; 
   color:#5c5c5c; 
-  font-family:“Helvetica Neue”, Helvetica;
+  font-family:"calibri", Garamond;
+  line-height: 126%;
   background: url(http://localhost/wordpressHC/wp-content/uploads/2016/09/fondo.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -121,7 +122,7 @@ border-top-right-radius: 5px; cursor:pointer;   }
 .toggle a{width:100%; color:#ffffff; background:url(images/mobile_nav_right.png) no-repeat right center #3e3e3e; padding:10px 10px; margin-top:5px; font-size:16px;}
 .toggle a:hover{color:#ffffff !important;}
 .sitenav{display:none;}
-.header{width:100%; position:absolute; z-index:999999; top:0;}
+.header{width:100%; position:inherit; z-index:999999; top:0;}
 .sitenav{ padding:0; text-align:right; float:right;}
 .sitenav ul { float:right; margin:0; padding:0; font-family:"calibri", Garamond; font-weight:400; font-size:15px;}
 .sitenav ul li{ display:inline-block; margin:0; position:relative; text-align:center;}
@@ -176,7 +177,7 @@ h2.section-title {color:#454545; font:300 36px/40px 'Playball',san-serif; text-a
 #sitefull{ width:100%; float:none;}
 #sitefull p{ margin-bottom:15px;}
 .page_content{ padding:25px 0;}
-.page_content p{ margin-bottom:20px; line-height:20px; font-size: 145% ;font-family: "calibri", Garamond;}
+.page_content p{ margin-bottom:20px; font-size: 145% ;font-family: "calibri", Garamond;}
 
 .blog_lists{ margin-bottom:30px; }
 .blog_lists h2{ margin-bottom:0px;}

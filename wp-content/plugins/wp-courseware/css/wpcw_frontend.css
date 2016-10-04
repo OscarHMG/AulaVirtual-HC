@@ -60,7 +60,7 @@
 }
 
 #wpcw_fe_course_progress .wpcw_fe_course_progress_course {
-	line-height: 20px;
+	 line-height: 126%;
 }
 
 #wpcw_fe_course_progress .wpcw_fe_course_progress_course a {
@@ -129,7 +129,7 @@
 
 #wpcw_fe_course .wpcw_fe_unit a {
 	font-weight: bold;
-	font-size: 12pt;
+    font-size: 123%;
 }
 
 /* Widget Progress */
