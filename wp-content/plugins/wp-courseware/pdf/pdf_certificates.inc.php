@@ -207,14 +207,14 @@ class WPCW_Certificate
 				
 		// Use date of completion if available from certificate details
 		$completeDate = false;
-		if ($certificateDetails && $certificateDetails->cert_generated) {
+		/*if ($certificateDetails && $certificateDetails->cert_generated) {
 			$completeDate = strtotime($certificateDetails->cert_generated);
 		}		
 		
 		// Use current date if not available.
-		if ($completeDate <= 0) {
-			$completeDate = current_time('timestamp');
-		}
+		if ($completeDate <= 0) {*/
+		$completeDate = current_time('timestamp');
+		//}
 		
 		$date_localFormat = get_option('date_format');
 		$date_str = date_i18n($date_localFormat, $completeDate);		

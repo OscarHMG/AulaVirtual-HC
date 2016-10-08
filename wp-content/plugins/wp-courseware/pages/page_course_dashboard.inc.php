@@ -14,10 +14,12 @@ function WPCW_showPage_Dashboard_load()
 	$page = new PageBuilder(false);
 	$page->showPageHeader(__('Mis Cursos', 'wp_courseware'), '75%', WPCW_icon_getPageIconURL());
 
-	$form_btn_admin = '<p style="text-align:right"><a class="button-primary" target="_blank" href="#" style="font-size:18px; background-color:#006738;" ><i class="fa fa-book">&nbsp;&nbsp;Como crear un Curso</i> </a></p>';
-	/*$form_btn_admin='<form method="post" action="pdf.php" target="_blank">
-		<p style="text-align:right"><input type="submit" style="width:182px;height:50px;font-size:27px;margin-right:9%;" value="Ayuda Rápida" class="button-primary" ></p>
-	</form>';*/
+	//$form_btn_admin = '<p style="text-align:right"><a class="button-primary" target="_blank" href="#" style="font-size:18px; background-color:#006738;" ><i 
+	//class="fa fa-book">&nbsp;&nbsp;Como crear un Curso</i> </a></p>';
+
+	$form_btn_admin='<form method="post" action="pdf.php" target="_blank">
+		<p style="text-align:right"><input type="submit" style="height:32px;font-size:20px;margin-right:9%;background-color:#006738;" value="&nbsp;&nbsp;Como crear un Curso" class="button-primary" class="fa fa-book" ></p>
+	</form>';
 	
 	echo $form_btn_admin;
 	// Handle any deletion
