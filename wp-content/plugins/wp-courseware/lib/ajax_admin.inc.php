@@ -38,7 +38,7 @@ function WPCW_AJAX_handleThickboxAction_QuestionPool_addQuestion()
 				break;
 				
 			default:
-				die(__('Unknown quiz type: ', 'wp_courseware') . $questionDetails->question_type);
+				die(__('Desconocido tiipo de evaluaci&oacute;n: ', 'wp_courseware') . $questionDetails->question_type);
 				break;
 		}
 		
@@ -95,7 +95,7 @@ function WPCW_AJAX_handleQuestionNewTag()
 {
 	$ajaxResults = array(
 		'success' 	=> true,
-		'errormsg' 	=> __('Unfortunately there was a problem adding the tag.', 'wp_courseware'),
+		'errormsg' 	=> __('Desafortunadamente, no se ha podido a&ntilde;adir la etiqueta.', 'wp_courseware'),
 		'html'		=> false
 	);
 	
@@ -192,7 +192,7 @@ function WPCW_AJAX_handleUnitDuplication()
 	
 	// Security check
 	if (!wp_verify_nonce(WPCW_arrays_getValue($_POST, 'security_id'), 'wpcw_ajax_unit_change')) {
-        die (__('Security check failed!', 'wp_courseware'));
+        die (__('Control de seguridad fallida', 'wp_courseware'));
 	}
 
 	// See if we can get the post that we've asked to duplicate

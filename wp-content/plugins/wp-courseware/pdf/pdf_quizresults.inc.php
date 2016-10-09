@@ -288,7 +288,7 @@ class WPCW_QuizResults
 		// Work out the maximum width of labels to use so that the labels line up.
 		$labelList = array(
 			'course' 	=> __('Nombre del Curso:', 		'wp_courseware'),
-			'quiz' 		=> __('T&iacute;tulo de la Evaluaci&oacute;n:', 		'wp_courseware'),
+			'quiz' 		=> __('Título de la Evaluaci&oacute;n:', 		'wp_courseware'),
 			'trainee' 	=> __('Nombre del estudiante:', 	'wp_courseware'),
 		);
 		
@@ -380,7 +380,7 @@ class WPCW_QuizResults
 				
 				// Create Results breakdown label
 				$this->pdffile->SetFont('', 'B', 11);
-				$this->pdffile->WriteHTML(__('Results breakdown:', 'wp_courseware'));
+				$this->pdffile->WriteHTML(__('Desglose de Resultados:', 'wp_courseware'));
 				$this->pdffile->Ln(2);
 				
 				$this->pdffile->SetFont('', 'B', 10);
@@ -507,7 +507,7 @@ class WPCW_PDF extends TCPDF
         $this->SetFont('helvetica', 'B', 20);
         
         // Title
-        $this->Cell(0, 15, __('Resultados de su evaluaci&oacute;n', 'wp_courseware'), 0, false, 'C', 0, '', 0, false, 'M', 'M');
+        $this->Cell(0, 15, __('Resultados de su evaluación', 'wp_courseware'), 0, false, 'C', 0, '', 0, false, 'M', 'M');
     }
 
     

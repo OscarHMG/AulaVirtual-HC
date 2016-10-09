@@ -951,7 +951,7 @@ class WPCW_UnitFrontend
 		$msgDetails = $this->check_quizzes_workoutQuizPassStatusDetails();
 		
 		// 1) Check for a download button
-		if (isset($msgDetails['button_dl_results_url']))
+		/*if (isset($msgDetails['button_dl_results_url']))
 		{
 			$messageToShow .= sprintf('
 				<div class="wpcw_fe_progress_download">
@@ -960,7 +960,7 @@ class WPCW_UnitFrontend
 					$msgDetails['button_dl_results_url'], 
 					__('Descargar Resultados', 'wp_courseware')
 				);
-		}
+		}*/
 		
 		// 2) Check for messages by row. If we've got a row, then render each item.
 		//    There are a maximum of 5 rows.

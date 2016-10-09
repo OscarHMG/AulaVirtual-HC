@@ -16,7 +16,7 @@ $quizID = intval(WPCW_arrays_getValue($_GET, 'quizid'));
 // Get the post object for this quiz item.
 $post = get_post($unitID);
 if (!$post) {		
-	WPCW_export_results_notFound(__('Could not find training unit.', 'wp_courseware'));
+	WPCW_export_results_notFound(__('No se pudo encontrar la unidad de capacitación.', 'wp_courseware'));
 }
 
 // Initalise the unit details
@@ -24,7 +24,7 @@ $fe = new WPCW_UnitFrontend($post);
 	
 // #### Get associated data for this unit. No course/module data, then it's not a unit 
 if (!$fe->check_unit_doesUnitHaveParentData()) {
-	WPCW_export_results_notFound(__('Could not find course details for unit.', 'wp_courseware'));
+	WPCW_export_results_notFound(__('No se pudo encontrar los detalles del curso para la unidad.', 'wp_courseware'));
 }
 
 // #### User not allowed access to content
@@ -65,7 +65,7 @@ die();
  */
 function WPCW_export_results_notFound($extraMessage = false)
 {
-	printf(__('Could not export your results. %s', 'wp_courseware'), $extraMessage);
+	printf(__('No se pudo exportar sus resultados. %s', 'wp_courseware'), $extraMessage);
 	die();
 }
 

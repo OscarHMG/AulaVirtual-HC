@@ -529,19 +529,19 @@ function WPCW_menu_MainMenu()
 
 	// ### Course Add/Modify
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - New Course', 'wp_courseware'),
+	__('WP Courseware - Nuevo Curso', 'wp_courseware'),
 	__('Agregar Curso', 'wp_courseware'),
 					'manage_options', 'WPCW_showPage_ModifyCourse', 'WPCW_showPage_ModifyCourse');
 	
 	// ### GradeBook for Course
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Gradebook', 'wp_courseware'),
+	__('WP Courseware - Calificaciones', 'wp_courseware'),
 	__('Calificaciones', 'wp_courseware'),
 					 $fa_gradebook, 'WPCW_showPage_GradeBook', 'WPCW_showPage_GradeBook');
 
 	// ### Module Add/Modify
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Modify Module', 'wp_courseware'),
+	__('WP Courseware - Modificar M&oacute;dulo', 'wp_courseware'),
 	__('Agregar M&oacute;dulo', 'wp_courseware'),
 					'manage_options', 'WPCW_showPage_ModifyModule', 'WPCW_showPage_ModifyModule');	
 
@@ -551,31 +551,31 @@ function WPCW_menu_MainMenu()
 
 	// ### Quiz Add/Modify
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Modify Quiz', 'wp_courseware'),
+	__('WP Courseware - Modificar Evaluaci&oacute;n', 'wp_courseware'),
 	__('Agregar Evaluaci&oacute;n/Encuesta', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_ModifyQuiz', 'WPCW_showPage_ModifyQuiz');	
 
 	// ### Quiz Summary
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Quiz Summary', 'wp_courseware'),
+	__('WP Courseware - Sumario Evaluaci&oacute;n', 'wp_courseware'),
 	__('Progreso Evaluaci&oacute;n/Encuesta', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_QuizSummary', 'WPCW_showPage_QuizSummary');
 	
 	// ### Question Pool
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Question Pool', 'wp_courseware'),
+	__('WP Courseware - Grupo de preguntas', 'wp_courseware'),
 	__('Grupo de preguntas', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_QuestionPool', 'WPCW_showPage_QuestionPool');
 	
 	// ### Question Modify
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Modify Question', 'wp_courseware'),
+	__('WP Courseware - Modificar Preguntas', 'wp_courseware'),
 	__('Editar preguntas', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_ModifyQuestion', 'WPCW_showPage_ModifyQuestion');	
 
 	// ### Module and Unit Ordering
 	add_submenu_page(WPCW_PLUGIN_ID,
-	__('WP Courseware - Module &amp; Unit Ordering', 'wp_courseware'),
+	__('WP Courseware - Orden de dM&oacute;dulos y Unidades', 'wp_courseware'),
 	__('Orden de M&oacute;dulos y Unidades', 'wp_courseware'),
 						'manage_options', 'WPCW_showPage_CourseOrdering', 'WPCW_showPage_CourseOrdering');					
 

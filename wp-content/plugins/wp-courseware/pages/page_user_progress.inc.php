@@ -237,7 +237,7 @@ function WPCW_showPage_UserProgess_quizAnswers_load()
 	// Link back to all user summary
 	printf('<a href="%s" class="button-secondary">%s</a>&nbsp;&nbsp;', 
 		admin_url('users.php'),
-		__('&laquo; Volver a User Summary', 'wp_courseware')
+		__('&laquo; Volver al resumen de usuario', 'wp_courseware')
 	);
 		
 	if ($userDetails = get_userdata($userID))
