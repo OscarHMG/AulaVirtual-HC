@@ -7,7 +7,7 @@
  *
  * @package WordPress
  */
-
+session_start();
 /** Make sure that the WordPress bootstrap has run before continuing. */
 require( dirname(__FILE__) . '/wp-load.php' );
 
@@ -66,6 +66,15 @@ function login_header( $title = 'Log In', $message = '', $wp_error = '' ) {
 		<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 	<!--<![endif]-->
 	<head>
+		<SCRIPT language=Javascript>
+		function isNumber(evt){
+			var charCode = (evt.which) ? evt.which : event.keyCode
+			if (charCode > 31 && (charCode < 48 || charCode > 57))
+				return false;
+			return true;
+	}
+
+		</SCRIPT>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<title><?php echo get_bloginfo( 'name', 'display' ) . $separator . $title; ?></title>
 	<?php
@@ -701,13 +710,33 @@ case 'register' :
 		wp_redirect( site_url('wp-login.php?registration=disabled') );
 		exit();
 	}
-
+	$userdata = array();
 	$user_login = '';
 	$user_email = '';
 	if ( $http_post ) {
-		$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
-		$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';
-		$errors = register_new_user($user_login, $user_email);
+
+		//Comprobar antes campos, luego insertar
+		//$errors = wp_insert_user($userdata);
+		if ( strlen($_POST['user_login'])<=7 ) {
+			$errors->add( 'empty_username', "<strong>ERROR</strong>: Nombre de usuario deben contener mas de 7 letras" );
+		}else if ( strlen( $_POST['CI'] ) <10 ) {
+			$errors->add( 'passwords_not_matched', "<strong>ERROR</strong>:Numero de Cedula debe contener 10 numeros" );
+		}else if( strlen( $_POST['user_pass'] ) <6 ){
+			$errors->add( 'empty_password', "<strong>ERROR</strong>:Contraseña debe tener mas de 6 digitos." );
+		} else{
+			$userdata['user_login']= $_POST['user_login'];
+			$userdata['user_pass'] = $_POST['user_pass'];
+			$userdata['user_nicename']=$_POST['CI'];
+			$userdata['user_email'] = ($_POST['CI']).("@correofalso.edu.");
+			//Guardo en la session para recuperarlas en el register #2
+			//$_SESSION['user_login'] = $_POST['user_login'];
+			//$_SESSION['user_pass'] =  $_POST['user_pass'];
+			//$_SESSION['CI'] = $_POST['CI'];
+			
+			$errors = wp_insert_user($userdata);
+			$_SESSION['ID']=$wpdb->get_var("SELECT MAX(ID) AS id FROM wp_users");
+		}
+		
 		if ( !is_wp_error($errors) ) {
 			$redirect_to = !empty( $_POST['redirect_to'] ) ? $_POST['redirect_to'] : 'wp-login.php?checkemail=registered';
 			wp_safe_redirect( $redirect_to );
@@ -728,13 +757,19 @@ case 'register' :
 ?>
 <form name="registerform" id="registerform" action="<?php echo esc_url( site_url( 'wp-login.php?action=register', 'login_post' ) ); ?>" method="post" novalidate="novalidate">
 	<p>
-		<label for="user_login"><?php _e('Username') ?><br />
-		<input type="text" name="user_login" id="user_login" class="input" value="<?php echo esc_attr(wp_unslash($user_login)); ?>" size="20" /></label>
+		<label for="user_login"><?php _e('Nombre de Usuario (*)') ?><br />
+		<input type="text" name="user_login" id="user_login" class="input" value="<?php echo esc_attr(wp_unslash($user_login)); ?>" size="20" required="required" /></label>
 	</p>
 	<p>
-		<label for="user_email"><?php _e('Email') ?><br />
-		<input type="email" name="user_email" id="user_email" class="input" value="<?php echo esc_attr( wp_unslash( $user_email ) ); ?>" size="25" /></label>
+		<label for="CI"><?php _e('Cédula (*)') ?><br />
+		<input type="text" name="CI" id="CI" class="input" value="<?php echo esc_attr( wp_unslash( $user_email ) ); ?>"  onkeypress="return isNumber(event)" maxlength="10" required="required" /></label>
 	</p>
+	<p>
+		<label for="user_pass"><?php _e('Contraseña (*)') ?><br />
+		<input type="password" name="user_pass" id="user_pass" class="input" value="<?php echo esc_attr( wp_unslash( $user_email ) ); ?>" size="25" required="required"/></label>
+	</p>
+	<input type="checkbox" onchange="document.getElementById('user_pass').type = this.checked ? 'text' : 'password'">Mostrar Contraseña</input>
+	<br class="clear" /> 
 	<?php
 	/**
 	 * Fires following the 'Email' field in the user registration form.
@@ -743,7 +778,8 @@ case 'register' :
 	 */
 	do_action( 'register_form' );
 	?>
-	<p id="reg_passmail"><?php _e( 'Registration confirmation will be emailed to you.' ); ?></p>
+	<br class="clear" />
+	<p id="reg_passmail"><?php _e( '(*) Campos Obligatorios.' ); ?></p>
 	<br class="clear" />
 	<input type="hidden" name="redirect_to" value="<?php echo esc_attr( $redirect_to ); ?>" />
 	<p class="submit"><input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Register'); ?>" /></p>
@@ -751,7 +787,6 @@ case 'register' :
 
 <p id="nav">
 <a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Log in' ); ?></a> |
-<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a>
 </p>
 
 <?php
@@ -903,7 +938,7 @@ default:
 
 <form name="loginform" id="loginform" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post">
 	<p>
-		<label for="user_login"><?php _e('Username or Email') ?><br />
+		<label for="user_login"><?php _e('Username') ?><br />
 		<input type="text" name="log" id="user_login"<?php echo $aria_describedby_error; ?> class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" /></label>
 	</p>
 	<p>
@@ -943,7 +978,7 @@ default:
 		echo apply_filters( 'register', $registration_url ) . ' | ';
 	endif;
 	?>
-	<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php _e( 'Lost your password?' ); ?></a>
+	
 <?php endif; ?>
 </p>
 <?php } ?>
