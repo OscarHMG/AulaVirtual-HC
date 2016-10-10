@@ -29,6 +29,7 @@
         <div class="container">
             <div class="logo">
                         <h1><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+			</br>
                         <span class="tagline"><?php bloginfo('description'); ?></span>
             </div><!-- logo -->
             <div class="toggle">
