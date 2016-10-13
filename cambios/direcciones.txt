@@ -1,0 +1,6 @@
+campos.php
+/wordpressHC/wp-admin/
+
+
+pdf_create_certificate
+wordpressHC\wp-content\plugins\wp-courseware\

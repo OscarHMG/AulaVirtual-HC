@@ -110,7 +110,7 @@ if ($complete_nameEr == "" &&  $telefonoEr ==""  && $celularEr =="" && $tel_fami
 	//Conexion base 
 	$servername = "localhost";
 	$username = "root";
-	$password = "";
+	$password = "root";
 	$dbname = "wordpresshc";
 
 	try {
@@ -152,13 +152,18 @@ function validacion_input($data) {
 <div class="header-innerpage">
                 <div class="container">
             <div class="logo">
-                        <h1><a href="http://localhost/wordpressHC/">Aula Virtual Hogar de cristo</a></h1>
+                        <h1><a href="http://186.3.171.15//wordpressHC/">Aula Virtual Hogar de cristo</a></h1>
             </div><!-- logo -->
             <div class="toggle">
                 <a class="toggleMenu" href="#" style="display: none;">Menu</a>
              </div><!-- toggle --> 
              <div class="sitenav" style="display: block;">                  
-                    <div class="menu"><ul><li><a href="http://localhost/wordpressHC/">Inicio</a></li><li class="page_item page-item-7"><a href="http://localhost/wordpressHC/cursos-virtuales-hc/">Cursos Virtuales HC</a></li><li class="page_item page-item-499 current_page_item"><a href="#">Mi Perfil</a></li></ul></div>
+                    <div class="menu">
+                    	<ul><li><a href="http://186.3.171.15//wordpressHC/">Aula Virtual</a>
+                    	<li class="page_item page-item-499 current_page_item"><a href="http://186.3.171.15/wordpressHC/perfil/">Mi Perfil</a></li>
+	                    </li><li class="page_item page-item-7"><a href="http://186.3.171.15/wordpressHC/wp-login.php?action=logout&_wpnonce=3ee0589ea5">Cerrar Sesión</a></li>
+
+                </ul></div>
               </div><!-- nav --><div class="clear"></div>
         </div><!-- container -->
  </div>
@@ -291,7 +296,7 @@ Voluntariado</p>
         
         <div class="copyright-wrapper">
         	<div class="container">
-            	<div class="copyright-txt">© 2016 <a href="http://localhost/wordpressHC/">Hogar de Cristo</a>. All Rights Reserved</div>
+            	<div class="copyright-txt">© 2016 <a href="http://186.3.171.15//wordpressHC/">Hogar de Cristo</a>. All Rights Reserved</div>
                 <div class="design-by">Theme by <a href="http://www.sktthemes.net" target="_blank">SKT Themes</a></div>
             </div>
             <div class="clear"></div>

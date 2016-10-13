@@ -727,7 +727,7 @@ case 'register' :
 			$userdata['user_login']= $_POST['user_login'];
 			$userdata['user_pass'] = $_POST['user_pass'];
 			$userdata['user_nicename']=$_POST['CI'];
-			$userdata['user_email'] = ($_POST['CI']).("@correofalso.edu.");
+			//$userdata['user_email'] = ($_POST['CI']).("@correofalso.edu.");
 			//Guardo en la session para recuperarlas en el register #2
 			//$_SESSION['user_login'] = $_POST['user_login'];
 			//$_SESSION['user_pass'] =  $_POST['user_pass'];

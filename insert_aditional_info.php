@@ -19,25 +19,22 @@ $full_name_contact = $_POST['full_name_contact'];
 $parentesco = $_POST['parentesco'];
 $mob_parentesco = $_POST['mob_parentesco'];
 //Get the info in the sessions
+
 $ci = '';
+$set_fields='';
+$update='';
 $ci = $_SESSION['ID'];
 
+$set_fields="full_name='".$full_name."',"."address='".$address."',"."processHC='".$process_hc."',"."phone='".$phone."',"."mobile_phone='".$mobile."',"."operator='".$operadora."',"."parentesco_name='".$full_name_contact."',"."parentesco='".$parentesco."',"."telef_parentesco='".$mob_parentesco."'";
+$update="UPDATE wp_users SET ".$set_fields." WHERE ID=".$ci;
 
-//Queries.
-$fields = "(id_user, full_name, address,processHC,phone,mobile_phone,operator,parentesco_name,parentesco,telef_parentesco)";
-$values = "('" .$ci."','".$full_name."','".$address."','".$process_hc."','".$phone."','".$mobile."','".$operadora."','".$full_name_contact."','".$parentesco."','".$mob_parentesco."')";
-
-/*$sql = "INSERT INTO wp_user_info_additional
-(id_user, full_name, address,processHC,phone,mobile_phone,operator,parentesco_name,parentesco,telef_parentesco) 
-VALUES (32,'oscar moncayo','duran','pruebaHC','861740','0980408714','claro','Hernan Moncayo','papa','0984737679')"; */
-$sql = "INSERT INTO wp_user_info_additional".$fields." VALUES".$values;
 if($ci!=null){
-	if(mysqli_query($link, $sql)){
+	if(mysqli_query($link, $update)){
 		session_destroy();
 		//echo "Registro Completo. Ahora vamos a ingresar a nuestra cuenta.";
 		//header( "refresh:1;url=wp-login.php"); //CAMBIA URL 
 		//header( "refresh:1;url=http://localhost/wordpressHC/wp-login.php"); //CAMBIA URL 
-		header('Location:http://localhost/wordpressHC/wp-login.php');
+		header('Location:http://186.3.171.15//wordpressHC/wp-login.php');
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 	}

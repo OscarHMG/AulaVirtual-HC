@@ -470,10 +470,12 @@ class WP_Users_List_Table extends WP_List_Table {
 						$r .= "$avatar $edit";
 						break;
 					case 'name':
-						$r .= "$user_object->first_name $user_object->last_name";
+						//$r .= "$user_object->first_name $user_object->last_name";
+						$r .= "$user_object->full_name";
 						break;
 					case 'email':
-						$r .= "<a href='" . esc_url( "mailto:$email" ) . "'>$email</a>";
+						//$r .= "<a href='" . esc_url( "mailto:$email" ) . "'>$email</a>";
+						$r .= "$user_object->user_nicename";
 						break;
 					case 'role':
 						$r .= esc_html( $roles_list );
