@@ -1,4 +1,4 @@
- <?php 
+ <?php require '../wp-config.php';
 //variables
  $usr_id= $alias= $nombre_completo= $direccion= $procesoHC= $telefono= $celular =$operadora= $nombre_parentesco = $parentesco= $telf_parentesco = "";
 
@@ -8,7 +8,7 @@ $cont=0;
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
-	
+	$usr_id=$_POST["usr_id"];
 
 	if(empty($_POST["nombre_completo"])){
 		$nombre_completo="";
@@ -71,27 +71,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$cont=1;
 }
 
-if(cont==1){
-	$servername = "localhost";
-	$username = "root";
-	$password = "root";
-	$dbname = "wordpresshc";
-
+if($cont==1){
+	$servername = DB_HOST;
+	$username = DB_USER;
+	$password = DB_PASSWORD;
+	$dbname = DB_NAME;
+	$sql="";
 	try {
 		    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 		    // set the PDO error mode to exception
 		    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    // sql to create table
 		    $sql = "UPDATE wp_users SET display_name='".$alias."', full_name='".$nombre_completo."', address='".$direccion."', processHC='".$procesoHC."', phone='".$telefono."', mobile_phone='".$celular."', operator='".$operadora."', parentesco_name='".$nombre_parentesco."', parentesco='".$parentesco."', telef_parentesco='".$telf_parentesco."' WHERE ID='".$usr_id."'";
-
+		    
 	    // preparar query
 	    $stmt = $conn->prepare($sql);
 
 	    // execute the query
 	    $stmt->execute();
-	    echo "se actualizaron los datos";
-	    }
-	catch(PDOException $e)
+	   
+	    }catch(PDOException $e)
 	    {
 	    	echo '<script type="text/javascript">
 			alert("Uupps. Se produjo un error, sus datos no fueron guardados.");
@@ -110,11 +109,11 @@ if(cont==1){
 	</script>';
 }
 
-	function validacion_input($data) {
-	  $data = trim($data);
-	  $data = stripslashes($data);
-	  $data = htmlspecialchars($data);
-	  return $data;
-	}
+function validacion_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
 ?>

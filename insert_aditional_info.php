@@ -34,7 +34,8 @@ if($ci!=null){
 		//echo "Registro Completo. Ahora vamos a ingresar a nuestra cuenta.";
 		//header( "refresh:1;url=wp-login.php"); //CAMBIA URL 
 		//header( "refresh:1;url=http://localhost/wordpressHC/wp-login.php"); //CAMBIA URL 
-		header('Location:http://186.3.171.15//wordpressHC/wp-login.php');
+		header('Location:http://localhost/wordpressHC/wp-login.php');
+		//header('Location:http://186.3.171.15//wordpressHC/wp-login.php');
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 	}

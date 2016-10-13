@@ -76,8 +76,6 @@ input.item:focus{ /* add this to the already existing style */
 
 
 input.item ,select{
-    height: 40%;
-    width: 39%;
     padding:5px 8px;
     box-shadow: 0px 0px 3px #32740a, 0 10px 15px #eee inset;
 }
